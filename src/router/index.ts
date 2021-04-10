@@ -3,6 +3,7 @@ import Accueil from '../views/Accueil.vue'
 import Contact from '../views/Contact.vue'
 import Histoire from '../views/Histoire.vue'
 import Projets from '../views/Projets.vue'
+import PageNotFound from '../views/PageNotFound.vue'
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -25,6 +26,11 @@ const routes: Array<RouteRecordRaw> = [
         name: 'Contact',
         component: Contact
     },
+    {
+        path: '/:pathMatch(.*)*',
+        name: 'PageNotFound',
+        component: PageNotFound
+    }
 ]
 
 const router = createRouter({
