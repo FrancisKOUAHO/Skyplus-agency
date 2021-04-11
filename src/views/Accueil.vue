@@ -2,10 +2,17 @@
   <h1>Accueil</h1>
 </template>
 
-<script>
-export default {
-  name: "Accueil"
-}
+<script lang="ts">
+
+import {defineComponent} from 'vue'
+
+export default defineComponent({
+  name: 'Accueil',
+  data() {
+    return {}
+  }
+})
+
 </script>
 
 <style scoped>

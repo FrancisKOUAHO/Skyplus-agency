@@ -1,28 +1,39 @@
 <template>
-  <ul>
-    <li>{{book.title}}</li>
-  </ul>
   <h1>Projets</h1>
+  <ul v-for="(projet, index) in projets" :key="index">
+    <li>{{ projet.title }}</li>
+    <li>{{ projet.image }}</li>
+    <li>{{ projet.description }}</li>
+
+  </ul>
 </template>
 
 <script lang="ts">
-interface Book {
+interface Projets {
   title: string
-  author: string
-  year: number
+  image: string
+  description: string
+  created: number
 }
 
-import { defineComponent } from 'vue'
+import {defineComponent} from 'vue'
 
 export default defineComponent({
   name: 'Projets',
-  data(){
-    return{
-      book: {
-        title: 'Vue 3 Guide',
-        author: 'Vue Team',
-        year: 2020
-      } as Book
+  data() {
+    return {
+      projets: [
+        {
+          title: 'Jacky',
+          image: 'Vue Team',
+          description: 'aaaaaa',
+        },
+        {
+          title: 'Francis',
+          image: 'Vue Team',
+          description: 'aaaaaa',
+        }
+      ]
     }
   }
 })

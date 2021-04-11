@@ -2,10 +2,17 @@
   <h1>Histoire</h1>
 </template>
 
-<script>
-export default {
-  name: "Histoire"
-}
+<script lang="ts">
+
+import {defineComponent} from 'vue'
+
+export default defineComponent({
+  name: 'Histoire',
+  data() {
+    return {}
+  }
+})
+
 </script>
 
 <style scoped>
