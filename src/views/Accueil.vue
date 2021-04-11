@@ -1,15 +1,17 @@
 <template>
   <div class=" body-color">
-    <h1>Accueil jacky Francis KOUAHO</h1>
+    <nav-bar/>
   </div>
 </template>
 
 <script lang="ts">
 
 import {defineComponent} from 'vue'
+import NavBar from "@/components/NavBar.vue";
 
 export default defineComponent({
   name: 'Accueil',
+  components: {NavBar},
   data() {
     return {}
   }
