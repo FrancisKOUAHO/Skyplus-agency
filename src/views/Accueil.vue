@@ -1,6 +1,6 @@
 <template>
   <div class=" body-color">
-    <h1>Accueil</h1>
+    <h1>Accueil Francis</h1>
   </div>
 </template>
 
