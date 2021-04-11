@@ -1,8 +1,8 @@
 import {createRouter, createWebHistory, RouteRecordRaw} from 'vue-router'
 import Accueil from '../views/Accueil.vue'
 import Contact from '../views/Contact.vue'
-import Histoire from '../views/Histoire.vue'
-import Projets from '../views/Projets.vue'
+import Agence from '../views/Agence.vue'
+import Creations from '../views/Creations.vue'
 import PageNotFound from '../views/PageNotFound.vue'
 
 const routes: Array<RouteRecordRaw> = [
@@ -12,14 +12,14 @@ const routes: Array<RouteRecordRaw> = [
         component: Accueil
     },
     {
-        path: '/projets',
-        name: 'Projets',
-        component: Projets
+        path: '/creations',
+        name: 'Creations',
+        component: Creations
     },
     {
-        path: '/histoire',
-        name: 'Histoire',
-        component: Histoire
+        path: '/agence',
+        name: 'Agence',
+        component: Agence
     },
     {
         path: '/contact',

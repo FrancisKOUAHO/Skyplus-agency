@@ -1,5 +1,7 @@
 <template>
-  <h1>Contact</h1>
+  <div class="body-color">
+    <h1>Histoire</h1>
+  </div>
 </template>
 
 <script lang="ts">
@@ -7,7 +9,7 @@
 import {defineComponent} from 'vue'
 
 export default defineComponent({
-  name: 'Contact',
+  name: 'Agence',
   data() {
     return {}
   }
@@ -16,8 +18,8 @@ export default defineComponent({
 
 <style scoped>
 .body-color {
-  background-image: linear-gradient(to left bottom, #C94F0A, #C94F0A, #EA6232,
-  #F3B248, #F3B248);
+  background-image: linear-gradient(to left bottom, #355EF2, #355EF2, #355EF2,
+  #72BFD4, #72BFD4);
   min-height: 100vh;
 }
 </style>
