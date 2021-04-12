@@ -1,15 +1,19 @@
 <template>
   <div class="body-color">
+    <nav-bar/>
     <h1>Projets</h1>
     <ul v-for="(projet, index) in projets" :key="index">
       <li>{{ projet.title }}</li>
       <li>{{ projet.image }}</li>
       <li>{{ projet.description }}</li>
     </ul>
+    <pieds-page/>
   </div>
 </template>
 
 <script lang="ts">
+import NavBar from "@/components/NavBar.vue";
+
 interface Projets {
   title: string
   image: string
@@ -18,9 +22,11 @@ interface Projets {
 }
 
 import {defineComponent} from 'vue'
+import PiedsPage from "@/components/PiedsPage.vue";
 
 export default defineComponent({
   name: 'Creations',
+  components: {PiedsPage, NavBar},
   data() {
     return {
       projets: [

@@ -1,15 +1,20 @@
 <template>
   <div class="body-color">
+    <nav-bar/>
     <h1>Histoire</h1>
+    <pieds-page/>
   </div>
 </template>
 
 <script lang="ts">
 
 import {defineComponent} from 'vue'
+import NavBar from "@/components/NavBar.vue";
+import PiedsPage from "@/components/PiedsPage.vue";
 
 export default defineComponent({
   name: 'Agence',
+  components: {PiedsPage, NavBar},
   data() {
     return {}
   }

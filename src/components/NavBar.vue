@@ -1,20 +1,22 @@
 <template>
   <nav class="nav flex flex-wrap items-center justify-between px-4">
     <div class="flex flex-no-shrink items-center mr-6 py-3 text-grey-darkest">
-      <svg width="100" height="100" viewBox="0 0 239 239" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <line x1="40" y1="45" x2="198" y2="45" stroke="white" stroke-width="10"/>
-        <line x1="45" y1="198" x2="45" y2="40" stroke="white" stroke-width="10"/>
-        <line x1="193" y1="198" x2="193" y2="148" stroke="white" stroke-width="10"/>
-        <line x1="193" y1="90" x2="193" y2="40" stroke="white" stroke-width="10"/>
-        <line x1="193" y1="139" x2="193" y2="99" stroke="white" stroke-width="10"/>
-        <line x1="173" y1="119" x2="213" y2="119" stroke="white" stroke-width="10"/>
-        <line x1="40" y1="193" x2="198" y2="193" stroke="white" stroke-width="10"/>
-        <path d="M118.397 144.458L84 128.025V147.334L118.397 165V144.458Z" fill="#FFFEFE"/>
-        <path d="M153 110.975V90.6388L118.397 74V93.5147L153 110.975Z" fill="#FFFEFE"/>
-        <path
-            d="M118.397 74L153 90.6388V110.975L118.397 93.5147M118.397 74L84 92.0767M118.397 74V93.5147M84 92.0767V110.975L134.051 136.652M84 92.0767L102.743 101.731M134.051 136.652L118.397 144.458M134.051 136.652L153 147.334M118.397 144.458L84 128.025V147.334L118.397 165M118.397 144.458V165M118.397 165L153 147.334M153 147.334V126.381L102.743 101.731M102.743 101.731L118.397 93.5147"
-            stroke="white" stroke-width="5"/>
-      </svg>
+      <router-link :to="{name: 'Accueil'}">
+        <svg width="100" height="100" viewBox="0 0 239 239" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="40" y1="45" x2="198" y2="45" stroke="white" stroke-width="10"/>
+          <line x1="45" y1="198" x2="45" y2="40" stroke="white" stroke-width="10"/>
+          <line x1="193" y1="198" x2="193" y2="148" stroke="white" stroke-width="10"/>
+          <line x1="193" y1="90" x2="193" y2="40" stroke="white" stroke-width="10"/>
+          <line x1="193" y1="139" x2="193" y2="99" stroke="white" stroke-width="10"/>
+          <line x1="173" y1="119" x2="213" y2="119" stroke="white" stroke-width="10"/>
+          <line x1="40" y1="193" x2="198" y2="193" stroke="white" stroke-width="10"/>
+          <path d="M118.397 144.458L84 128.025V147.334L118.397 165V144.458Z" fill="#FFFEFE"/>
+          <path d="M153 110.975V90.6388L118.397 74V93.5147L153 110.975Z" fill="#FFFEFE"/>
+          <path
+              d="M118.397 74L153 90.6388V110.975L118.397 93.5147M118.397 74L84 92.0767M118.397 74V93.5147M84 92.0767V110.975L134.051 136.652M84 92.0767L102.743 101.731M134.051 136.652L118.397 144.458M134.051 136.652L153 147.334M118.397 144.458L84 128.025V147.334L118.397 165M118.397 144.458V165M118.397 165L153 147.334M153 147.334V126.381L102.743 101.731M102.743 101.731L118.397 93.5147"
+              stroke="white" stroke-width="5"/>
+        </svg>
+      </router-link>
     </div>
 
     <input class="menu-btn hidden" type="checkbox" id="menu-btn">
@@ -24,16 +26,24 @@
 
     <ul class="menu border-b md:border-none flex justify-center list-reset m-0 w-full md:w-auto">
       <li class="border-t md:border-none">
-        <a href="/"
-           class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold">Agence</a>
+        <router-link :to="{name: 'Agence'}"
+                     class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold">
+          Agence
+        </router-link>
       </li>
 
       <li class="border-t md:border-none">
-        <a href="/about/" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Créations</a>
+        <router-link :to="{name: 'Creations'}"
+                     class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">
+          Créations
+        </router-link>
       </li>
 
       <li class="border-t md:border-none">
-        <a href="/blog/" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Contact</a>
+        <router-link :to="{name: 'Contact'}"
+                     class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">
+          Contact
+        </router-link>
       </li>
 
     </ul>
@@ -54,11 +64,11 @@ export default defineComponent({
 </script>
 
 <style scoped>
-ul{
+ul {
   margin-right: 5%;
 }
 
-li{
+li {
   color: white;
   text-transform: uppercase;
 }

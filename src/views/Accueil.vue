@@ -1,6 +1,7 @@
 <template>
   <div class=" body-color">
     <nav-bar/>
+    <pieds-page/>
   </div>
 </template>
 
@@ -8,10 +9,12 @@
 
 import {defineComponent} from 'vue'
 import NavBar from "@/components/NavBar.vue";
+import Footer from "@/components/PiedsPage.vue";
+import PiedsPage from "@/components/PiedsPage.vue";
 
 export default defineComponent({
   name: 'Accueil',
-  components: {NavBar},
+  components: {PiedsPage, NavBar},
   data() {
     return {}
   }
