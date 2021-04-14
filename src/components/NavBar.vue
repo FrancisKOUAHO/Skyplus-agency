@@ -24,24 +24,24 @@
       <span class="navicon bg-grey-darkest flex items-center relative"></span>
     </label>
 
-    <ul class="menu border-b md:border-none flex justify-center list-reset m-0 w-full md:w-auto">
-      <li class="border-t md:border-none">
+    <ul class="menu border-b md:border-none flex justify-center list-reset m-0 w-full md:w-auto text-sm">
+      <li class="border-t md:border-none hover:text-grey-darker">
         <router-link :to="{name: 'Agence'}"
-                     class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold">
+                     class="link-hover after block md:inline-block m-8 py-3 no-underline text-grey-darkest">
           Agence
         </router-link>
       </li>
 
-      <li class="border-t md:border-none">
+      <li class="border-t md:border-none hover:text-grey-darker">
         <router-link :to="{name: 'Creations'}"
-                     class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">
+                     class="link-hover after block md:inline-block m-8 py-3 no-underline text-grey-darkest">
           Créations
         </router-link>
       </li>
 
-      <li class="border-t md:border-none">
+      <li class="border-t md:border-none hover:text-grey-darker">
         <router-link :to="{name: 'Contact'}"
-                     class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">
+                     class="link-hover after block md:inline-block m-8 py-3 no-underline text-grey-darkest">
           Contact
         </router-link>
       </li>
@@ -71,6 +71,36 @@ ul {
 li {
   color: white;
   text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+a,a:hover{
+
+	position:relative;
+
+	text-decoration:none;
+  display: flex;
+justify-content: center;
+}
+
+a.after:after{
+  content: "";
+  transition: 0.5s all ease;
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  position: absolute;
+  bottom: 0.5em;
+  height: 1px;
+  background: #fffefe !important;
+  left: 0px;
+  width: 0;
+}
+
+a.after:hover:after{
+    width: 100%;
+}
+
+.link-hover{
+  left:0;
 }
 
 @media (max-width: 767px) {
