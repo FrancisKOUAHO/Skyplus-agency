@@ -47,7 +47,7 @@ export default defineComponent({
 .all-square {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 57%;
   transform: translate(10%, -70%);
 }
 

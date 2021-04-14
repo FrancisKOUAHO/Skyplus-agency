@@ -1,4 +1,5 @@
 <template>
+    <cercle/>
   <footer class='w-3/4 text-center border-grey p-4'>
     <div>
       <p>SKYPLUS © 2021 - Agence de communication et de création digitale</p>
@@ -9,10 +10,11 @@
 <script lang="ts">
 
 import {defineComponent} from 'vue'
+import Cercle from "@/components/Cercle.vue";
 
 export default defineComponent({
   name: 'PiedsPage',
-  components: {},
+  components: {Cercle},
   data() {
     return {}
   }
@@ -20,15 +22,15 @@ export default defineComponent({
 </script>
 
 <style scoped>
-footer{
+footer {
   background-image: linear-gradient(to right, rgb(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
-  position:absolute;
-  bottom:0;
+  position: absolute;
+  bottom: 0;
   text-align: left;
   padding-left: 2em;
 }
 
-p{
+p {
   color: #fff;
 }
 

@@ -2,10 +2,14 @@
   <div class=" body-color">
     <nav-bar/>
     <line-vertical/>
-    <div>
-      <skyplus/>
-      <line-horizontal/>
-    </div>
+    <skyplus/>
+    <line-horizontal/>
+    <router-link :to="{name: 'Creations'}">
+      <button class="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded btn-placement">
+        Voir nos créations
+        <img src="../assets/image/arrow-left.png" alt="arrow">
+      </button>
+    </router-link>
     <square/>
     <pieds-page/>
   </div>
@@ -27,7 +31,8 @@ export default defineComponent({
   components: {LineHorizontal, Skyplus, LineVertical, Square, PiedsPage, NavBar},
   data() {
     return {}
-  }
+  },
+  methods: {}
 })
 </script>
 
@@ -36,6 +41,32 @@ export default defineComponent({
   background-image: linear-gradient(to left bottom, #7e80cb, #5e8cd2, #3b95d1, #139ecb, #00a4c1,
   #00adc1, #00b6be, #00bfb9, #00cfc2, #00dfc9, #00efce, #00ffd2);
   min-height: 100vh;
+}
+
+.btn {
+  @apply font-bold py-2 px-4 rounded;
+}
+
+.btn-blue {
+  @apply bg-blue-500 text-white;
+}
+
+.btn-blue:hover {
+  @apply bg-blue-700;
+}
+
+.btn-placement {
+  margin-left: 28%;
+  width: 14%;
+  margin-top: 1%;
+  background-image: linear-gradient(to right, #E18CFF, #E18CFF, #C489F0, #C489F0, #C489F0,
+  #C489F0, #AF86E5, #AF86E5, #7E80CB);
+}
+
+img {
+  float: right;
+  width: 10px;
+  margin-top: 4.5%;
 }
 
 </style>

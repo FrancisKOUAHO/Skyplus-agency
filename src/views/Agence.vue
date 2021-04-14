@@ -1,7 +1,11 @@
 <template>
   <div class="body-color">
     <nav-bar/>
-    <h1>Histoire</h1>
+    <div>
+      <line-vertical/>
+      <skyplus/>
+      <line-horizontal/>
+    </div>
     <pieds-page/>
   </div>
 </template>
@@ -11,10 +15,13 @@
 import {defineComponent} from 'vue'
 import NavBar from "@/components/NavBar.vue";
 import PiedsPage from "@/components/PiedsPage.vue";
+import LineVertical from "@/components/LineVertical.vue";
+import Skyplus from "@/components/Skyplus.vue";
+import LineHorizontal from "@/components/LineHorizontal.vue";
 
 export default defineComponent({
   name: 'Agence',
-  components: {PiedsPage, NavBar},
+  components: {LineHorizontal, Skyplus, LineVertical, PiedsPage, NavBar},
   data() {
     return {}
   }
