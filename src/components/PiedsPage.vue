@@ -1,5 +1,4 @@
 <template>
-    <cercle/>
   <footer class='w-3/4 text-center border-grey p-4'>
     <div>
       <p>SKYPLUS © 2021 - Agence de communication et de création digitale</p>
@@ -14,7 +13,6 @@ import Cercle from "@/components/Cercle.vue";
 
 export default defineComponent({
   name: 'PiedsPage',
-  components: {Cercle},
   data() {
     return {}
   }
