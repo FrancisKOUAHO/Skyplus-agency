@@ -1,4 +1,10 @@
 <template>
+  <object type="image/svg+xml"
+      data="../static/svg/soleil2.svg"
+      width="auto"
+      height="auto"
+      class="footer_soleil"
+  />
   <footer class='w-3/4 text-center border-grey p-4'>
     <div>
       <p>SKYPLUS © 2021 - Agence de communication et de création digitale</p>
@@ -26,6 +32,12 @@ footer {
   bottom: 0;
   text-align: left;
   padding-left: 2em;
+}
+
+.footer_soleil{
+  position: absolute;
+  bottom: -11em;
+  right: -11em;
 }
 
 p {
