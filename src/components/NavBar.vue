@@ -40,12 +40,18 @@
       </li>
 
       <li class="border-t md:border-none hover:text-grey-darker">
+        <router-link :to="{name: 'Offre'}"
+                     class="link-hover after block md:inline-block m-8 py-3 no-underline text-grey-darkest">
+          Nos offres
+        </router-link>
+      </li>
+
+      <li class="border-t md:border-none hover:text-grey-darker">
         <router-link :to="{name: 'Contact'}"
                      class="link-hover after block md:inline-block m-8 py-3 no-underline text-grey-darkest">
           Contact
         </router-link>
       </li>
-
     </ul>
   </nav>
 </template>
@@ -74,16 +80,16 @@ li {
   letter-spacing: 2px;
 }
 
-a,a:hover{
+a, a:hover {
 
-	position:relative;
+  position: relative;
 
-	text-decoration:none;
+  text-decoration: none;
   display: flex;
-justify-content: center;
+  justify-content: center;
 }
 
-a.after:after{
+a.after:after {
   content: "";
   transition: 0.5s all ease;
   transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
@@ -95,12 +101,12 @@ a.after:after{
   width: 0;
 }
 
-a.after:hover:after{
-    width: 100%;
+a.after:hover:after {
+  width: 100%;
 }
 
-.link-hover{
-  left:0;
+.link-hover {
+  left: 0;
 }
 
 @media (max-width: 767px) {
