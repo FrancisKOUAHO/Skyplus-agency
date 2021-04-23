@@ -4,6 +4,8 @@ import Contact from '../views/Contact.vue'
 import Agence from '../views/Agence.vue'
 import Creations from '../views/Creations.vue'
 import PageNotFound from '../views/PageNotFound.vue'
+import AdminLogin from '../views/Admin/Login.vue'
+import Admin from '../views/Admin/Index.vue'
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -25,6 +27,16 @@ const routes: Array<RouteRecordRaw> = [
         path: '/contact',
         name: 'Contact',
         component: Contact
+    },
+    {
+        path: '/skyplus-admin',
+        name: 'AdminLogin',
+        component: AdminLogin
+    },
+    {
+        path: '/skyplus',
+        name: 'Admin',
+        component: Admin
     },
     {
         path: '/:pathMatch(.*)*',
