@@ -1,7 +1,13 @@
 <template>
-  <div class="skyplus">
-    <center><h1>SKYPLUS</h1></center>
+  <div class="flex items-center mt-28 pl-40">
+  <div>
+    <img class="visuel_plus fadeInUp" src="../assets/image/image_plus_home.png">
   </div>
+  <div class="title_desc">
+    <h1 class="text-9xl mt-12 relative fadeInRight">SKYPLUS</h1>
+    <h3 class="text-5xl relative right-28 fadeInRight">Sky’s not the limit </h3>
+  </div>
+</div>
 </template>
 
 <script lang="ts">
@@ -17,13 +23,104 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.skyplus{
-  border: 3px solid white;
-  width: 10%;
-  margin-top: 0%;
-  margin-left: 30%;
-  color: white;
-  font-size: 25px;
+img {
+  width: 27em;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+/* Animation FadeInUp class "FadeInUp"*/ 
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    position: relative;
+    top: 100px;
+  }
+  100% {
+    opacity: 1;
+    position: relative;
+    top: 0px;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    position: relative;
+    top: 100px;
+  }
+  100% {
+    opacity: 1;
+    position: relative;
+    top: 0px;
+    transform: translateY(0px);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+/* Animation FadeInRight class "FadeInRight"*/ 
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    position: relative;
+    left: 100px;
+  }
+  100% {
+    opacity: 1;
+    position: relative;
+    left: 0px;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    position: relative;
+    left: 100px;
+  }
+  100% {
+    opacity: 1;
+    
+    transform: translateX(0px);
+  }
+}
+
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
+
+.title_desc{
+  color: #fffefe;
+}
+
+h1{
+  right: 2em;
+  font-family: Raleway-Bold;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-delay: 2s;
+}
+
+h3 {
+  top: 3.7rem;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-delay: 4s;
 }
 
 

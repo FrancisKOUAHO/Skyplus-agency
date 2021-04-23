@@ -1,15 +1,13 @@
 <template>
   <div class=" body-color">
     <nav-bar/>
-    <line-vertical/>
     <skyplus/>
-    <line-horizontal/>
-    <router-link :to="{name: 'Creations'}">
+    <!-- <router-link :to="{name: 'Creations'}">
       <button class="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded btn-placement">
         Voir nos créations
         <img src="../assets/image/arrow-left.png" alt="arrow">
       </button>
-    </router-link>
+    </router-link> -->
     <square/>
     <pieds-page/>
   </div>
@@ -22,13 +20,11 @@ import NavBar from "@/components/NavBar.vue";
 import Footer from "@/components/PiedsPage.vue";
 import PiedsPage from "@/components/PiedsPage.vue";
 import Square from "@/components/square.vue";
-import LineVertical from "@/components/LineVertical.vue";
 import Skyplus from "@/components/Skyplus.vue";
-import LineHorizontal from "@/components/LineHorizontal.vue";
 
 export default defineComponent({
   name: 'Accueil',
-  components: {LineHorizontal, Skyplus, LineVertical, Square, PiedsPage, NavBar},
+  components: {Skyplus, Square, PiedsPage, NavBar},
   data() {
     return {}
   },
