@@ -1,4 +1,4 @@
-import {createRouter, createWebHistory, RouteRecordRaw} from 'vue-router'
+import {createRouter, createWebHistory, RouteRecordRaw} from "vue-router"
 import Accueil from '../views/Accueil.vue'
 import Contact from '../views/Contact.vue'
 import Agence from '../views/Agence.vue'
@@ -14,52 +14,62 @@ const routes: Array<RouteRecordRaw> = [
     {
         path: '/',
         name: 'Accueil',
-        component: Accueil
+        component: Accueil,
+        meta: { title: 'Skyplus | Accueil' }
     },
     {
         path: '/creations',
         name: 'Creations',
-        component: Creations
+        component: Creations,
+        meta: { title: 'Skyplus | Créations' }
     },
     {
         path: '/agence',
         name: 'Agence',
-        component: Agence
+        component: Agence,
+        meta: { title: 'Skyplus | Agence' }
     },
     {
         path: '/contact',
         name: 'Contact',
-        component: Contact
+        component: Contact,
+        meta: { title: 'Skyplus | Contact' }
     },
     {
         path: '/Offre',
         name: 'Offre',
-        component: Offre
+        component: Offre,
+        meta: { title: 'Skyplus |  Nos offres ' }
     },
     {
         path: '/offres-independants-creation-site',
         name: 'OffresIndependants',
-        component: OffresIndependants
+        component: OffresIndependants,
+        meta: { title: 'Skyplus | Offres Independants' }
     },
     {
         path: '/offres-entreprises-creation-site',
         name: 'OffresEntreprises',
-        component: OffresEntreprises
+        component: OffresEntreprises,
+        meta: { title: 'Skyplus | Offres Entreprises' }
     },
     {
         path: '/skyplus-admin',
         name: 'AdminLogin',
-        component: AdminLogin
+        component: AdminLogin,
+        meta: { title: 'Skyplus | Connexion' }
     },
     {
         path: '/skyplus',
         name: 'Admin',
-        component: Admin
+        component: Admin,
+        meta: { title: 'Skyplus | Dashboard' }
     },
     {
         path: '/:pathMatch(.*)*',
         name: 'PageNotFound',
-        component: PageNotFound
+        component: PageNotFound,
+        meta: { title: 'Skyplus | Page not found' }
     }
 ]
 

@@ -1,13 +1,15 @@
 <template>
-<h1>Admin</h1>
+ <h1>Admin</h1>
 </template>
 
 <script>
-export default {
-  name: "Index"
-}
+import {defineComponent} from 'vue'
+
+export default defineComponent({
+  name: "Index",
+
+})
 </script>
 
 <style scoped>
-
 </style>

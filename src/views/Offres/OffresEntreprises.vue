@@ -1,5 +1,23 @@
 <template>
   <div class="body-color">
+    <div style="margin-top: -45%; z-index: 10">
+      <router-link :to="{name: 'Accueil'}">
+        <svg width="100" height="100" viewBox="0 0 239 239" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="40" y1="45" x2="198" y2="45" stroke="white" stroke-width="10"/>
+          <line x1="45" y1="198" x2="45" y2="40" stroke="white" stroke-width="10"/>
+          <line x1="193" y1="198" x2="193" y2="148" stroke="white" stroke-width="10"/>
+          <line x1="193" y1="90" x2="193" y2="40" stroke="white" stroke-width="10"/>
+          <line x1="193" y1="139" x2="193" y2="99" stroke="white" stroke-width="10"/>
+          <line x1="173" y1="119" x2="213" y2="119" stroke="white" stroke-width="10"/>
+          <line x1="40" y1="193" x2="198" y2="193" stroke="white" stroke-width="10"/>
+          <path d="M118.397 144.458L84 128.025V147.334L118.397 165V144.458Z" fill="#FFFEFE"/>
+          <path d="M153 110.975V90.6388L118.397 74V93.5147L153 110.975Z" fill="#FFFEFE"/>
+          <path
+              d="M118.397 74L153 90.6388V110.975L118.397 93.5147M118.397 74L84 92.0767M118.397 74V93.5147M84 92.0767V110.975L134.051 136.652M84 92.0767L102.743 101.731M134.051 136.652L118.397 144.458M134.051 136.652L153 147.334M118.397 144.458L84 128.025V147.334L118.397 165M118.397 144.458V165M118.397 165L153 147.334M153 147.334V126.381L102.743 101.731M102.743 101.731L118.397 93.5147"
+              stroke="white" stroke-width="5"/>
+        </svg>
+      </router-link>
+    </div>
     <div class="container" style="display: flex; flex-direction: column;">
       <center>
         <div>
@@ -155,6 +173,7 @@ export default {
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-left: 1px solid rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(5px);
+  margin-left: -2%;
 }
 
 li{

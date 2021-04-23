@@ -1,24 +1,5 @@
 <template>
-  <div class="all-square">
-    <div class="div-square">
-      <div class="square square-blue" @click="printToConsole"></div>
-      <div class="square square-black"></div>
-      <div class="square square-pink"></div>
-    </div>
-
-    <div class="div-square">
-      <div class="square square-black"></div>
-      <div class="square square-green"></div>
-      <div class="square square-black"></div>
-    </div>
-
-    <div class="div-square">
-      <div class="square square-orange"></div>
-      <div class="square square-black"></div>
-      <div class="square square-green"></div>
-    </div>
-
-  </div>
+  <div></div>
 </template>
 
 
@@ -30,122 +11,85 @@ export default defineComponent({
   data() {
     return {}
   },
-  methods: {
-    printToConsole(): void {
-      let allQuares = document.getElementsByClassName('square')
-      for (const allQuare of allQuares) {
-        console.log(allQuare)
-      }
-    }
-  }
+  methods: {}
 
 })
 </script>
 
 <style scoped>
-
-.all-square {
-  position: absolute;
-  top: 50%;
-  left: 57%;
-  transform: translate(10%, -70%);
+div {
+  width: 200px;
+  height: 200px;
+  background-color: #5e8cd2;
+  animation: square-to-circle 2s 1s infinite alternate;
 }
 
-.square {
-  position: relative;
-  width: 50px;
-  height: 50px;
-  margin: 15px;
-  border: 0.7px solid whitesmoke;
+@-webkit-keyframes square-to-circle {
+  0% {
+    border-radius: 0 0 0 0;
+  }
+  25% {
+    border-radius: 50% 0 0 0;
+  }
+  50% {
+    border-radius: 50% 50% 0 0;
+  }
+  75% {
+    border-radius: 50% 50% 50% 0;
+  }
+  100% {
+    border-radius: 50%;
+  }
 }
 
-.square::before {
-  content: '';
-  display: inline-block;
-  width: 50px;
-  height: 20px;
-  transform: skewX(-40deg);
-  position: absolute;
-  top: -20px;
-  left: 8px;
-  border: 0.7px solid whitesmoke;
+@keyframes square-to-circle {
+  0% {
+    border-radius: 0 0 0 0;
+    background: #3b95d1;
+  }
+  25% {
+    border-radius: 50% 0 0 0;
+    background: #139ecb;
+  }
+  50% {
+    border-radius: 50% 50% 0 0;
+    background: #00a4c1;
+  }
+  75% {
+    border-radius: 50% 50% 50% 0;
+    background: #00adc1;
+  }
+  100% {
+    border-radius: 50%;
+    background: #00b6be;
+  }
 }
 
-.square::after {
-  content: '';
-  display: inline-block;
-  width: 16px;
-  height: 50px;
-  transform: skewY(-50deg);
-  position: absolute;
-  top: -10px;
-  left: 100%;
-  border: 0.7px solid whitesmoke;
+@keyframes square-to-circle {
+  0% {
+    border-radius: 0 0 0 0;
+    background: #00bfb9;
+    transform: rotate(0deg);
+  }
+  25% {
+    border-radius: 50% 0 0 0;
+    background: #00cfc2;
+    transform: rotate(45deg);
+  }
+  50% {
+    border-radius: 50% 50% 0 0;
+    background: #00dfc9;
+    transform: rotate(90deg);
+  }
+  75% {
+    border-radius: 50% 50% 50% 0;
+    background: #00efce;
+    transform: rotate(135deg);
+  }
+  100% {
+    border-radius: 50%;
+    background: #00ffd2;
+    transform: rotate(180deg);
+  }
 }
-
-.div-square {
-  display: flex;
-}
-
-.square-black {
-  background-color: #0d060e;
-}
-
-.square-black::after {
-  background-color: #0d060e;
-}
-
-.square-black::before {
-  background-color: #0d060e;
-}
-
-
-.square-blue {
-  background-color: #122F67;
-}
-
-.square-blue::after {
-  background-color: #122F67;
-}
-
-.square-blue::before {
-  background-color: #122F67;
-}
-
-.square-pink {
-  background-color: #FF2E63;
-}
-
-.square-pink::after {
-  background-color: #FF2E63;
-}
-
-.square-pink::before {
-  background-color: #FF2E63;
-}
-
-.square-green {
-  background-color: #1b678d;
-}
-
-.square-green::after {
-  background-color: #1b678d;
-}
-
-.square-green::before {
-  background-color: #1b678d;
-}
-
-.square-orange {
-  background-color: #CD4B1D;
-}
-
-.square-orange::after {
-  background-color: #CD4B1D;
-}
-
-.square-orange::before {
-  background-color: #CD4B1D;
-}
-
 </style>

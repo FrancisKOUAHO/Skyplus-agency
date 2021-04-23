@@ -1,14 +1,10 @@
 <template>
   <div class=" body-color">
     <nav-bar/>
-    <skyplus/>
-    <!-- <router-link :to="{name: 'Creations'}">
-      <button class="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded btn-placement">
-        Voir nos créations
-        <img src="../assets/image/arrow-left.png" alt="arrow">
-      </button>
-    </router-link> -->
-    <square/>
+    <router-link :to="{name: 'Creations'}">
+      <skyplus/>
+    </router-link>
+    <square class="square"/>
     <pieds-page/>
   </div>
 </template>
@@ -37,6 +33,11 @@ export default defineComponent({
   background-image: linear-gradient(to left bottom, #7e80cb, #5e8cd2, #3b95d1, #139ecb, #00a4c1,
   #00adc1, #00b6be, #00bfb9, #00cfc2, #00dfc9, #00efce, #00ffd2);
   min-height: 100vh;
+}
+
+.square {
+  margin-left: 70%;
+  margin-top: -35%
 }
 
 .btn {

@@ -2,6 +2,24 @@
   <router-view/>
 </template>
 
+<script lang="ts">
+
+import {defineComponent} from 'vue'
+
+
+export default defineComponent({
+  name: 'App',
+  data() {
+    return {}
+  },
+  watch: {
+    '$route' (to, from) {
+      document.title = to.meta.title || 'Your Website'
+    }
+  },
+})
+</script>
+
 <style>
 @font-face {
   font-family: "Raleway-Regular";

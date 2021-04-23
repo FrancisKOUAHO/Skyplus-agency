@@ -1,9 +1,6 @@
 <template>
   <div class="body-color">
     <nav-bar/>
-    <div>
-      <skyplus/>
-    </div>
     <pieds-page/>
   </div>
 </template>
@@ -13,11 +10,10 @@
 import {defineComponent} from 'vue'
 import NavBar from "@/components/NavBar.vue";
 import PiedsPage from "@/components/PiedsPage.vue";
-import Skyplus from "@/components/Skyplus.vue";
 
 export default defineComponent({
   name: 'Contact',
-  components: {Skyplus, PiedsPage, NavBar},
+  components: {PiedsPage, NavBar},
   data() {
     return {}
   }
