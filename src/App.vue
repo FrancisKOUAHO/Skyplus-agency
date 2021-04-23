@@ -8,6 +8,11 @@
   src: url("assets/fonts/Raleway-VariableFont_wght.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Raleway-Bold";
+  src: url("assets/fonts/Raleway-Bold.ttf") format("truetype");
+}
+
 html, body {
   font-family: Raleway-Regular,sans-serif;
 }

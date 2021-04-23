@@ -2,9 +2,8 @@
   <div class="body-color">
     <nav-bar/>
     <div>
-      <line-vertical/>
+
       <skyplus/>
-      <line-horizontal/>
     </div>
     <pieds-page/>
   </div>
@@ -15,13 +14,11 @@
 import {defineComponent} from 'vue'
 import NavBar from "@/components/NavBar.vue";
 import PiedsPage from "@/components/PiedsPage.vue";
-import LineVertical from "@/components/LineVertical.vue";
 import Skyplus from "@/components/Skyplus.vue";
-import LineHorizontal from "@/components/LineHorizontal.vue";
 
 export default defineComponent({
   name: 'Agence',
-  components: {LineHorizontal, Skyplus, LineVertical, PiedsPage, NavBar},
+  components: {Skyplus, PiedsPage, NavBar},
   data() {
     return {}
   }
