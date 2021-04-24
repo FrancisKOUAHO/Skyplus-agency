@@ -99,7 +99,7 @@
 
 <script>
 export default {
-  name: "OffresEntreprises"
+  name: "OffresEntreprises",
 }
 </script>
 
