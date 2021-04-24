@@ -2,6 +2,7 @@
   <div class="body-color">
     <nav-bar/>
     <contact-vue/>
+    <reseau-sociaux/>
     <pieds-page/>
   </div>
 </template>
@@ -12,10 +13,11 @@ import {defineComponent} from 'vue'
 import NavBar from "@/components/NavBar.vue";
 import PiedsPage from "@/components/PiedsPage.vue";
 import ContactVue from "@/components/ContactVue.vue";
+import ReseauSociaux from "@/components/ReseauSociaux.vue";
 
 export default defineComponent({
   name: 'Contact',
-  components: {ContactVue, PiedsPage, NavBar},
+  components: {ReseauSociaux, ContactVue, PiedsPage, NavBar},
   data() {
     return {}
   }
