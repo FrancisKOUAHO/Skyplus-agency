@@ -64,31 +64,31 @@ export default defineComponent({
     }
   },
   created(){
-    // let comportement = document.getElementsByTagName('article');
-    //   if (comportement.classList.contains('active')){
-    //     console.log("OK")
-    //   }
+    /*let comportement = document.getElementsByTagName('article');
+      if (comportement.classList.contains('active')){
+        console.log("OK")
+      }
     document.addEventListener("DOMContentLoaded", function() {
 
       let comportement = document.getElementsByTagName('article');
       comportement[0].setAttribute('class','active')
 
-      // let article_active = comportement.length; // ça marche 
-      // console.log(article_active);
-      
-      // for (let i=0; i < comportement.length; i++){
-      //   if (comportement[i].classList.contains('active')){
-           
-      //   }
-      // }
-      //  for (let i=0; i < comportement.length; i++){
-      //    if (comportement[i].classList.contains('active')){
-      //      console.log(comportement[i]);
-      //      comportement[i-1].setAttribute('class', 'left');
-      //      comportement[i+1].setAttribute('class', 'right');
-      //    }
-      //  }
-     })
+      let article_active = comportement.length; // ça marche
+      console.log(article_active);
+
+      for (let i=0; i < comportement.length; i++){
+        if (comportement[i].classList.contains('active')){
+
+        }
+      }
+       for (let i=0; i < comportement.length; i++){
+         if (comportement[i].classList.contains('active')){
+           console.log(comportement[i]);
+           comportement[i-1].setAttribute('class', 'left');
+           comportement[i+1].setAttribute('class', 'right');
+         }
+       }
+     })*/
   },
   methods:{
     ChangeSlide(sens){
@@ -104,7 +104,7 @@ export default defineComponent({
         console.log("TEST2")
         comportement[numero].setAttribute('class', 'active');
       }
-      
+
      }
     }
 })

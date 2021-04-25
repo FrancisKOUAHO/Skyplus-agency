@@ -5,6 +5,7 @@
       <skyplus/>
     </router-link>
     <square class="square"/>
+    <hello/>
     <pieds-page/>
   </div>
 </template>
@@ -17,10 +18,11 @@ import Footer from "@/components/PiedsPage.vue";
 import PiedsPage from "@/components/PiedsPage.vue";
 import Square from "@/components/square.vue";
 import Skyplus from "@/components/Skyplus.vue";
+import Hello from "@/components/Hello.vue";
 
 export default defineComponent({
   name: 'Accueil',
-  components: {Skyplus, Square, PiedsPage, NavBar},
+  components: {Hello, Skyplus, Square, PiedsPage, NavBar},
   data() {
     return {}
   },
