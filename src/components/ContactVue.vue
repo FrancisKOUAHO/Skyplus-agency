@@ -1,11 +1,6 @@
 <template>
   <section id='section5' class="pt-5 pb-5 structure">
-    <!-- Titre de la section -->
-    <h1 class="titleSection pb-3 pb-md-5 " style="color: white">Nous gravitons dans</h1>
-    <h1 class="titleSection pb-3 pb-md-5" style="color: white">les meilleures sphères</h1>
-    <!-- Fin du titre de la section -->
     <div class="container">
-
       <!-- OMBRES -->
       <div class="drop drop-1"></div>
       <div class="drop drop-2"></div>
