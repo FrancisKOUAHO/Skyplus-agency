@@ -2,236 +2,113 @@
   <section class="section-projects" id="projects">
     <div class="slider animate">
       <div class="slides">
-        <article class="left">
-          <img class="image" src="/static/projets/califor.png">
-          <div class="title">
-            Califor
-          </div>
-          <div class="logo"><img src="https://califor.fr/wp-content/uploads/2021/01/cropped-logo-califor-noir2-.png"
-                                 alt="Nikon Club"></div>
+        <article class="" id="slide" v-for='slide in sliders' :key='slide.index' >
+          <img class="image" :src="slide.background">
+          <div class="title">{{slide.name}}</div>
+          <div class="logo"><img :src="slide.logo"
+                                 :alt="slide.name"></div>
           <div class="content">
-            <strong>CALIFOR, propose des pièces Unisexes, relax et bien pensées, baignant dans l’esprit Rap, sport et
-              quelques références cinématographiques du milieu des années 90.</strong>
-            <div class="button">
-              <a href="https://www.nikonclub.fr/" target="_blank">&nbsp;</a>
-              <span>Voir le site</span>
-            </div>
-          </div>
-        </article>
-        <article class="active">
-          <img class="image" src="/static/projets/auxfinsgastronomes.png">
-          <div class="title">Aux fins gastronomes</div>
-          <div class="logo"><img src="/static/logo/cropped-logo-cheron2-5.png"
-                                 alt="Aux fins gastronomes"></div>
-          <div class="content">
-            <strong>Cuisine et pâtisse des recettes d’antan tout comme de nouvelles créations conçues en symbiose avec
-              ses salariés</strong>
+            <strong>{{slide.description}}</strong>
 
-          </div>
-        </article>
-        <article class="right">
-          <img class="image" src="/static/projets/KCLM.png">
-          <div class="title">KCLM</div>
-          <div class="logo"><img
-              src="https://cdn.shopify.com/s/files/1/0295/7043/3068/files/Unknown_1800x.jpeg?v=1580859032"
-              alt="Huttopia"></div>
-          <div class="content">
-            <strong>Autorise-toi à avoir de Grands Rêves, avec un grand “G” et un grand “R”, c’est la devise de KCLM,
-              une marque qui travaille avec de nombreux artistes connus comme inconnus.</strong>
-          </div>
-        </article>
-        <article class="next-right">
-          <div class="image"
-               style="background-image: url('../../public/static/projets/screen_cheron_V2.png')"></div>
-          <div class="title">Clearblue</div>
-          <div class="logo"><img src="https://www.agencekali.fr/wp-content/uploads/2018/02/site_kali_logo_clearblue.png"
-                                 alt="Clearblue"></div>
-          <div class="content">
-            <strong>Site international générant un trafic digne d'un baby-boom.</strong>
-
-            <div class="button">
-              <a href="http://www.clearblue.com/" target="_blank">&nbsp;</a>
-              <span>Voir le site</span>
-            </div>
-          </div>
-        </article>
-        <article class="hidden">
-          <div class="image"
-               style="background-image: url('../../public/static/projets/screen_cheron_V2.png')"></div>
-          <div class="title">Engie</div>
-          <div class="logo"><img src="https://www.agencekali.fr/wp-content/uploads/2018/02/site_kali_logo_engie.png"
-                                 alt="Engie"></div>
-          <div class="content">
-            <strong>Site corporate B2B débordant d'énergie.</strong>
-
-            <div class="button">
-              <a href="https://entreprises-collectivites.engie.fr/" target="_blank">&nbsp;</a>
-              <span>Voir le site</span>
-            </div>
-          </div>
-        </article>
-        <article class="hidden">
-          <div class="image"
-               style="background-image: url('../../public/static/projets/screen_cheron_V2.png')"></div>
-          <div class="title">Archea</div>
-          <div class="logo"><img
-              src="https://www.agencekali.fr/wp-content/uploads/2018/02/site_kali_logo_archea-120x120.jpg" alt="Archea">
-          </div>
-          <div class="content">
-            <strong>Site web aménagé sur mesure.</strong>
-
-            <div class="button">
-              <a href="https://archea.fr/" target="_blank">&nbsp;</a>
-              <span>Voir le site</span>
-            </div>
-          </div>
-        </article>
-        <article class="hidden">
-          <div class="image"
-               style="background-image: url('https://www.agencekali.fr/wp-content/uploads/2018/02/Site_kali_visuel_ambiance-oman.jpg')"></div>
-          <div class="title">Oman Tourisme</div>
-          <div class="logo"><img
-              src="https://www.agencekali.fr/wp-content/uploads/2018/02/site_kali_logo_oman-120x120.jpg"
-              alt="Oman Tourisme"></div>
-          <div class="content">
-            <strong>Oasis digitale propice à l'évasion.</strong>
-
-          </div>
-        </article>
-        <article class="hidden">
-          <div class="image"
-               style="background-image: url('https://www.agencekali.fr/wp-content/uploads/2018/03/Site_kali_visuel_ambiance.jpg')"></div>
-          <div class="title">Procter &amp; Gamble</div>
-          <div class="logo"><img src="https://www.agencekali.fr/wp-content/uploads/2018/03/PG.jpg"
-                                 alt="Procter &amp; Gamble"></div>
-          <div class="content">
-            <strong>Application mobile nouvelle génération.</strong>
-
-            <div class="button">
-              <a href="https://itunes.apple.com/us/app/clearblue-connected/id1002628474?mt=8" target="_blank">&nbsp;</a>
-              <span>Voir l'application</span>
-            </div>
-          </div>
-        </article>
-        <article class="hidden">
-          <div class="image"
-               style="background-image: url('https://www.agencekali.fr/wp-content/uploads/2018/03/Site_kali_visuel_ambiance-1.jpg')"></div>
-          <div class="title">Nikon School</div>
-          <div class="logo"><img
-              src="https://www.agencekali.fr/wp-content/uploads/2018/03/site_kali_logo_nikon_school-1-120x120.jpg"
-              alt="Nikon School"></div>
-          <div class="content">
-            <strong>Plateforme e-commerce pour dépasser les clichés.</strong>
-
-            <div class="button">
-              <a href="https://www.nikonschool.fr" target="_blank" rel="nofollow">&nbsp;</a>
-              <span>Voir le site</span>
-            </div>
-          </div>
-        </article>
-        <article class="hidden">
-          <div class="image"
-               style="background-image: url('https://www.agencekali.fr/wp-content/uploads/2018/03/Site_kali_visuel_ambiance-la-tribune.jpg')"></div>
-          <div class="title">La Tribune</div>
-          <div class="logo"><img
-              src="https://www.agencekali.fr/wp-content/uploads/2018/03/site_kali_logo_latribune-1.png"
-              alt="La Tribune"></div>
-          <div class="content">
-            <strong>Dispositif de routage pour newsletters très bien côtées.</strong>
-
-          </div>
-        </article>
-        <article class="hidden">
-          <div class="image"
-               style="background-image: url('https://www.agencekali.fr/wp-content/uploads/2018/03/Site_kali_visuel_ambiance-veolia-1.jpg')"></div>
-          <div class="title">Veolia</div>
-          <div class="logo"><img src="https://www.agencekali.fr/wp-content/uploads/2018/03/site_kali_logo_veolia.png"
-                                 alt="Veolia"></div>
-          <div class="content">
-            <strong>Plateforme e-learning aux ressources infinies.</strong>
-
-          </div>
-        </article>
-        <article class="hidden">
-          <div class="image"
-               style="background-image: url('https://www.agencekali.fr/wp-content/uploads/2018/03/Site_kali_visuel_ambiance-3.jpg')"></div>
-          <div class="title">Vins de Bergerac-Duras</div>
-          <div class="logo"><img src="https://www.agencekali.fr/wp-content/uploads/2018/03/site_kali_logo_247.png"
-                                 alt="Vins de Bergerac-Duras"></div>
-          <div class="content">
-            <strong>Le magazine 247% lifestyle à consommer sans modération</strong>
-
-            <div class="button">
-              <a href="http://www.247lemag.fr" target="_blank">&nbsp;</a>
-              <span>Voir le site</span>
-            </div>
-          </div>
-        </article>
-        <article class="hidden">
-          <div class="image"
-               style="background-image: url('https://www.agencekali.fr/wp-content/uploads/2018/03/Site_kali_visuel_ambiance_ainvestir.jpg')"></div>
-          <div class="title">Ainvestir</div>
-          <div class="logo"><img src="https://www.agencekali.fr/wp-content/uploads/2018/03/site_kali_logo_ainvestir.png"
-                                 alt="Ainvestir"></div>
-          <div class="content">
-            <strong>Site web B2B conçu avec des O et des 1.</strong>
-
-            <div class="button">
-              <a href="https://www.ainvestir.fr/" target="_blank">&nbsp;</a>
-              <span>Voir le site</span>
-            </div>
-          </div>
-        </article>
-        <article class="hidden">
-          <div class="image"
-               style="background-image: url('https://www.agencekali.fr/wp-content/uploads/2019/06/agencekali-autobernard_03.jpg')"></div>
-          <div class="title">Auto <br>Bernard</div>
-          <div class="logo"><img src="https://www.agencekali.fr/wp-content/uploads/2019/06/Logo-autobernard.png"
-                                 alt="Auto <br />Bernard"></div>
-          <div class="content">
-            <strong>Direction assistée jusqu'aux meilleures concessions.</strong>
-
-          </div>
-        </article>
-        <article class="hidden">
-          <div class="image"
-               style="background-image: url('https://www.agencekali.fr/wp-content/uploads/2019/06/agencekali-AURASV_03_03.jpg')"></div>
-          <div class="title"><span style="font-size:3.1rem">Auvergne Rhone-Alpes Spectacle Vivant</span></div>
-          <div class="logo"><img src="https://www.agencekali.fr/wp-content/uploads/2019/06/aurasv.png"
-                                 alt="<span style=&quot;font-size:3.1rem&quot;>Auvergne Rhone-Alpes Spectacle Vivant</span>">
-          </div>
-          <div class="content">
-            <strong>Site vivant en perpétuel mouvement</strong>
-
-          </div>
-        </article>
-        <article class="prev-left">
-          <div class="image"
-               style="background-image: url('../../public/static/projets/screen_cheron_V2.png')"></div>
-          <div class="title">Okivét</div>
-          <div class="logo"><img src="https://www.agencekali.fr/wp-content/uploads/2020/10/okivet-logo.jpg"
-                                 alt="Okivét"></div>
-          <div class="content">
-            <strong>Le site pour chiens &amp; chats à portée de souris </strong>
-
-            <div class="button">
-              <a href="https://www.okivet.com/" target="_blank" rel="nofollow">&nbsp;</a>
-              <span>Voir le site</span>
-            </div>
           </div>
         </article>
       </div>
 
-      <div class="prev"><i class="i-arrow-short"></i></div>
-      <div class="next"><i class="i-arrow-short"></i></div>
+      <div class="prev" v-on:click="ChangeSlide(-1)"><i class="i-arrow-short"></i></div>
+      <div class="next" v-on:click="ChangeSlide(1)"><i class="i-arrow-short"></i></div>
     </div>
   </section>
 </template>
 
 <script>
-export default {
-  name: "Gallery"
-}
+import {defineComponent} from 'vue'
+
+var numero = 0;
+
+export default defineComponent({
+  name: "Gallery",
+  data(){
+    return{
+      sliders: [
+    {
+      "name": "Aux fins gastronomes",
+      "background": "/static/projets/auxfinsgastronomes.png",
+      "logo": "/static/logo/cropped-logo-cheron2-5.png",
+      "description": "Cuisine et pâtisse des recettes d’antan tout comme de nouvelles créations conçues en symbiose avec ses salariés",
+    },
+    {
+      "name": "Francis KOUAHO",
+      "background": "/static/projets/auxfinsgastronomes.png",
+      "logo": "/static/logo/cropped-logo-cheron2-5.png",
+      "description": "Cuisine et pâtisse des recettes d’antan tout comme de nouvelles créations conçues en symbiose avec ses salariés",
+    },
+    {
+      "name": "Jacky TRUONG",
+      "background": "/static/projets/auxfinsgastronomes.png",
+      "logo": "/static/logo/cropped-logo-cheron2-5.png",
+      "description": "Cuisine et pâtisse des recettes d’antan tout comme de nouvelles créations conçues en symbiose avec ses salariés",
+    },
+    {
+      "name": "Arash MORTAZAVI",
+      "background": "/static/projets/auxfinsgastronomes.png",
+      "logo": "/static/logo/cropped-logo-cheron2-5.png",
+      "description": "Cuisine et pâtisse des recettes d’antan tout comme de nouvelles créations conçues en symbiose avec ses salariés",
+    },
+    {
+      "name": "Califor",
+      "background": "/static/projets/auxfinsgastronomes.png",
+      "logo": "/static/logo/cropped-logo-cheron2-5.png",
+      "description": "Cuisine et pâtisse des recettes d’antan tout comme de nouvelles créations conçues en symbiose avec ses salariés",
+    }
+  ]
+    }
+  },
+  created(){
+    // let comportement = document.getElementsByTagName('article');
+    //   if (comportement.classList.contains('active')){
+    //     console.log("OK")
+    //   }
+    document.addEventListener("DOMContentLoaded", function() {
+
+      let comportement = document.getElementsByTagName('article');
+      comportement[0].setAttribute('class','active')
+
+      // let article_active = comportement.length; // ça marche 
+      // console.log(article_active);
+      
+      // for (let i=0; i < comportement.length; i++){
+      //   if (comportement[i].classList.contains('active')){
+           
+      //   }
+      // }
+      //  for (let i=0; i < comportement.length; i++){
+      //    if (comportement[i].classList.contains('active')){
+      //      console.log(comportement[i]);
+      //      comportement[i-1].setAttribute('class', 'left');
+      //      comportement[i+1].setAttribute('class', 'right');
+      //    }
+      //  }
+     })
+  },
+  methods:{
+    ChangeSlide(sens){
+      let comportement = document.getElementsByTagName('article');
+      numero = numero + sens;
+      if (numero < 0){
+        numero = comportement.length - 1;
+        console.log("TEST1")
+        comportement[numero].setAttribute('class', 'active');
+      }
+      if (numero > comportement.length - 1){
+        numero = 0;
+        console.log("TEST2")
+        comportement[numero].setAttribute('class', 'active');
+      }
+      
+     }
+    }
+})
+
 </script>
 
 <style scoped>
