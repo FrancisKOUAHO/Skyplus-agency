@@ -61,8 +61,6 @@ export default {
 
 <style scoped>
 
-@import "../assets/css/bootstrap.css";
-
 :root {
   --white: #ffffff;
   --twhite: rgb(255, 255, 255, .3);
