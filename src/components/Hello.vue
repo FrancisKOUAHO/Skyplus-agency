@@ -5,7 +5,7 @@
     </div>
     <div>
       <img src="../assets/image/right-arrow.svg" alt="" width="25"
-           style="margin-left: 96.6%; margin-top: -5.3%; color: white; transform: rotate(-90deg);">
+           style="margin-left: 96.6%; margin-top: -4.5%; color: white; transform: rotate(-90deg);">
     </div>
     <div v-if="showModal"
          class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50  justify-center items-center flex">
