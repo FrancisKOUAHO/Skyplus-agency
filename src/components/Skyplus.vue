@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center mt-28 pl-40">
+  <div class="flex items-center pl-40 homeContent">
   <div>
     <img class="visuel_plus fadeInUp" src="../assets/image/image_plus_home.png">
   </div>
@@ -34,6 +34,10 @@ img {
   animation-duration: 3s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+}
+
+.homeContent{
+  margin-top: 7em;
 }
 
 /* Animation FadeInUp class "FadeInUp"*/
