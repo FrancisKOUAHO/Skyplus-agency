@@ -24,10 +24,10 @@ export default {
 section {
   position: absolute;
   width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 13em;
 }
 
 ul {

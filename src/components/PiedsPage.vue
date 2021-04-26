@@ -5,7 +5,7 @@
       height="auto"
       class="footer_soleil"
   />
-  <footer class='w-3/4 text-center border-grey p-4'>
+  <footer class='w-3/4 border-grey p-4'>
     <div>
       <p>SKYPLUS © 2021 - Agence de communication et de création digitale</p>
     </div>

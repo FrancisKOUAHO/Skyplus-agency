@@ -7,7 +7,7 @@
       </h1>
       <span style="font-weight: 600; font-size: 48px; line-height: 1.15; color: white">les meilleures sphères</span>
     </div>
-    <reseau-sociaux style="margin-top: -15%"/>
+    <reseau-sociaux/>
     <pieds-page/>
   </div>
 </template>

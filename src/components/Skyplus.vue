@@ -7,15 +7,20 @@
     <h1 class="text-9xl mt-12 relative fadeInRight" style="text-decoration: none; text-decoration-line: none">SKYPLUS</h1>
     <h3 class="text-5xl relative right-28 fadeInRight">Sky’s not the limit </h3>
   </div>
+  <div>
+    <square/>
+  </div>
 </div>
 </template>
 
 <script lang="ts">
 import {defineComponent} from 'vue'
+import Square from "@/components/square.vue";
 
 
 export default defineComponent({
   name: 'Skyplus',
+  components: {Square}, 
   data() {
     return {}
   }

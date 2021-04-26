@@ -70,6 +70,12 @@ export default defineComponent({
 </script>
 
 <style scoped>
+
+nav{
+  z-index: 2;
+  position: relative;
+}
+
 ul {
   margin-right: 5%;
 }

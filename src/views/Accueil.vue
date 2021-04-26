@@ -2,7 +2,6 @@
   <div class=" body-color">
     <nav-bar/>
     <skyplus/>
-    <square class="square"/>
     <hello/>
     <pieds-page/>
   </div>
@@ -12,15 +11,13 @@
 
 import {defineComponent} from 'vue'
 import NavBar from "@/components/NavBar.vue";
-import Footer from "@/components/PiedsPage.vue";
 import PiedsPage from "@/components/PiedsPage.vue";
-import Square from "@/components/square.vue";
 import Skyplus from "@/components/Skyplus.vue";
 import Hello from "@/components/Hello.vue";
 
 export default defineComponent({
   name: 'Accueil',
-  components: {Hello, Skyplus, Square, PiedsPage, NavBar},
+  components: {Hello, Skyplus, PiedsPage, NavBar},
   data() {
     return {}
   },
