@@ -54,7 +54,7 @@
             </ul>
           </div>
           <div style="margin-top: 10%">
-            <router-link :to="{name: 'OffresIndependants'}">
+            <router-link :to="{name: 'OffresIndependants'}" style="color: black !important;">
               Ça m'intéresse !
             </router-link>
           </div>
@@ -84,7 +84,7 @@
             </ul>
           </div>
           <div>
-            <router-link :to="{name: 'OffresEntreprises'}">
+            <router-link :to="{name: 'OffresEntreprises'}" style="color: black !important;">
               Ça m'intéresse !
             </router-link>
           </div>

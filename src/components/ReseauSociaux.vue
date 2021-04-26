@@ -1,11 +1,13 @@
 <template>
   <section>
     <ul>
-      <li><a href="https://www.instagram.com/skyplusagency/?hl=fr"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-      <li><a href="https://www.instagram.com/skyplusagency/?hl=fr"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-      <li><a href="https://www.instagram.com/skyplusagency/?hl=fr"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-      <li><a href="https://www.linkedin.com/company/skyplus/about/?viewAsMember=true"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-      <li><a href="https://www.instagram.com/skyplusagency/?hl=fr"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+      <li><a href="https://www.facebook.com/search/top?q=skyplusagency"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+      </li>
+      <li><a href="https://www.instagram.com/skyplusagency/?hl=fr"><i class="fa fa-instagram"
+                                                                      aria-hidden="true"></i></a></li>
+      <li><a href="mailto:contact@example.com"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+      <li><a href="tel:+33500000000"><i class="fa fa-mobile" aria-hidden="true"></i></a></li>
+
     </ul>
   </section>
 

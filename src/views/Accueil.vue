@@ -1,9 +1,7 @@
 <template>
   <div class=" body-color">
     <nav-bar/>
-    <router-link :to="{name: 'Creations'}">
-      <skyplus/>
-    </router-link>
+    <skyplus/>
     <square class="square"/>
     <hello/>
     <pieds-page/>

@@ -44,7 +44,7 @@
               Internet</p>
           </div>
           <div style="margin-top: 10%">
-            <router-link :to="{name: 'OffresIndependants'}">
+            <router-link :to="{name: 'OffresIndependants'}" style="color: black !important;">
               Découvrir les offres indépendants
             </router-link>
           </div>
@@ -67,7 +67,7 @@
             </p>
           </div>
           <div>
-            <router-link :to="{name: 'OffresEntreprises'}">
+            <router-link :to="{name: 'OffresEntreprises'}" style="color: black !important;">
               Découvrir les offres entreprises
             </router-link>
           </div>

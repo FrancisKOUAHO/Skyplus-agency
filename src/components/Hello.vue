@@ -1,16 +1,41 @@
 <template>
-  <div id="hello">
-    <span style="margin-top: 20%">Say hello</span>
-  </div>
-  <div>
-    <img src="../assets/image/right-arrow.svg" alt="" width="25" style="margin-left: 96.6%; margin-top: -4.5%; color: white; transform: rotate(-90deg);">
+  <div v-on:click="toggleModal()">
+    <div id="hello">
+      <span style="margin-top: 20%">Say hello</span>
+    </div>
+    <div>
+      <img src="../assets/image/right-arrow.svg" alt="" width="25"
+           style="margin-left: 96.6%; margin-top: -5.3%; color: white; transform: rotate(-90deg);">
+    </div>
+    <div v-if="showModal"
+         class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50  justify-center items-center flex">
+      <div class="relative w-auto my-6 mx-auto max-w-6xl" style="width: 100% !important;">
+          <div class="relative p-6 flex-auto" style="background: linear-gradient(45deg, #1b678d, #1b678d);">
+            <contact-form/>
+          </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: "Hello"
-}
+import {defineComponent} from 'vue'
+import ContactForm from "@/components/ContactForm";
+
+export default defineComponent({
+  name: "Hello",
+  components: {ContactForm},
+  data() {
+    return {
+      showModal: false
+    }
+  },
+  methods: {
+    toggleModal: function () {
+      this.showModal = !this.showModal;
+    }
+  }
+})
 </script>
 
 <style scoped>

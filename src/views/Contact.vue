@@ -6,22 +6,6 @@
       <h1 style="font-weight: 600; font-size: 48px; line-height: 1.15; color: white"><span>Nous gravitons dans</span>
       </h1>
       <span style="font-weight: 600; font-size: 48px; line-height: 1.15; color: white">les meilleures sphères</span>
-      <div class="content">
-        <div class="baseline">
-          <span style="color: white">Si vous souhaitez nous contacter pour</span>
-          <div class="action-list">
-            <div class="gradient-text">nous briefer</div>
-            <div class="gradient-text active">dire bonjour</div>
-            <div class="gradient-text">rejoindre l'équipe</div>
-            <div class="gradient-text">réserver un bouchon</div>
-            <div class="gradient-text">prendre un café</div>
-            <div class="gradient-text">faire une partie de baby</div>
-            <div class="gradient-text">grimper dans la navette</div>
-            <div class="gradient-text">devenir membre de la galaxie</div>
-            <div class="gradient-text">monter un projet sur Mars</div>
-          </div>
-        </div>
-      </div>
     </div>
     <reseau-sociaux style="margin-top: -15%"/>
     <pieds-page/>

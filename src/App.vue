@@ -13,7 +13,7 @@ export default defineComponent({
     return {}
   },
   watch: {
-    '$route' (to, from) {
+    '$route'(to, from) {
       document.title = to.meta.title || 'Your Website'
     }
   },
@@ -32,14 +32,20 @@ export default defineComponent({
 }
 
 html, body {
-  font-family: Raleway-Regular,sans-serif;
+  font-family: Raleway-Regular, sans-serif;
 }
 
-#app{
-  font-family: Raleway-Regular,sans-serif;
+a {
+  color: white !important;
+  text-decoration: none;
 }
- html{
-   overflow-x: hidden;
-   overflow-y: hidden;
- }
+
+#app {
+  font-family: Raleway-Regular, sans-serif;
+}
+
+html {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
 </style>

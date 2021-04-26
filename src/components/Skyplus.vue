@@ -4,7 +4,7 @@
     <img class="visuel_plus fadeInUp" src="../assets/image/image_plus_home.png">
   </div>
   <div class="title_desc">
-    <h1 class="text-9xl mt-12 relative fadeInRight">SKYPLUS</h1>
+    <h1 class="text-9xl mt-12 relative fadeInRight" style="text-decoration: none; text-decoration-line: none">SKYPLUS</h1>
     <h3 class="text-5xl relative right-28 fadeInRight">Sky’s not the limit </h3>
   </div>
 </div>
@@ -31,7 +31,7 @@ img {
   animation-fill-mode: both;
 }
 
-/* Animation FadeInUp class "FadeInUp"*/ 
+/* Animation FadeInUp class "FadeInUp"*/
 
 @-webkit-keyframes fadeInUp {
   0% {
@@ -66,7 +66,7 @@ img {
   animation-name: fadeInUp;
 }
 
-/* Animation FadeInRight class "FadeInRight"*/ 
+/* Animation FadeInRight class "FadeInRight"*/
 
 @-webkit-keyframes fadeInRight {
   0% {
@@ -90,7 +90,7 @@ img {
   }
   100% {
     opacity: 1;
-    
+
     transform: translateX(0px);
   }
 }
