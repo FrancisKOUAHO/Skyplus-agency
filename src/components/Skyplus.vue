@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center pl-40 homeContent">
+  <div class="flex justify-center items-center homeContent">
   <div>
     <img class="visuel_plus fadeInUp" src="../assets/image/image_plus_home.png">
   </div>
