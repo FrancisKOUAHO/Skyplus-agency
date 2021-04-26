@@ -3,7 +3,7 @@
     <span style="margin-top: 20%">Say hello</span>
   </div>
   <div>
-    <img src="../assets/image/right-arrow.svg" alt="" width="25" style="margin-left: 96.6%; margin-top: -6.5%; color: white; transform: rotate(-90deg);">
+    <img src="../assets/image/right-arrow.svg" alt="" width="25" style="margin-left: 96.6%; margin-top: -4.5%; color: white; transform: rotate(-90deg);">
   </div>
 </template>
 
