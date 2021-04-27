@@ -31,6 +31,11 @@ export default defineComponent({
   src: url("assets/fonts/Raleway-Bold.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Raleway-Thin";
+  src: url("assets/fonts/Raleway-Thin.ttf") format("truetype");
+}
+
 html, body {
   font-family: Raleway-Regular, sans-serif;
 }
