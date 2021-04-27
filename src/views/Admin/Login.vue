@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="onSubmit">
+  <form @submit.prevent="submit">
     <div class="body-color">
       <div class="card">
         <h1 class="card__title">Connexion</h1>
@@ -7,8 +7,8 @@
           <input
               class="form-row__input"
               type="text"
+              v-model="data.email"
               placeholder="Adresse mail"
-              v-model="form.username"
               required
           />
         </div>
@@ -16,12 +16,12 @@
           <input
               class="form-row__input"
               type="password"
+              v-model="data.password"
               placeholder="Mot de passe"
-              v-model="form.password"
               required
           />
         </div>
-        <div class="text-red-600 my-2">{{ userStore.state.error }}</div>
+        <div class="text-red-600 my-2">message error</div>
         <div class="form-row">
           <button class="button" type="submit">
             <span>Connexion</span>
@@ -34,22 +34,30 @@
 
 <script lang="ts">
 import {defineComponent, reactive} from 'vue'
-import userStore from '@/store/user'
+import {useRouter} from "vue-router";
 
 export default defineComponent({
   setup() {
-    const form = reactive({
-      username: '',
+    const data = reactive({
+      email: '',
       password: ''
     })
+    const router = useRouter()
 
-    const onSubmit = () => {
-      userStore.login(form.username, form.password)
-      form.username = ''
-      form.password = ''
+    const submit = async () => {
+      await fetch('http://localhost:3001/api/login', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        credentials: 'include',
+        body: JSON.stringify(data)
+      })
+      await router.push('/skyplus')
     }
 
-    return { form, userStore, onSubmit }
+    return {
+      data,
+      submit
+    }
   }
 })
 </script>
