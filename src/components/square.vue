@@ -23,6 +23,8 @@ div {
   height: 200px;
   background-color: #5e8cd2;
   animation: square-to-circle 2s 1s infinite alternate;
+  opacity: 0.6;
+  margin-bottom: 70%;
 }
 
 @-webkit-keyframes square-to-circle {

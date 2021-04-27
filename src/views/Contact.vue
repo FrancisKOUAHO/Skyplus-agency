@@ -233,6 +233,7 @@ export default defineComponent({
   -webkit-transition: all .25s ease .9s;
   transition: all .25s ease .9s;
 }
+
 #contact .baseline {
   line-height: 1.3;
   opacity: 0;
@@ -242,7 +243,7 @@ export default defineComponent({
   transition: all .25s ease .25s;
 }
 
-#contact .baseline .action-list{
+#contact .baseline .action-list {
   position: absolute;
   left: 0;
   line-height: 1.1rem;
@@ -256,8 +257,8 @@ export default defineComponent({
   transition: all .25s ease;
   bottom: -1.1rem;
   margin-bottom: 2.2rem;
-  -webkit-transition: margin-bottom .6s ease,bottom 0s .6s;
-  transition: margin-bottom .6s ease,bottom 0s .6s;
+  -webkit-transition: margin-bottom .6s ease, bottom 0s .6s;
+  transition: margin-bottom .6s ease, bottom 0s .6s;
 }
 
 </style>

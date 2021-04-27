@@ -20,7 +20,7 @@ import Square from "@/components/square.vue";
 
 export default defineComponent({
   name: 'Skyplus',
-  components: {Square}, 
+  components: {Square},
   data() {
     return {}
   }
