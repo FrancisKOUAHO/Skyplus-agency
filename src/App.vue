@@ -40,6 +40,7 @@ html{
   height: 100%;
 }
 
+<<<<<<< HEAD
 body{
   font-family: "Raleway","Arial",sans-serif;
   font-weight: 300;
@@ -54,5 +55,14 @@ body{
   background-repeat: no-repeat;
   min-height: 100%;
   position: relative;
+=======
+a {
+  color: white !important;
+  text-decoration: none;
+}
+
+#app {
+  font-family: Raleway-Regular, sans-serif;
+>>>>>>> fea53e6bc2c32ebdb5199b4f31b44dec2daa4383
 }
 </style>
