@@ -6,7 +6,7 @@
     </div>
   </div>
   <div class="flex justify-center agenceContent">
-    <div class="content1 fadeInUp">
+    <div class="content1 right-56 fadeInUp">
         <h4 class="text-4xl mb-5 text-right -mr-20 fadeInUp">Lorem ipsum dolor sit</h4>
         <p class="fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi ligula,
             tincidunt eget placerat et, dignissim quis urna. In gravida vel magna at scelerisque.
@@ -24,7 +24,16 @@
             adipiscing elit. Donec nisi ligula.
             </p>
     </div>
-    <div class="content2"></div>
+  </div>
+  <div class="flex items-center justify-end agenceContent">
+    <div class="content2 fadeInUp">
+        <h4 class="text-4xl text-right mb-40 -mr-40 fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Donec nisi ligula, tincidunt eget placerat et, 
+          dignissim quis urna. </h4>
+    </div>
+    <div class="content3">
+      <img class="agence_image mb-40 fadeInUp" src="../assets/image/agence_image1.png">
+    </div>
   </div>
 </template>
 
@@ -77,12 +86,6 @@ h4 {
     font-family: Raleway-Bold;
 }
 
-.agenceContent > div{
-    width: 28em;
-    padding: 3em 2em;
-    margin: 3em;
-}
-
 .content1 {
     background: rgba(255, 255, 255, 0.20);
     -webkit-animation-duration: 2s;
@@ -90,6 +93,9 @@ h4 {
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
     animation-delay: 3s;
+    width: 28em;
+    padding: 3em 2em;
+    margin: 3em;
 }
 
 .content1 > p {
@@ -99,6 +105,30 @@ h4 {
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
     animation-delay: 5s;
+}
+
+.content2{
+  width: 28em;
+  margin: 3em;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-delay: 6s;
+  z-index: 1;
+}
+
+.content3{
+  width: 50%;
+}
+
+.content3 .agence_image{
+  width: 80%;
+    -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-delay: 7s;
 }
 
 /* ANIMATION */

@@ -36,6 +36,10 @@ export default defineComponent({
   src: url("assets/fonts/Raleway-Thin.ttf") format("truetype");
 }
 
+html{
+  height: 100%;
+}
+
 body{
   font-family: "Raleway","Arial",sans-serif;
   font-weight: 300;
@@ -45,5 +49,10 @@ body{
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100%;
+  position: relative;
 }
 </style>
