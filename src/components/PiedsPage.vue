@@ -1,10 +1,10 @@
 <template>
-  <object type="image/svg+xml"
+<!--  <object type="image/svg+xml"
       data="../static/svg/soleil2.svg"
       width="auto"
       height="auto"
       class="footer_soleil"
-  />
+  />-->
   <footer class='w-3/4 border-grey p-4'>
     <div>
       <p>SKYPLUS © 2021 - Agence de communication et de création digitale</p>
@@ -28,14 +28,10 @@ export default defineComponent({
 <style scoped>
 footer {
   background-image: linear-gradient(to right, rgb(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  position: absolute;
   bottom: 0;
   text-align: left;
   padding-left: 2em;
-}
-
-.footer_soleil{
-  position: relative;
-  right: 0;
 }
 
 
