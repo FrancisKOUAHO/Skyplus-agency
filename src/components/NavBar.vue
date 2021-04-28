@@ -87,9 +87,7 @@ li {
 }
 
 a, a:hover {
-
   position: relative;
-
   text-decoration: none;
   display: flex;
   justify-content: center;

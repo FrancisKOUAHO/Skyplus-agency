@@ -4,6 +4,7 @@ import Contact from '../views/Contact.vue'
 import Agence from '../views/Agence.vue'
 import Creations from '../views/Creations.vue'
 import Offre from '../views/Offres/index.vue'
+import InfosLegales from '../views/InfosLegales/Index.vue'
 import OffresIndependants from '../views/Offres/OffresIndependants.vue'
 import OffresEntreprises from '../views/Offres/OffresEntreprises.vue'
 import PageNotFound from '../views/PageNotFound.vue'
@@ -40,6 +41,12 @@ const routes: Array<RouteRecordRaw> = [
         name: 'Offre',
         component: Offre,
         meta: { title: 'Skyplus |  Nos offres ' }
+    },
+    {
+        path: '/infos-legales',
+        name: 'InfosLegales',
+        component: InfosLegales,
+        meta: { title: 'Skyplus |  infos-legales ' }
     },
     {
         path: '/offres-independants-creation-site',
