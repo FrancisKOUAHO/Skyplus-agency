@@ -26,6 +26,6 @@ export default defineComponent({
 .body-color {
   background-image: linear-gradient(to left bottom, #355EF2, #355EF2, #355EF2,
   #72BFD4, #72BFD4);
-
 }
+
 </style>
