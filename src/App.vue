@@ -36,13 +36,12 @@ export default defineComponent({
   src: url("assets/fonts/Raleway-Thin.ttf") format("truetype");
 }
 
-html{
+html {
   height: 100%;
 }
 
-<<<<<<< HEAD
-body{
-  font-family: "Raleway","Arial",sans-serif;
+body {
+  font-family: "Raleway", "Arial", sans-serif;
   font-weight: 300;
   font-size: .8rem;
   overflow-x: hidden;
@@ -55,7 +54,8 @@ body{
   background-repeat: no-repeat;
   min-height: 100%;
   position: relative;
-=======
+}
+
 a {
   color: white !important;
   text-decoration: none;
@@ -63,6 +63,5 @@ a {
 
 #app {
   font-family: Raleway-Regular, sans-serif;
->>>>>>> fea53e6bc2c32ebdb5199b4f31b44dec2daa4383
 }
 </style>
