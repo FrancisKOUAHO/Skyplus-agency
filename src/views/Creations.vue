@@ -46,7 +46,10 @@ export default defineComponent({
 .body-color {
   background-image: linear-gradient(to left bottom, #88d9d8, #4ed2ef, #5cc8ff, #88bbff, #b5a9fa,
   #cb9bec, #de8cd9);
-  min-height: 100vh;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
 }
 
 </style>

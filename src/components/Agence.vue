@@ -8,24 +8,24 @@
   <div class="flex justify-center agenceContent">
     <div class="content1 fadeInUp">
         <h4 class="text-4xl mb-5 text-right -mr-20 fadeInUp">Lorem ipsum dolor sit</h4>
-        <p class="fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi ligula, 
-            tincidunt eget placerat et, dignissim quis urna. In gravida vel magna at scelerisque. 
-            Fusce mollis dapibus nisl vestibulum molestie. Lorem ipsum dolor sit amet, consectetur 
+        <p class="fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi ligula,
+            tincidunt eget placerat et, dignissim quis urna. In gravida vel magna at scelerisque.
+            Fusce mollis dapibus nisl vestibulum molestie. Lorem ipsum dolor sit amet, consectetur
             adipiscing elit. Donec nisi ligula.
             </p>
-        <p class="fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi ligula, 
-            tincidunt eget placerat et, dignissim quis urna. In gravida vel magna at scelerisque. 
-            Fusce mollis dapibus nisl vestibulum molestie. Lorem ipsum dolor sit amet, consectetur 
+        <p class="fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi ligula,
+            tincidunt eget placerat et, dignissim quis urna. In gravida vel magna at scelerisque.
+            Fusce mollis dapibus nisl vestibulum molestie. Lorem ipsum dolor sit amet, consectetur
             adipiscing elit. Donec nisi ligula.
             </p>
-        <p class="fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi ligula, 
-            tincidunt eget placerat et, dignissim quis urna. In gravida vel magna at scelerisque. 
-            Fusce mollis dapibus nisl vestibulum molestie. Lorem ipsum dolor sit amet, consectetur 
+        <p class="fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi ligula,
+            tincidunt eget placerat et, dignissim quis urna. In gravida vel magna at scelerisque.
+            Fusce mollis dapibus nisl vestibulum molestie. Lorem ipsum dolor sit amet, consectetur
             adipiscing elit. Donec nisi ligula.
             </p>
     </div>
     <div class="content2"></div>
-  </div>    
+  </div>
 </template>
 
 <script lang="ts">
@@ -47,7 +47,7 @@ h1, h3, h4, p {
 }
 
 h1 {
-    font-family: Raleway-Bold;
+    font-family: Raleway-Bold,serif;
     -webkit-animation-duration: 2s;
     animation-duration: 2s;
     -webkit-animation-fill-mode: both;
@@ -56,7 +56,7 @@ h1 {
 }
 
 h3 {
-    font-family: Raleway-Thin;
+    font-family: Raleway-Thin,sans-serif;
     -webkit-animation-duration: 2s;
     animation-duration: 2s;
     -webkit-animation-fill-mode: both;

@@ -55,7 +55,10 @@ export default defineComponent({
 .body-color {
   background-image: linear-gradient(to left bottom, #C94F0A, #C94F0A, #EA6232,
   #F3B248, #F3B248);
-  min-height: 100vh;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
 }
 
 #contact .container.displayed .baseline {
