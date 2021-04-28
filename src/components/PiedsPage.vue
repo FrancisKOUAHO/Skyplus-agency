@@ -28,17 +28,16 @@ export default defineComponent({
 <style scoped>
 footer {
   background-image: linear-gradient(to right, rgb(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
-  position: absolute;
   bottom: 0;
   text-align: left;
   padding-left: 2em;
 }
 
 .footer_soleil{
-  position: absolute;
-  bottom: -11em;
-  right: -11em;
+  position: relative;
+  right: 0;
 }
+
 
 p {
   color: #fff;

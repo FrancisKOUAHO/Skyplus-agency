@@ -41,12 +41,9 @@ body{
   font-weight: 300;
   font-size: .8rem;
   overflow-x: hidden;
-  position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  margin: 0;
-  padding: 0;
 }
 </style>
