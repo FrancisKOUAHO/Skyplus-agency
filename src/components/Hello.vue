@@ -49,15 +49,15 @@
                 </select>
               </div>
             </div>
-<!--            <select name="" id="">
-              <option value="">Qu'est-ce qui vous amène ?</option>
-              <option value="projet">J'ai un projet à vous présenter</option>
-              <option value="rencontre">J'aimerais vous rencontrer</option>
-              <option value="collaborer">Je veux collaborer avec vous</option>
-              <option value="job">Je veux postuler</option>
-              <option value="stage">Je recherche un stage</option>
-              <option value="autre">Autre</option>
-            </select>-->
+            <!--            <select name="" id="">
+                          <option value="">Qu'est-ce qui vous amène ?</option>
+                          <option value="projet">J'ai un projet à vous présenter</option>
+                          <option value="rencontre">J'aimerais vous rencontrer</option>
+                          <option value="collaborer">Je veux collaborer avec vous</option>
+                          <option value="job">Je veux postuler</option>
+                          <option value="stage">Je recherche un stage</option>
+                          <option value="autre">Autre</option>
+                        </select>-->
           </div>
         </div>
         <div class="flex flex-wrap -mx-3 mb-6">
@@ -93,15 +93,9 @@ import {defineComponent} from 'vue'
 export default defineComponent({
   name: "Hello",
   data() {
-    return {
-      showModal: false
-    }
+    return {}
   },
-  methods: {
-    toggleModal: function () {
-      this.showModal = !this.showModal;
-    }
-  }
+  methods: {}
 })
 </script>
 
@@ -229,7 +223,8 @@ export default defineComponent({
   margin-top: -3px;
   right: .75em;
   display: block;
-  width: 0; height: 0;
+  width: 0;
+  height: 0;
   border-color: transparent;
   border-top-color: #444;
   border-width: 6px;

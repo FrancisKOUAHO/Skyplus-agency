@@ -48,9 +48,4 @@ a {
 #app {
   font-family: Raleway-Regular, sans-serif;
 }
-
-html {
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
 </style>

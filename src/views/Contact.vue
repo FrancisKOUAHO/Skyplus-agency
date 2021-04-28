@@ -7,6 +7,13 @@
       </h1>
       <span style="font-weight: 600; font-size: 48px; line-height: 1.15; color: white">les meilleures sphères</span>
     </div>
+
+    <div class="flex-initial div-form">
+      <div v-for="(contact, index) in contacts" :key="index">
+        <a href=""><i></i><span>{{ contact.info }}</span></a>
+        <div>{{ contact.name }}</div>
+      </div>
+    </div>
     <reseau-sociaux/>
     <pieds-page/>
   </div>
@@ -24,7 +31,22 @@ export default defineComponent({
   name: 'Contact',
   components: {ReseauSociaux, ContactVue, PiedsPage, NavBar},
   data() {
-    return {}
+    return {
+      contacts: [
+        {
+          name: 'mail',
+          info: 'contact@skyplus.fr',
+        },
+        {
+          name: 'map',
+          info: '119 rue saint sebastien 78300 Poissy',
+        },
+        {
+          name: 'call',
+          info: '+33 (0)9 00 00 00 00'
+        }
+      ]
+    }
   }
 })
 </script>
@@ -260,5 +282,17 @@ export default defineComponent({
   -webkit-transition: margin-bottom .6s ease, bottom 0s .6s;
   transition: margin-bottom .6s ease, bottom 0s .6s;
 }
+
+.flex-initial{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 25%;
+  margin-top: 5%;
+  width: 45%;
+}
+.div-form{
+  color: white;
+}
+
 
 </style>

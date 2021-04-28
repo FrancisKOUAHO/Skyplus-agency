@@ -6,7 +6,7 @@
             src="https://scontent.fmnl13-1.fna.fbcdn.net/v/t1.0-9/117334168_2606581056324669_4951020710334194218_o.jpg?_nc_cat=101&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeFo4bRKc5SfTQvzhwotnTaOfj1P6rO41HF-PU_qs7jUcU1pCerqu3HUsOB0yKyJQwnrgz8Au7GZADcpedo6WgM4&_nc_ohc=DWpkI3p4RSUAX_hKF_Y&_nc_ht=scontent.fmnl13-1.fna&oh=c13c63ee952123b14f0da72b99ccecc8&oe=6087FEC5"
             alt="" class="rounded-full h-10 w-10 flex items-center justify-center mr-3 border-2 border-blue-500">
         <div class="ml-1">
-          <p class="ml-1 text-md font-medium tracking-wide truncate text-gray-100 font-sans">JED DYLAN LEE</p>
+          <p class="ml-1 text-md font-medium tracking-wide truncate text-gray-100 font-sans">{{ message }}</p>
           <div class="badge">
             <span class="px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-blue-800 bg-blue-100 rounded-full">Admin</span>
           </div>
@@ -28,7 +28,19 @@
                                                                   stroke-width="2"
                                                                   d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
                     </span>
-              <span class="ml-2 font-semibold text-sm tracking-wide truncate font-sans">Home</span>
+              <span class="ml-2 font-semibold text-sm tracking-wide truncate font-sans">Accueil</span>
+            </a>
+          </li>
+          <li>
+            <a href="#"
+               class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-500 hover:text-gray-200 border-l-4 border-transparent hover:border-blue-500 pr-6">
+                    <span class="inline-flex justify-center items-center ml-4">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                         xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round"
+                                                                  stroke-width="2"
+                                                                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                    </span>
+              <span class="ml-2 font-semibold text-sm tracking-wide truncate font-sans">Projets</span>
             </a>
           </li>
           <li>
@@ -40,7 +52,21 @@
                                                                   stroke-width="2"
                                                                   d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path></svg>
                     </span>
-              <span class="ml-2 font-semibold text-sm tracking-wide truncate font-sans">Inbox</span>
+              <span class="ml-2 font-semibold text-sm tracking-wide truncate font-sans">Clients</span>
+              <span
+                  class="px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-blue-500 bg-blue-100 rounded-full">New</span>
+            </a>
+          </li>
+          <li>
+            <a href="#"
+               class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-500 hover:text-gray-200 border-l-4 border-transparent hover:border-blue-500 pr-6">
+                    <span class="inline-flex justify-center items-center ml-4">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                         xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round"
+                                                                  stroke-width="2"
+                                                                  d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path></svg>
+                    </span>
+              <span class="ml-2 font-semibold text-sm tracking-wide truncate font-sans">Futur clients</span>
               <span
                   class="px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-blue-500 bg-blue-100 rounded-full">New</span>
             </a>
@@ -86,7 +112,9 @@
                                                               stroke-width="2"
                                                               d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
                 </span>
-              <span class="ml-2 font-semibold text-sm tracking-wide truncate font-sans">Logout</span>
+              <router-link :to="{name: 'skyplus'}" @click="logout">
+                <span class="ml-2 font-semibold text-sm tracking-wide truncate font-sans" >Logout</span>
+              </router-link>
             </a>
           </li>
         </ul>
@@ -96,10 +124,46 @@
 </template>
 
 <script>
-import {defineComponent} from 'vue'
+import {defineComponent, onMounted, ref} from 'vue'
+import {useStore} from 'vuex'
 
 export default defineComponent({
   name: "Index",
+  setup() {
+    const message = ref('Connecter')
+    const store = useStore()
+
+    onMounted(async () => {
+      try {
+        const response = await fetch('http://localhost:3001/api/user', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          credentials: 'include',
+        })
+        const content = await response.json()
+        message.value = `${content.name}`
+        await store.dispatch('setAuth', true)
+      } catch (e) {
+        await store.dispatch('setAuth', false)
+      }
+
+    })
+
+    const logout = async () => {
+      await fetch('http://localhost:3001/api/logout', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        credentials: 'include',
+      })
+    }
+
+    return {
+      message,
+      logout
+    }
+
+
+  }
 
 })
 </script>
