@@ -124,6 +124,7 @@ h1{
 }
 
 h3 {
+  font-family: Raleway-Thin;
   top: 3.7rem;
   -webkit-animation-duration: 3s;
   animation-duration: 3s;
