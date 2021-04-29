@@ -64,13 +64,13 @@ const routes: Array<RouteRecordRaw> = [
         path: '/skyplus-admin',
         name: 'AdminLogin',
         component: AdminLogin,
-        meta: { title: 'Skyplus | Connexion' }
+        meta: { title: 'Skyplus | Connexion'}
     },
     {
         path: '/skyplus',
         name: 'Admin',
         component: Admin,
-        meta: { title: 'Skyplus | Dashboard' }
+        meta: { title: 'Skyplus | Dashboard'}
     },
     {
         path: '/:pathMatch(.*)*',
@@ -79,6 +79,8 @@ const routes: Array<RouteRecordRaw> = [
         meta: { title: 'Skyplus | Page not found' }
     }
 ]
+
+
 
 const router = createRouter({
     history: createWebHistory(process.env.BASE_URL),

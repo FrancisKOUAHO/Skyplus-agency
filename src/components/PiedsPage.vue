@@ -7,7 +7,12 @@
       <router-link class="double" :to="{name: 'InfosLegales'}">
         <li> infos <br>légales</li>
       </router-link>
-      <li class="no-link"><span class="double">© 2021 <br>SKYPLUS</span></li>
+
+      <li class="no-link">
+        <router-link :to="{name: 'AdminLogin'}">
+          <span class="double">© 2021 <br>SKYPLUS</span>
+        </router-link>
+      </li>
     </ul>
   </footer>
 </template>
