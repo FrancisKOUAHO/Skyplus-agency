@@ -10,8 +10,15 @@
 
     <div class="flex-initial div-form">
       <div v-for="(contact, index) in contacts" :key="index">
-        <a href=""><i></i><span>{{ contact.info }}</span></a>
-        <div>{{ contact.name }}</div>
+        <a href="">
+          <span class="contact-info">{{ contact.info }}</span>
+        </a>
+        <router-link to="mailto:contact@skyplus.fr" class="contact-name">
+          <div style="display: flex;">
+            <img src="../assets/image/right.svg" alt="right" width="16"/>
+            <span style="margin-left: 5%">{{ contact.name }}</span>
+          </div>
+        </router-link>
       </div>
     </div>
     <reseau-sociaux/>
@@ -52,6 +59,14 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.contact-name {
+  font-size: 1.2rem;
+}
+
+.contact-info {
+  font-size: .9rem;
+}
+
 .body-color {
   background-image: linear-gradient(to left bottom, #C94F0A, #C94F0A, #EA6232,
   #F3B248, #F3B248);
@@ -286,14 +301,15 @@ export default defineComponent({
   transition: margin-bottom .6s ease, bottom 0s .6s;
 }
 
-.flex-initial{
+.flex-initial {
   display: flex;
   justify-content: space-between;
   margin-left: 25%;
   margin-top: 5%;
   width: 45%;
 }
-.div-form{
+
+.div-form {
   color: white;
 }
 

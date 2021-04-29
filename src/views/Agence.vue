@@ -15,7 +15,9 @@ export default defineComponent({
   name: 'Agence',
   components: {PiedsPage, NavBar, Agence1},
   data() {
-    return {}
+    return {
+      color: '#333'
+    }
   }
 })
 </script>

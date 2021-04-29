@@ -24,20 +24,7 @@ export default defineComponent({
   name: 'Creations',
   components: {Gallery, PiedsPage, NavBar},
   data() {
-    return {
-      projets: [
-        {
-          title: 'Jacky',
-          image: 'Vue Team',
-          description: 'aaaaaa',
-        },
-        {
-          title: 'Francis',
-          image: 'Vue Team',
-          description: 'aaaaaa',
-        }
-      ]
-    }
+    return {}
   }
 })
 </script>

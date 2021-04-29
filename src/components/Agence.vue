@@ -27,8 +27,8 @@
   </div>
   <div class="flex items-center justify-end agenceContent">
     <div class="content2 fadeInUp">
-        <h4 class="text-4xl text-right mb-40 -mr-40 fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-          Donec nisi ligula, tincidunt eget placerat et, 
+        <h4 class="text-4xl text-right mb-40 -mr-40 fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Donec nisi ligula, tincidunt eget placerat et,
           dignissim quis urna. </h4>
     </div>
     <div class="content3">
