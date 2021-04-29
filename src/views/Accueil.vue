@@ -9,6 +9,7 @@
 
 <script lang="ts">
 
+
 import {defineComponent} from 'vue'
 import NavBar from "@/components/NavBar.vue";
 import PiedsPage from "@/components/PiedsPage.vue";
@@ -34,6 +35,7 @@ export default defineComponent({
   height: 100%;
   top: 0px;
 }
+
 .square {
   margin-left: 70%;
   margin-top: -35%
