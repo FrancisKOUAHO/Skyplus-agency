@@ -4,6 +4,7 @@ import Contact from '../views/Contact.vue'
 import Agence from '../views/Agence.vue'
 import Creations from '../views/Creations.vue'
 import Offre from '../views/Offres/index.vue'
+import InfosLegales from '../views/InfosLegales/Index.vue'
 import OffresIndependants from '../views/Offres/OffresIndependants.vue'
 import OffresEntreprises from '../views/Offres/OffresEntreprises.vue'
 import PageNotFound from '../views/PageNotFound.vue'
@@ -42,6 +43,12 @@ const routes: Array<RouteRecordRaw> = [
         meta: { title: 'Skyplus |  Nos offres ' }
     },
     {
+        path: '/infos-legales',
+        name: 'InfosLegales',
+        component: InfosLegales,
+        meta: { title: 'Skyplus |  infos-legales ' }
+    },
+    {
         path: '/offres-independants-creation-site',
         name: 'OffresIndependants',
         component: OffresIndependants,
@@ -57,13 +64,13 @@ const routes: Array<RouteRecordRaw> = [
         path: '/skyplus-admin',
         name: 'AdminLogin',
         component: AdminLogin,
-        meta: { title: 'Skyplus | Connexion' }
+        meta: { title: 'Skyplus | Connexion', requiresVisitor : true  }
     },
     {
         path: '/skyplus',
         name: 'Admin',
         component: Admin,
-        meta: { title: 'Skyplus | Dashboard' }
+        meta: { title: 'Skyplus | Dashboard', requiresAuth : true }
     },
     {
         path: '/:pathMatch(.*)*',
@@ -72,6 +79,8 @@ const routes: Array<RouteRecordRaw> = [
         meta: { title: 'Skyplus | Page not found' }
     }
 ]
+
+
 
 const router = createRouter({
     history: createWebHistory(process.env.BASE_URL),

@@ -393,7 +393,7 @@ export default defineComponent({
 }
 
 i.i-arrow-short {
-  background-image: url("../assets/icons/arrow-short.svg");
+  background-image: url("../assets/image/icons/arrow-short.svg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
