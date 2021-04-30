@@ -1,7 +1,9 @@
 <template>
-  <nav-bar/>
-  <agence1/>
-  <pieds-page/>
+  <div class="body-color">
+    <nav-bar/>
+    <agence1/>
+    <pieds-page/>
+  </div>
 </template>
 
 <script lang="ts">
@@ -23,7 +25,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
-body {
+.body-color{
   background-image: linear-gradient(to left bottom, #355EF2, #355EF2, #355EF2,
   #72BFD4, #72BFD4);
 }

@@ -9,11 +9,9 @@
                                  :alt="slide.name"></div>
           <div class="content">
             <strong>{{ slide.description }}</strong>
-
           </div>
         </article>
       </div>
-
       <div class="prev" v-on:click="ChangeSlide(-1)"><i class="i-arrow-short"></i></div>
       <div class="next" v-on:click="ChangeSlide(1)"><i class="i-arrow-short"></i></div>
     </div>
