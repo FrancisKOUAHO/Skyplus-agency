@@ -50,7 +50,7 @@ export default defineComponent({
         },
         {
           name: 'call',
-          info: '+33 (0)9 00 00 00 00'
+          info: '+33 (0) 9 00 00 00 00'
         }
       ]
     }

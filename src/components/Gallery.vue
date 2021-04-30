@@ -2,13 +2,13 @@
   <section class="section-projects" id="projects">
     <div class="slider animate">
       <div class="slides">
-        <article class="" id="slide" v-for='slide in sliders' :key='slide.index' >
+        <article class="" id="slide" v-for='slide in sliders' :key='slide.index'>
           <img class="image" :src="slide.background">
-          <div class="title">{{slide.name}}</div>
+          <div class="title">{{ slide.name }}</div>
           <div class="logo"><img :src="slide.logo"
                                  :alt="slide.name"></div>
           <div class="content">
-            <strong>{{slide.description}}</strong>
+            <strong>{{ slide.description }}</strong>
 
           </div>
         </article>
@@ -27,43 +27,43 @@ var numero = 0;
 
 export default defineComponent({
   name: "Gallery",
-  data(){
-    return{
+  data() {
+    return {
       sliders: [
-    {
-      "name": "Aux fins gastronomes",
-      "background": "/static/projets/auxfinsgastronomes.png",
-      "logo": "/static/logo/cropped-logo-cheron2-5.png",
-      "description": "Cuisine et pâtisse des recettes d’antan tout comme de nouvelles créations conçues en symbiose avec ses salariés",
-    },
-    {
-      "name": "Francis KOUAHO",
-      "background": "/static/projets/auxfinsgastronomes.png",
-      "logo": "/static/logo/cropped-logo-cheron2-5.png",
-      "description": "Cuisine et pâtisse des recettes d’antan tout comme de nouvelles créations conçues en symbiose avec ses salariés",
-    },
-    {
-      "name": "Jacky TRUONG",
-      "background": "/static/projets/auxfinsgastronomes.png",
-      "logo": "/static/logo/cropped-logo-cheron2-5.png",
-      "description": "Cuisine et pâtisse des recettes d’antan tout comme de nouvelles créations conçues en symbiose avec ses salariés",
-    },
-    {
-      "name": "Arash MORTAZAVI",
-      "background": "/static/projets/auxfinsgastronomes.png",
-      "logo": "/static/logo/cropped-logo-cheron2-5.png",
-      "description": "Cuisine et pâtisse des recettes d’antan tout comme de nouvelles créations conçues en symbiose avec ses salariés",
-    },
-    {
-      "name": "Califor",
-      "background": "/static/projets/auxfinsgastronomes.png",
-      "logo": "/static/logo/cropped-logo-cheron2-5.png",
-      "description": "Cuisine et pâtisse des recettes d’antan tout comme de nouvelles créations conçues en symbiose avec ses salariés",
-    }
-  ]
+        {
+          "name": "Aux fins gastronomes",
+          "background": "../assets/image/projets/Auxfinsgastronomes.png",
+          "logo": "@assets/logo/logoauxfinsgastronomes.png",
+          "description": "Cuisine et pâtisse des recettes d’antan tout comme de nouvelles créations conçues en symbiose avec ses salariés",
+        },
+        {
+          "name": "Califor",
+          "background": "../assets/image/projets/Califor.png",
+          "logo": "",
+          "description": "CALIFOR, propose des pièces Unisexes, relax et bien pensées, baignant dans l’esprit Rap, sport et quelques références cinématographiques du milieu des années 90.\n",
+        },
+        {
+          "name": "KCLM",
+          "background": "../assets/image/projets/KCLM.png",
+          "logo": "",
+          "description": "Autorise-toi à avoir de Grands Rêves, avec un grand “G” et un grand “R”, c’est la devise de KCLM, une marque qui travaille avec de nombreux artistes connus comme inconnus.",
+        },
+        {
+          "name": "Arash MORTAZAVI",
+          "background": "../assets/image/projets/Auxfinsgastronomes.png",
+          "logo": "",
+          "description": "Cuisine et pâtisse des recettes d’antan tout comme de nouvelles créations conçues en symbiose avec ses salariés",
+        },
+        {
+          "name": "Califor",
+          "background": "../assets/image/projets/Auxfinsgastronomes.png",
+          "logo": "",
+          "description": "Cuisine et pâtisse des recettes d’antan tout comme de nouvelles créations conçues en symbiose avec ses salariés",
+        }
+      ]
     }
   },
-  created(){
+  created() {
     /*let comportement = document.getElementsByTagName('article');
       if (comportement.classList.contains('active')){
         console.log("OK")
@@ -90,23 +90,23 @@ export default defineComponent({
        }
      })*/
   },
-  methods:{
-    ChangeSlide(sens){
+  methods: {
+    ChangeSlide(sens) {
       let comportement = document.getElementsByTagName('article');
       numero = numero + sens;
-      if (numero < 0){
+      if (numero < 0) {
         numero = comportement.length - 1;
         console.log("TEST1")
         comportement[numero].setAttribute('class', 'active');
       }
-      if (numero > comportement.length - 1){
+      if (numero > comportement.length - 1) {
         numero = 0;
         console.log("TEST2")
         comportement[numero].setAttribute('class', 'active');
       }
 
-     }
     }
+  }
 })
 
 </script>
