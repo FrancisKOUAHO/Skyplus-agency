@@ -1,9 +1,11 @@
 <template>
-  <div class="body-color">
+  <!-- <div class="body-color"> -->
     <nav-bar/>
+    <creation-bloc-top/>
     <gallery/>
+    <creation-bloc-bottom/>
     <pieds-page/>
-  </div>
+  <!-- </div> -->
 </template>
 
 <script lang="ts">
@@ -17,22 +19,23 @@ interface Projets {
 }
 
 import {defineComponent} from 'vue'
-import PiedsPage from "@/components/PiedsPage.vue";
+import CreationBlocTop from "@/components/CreationBlocTop.vue";
 import Gallery from "@/components/Gallery.vue";
+import CreationBlocBottom from "@/components/CreationBlocBottom.vue";
+import PiedsPage from "@/components/PiedsPage.vue";
 
 export default defineComponent({
   name: 'Creations',
-  components: {Gallery, PiedsPage, NavBar},
+  components: {CreationBlocTop, CreationBlocBottom, Gallery, PiedsPage, NavBar},
   data() {
     return {}
   }
 })
 </script>
 
-<style scoped>
-.body-color {
-  background-image: linear-gradient(to left bottom, #88d9d8, #4ed2ef, #5cc8ff, #88bbff, #b5a9fa,
-  #cb9bec, #de8cd9);
+<style>
+body {
+  background-image: linear-gradient(to left bottom, #86A8E7, #D16BA5);
   position: fixed;
   width: 100%;
   height: 100%;
