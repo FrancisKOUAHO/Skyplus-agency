@@ -8,78 +8,83 @@ import InfosLegales from '../views/InfosLegales/Index.vue'
 import OffresIndependants from '../views/Offres/OffresIndependants.vue'
 import OffresEntreprises from '../views/Offres/OffresEntreprises.vue'
 import PageNotFound from '../views/PageNotFound.vue'
-import AdminLogin from '../views/Admin/Login.vue'
-import Admin from '../views/Admin/Index.vue'
+import AdminLogin from '../views/Admin/Logins.vue'
+import Dashboard from '../views/Admin/Dashboard.vue'
+import Login from "@/views/Admin/Logins.vue";
 
 const routes: Array<RouteRecordRaw> = [
     {
         path: '/',
         name: 'Accueil',
         component: Accueil,
-        meta: { title: 'Skyplus | Accueil' }
+        meta: {title: 'Skyplus | Accueil'}
     },
     {
         path: '/creations',
         name: 'Creations',
         component: Creations,
-        meta: { title: 'Skyplus | Créations' }
+        meta: {title: 'Skyplus | Créations'}
     },
     {
         path: '/agence',
         name: 'Agence',
         component: Agence,
-        meta: { title: 'Skyplus | Agence' }
+        meta: {title: 'Skyplus | Agence'}
     },
     {
         path: '/contact',
         name: 'Contact',
         component: Contact,
-        meta: { title: 'Skyplus | Contact' }
+        meta: {title: 'Skyplus | Contact'}
     },
     {
         path: '/Offre',
         name: 'Offre',
         component: Offre,
-        meta: { title: 'Skyplus |  Nos offres ' }
+        meta: {title: 'Skyplus |  Nos offres '}
     },
     {
         path: '/infos-legales',
         name: 'InfosLegales',
         component: InfosLegales,
-        meta: { title: 'Skyplus |  infos-legales ' }
+        meta: {title: 'Skyplus |  infos-legales '}
     },
     {
         path: '/offres-independants-creation-site',
         name: 'OffresIndependants',
         component: OffresIndependants,
-        meta: { title: 'Skyplus | Offres Independants' }
+        meta: {title: 'Skyplus | Offres Independants'}
     },
     {
         path: '/offres-entreprises-creation-site',
         name: 'OffresEntreprises',
         component: OffresEntreprises,
-        meta: { title: 'Skyplus | Offres Entreprises' }
+        meta: {title: 'Skyplus | Offres Entreprises'}
     },
     {
         path: '/skyplus-admin',
         name: 'AdminLogin',
         component: AdminLogin,
-        meta: { title: 'Skyplus | Connexion'}
     },
     {
-        path: '/skyplus',
-        name: 'Admin',
-        component: Admin,
-        meta: { title: 'Skyplus | Dashboard'}
+        path: '/login',
+        name: 'Login',
+        component: Login,
+        meta: {title: 'Skyplus | Connexion'}
+    },
+    {
+        path: '/dashboard',
+        name: 'Dashboard',
+        component: Dashboard,
+        meta: {title: 'Skyplus | Dashboard'}
     },
     {
         path: '/:pathMatch(.*)*',
         name: 'PageNotFound',
         component: PageNotFound,
-        meta: { title: 'Skyplus | Page not found' }
+        meta: {title: 'Skyplus | Page not found'}
     }
 ]
-
 
 
 const router = createRouter({

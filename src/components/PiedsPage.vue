@@ -9,7 +9,7 @@
       </router-link>
 
       <li class="no-link">
-        <router-link :to="{name: 'AdminLogin'}">
+        <router-link :to="{name: 'Login'}">
           <span class="double">© 2021 <br>SKYPLUS</span>
         </router-link>
       </li>
