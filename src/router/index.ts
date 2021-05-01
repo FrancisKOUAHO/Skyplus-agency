@@ -1,16 +1,15 @@
 import {createRouter, createWebHistory, RouteRecordRaw} from "vue-router"
-import Accueil from '../views/Accueil.vue'
-import Contact from '../views/Contact.vue'
-import Agence from '../views/Agence.vue'
-import Creations from '../views/Creations.vue'
-import Offre from '../views/Offres/index.vue'
-import InfosLegales from '../views/InfosLegales/Index.vue'
-import OffresIndependants from '../views/Offres/OffresIndependants.vue'
-import OffresEntreprises from '../views/Offres/OffresEntreprises.vue'
-import PageNotFound from '../views/PageNotFound.vue'
-import AdminLogin from '../views/Admin/Logins.vue'
-import Dashboard from '../views/Admin/Dashboard.vue'
-import Login from "@/views/Admin/Logins.vue";
+import Accueil from '@/views/Accueil.vue'
+import Contact from '@/views/Contact.vue'
+import Agence from '@/views/Agence.vue'
+import Creations from '@/views/Creations.vue'
+import Offre from '@/views/Offres/index.vue'
+import InfosLegales from '@/views/InfosLegales/Index.vue'
+import OffresIndependants from '@/views/Offres/OffresIndependants.vue'
+import OffresEntreprises from '@/views/Offres/OffresEntreprises.vue'
+import PageNotFound from '@/views/PageNotFound.vue'
+import Dashboard from '@/views/Admin/Dashboard.vue'
+import Login from '@/views/Login.vue'
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -60,11 +59,6 @@ const routes: Array<RouteRecordRaw> = [
         name: 'OffresEntreprises',
         component: OffresEntreprises,
         meta: {title: 'Skyplus | Offres Entreprises'}
-    },
-    {
-        path: '/skyplus-admin',
-        name: 'AdminLogin',
-        component: AdminLogin,
     },
     {
         path: '/login',

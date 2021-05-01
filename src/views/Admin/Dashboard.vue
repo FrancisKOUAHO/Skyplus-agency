@@ -103,19 +103,19 @@
               <span class="ml-2 font-semibold text-sm tracking-wide truncate font-sans">Settings</span>
             </a>
           </li>
-          <li>
-            <router-link :to="{name: 'AdminLogin'}"
-               class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-500 hover:text-gray-200 border-l-4 border-transparent hover:border-red-500 pr-6">
+          <li @click="logout">
+            <a
+                class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-500 hover:text-gray-200 border-l-4 border-transparent hover:border-red-500 pr-6">
                 <span class="inline-flex justify-center items-center ml-4 text-red-400">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                      xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round"
                                                               stroke-width="2"
                                                               d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
                 </span>
-                <span class="ml-2 font-semibold text-sm tracking-wide truncate font-sans">
+              <span class="ml-2 font-semibold text-sm tracking-wide truncate font-sans">
                     Logout
                 </span>
-            </router-link>
+            </a>
           </li>
         </ul>
       </div>
@@ -124,10 +124,43 @@
 </template>
 
 <script>
-import {defineComponent} from 'vue'
+import {computed, defineComponent, onMounted, ref} from 'vue'
+import {useStore} from 'vuex'
+import {useRouter} from "vue-router";
 
 export default defineComponent({
-  name: "Index",
+  name: "Dashboard",
+  setup() {
+    const message = ref('')
+    const store = useStore()
+    const auth = computed(() => store.state.authenticated)
+    const router = useRouter()
+    const logout = async () => {
+      await fetch('http://localhost:3001/api/logout', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        credentials: 'include',
+      })
+      await router.push({name: 'Login'})
+    }
+    onMounted(async () => {
+      try {
+        const response = await fetch('http://localhost:3001/api/user', {
+          headers: {'Content-Type': 'application/json'},
+          credentials: 'include',
+        })
+        const content = await response.json()
+        message.value = `${content.name}`
+        await store.dispatch('setAuth', true)
+      } catch (e) {
+        await store.dispatch('setAuth', false)
+      }
+    })
+    return {
+      message,
+      logout
+    }
+  }
 
 })
 </script>
