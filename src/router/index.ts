@@ -64,13 +64,13 @@ const routes: Array<RouteRecordRaw> = [
         path: '/skyplus-admin',
         name: 'AdminLogin',
         component: AdminLogin,
-        meta: { title: 'Skyplus | Connexion', requiresVisitor : true  }
+        meta: { title: 'Skyplus | Connexion'}
     },
     {
         path: '/skyplus',
         name: 'Admin',
         component: Admin,
-        meta: { title: 'Skyplus | Dashboard', requiresAuth : true }
+        meta: { title: 'Skyplus | Dashboard'}
     },
     {
         path: '/:pathMatch(.*)*',

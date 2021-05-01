@@ -104,7 +104,7 @@
             </a>
           </li>
           <li>
-            <router-link :to="{name: 'AdminLogin'}" @click="logout"
+            <router-link :to="{name: 'AdminLogin'}"
                class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-500 hover:text-gray-200 border-l-4 border-transparent hover:border-red-500 pr-6">
                 <span class="inline-flex justify-center items-center ml-4 text-red-400">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -124,48 +124,10 @@
 </template>
 
 <script>
-import {computed, defineComponent, onMounted, ref} from 'vue'
-import {useStore} from 'vuex'
+import {defineComponent} from 'vue'
 
 export default defineComponent({
   name: "Index",
-  setup() {
-    const message = ref('')
-    const store = useStore()
-
-    const auth = computed(() => store.state.authenticated)
-
-    const logout = async () => {
-      await fetch('http://localhost:3001/api/logout', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        credentials: 'include',
-      })
-    }
-
-    onMounted(async () => {
-      try {
-        const response = await fetch('http://localhost:3001/api/user', {
-          headers: {'Content-Type': 'application/json'},
-          credentials: 'include',
-        })
-        const content = await response.json()
-        console.log(content.name)
-        message.value = `${content.name}`
-        await store.dispatch('setAuth', true)
-      } catch (e) {
-        await store.dispatch('setAuth', false)
-      }
-
-    })
-
-    return {
-      message,
-      logout
-    }
-
-
-  }
 
 })
 </script>

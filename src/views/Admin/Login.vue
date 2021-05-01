@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="submit">
+  <form>
     <div class="body-color">
       <div class="card">
         <h1 class="card__title">Connexion</h1>
@@ -7,7 +7,6 @@
           <input
               class="form-row__input"
               type="text"
-              v-model="data.email"
               placeholder="Adresse mail"
               required
           />
@@ -16,14 +15,13 @@
           <input
               class="form-row__input"
               type="password"
-              v-model="data.password"
               placeholder="Mot de passe"
               required
           />
         </div>
         <div class="text-red-600 my-2">message error</div>
         <div class="form-row">
-          <button class="button" type="submit">
+          <button class="button">
             <span>Connexion</span>
           </button>
         </div>
@@ -33,32 +31,8 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive} from 'vue'
-import {useRouter} from "vue-router";
-
+import {defineComponent} from 'vue'
 export default defineComponent({
-  setup() {
-    const data = reactive({
-      email: '',
-      password: ''
-    })
-    const router = useRouter()
-
-    const submit = async () => {
-      await fetch('http://localhost:3001/api/login', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        credentials: 'include',
-        body: JSON.stringify(data)
-      })
-      await router.push('/skyplus')
-    }
-
-    return {
-      data,
-      submit
-    }
-  }
 })
 </script>
 
