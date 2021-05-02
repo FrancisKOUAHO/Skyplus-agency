@@ -18,9 +18,9 @@ interface Projets {
   created: number
 }
 
-import {defineComponent} from 'vue'
+import {defineComponent} from 'vue';
 import CreationBlocTop from "@/components/CreationBlocTop.vue";
-import Gallery from "@/components/Gallery.vue";
+import Gallery from "@/components/Gallery2.vue";
 import CreationBlocBottom from "@/components/CreationBlocBottom.vue";
 import PiedsPage from "@/components/PiedsPage.vue";
 

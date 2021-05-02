@@ -1,5 +1,5 @@
 <template>
-  <div class="container_bloc2">
+  <div class="container_bloc2 fadeInLeft">
     <span class="titre_partenaire">Ils nous ont fait confiance</span>
     <div class="flex flex-wrap -mx-2 overflow-hidden sm:-mx-2 md:-mx-2 lg:-mx-2 xl:-mx-2 mt-4">
 
@@ -60,12 +60,50 @@ export default defineComponent({
   /* padding: 3em 3em 3em 0em; */
   width: 70%;
   padding: 3em 3em 3em 49em;
+  -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    animation-delay: 3s;
 }
 
 .titre_partenaire {
-  padding: 0 7.5em;
+  padding: 0 7em;
   color: #fffefe;
   font-size: 1.2rem;
+}
+
+/* Animation FadeInLeft class "FadeInLeft"*/
+
+@-webkit-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    position: relative;
+    left: -100px;
+  }
+  100% {
+    opacity: 1;
+    left: 100px;
+    /* transform: translateX(0px); */
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    position: relative;
+    left: -100px;
+  }
+  100% {
+    opacity: 1;
+    left: 100px;
+    /* transform: translateX(0px); */
+  }
+}
+
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
 }
 
 </style>

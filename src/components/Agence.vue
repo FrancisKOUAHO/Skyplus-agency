@@ -61,7 +61,7 @@ h1 {
     animation-duration: 2s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
-    animation-delay: 1s;
+    animation-delay: .5s;
 }
 
 h3 {
@@ -70,7 +70,7 @@ h3 {
     animation-duration: 2s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
-    animation-delay: 2s;
+    animation-delay: 1s;
 }
 
 h4 {
@@ -79,7 +79,7 @@ h4 {
     animation-duration: 2s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
-    animation-delay: 4s;
+    animation-delay: 2s;
 }
 
 .h3bold {
@@ -92,7 +92,7 @@ h4 {
     animation-duration: 2s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
-    animation-delay: 3s;
+    animation-delay: 1.5s;
     width: 28em;
     padding: 3em 2em;
     margin: 3em;
@@ -104,7 +104,7 @@ h4 {
     animation-duration: 2s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
-    animation-delay: 5s;
+    animation-delay: 2.5s;
 }
 
 .content2{
@@ -114,7 +114,7 @@ h4 {
   animation-duration: 2s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  animation-delay: 6s;
+  animation-delay: 3s;
   z-index: 1;
 }
 
@@ -128,7 +128,7 @@ h4 {
   animation-duration: 2s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  animation-delay: 7s;
+  animation-delay: 3.5s;
 }
 
 /* ANIMATION */
