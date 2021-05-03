@@ -20,7 +20,7 @@ interface Projets {
 
 import {defineComponent} from 'vue';
 import CreationBlocTop from "@/components/CreationBlocTop.vue";
-import Gallery from "@/components/Gallery2.vue";
+import Gallery from "@/components/Gallery.vue";
 import CreationBlocBottom from "@/components/CreationBlocBottom.vue";
 import PiedsPage from "@/components/PiedsPage.vue";
 

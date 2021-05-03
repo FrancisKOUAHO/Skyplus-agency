@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="submit">
+  <form @submit.prevent="loginUser">
     <div class="body-color">
       <div class="card">
         <h1 class="card__title">Connexion</h1>
@@ -7,7 +7,7 @@
           <input
               class="form-row__input"
               type="text"
-              v-model="data.email"
+              v-model="login.email"
               placeholder="Adresse mail"
               required
           />
@@ -16,12 +16,12 @@
           <input
               class="form-row__input"
               type="password"
-              v-model="data.password"
+              v-model="login.password"
               placeholder="Mot de passe"
               required
           />
         </div>
-        <div class="text-red-600 my-2">{{ data.message }}</div>
+<!--        <div class="text-red-600 my-2"> data.message</div>-->
         <div class="form-row">
           <button class="button" type="submit">
             <span>Connexion</span>
@@ -33,30 +33,34 @@
 </template>
 
 <script>
-import {defineComponent, reactive} from 'vue'
-import {useRouter} from "vue-router";
+import {defineComponent} from 'vue'
+import swal from "sweetalert";
+
 
 export default defineComponent({
   name: "Login",
-  setup() {
-    const data = reactive({
-      email: '',
-      password: '',
-      message: ''
-    })
-    const router = useRouter()
-    const submit = async () => {
-      await fetch('http://localhost:3001/api/login', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        credentials: 'include',
-        body: JSON.stringify(data)
-      })
-      await router.push({name: 'Dashboard'})
-    }
+  data() {
     return {
-      data,
-      submit
+      login: {
+        email: "",
+        password: ""
+      }
+    };
+  },
+  methods: {
+    async loginUser() {
+      try {
+        let response = await this.$http.post("/user/login", this.login);
+        let token = response.data.token;
+        localStorage.setItem("jwt", token);
+        if (token) {
+          swal("Success", "Connexion réussie", "Error");
+          this.$router.push({name: 'Dashboard'});
+        }
+      } catch (err) {
+        swal("Error", "Quelque chose a mal tourné", "error");
+        console.log(err.response);
+      }
     }
   }
 })

@@ -103,7 +103,7 @@
               <span class="ml-2 font-semibold text-sm tracking-wide truncate font-sans">Settings</span>
             </a>
           </li>
-          <li @click="logout">
+          <li @click="logUserOut">
             <a
                 class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-500 hover:text-gray-200 border-l-4 border-transparent hover:border-red-500 pr-6">
                 <span class="inline-flex justify-center items-center ml-4 text-red-400">
@@ -124,42 +124,31 @@
 </template>
 
 <script>
-import {computed, defineComponent, onMounted, ref} from 'vue'
-import {useStore} from 'vuex'
-import {useRouter} from "vue-router";
+import {defineComponent} from 'vue'
+import VueJwtDecode from "vue-jwt-decode";
+
 
 export default defineComponent({
   name: "Dashboard",
-  setup() {
-    const message = ref('')
-    const store = useStore()
-    const auth = computed(() => store.state.authenticated)
-    const router = useRouter()
-    const logout = async () => {
-      await fetch('http://localhost:3001/api/logout', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        credentials: 'include',
-      })
-      await router.push({name: 'Login'})
-    }
-    onMounted(async () => {
-      try {
-        const response = await fetch('http://localhost:3001/api/user', {
-          headers: {'Content-Type': 'application/json'},
-          credentials: 'include',
-        })
-        const content = await response.json()
-        message.value = `${content.name}`
-        await store.dispatch('setAuth', true)
-      } catch (e) {
-        await store.dispatch('setAuth', false)
-      }
-    })
+  data() {
     return {
-      message,
-      logout
+      user: {}
+    };
+  },
+  methods: {
+    getUserDetails() {
+      let token = localStorage.getItem("jwt");
+      let decoded = VueJwtDecode.decode(token);
+      this.user = decoded;
+    },
+    logUserOut() {
+      localStorage.removeItem("jwt");
+      this.$router.push({name: 'Login'});
     }
+  },
+
+  created() {
+    this.getUserDetails();
   }
 
 })

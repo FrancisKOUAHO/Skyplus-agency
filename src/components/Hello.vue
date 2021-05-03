@@ -3,7 +3,7 @@
   <div id="open-modal" class="modal-window">
     <div>
       <a href="#modal-close" title="Fermer" class="modal-close">Fermer &times;</a>
-      <form class="w-full max-w-lg ml-36">
+      <form class="w-full max-w-lg ml-36" @submit.prevent="sendEmail">
         <div class="flex flex-wrap -mx-3 mb-6">
           <div class="w-full px-3">
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
@@ -11,7 +11,8 @@
             </label>
             <input
                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="nick" type="text">
+                id="nick" type="text" v-model="name"
+            >
           </div>
         </div>
         <div class="flex flex-wrap -mx-3 mb-6">
@@ -21,7 +22,8 @@
             </label>
             <input
                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="email" type="email">
+                id="email" type="email" v-model="email"
+            >
           </div>
         </div>
         <div class="flex flex-wrap -mx-3 mb-6">
@@ -31,7 +33,8 @@
             </label>
             <input
                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="tel" type="tel">
+                id="tel" type="tel" v-model="tel"
+            >
           </div>
         </div>
         <div class="flex flex-wrap -mx-3 mb-6">
@@ -49,15 +52,6 @@
                 </select>
               </div>
             </div>
-            <!--            <select name="" id="">
-                          <option value="">Qu'est-ce qui vous amène ?</option>
-                          <option value="projet">J'ai un projet à vous présenter</option>
-                          <option value="rencontre">J'aimerais vous rencontrer</option>
-                          <option value="collaborer">Je veux collaborer avec vous</option>
-                          <option value="job">Je veux postuler</option>
-                          <option value="stage">Je recherche un stage</option>
-                          <option value="autre">Autre</option>
-                        </select>-->
           </div>
         </div>
         <div class="flex flex-wrap -mx-3 mb-6">
@@ -67,7 +61,7 @@
             </label>
             <textarea
                 class=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
-                id="message"></textarea>
+                id="message" v-model="message"></textarea>
             <p class="text-white text-xs italic">message d'erreur</p>
           </div>
         </div>
@@ -75,7 +69,8 @@
           <div class="md:w-1/3">
             <button
                 class=" ml-60 shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none font-bold py-2 px-4 rounded"
-                type="button" style="background-color: white !important;">
+                type="submit" style="background-color: white !important;" value="Send"
+            >
               Envoyer
             </button>
           </div>
@@ -89,13 +84,36 @@
 
 <script>
 import {defineComponent} from 'vue'
+import emailjs from 'emailjs-com';
 
 export default defineComponent({
   name: "Hello",
   data() {
-    return {}
+    return {
+      name: '',
+      email: '',
+      tel: '',
+      message: ''
+    }
   },
-  methods: {}
+  methods: {
+    sendEmail(e) {
+      try {
+        emailjs.sendForm('service_l8twccb', 'template_q8cvqtb', e.target,
+            'user_IIORNjcJYo0Dcw6YZHP4E', {
+              name: this.name,
+              email: this.email,
+              message: this.message
+            })
+
+      } catch(error) {
+        console.log({error})
+      }
+      this.name = ''
+      this.email = ''
+      this.message = ''
+    },
+  }
 })
 </script>
 
