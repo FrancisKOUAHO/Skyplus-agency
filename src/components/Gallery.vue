@@ -80,6 +80,7 @@
 
 import {defineComponent} from 'vue'
 
+
 export default defineComponent({
   name: 'Gallery2',
   data() {
@@ -103,18 +104,6 @@ export default defineComponent({
           "logo": "",
           "description": "Autorise-toi à avoir de Grands Rêves, avec un grand “G” et un grand “R”, c’est la devise de KCLM, une marque qui travaille avec de nombreux artistes connus comme inconnus.",
         },
-        {
-          "name": "Arash MORTAZAVI",
-          "background": "../assets/image/projets/Auxfinsgastronomes.png",
-          "logo": "",
-          "description": "Cuisine et pâtisse des recettes d’antan tout comme de nouvelles créations conçues en symbiose avec ses salariés",
-        },
-        {
-          "name": "Califor",
-          "background": "../assets/image/projets/Auxfinsgastronomes.png",
-          "logo": "",
-          "description": "Cuisine et pâtisse des recettes d’antan tout comme de nouvelles créations conçues en symbiose avec ses salariés",
-        }
       ]
     }
   },
@@ -137,7 +126,7 @@ export default defineComponent({
   min-height: 100vh;
   width: 100%;
   max-width: 900px;
-  margin: 0em auto -10em auto;
+  margin: 0 auto -10em auto;
   -webkit-animation-duration: 2s;
   animation-duration: 1.5s;
   -webkit-animation-fill-mode: both;
@@ -166,7 +155,7 @@ export default defineComponent({
   font-family: Arial, sans-serif;
   font-size: 12px;
   line-height: 17px;
-  letter-spacing: 0.3px;
+  letter-spacing: 0;
   font-weight: normal;
   color: #fff;
 }
@@ -225,7 +214,7 @@ a {
 .c-mouse-vertical-carousel__eyebrow span {
   position: absolute;
   left: -70px;
-  top: 0px;
+  top: 0;
 }
 
 .c-mouse-vertical-carousel__title {
@@ -254,7 +243,7 @@ a {
   100% {
     opacity: 1;
     position: relative;
-    top: 0px;
+    top: 0;
     /* transform: translateY(-100px); */
   }
 }
@@ -268,7 +257,7 @@ a {
   100% {
     opacity: 1;
     position: relative;
-    top: 0px;
+    top: 0;
     /* transform: translateY(-100px); */
   }
 }

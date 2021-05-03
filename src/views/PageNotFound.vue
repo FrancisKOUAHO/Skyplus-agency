@@ -16,20 +16,20 @@ export default {
     return {}
   },
   setup(){
-    var hour = document.getElementById("hour");
-    var minute = document.getElementById("minute");
-    var seconds = document.getElementById("seconds");
+    let hour = document.getElementById("hour");
+    let minute = document.getElementById("minute");
+    let seconds = document.getElementById("seconds");
 
-    var set_clock = setInterval(
+    let set_clock = setInterval(
         function clock(){
-          var date_now = new Date();
-          var hr = date_now.getHours();
-          var min = date_now.getMinutes();
-          var sec = date_now.getSeconds();
+          let date_now = new Date();
+          let hr = date_now.getHours();
+          let min = date_now.getMinutes();
+          let sec = date_now.getSeconds();
 
-          var calc_hr = (hr * 30) + (min / 2);
-          var calc_min =    (min * 6)  ;
-          var calc_sec = sec * 6 ;
+          let calc_hr = (hr * 30) + (min / 2);
+          let calc_min =    (min * 6)  ;
+          let calc_sec = sec * 6 ;
 
           hour.style.transform = "rotate(" + calc_hr + "deg)";
           minute.style.transform = "rotate(" + calc_min + "deg)";
