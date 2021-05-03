@@ -35,6 +35,7 @@
 <script>
 import {defineComponent} from 'vue'
 import swal from "sweetalert";
+import axios from 'axios';
 
 
 export default defineComponent({
@@ -50,7 +51,7 @@ export default defineComponent({
   methods: {
     async loginUser() {
       try {
-        let response = await this.$http.post("/user/login", this.login);
+        let response = await axios.post("http://localhost:3001/user/login", this.login);
         let token = response.data.token;
         localStorage.setItem("jwt", token);
         if (token) {

@@ -103,15 +103,17 @@ export default defineComponent({
             'user_IIORNjcJYo0Dcw6YZHP4E', {
               name: this.name,
               email: this.email,
-              message: this.message
+              message: this.message,
+              tel: this.tel
             })
 
-      } catch(error) {
+      } catch (error) {
         console.log({error})
       }
       this.name = ''
       this.email = ''
       this.message = ''
+      this.tel
     },
   }
 })
