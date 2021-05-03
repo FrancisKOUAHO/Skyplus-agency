@@ -77,7 +77,6 @@
 
 
 <script lang="ts">
-
 import {defineComponent} from 'vue'
 
 
@@ -126,7 +125,7 @@ export default defineComponent({
   min-height: 100vh;
   width: 100%;
   max-width: 900px;
-  margin: 0 auto -10em auto;
+  margin: 0em auto -10em auto;
   -webkit-animation-duration: 2s;
   animation-duration: 1.5s;
   -webkit-animation-fill-mode: both;
