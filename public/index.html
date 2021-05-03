@@ -7,7 +7,7 @@
     <link href="css/tailwind.css" rel="stylesheet">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
@@ -19,135 +19,137 @@
 </body>
 <script>
     class VerticalMouseDrivenCarousel {
-	constructor(options = {}) {
-		const _defaults = {
-			carousel: ".js-carousel",
-			bgImg: ".js-carousel-bg-img",
-			list: ".js-carousel-list",
-			listItem: ".js-carousel-list-item"
-		};
+        constructor(options = {}) {
+            const _defaults = {
+                carousel: ".js-carousel",
+                bgImg: ".js-carousel-bg-img",
+                list: ".js-carousel-list",
+                listItem: ".js-carousel-list-item"
+            };
 
-		this.posY = 0;
+            this.posY = 0;
 
-		this.defaults = Object.assign({}, _defaults, options);
+            this.defaults = Object.assign({}, _defaults, options);
 
-		this.initCursor();
-		this.init();
-		this.bgImgController();
-	}
+            this.initCursor();
+            this.init();
+            this.bgImgController();
+        }
 
-	//region getters
-	getBgImgs() {
-		return document.querySelectorAll(this.defaults.bgImg);
-	}
+        //region getters
+        getBgImgs() {
+            return document.querySelectorAll(this.defaults.bgImg);
+        }
 
-	getListItems() {
-		return document.querySelectorAll(this.defaults.listItem);
-	}
+        getListItems() {
+            return document.querySelectorAll(this.defaults.listItem);
+        }
 
-	getList() {
-		return document.querySelector(this.defaults.list);
-	}
+        getList() {
+            return document.querySelector(this.defaults.list);
+        }
 
-	getCarousel() {
-		return document.querySelector(this.defaults.carousel);
-	}
+        getCarousel() {
+            return document.querySelector(this.defaults.carousel);
+        }
 
-	init() {
-		TweenMax.set(this.getBgImgs(), {
-			autoAlpha: 0,
-			scale: 1.05
-		});
+        init() {
+            TweenMax.set(this.getBgImgs(), {
+                autoAlpha: 0,
+                scale: 1.05
+            });
 
-		TweenMax.set(this.getBgImgs()[0], {
-			autoAlpha: 1,
-			scale: 1
-		});
+            TweenMax.set(this.getBgImgs()[0], {
+                autoAlpha: 1,
+                scale: 1
+            });
 
-		this.listItems = this.getListItems().length - 1;
-		
-		this.listOpacityController(0);
-	}
+            this.listItems = this.getListItems().length - 1;
 
-	initCursor() {
-		const listHeight = this.getList().clientHeight;
-		const carouselHeight = this.getCarousel().clientHeight;
+            this.listOpacityController(0);
+        }
 
-		this.getCarousel().addEventListener(
-			"mousemove",
-			event => {
-				this.posY = event.pageY - this.getCarousel().offsetTop;
-				let offset = -this.posY / carouselHeight * listHeight;
+        initCursor() {
+            const listHeight = this.getList().clientHeight;
+            const carouselHeight = this.getCarousel().clientHeight;
 
-				TweenMax.to(this.getList(), 0.3, {
-					y: offset,
-					ease: Power4.easeOut
-				});
-			},
-			false
-		);
-	}
+            this.getCarousel().addEventListener(
+                "mousemove",
+                event => {
+                    this.posY = event.pageY - this.getCarousel().offsetTop;
+                    let offset = -this.posY / carouselHeight * listHeight;
 
-	bgImgController() {
-		for (const link of this.getListItems()) {
-			link.addEventListener("mouseenter", ev => {
-				let currentId = ev.currentTarget.dataset.itemId;
+                    TweenMax.to(this.getList(), 0.3, {
+                        y: offset,
+                        ease: Power4.easeOut
+                    });
+                },
+                false
+            );
+        }
 
-				this.listOpacityController(currentId);
+        bgImgController() {
+            for (const link of this.getListItems()) {
+                link.addEventListener("mouseenter", ev => {
+                    let currentId = ev.currentTarget.dataset.itemId;
 
-				TweenMax.to(ev.currentTarget, 0.3, {
-					autoAlpha: 1
-				});
+                    this.listOpacityController(currentId);
 
-				TweenMax.to(".is-visible", 0.2, {
-					autoAlpha: 0,
-					scale: 1.05
-				});
+                    TweenMax.to(ev.currentTarget, 0.3, {
+                        autoAlpha: 1
+                    });
 
-				if (!this.getBgImgs()[currentId].classList.contains("is-visible")) {
-					this.getBgImgs()[currentId].classList.add("is-visible");
-				}
+                    TweenMax.to(".is-visible", 0.2, {
+                        autoAlpha: 0,
+                        scale: 1.05
+                    });
 
-				TweenMax.to(this.getBgImgs()[currentId], 0.6, {
-					autoAlpha: 1,
-					scale: 1
-				});
-			});
-		}
-	}
+                    if (!this.getBgImgs()[currentId].classList.contains("is-visible")) {
+                        this.getBgImgs()[currentId].classList.add("is-visible");
+                    }
 
-	listOpacityController(id) {
-		id = parseInt(id);
-		let aboveCurrent = this.listItems - id;
-		let belowCurrent = parseInt(id);
+                    TweenMax.to(this.getBgImgs()[currentId], 0.6, {
+                        autoAlpha: 1,
+                        scale: 1
+                    });
+                });
+            }
+        }
 
-		if (aboveCurrent > 0) {
-			for (let i = 1; i <= aboveCurrent; i++) {
-				let opacity = 0.5 / i;
-				let offset = 5 * i;
-				TweenMax.to(this.getListItems()[id + i], 0.5, {
-					autoAlpha: opacity,
-					x: offset,
-					ease: Power3.easeOut
-				});
-			}
-		}
+        listOpacityController(id) {
+            id = parseInt(id);
+            let aboveCurrent = this.listItems - id;
+            let belowCurrent = parseInt(id);
 
-		if (belowCurrent > 0) {
-			for (let i = 0; i <= belowCurrent; i++) {
-				let opacity = 0.5 / i;
-				let offset = 5 * i;
-				TweenMax.to(this.getListItems()[id - i], 0.5, {
-					autoAlpha: opacity,
-					x: offset,
-					ease: Power3.easeOut
-				});
-			}
-		}
-	}
-}
+            if (aboveCurrent > 0) {
+                for (let i = 1; i <= aboveCurrent; i++) {
+                    let opacity = 0.5 / i;
+                    let offset = 5 * i;
+                    TweenMax.to(this.getListItems()[id + i], 0.5, {
+                        autoAlpha: opacity,
+                        x: offset,
+                        ease: Power3.easeOut
+                    });
+                }
+            }
 
-new VerticalMouseDrivenCarousel();
+            if (belowCurrent > 0) {
+                for (let i = 0; i <= belowCurrent; i++) {
+                    let opacity = 0.5 / i;
+                    let offset = 5 * i;
+                    TweenMax.to(this.getListItems()[id - i], 0.5, {
+                        autoAlpha: opacity,
+                        x: offset,
+                        ease: Power3.easeOut
+                    });
+                }
+            }
+        }
+    }
+
+    new VerticalMouseDrivenCarousel();
 
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
 </html>

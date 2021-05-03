@@ -1,123 +1,218 @@
 <template>
-  <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-gray-50 text-gray-800">
-    <div class="fixed flex flex-col top-0 left-0 w-64 bg-gray-900 h-full shadow-lg">
-      <div class="flex items-center pl-6 h-20 border-b border-gray-800">
-        <img
-            src="https://scontent.fmnl13-1.fna.fbcdn.net/v/t1.0-9/117334168_2606581056324669_4951020710334194218_o.jpg?_nc_cat=101&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeFo4bRKc5SfTQvzhwotnTaOfj1P6rO41HF-PU_qs7jUcU1pCerqu3HUsOB0yKyJQwnrgz8Au7GZADcpedo6WgM4&_nc_ohc=DWpkI3p4RSUAX_hKF_Y&_nc_ht=scontent.fmnl13-1.fna&oh=c13c63ee952123b14f0da72b99ccecc8&oe=6087FEC5"
-            alt="" class="rounded-full h-10 w-10 flex items-center justify-center mr-3 border-2 border-blue-500">
-        <div class="ml-1">
-          <p class="ml-1 text-md font-medium tracking-wide truncate text-gray-100 font-sans">{{ user.name }}</p>
-          <div class="badge">
-            <span class="px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-blue-800 bg-blue-100 rounded-full">Admin</span>
+  <div class="bg-gray-100 font-family-karla flex">
+
+    <aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl">
+      <div class="p-6">
+        <img src="@/assets/image/logo/Logo_Skyplus.png" class="text-white text-3xl font-semibold uppercase hover:text-gray-300"/>
+        <button
+            class="w-full bg-white cta-btn font-semibold py-2 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">
+           {{user.name}}
+        </button>
+      </div>
+      <nav class="text-white text-base font-semibold pt-3">
+        <a href="index.html" class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
+          <i class="fas fa-tachometer-alt mr-3"></i>
+          Tableau de bord
+        </a>
+        <a href="blank.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+          <i class="fas fa-sticky-note mr-3"></i>
+          CLients
+        </a>
+        <a href="tables.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+          <i class="fas fa-table mr-3"></i>
+          Projets
+        </a>
+        <a href="forms.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+          <i class="fas fa-align-left mr-3"></i>
+          Forms
+        </a>
+        <a href="tabs.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+          <i class="fas fa-tablet-alt mr-3"></i>
+          Tabbed Content
+        </a>
+        <a href="calendar.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+          <i class="fas fa-calendar mr-3"></i>
+          Calendrier
+        </a>
+      </nav>
+    </aside>
+
+    <div class="w-full flex flex-col h-screen overflow-y-hidden">
+      <!-- Desktop Header -->
+      <header class="w-full items-center bg-white py-2 px-6 hidden sm:flex">
+        <div class="w-1/2"></div>
+        <div x-data="{ isOpen: false }" class="relative w-1/2 flex justify-end">
+          <button @click="isOpen = !isOpen"
+                  class="realtive z-10 w-12 h-12 rounded-full overflow-hidden border-4 border-gray-400 hover:border-gray-300 focus:border-gray-300 focus:outline-none">
+            <img src="https://source.unsplash.com/uJ8LNVCBjFQ/400x400">
+          </button>
+          <button x-show="isOpen" @click="isOpen = false" class="h-full w-full fixed inset-0 cursor-default" style="display: none;"></button>
+          <div x-show="isOpen" class="absolute w-32 bg-white rounded-lg shadow-lg py-2 mt-16">
+            <a href="#" class="block px-4 py-2 account-link hover:text-white">Account</a>
+            <a href="#" class="block px-4 py-2 account-link hover:text-white">Support</a>
+            <a href="#" class="block px-4 py-2 account-link hover:text-white">Sign Out</a>
           </div>
         </div>
-      </div>
-      <div class="overflow-y-auto overflow-x-hidden flex-grow">
-        <ul class="flex flex-col py-6 space-y-1">
-          <li class="px-5">
-            <div class="flex flex-row items-center h-8">
-              <div class="flex font-semibold text-sm text-gray-300 my-4 font-sans uppercase">Dashboard</div>
+      </header>
+
+      <!-- Mobile Header & Nav -->
+      <header x-data="{ isOpen: false }" class="w-full bg-sidebar py-5 px-6 sm:hidden">
+        <div class="flex items-center justify-between">
+          <a href="index.html" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">Admin</a>
+          <button @click="isOpen = !isOpen" class="text-white text-3xl focus:outline-none">
+            <i x-show="!isOpen" class="fas fa-bars"></i>
+            <i x-show="isOpen" class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <!-- Dropdown Nav -->
+        <nav :class="isOpen ? 'flex': 'hidden'" class="flex flex-col pt-4">
+          <a href="index.html" class="flex items-center active-nav-link text-white py-2 pl-4 nav-item">
+            <i class="fas fa-tachometer-alt mr-3"></i>
+            Dashboard
+          </a>
+          <a href="blank.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+            <i class="fas fa-sticky-note mr-3"></i>
+            Blank Page
+          </a>
+          <a href="tables.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+            <i class="fas fa-table mr-3"></i>
+            Tables
+          </a>
+          <a href="forms.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+            <i class="fas fa-align-left mr-3"></i>
+            Forms
+          </a>
+          <a href="tabs.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+            <i class="fas fa-tablet-alt mr-3"></i>
+            Tabbed Content
+          </a>
+          <a href="calendar.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+            <i class="fas fa-calendar mr-3"></i>
+            Calendar
+          </a>
+          <a href="#" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+            <i class="fas fa-cogs mr-3"></i>
+            Support
+          </a>
+          <a href="#" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+            <i class="fas fa-user mr-3"></i>
+            My Account
+          </a>
+          <a href="#" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+            <i class="fas fa-sign-out-alt mr-3"></i>
+            Sign Out
+          </a>
+          <button
+              class="w-full bg-white cta-btn font-semibold py-2 mt-3 rounded-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">
+            <i class="fas fa-arrow-circle-up mr-3"></i> Upgrade to Pro!
+          </button>
+        </nav>
+      </header>
+
+      <div class="w-full overflow-x-hidden border-t flex flex-col">
+        <main class="w-full flex-grow p-6">
+          <h1 class="text-3xl text-black pb-6">Dashboard</h1>
+
+          <div class="flex flex-wrap mt-6">
+            <div class="w-full lg:w-1/2 pr-0 lg:pr-2">
+              <p class="text-xl pb-3 flex items-center">
+                <i class="fas fa-plus mr-3"></i> Monthly Reports
+              </p>
+              <div class="p-6 bg-white">
+                <canvas id="chartOne" width="400" height="200"></canvas>
+              </div>
             </div>
-          </li>
-          <li>
-            <a href="#"
-               class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-500 hover:text-gray-200 border-l-4 border-transparent hover:border-blue-500 pr-6">
-                    <span class="inline-flex justify-center items-center ml-4">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                         xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round"
-                                                                  stroke-width="2"
-                                                                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
-                    </span>
-              <span class="ml-2 font-semibold text-sm tracking-wide truncate font-sans">Accueil</span>
-            </a>
-          </li>
-          <li>
-            <a href="#"
-               class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-500 hover:text-gray-200 border-l-4 border-transparent hover:border-blue-500 pr-6">
-                    <span class="inline-flex justify-center items-center ml-4">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                         xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round"
-                                                                  stroke-width="2"
-                                                                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
-                    </span>
-              <span class="ml-2 font-semibold text-sm tracking-wide truncate font-sans">Projets</span>
-            </a>
-          </li>
-          <li>
-            <a href="#"
-               class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-500 hover:text-gray-200 border-l-4 border-transparent hover:border-blue-500 pr-6">
-                    <span class="inline-flex justify-center items-center ml-4">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                         xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round"
-                                                                  stroke-width="2"
-                                                                  d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path></svg>
-                    </span>
-              <span class="ml-2 font-semibold text-sm tracking-wide truncate font-sans">Clients</span>
-              <span
-                  class="px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-blue-500 bg-blue-100 rounded-full">New</span>
-            </a>
-          </li>
-          <li>
-            <a href="#"
-               class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-500 hover:text-gray-200 border-l-4 border-transparent hover:border-blue-500 pr-6">
-                    <span class="inline-flex justify-center items-center ml-4">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                         xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round"
-                                                                  stroke-width="2"
-                                                                  d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path></svg>
-                    </span>
-              <span class="ml-2 font-semibold text-sm tracking-wide truncate font-sans">Futur clients</span>
-              <span
-                  class="px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-blue-500 bg-blue-100 rounded-full">New</span>
-            </a>
-          </li>
-          <li class="px-5">
-            <div class="flex flex-row items-center h-8">
-              <div class="flex font-semibold text-sm text-gray-300 my-4 font-sans uppercase">Settings</div>
+            <div class="w-full lg:w-1/2 pl-0 lg:pl-2 mt-12 lg:mt-0">
+              <p class="text-xl pb-3 flex items-center">
+                <i class="fas fa-check mr-3"></i> Resolved Reports
+              </p>
+              <div class="p-6 bg-white">
+                <canvas id="chartTwo" width="400" height="200"></canvas>
+              </div>
             </div>
-          </li>
-          <li>
-            <a href="#"
-               class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-500 hover:text-gray-200 border-l-4 border-transparent hover:border-blue-500 pr-6">
-                <span class="inline-flex justify-center items-center ml-4">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                     xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round"
-                                                              stroke-width="2"
-                                                              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-                </span>
-              <span class="ml-2 font-semibold text-sm tracking-wide truncate font-sans">Profile</span>
-            </a>
-          </li>
-          <li>
-            <a href="#"
-               class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-500 hover:text-gray-200 border-l-4 border-transparent hover:border-blue-500 pr-6">
-                <span class="inline-flex justify-center items-center ml-4">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                     xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                </svg>
-                </span>
-              <span class="ml-2 font-semibold text-sm tracking-wide truncate font-sans">Settings</span>
-            </a>
-          </li>
-          <li @click="logUserOut">
-            <a
-                class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-500 hover:text-gray-200 border-l-4 border-transparent hover:border-red-500 pr-6">
-                <span class="inline-flex justify-center items-center ml-4 text-red-400">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                     xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round"
-                                                              stroke-width="2"
-                                                              d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
-                </span>
-              <span class="ml-2 font-semibold text-sm tracking-wide truncate font-sans">
-                    Logout
-                </span>
-            </a>
-          </li>
-        </ul>
+          </div>
+
+          <div class="w-full mt-12">
+            <p class="text-xl pb-3 flex items-center">
+              <i class="fas fa-list mr-3"></i> Latest Reports
+            </p>
+            <div class="bg-white overflow-auto">
+              <table class="min-w-full bg-white">
+                <thead class="bg-gray-800 text-white">
+                <tr>
+                  <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Name</th>
+                  <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Last name</th>
+                  <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Phone</th>
+                  <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Email</th>
+                </tr>
+                </thead>
+                <tbody class="text-gray-700">
+                <tr>
+                  <td class="w-1/3 text-left py-3 px-4">Lian</td>
+                  <td class="w-1/3 text-left py-3 px-4">Smith</td>
+                  <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="tel:622322662">622322662</a></td>
+                  <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="mailto:jonsmith@mail.com">jonsmith@mail.com</a>
+                  </td>
+                </tr>
+                <tr class="bg-gray-200">
+                  <td class="w-1/3 text-left py-3 px-4">Emma</td>
+                  <td class="w-1/3 text-left py-3 px-4">Johnson</td>
+                  <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="tel:622322662">622322662</a></td>
+                  <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="mailto:jonsmith@mail.com">jonsmith@mail.com</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="w-1/3 text-left py-3 px-4">Oliver</td>
+                  <td class="w-1/3 text-left py-3 px-4">Williams</td>
+                  <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="tel:622322662">622322662</a></td>
+                  <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="mailto:jonsmith@mail.com">jonsmith@mail.com</a>
+                  </td>
+                </tr>
+                <tr class="bg-gray-200">
+                  <td class="w-1/3 text-left py-3 px-4">Isabella</td>
+                  <td class="w-1/3 text-left py-3 px-4">Brown</td>
+                  <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="tel:622322662">622322662</a></td>
+                  <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="mailto:jonsmith@mail.com">jonsmith@mail.com</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="w-1/3 text-left py-3 px-4">Lian</td>
+                  <td class="w-1/3 text-left py-3 px-4">Smith</td>
+                  <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="tel:622322662">622322662</a></td>
+                  <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="mailto:jonsmith@mail.com">jonsmith@mail.com</a>
+                  </td>
+                </tr>
+                <tr class="bg-gray-200">
+                  <td class="w-1/3 text-left py-3 px-4">Emma</td>
+                  <td class="w-1/3 text-left py-3 px-4">Johnson</td>
+                  <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="tel:622322662">622322662</a></td>
+                  <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="mailto:jonsmith@mail.com">jonsmith@mail.com</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="w-1/3 text-left py-3 px-4">Oliver</td>
+                  <td class="w-1/3 text-left py-3 px-4">Williams</td>
+                  <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="tel:622322662">622322662</a></td>
+                  <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="mailto:jonsmith@mail.com">jonsmith@mail.com</a>
+                  </td>
+                </tr>
+                <tr class="bg-gray-200">
+                  <td class="w-1/3 text-left py-3 px-4">Isabella</td>
+                  <td class="w-1/3 text-left py-3 px-4">Brown</td>
+                  <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="tel:622322662">622322662</a></td>
+                  <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="mailto:jonsmith@mail.com">jonsmith@mail.com</a>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </main>
+
+        <footer class="w-full bg-white text-right p-4">
+          Built by <a target="_blank" href="https://davidgrzyb.com" class="underline">David Grzyb</a>.
+        </footer>
       </div>
     </div>
   </div>
@@ -150,10 +245,20 @@ export default defineComponent({
 
   created() {
     this.getUserDetails();
+
   }
 
 })
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+.font-family-karla { font-family: karla; }
+.bg-sidebar { background: #3d68ff; }
+.cta-btn { color: #3d68ff; }
+.upgrade-btn { background: #1947ee; }
+.upgrade-btn:hover { background: #0038fd; }
+.active-nav-link { background: #1947ee; }
+.nav-item:hover { background: #1947ee; }
+.account-link:hover { background: #3d68ff; }
 </style>
