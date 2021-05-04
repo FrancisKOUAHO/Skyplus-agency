@@ -74,13 +74,13 @@
                   <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Projet</th>
                 </tr>
                 </thead>
-                <tbody class="text-gray-700">
+                <tbody class="text-gray-700" v-for="(get_client, index) in get_clients" :key="index">
                 <tr class="bg-gray-200">
-                  <td class="w-1/3 text-left py-3 px-4">Emma</td>
-                  <td class="text-left py-3 px-4"><a class="color-text" href="tel:622322662">622322662</a></td>
-                  <td class="text-left py-3 px-4"><a class="color-text" href="mailto:jonsmith@mail.com">jonsmith@mail.com</a>
+                  <td class="w-1/3 text-left py-3 px-4">{{ get_client.name }}</td>
+                  <td class="text-left py-3 px-4"><a class="color-text" href="tel:622322662">{{ get_client.phone }}</a></td>
+                  <td class="text-left py-3 px-4"><a class="color-text" href="mailto:jonsmith@mail.com">{{ get_client.email }}</a>
                   </td>
-                  <td class="text-left py-3 px-4"><a class="color-text" href="mailto:jonsmith@mail.com">En cours </a>
+                  <td class="text-left py-3 px-4"><a class="color-text" href="mailto:jonsmith@mail.com">{{get_client.project}}</a>
                   </td>
                 </tr>
                 </tbody>
@@ -99,6 +99,7 @@ import VueJwtDecode from "vue-jwt-decode";
 import 'alpinejs'
 import HeaderDashboard from "@/components/ComponentsAdmins/Hearders/HeaderDashboard";
 import DropdownDashboard from "@/components/Dropdown/DropdownDashboard";
+import axios from "axios";
 
 export default defineComponent({
   name: "Dashboard",
@@ -109,6 +110,7 @@ export default defineComponent({
       user: {},
       isOpen1: false,
       isOpen2: true,
+      get_clients: []
     };
   },
   methods: {
@@ -124,6 +126,12 @@ export default defineComponent({
   },
   created() {
     this.getUserDetails();
+    let apiURL = 'https://agencyskyplus.herokuapp.com/client/get-client';
+    axios.get(apiURL).then(res => {
+      this.get_clients = res.data;
+    }).catch(error => {
+      console.log(error)
+    });
 
   }
 })
