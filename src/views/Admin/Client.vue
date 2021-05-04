@@ -40,6 +40,7 @@
         <main class="w-full flex-grow p-6">
           <h1 class="text-3xl text-black pb-6">Tableau des Clients</h1>
           <table-clients/>
+          <register-client/>
         </main>
       </div>
     </div>
@@ -51,9 +52,10 @@ import HeaderDashboard from "../../components/ComponentsAdmins/Hearders/HeaderDa
 import VueJwtDecode from "vue-jwt-decode";
 import TableClients from "@/components/ComponentsAdmins/Tables/TableClients";
 import DropdownDashboard from "@/components/Dropdown/DropdownDashboard";
+import RegisterClient from "@/components/Forms/RegisterClient";
 export default {
   name: "Client",
-  components: {DropdownDashboard, TableClients, HeaderDashboard},
+  components: {RegisterClient, DropdownDashboard, TableClients, HeaderDashboard},
   data() {
     return {
       user: {},

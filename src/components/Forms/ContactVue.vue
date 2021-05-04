@@ -20,7 +20,7 @@ export default {
 
 :root{
   --white: #ffffff;
-  --twhite: rgb(255, 255, 255,.3);
+  --twhite: rgb(255, 255, 255);
   --dark-green :#435247;
   --light-green : #8eaa97;
 }

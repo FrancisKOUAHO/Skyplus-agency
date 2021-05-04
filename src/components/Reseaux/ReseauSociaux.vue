@@ -1,12 +1,26 @@
 <template>
   <section>
     <ul>
-      <li><a href="https://www.facebook.com/search/top?q=skyplusagency"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+      <li>
+        <a href="https://www.facebook.com/search/top?q=skyplusagency">
+          <i class="fab fa-facebook-f"></i>
+        </a>
       </li>
-      <li><a href="https://www.instagram.com/skyplusagency/?hl=fr"><i class="fa fa-instagram"
-                                                                      aria-hidden="true"></i></a></li>
-      <li><a href="mailto:contact@example.com"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
-      <li><a href="tel:+33500000000"><i class="fa fa-mobile" aria-hidden="true"></i></a></li>
+      <li>
+        <a href="https://www.instagram.com/skyplusagency/?hl=fr">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </li>
+      <li>
+        <a href="mailto:contact@example.com">
+          <i class="far fa-envelope"></i>
+        </a>
+      </li>
+      <li>
+        <a href="tel:+33500000000">
+          <i class="fas fa-mobile"></i>
+        </a>
+      </li>
 
     </ul>
   </section>
