@@ -47,7 +47,7 @@
                 <i class="fas fa-plus mr-3"></i> Rapports mensuels
               </p>
               <div class="p-6 bg-white">
-                <canvas id="chartOne" width="400" height="200"></canvas>
+                <visualisation/>
               </div>
             </div>
             <div class="w-full lg:w-1/2 pl-0 lg:pl-2 mt-12 lg:mt-0">
@@ -100,11 +100,12 @@ import 'alpinejs'
 import HeaderDashboard from "@/components/ComponentsAdmins/Hearders/HeaderDashboard";
 import DropdownDashboard from "@/components/Dropdown/DropdownDashboard";
 import axios from "axios";
+import Visualisation from "@/components/Chart/Visualisation";
 
 export default defineComponent({
   name: "Dashboard",
 
-  components: {DropdownDashboard, HeaderDashboard},
+  components: {Visualisation, DropdownDashboard, HeaderDashboard},
   data() {
     return {
       user: {},
