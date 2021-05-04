@@ -1,5 +1,5 @@
 <template>
-    <img src="../assets/image/nuage.png">
+    <img src="../../assets/image/nuage.png">
 </template>
 
 <script lang="ts">

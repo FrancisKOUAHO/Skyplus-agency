@@ -29,7 +29,7 @@
               <div v-if="isOpen1" class="fixed inset-0 w-full h-screen z-20 bg-black opacity-25"
                    @click="isOpen1 = false"></div>
               <div v-if="isOpen1" class="absolute z-30 right-0 mt-2" :class="{'hidden': !isOpen1}">
-                  <dropdown-dashboard/>
+                <dropdown-dashboard/>
               </div>
             </div>
           </div>
@@ -38,55 +38,8 @@
 
       <div class="w-full overflow-x-hidden border-t flex flex-col">
         <main class="w-full flex-grow p-6">
-          <h1 class="text-3xl text-black pb-6">Tableau de bord
-          </h1>
-
-          <div class="flex flex-wrap mt-6">
-            <div class="w-full lg:w-1/2 pr-0 lg:pr-2">
-              <p class="text-xl pb-3 flex items-center">
-                <i class="fas fa-plus mr-3"></i> Rapports mensuels
-              </p>
-              <div class="p-6 bg-white">
-                <canvas id="chartOne" width="400" height="200"></canvas>
-              </div>
-            </div>
-            <div class="w-full lg:w-1/2 pl-0 lg:pl-2 mt-12 lg:mt-0">
-              <p class="text-xl pb-3 flex items-center">
-                <i class="fas fa-check mr-3"></i> Rapports résolus
-              </p>
-              <div class="p-6 bg-white">
-                <canvas id="chartTwo" width="400" height="200"></canvas>
-              </div>
-            </div>
-          </div>
-
-          <div class="w-full mt-12">
-            <p class="text-xl pb-3 flex items-center">
-              <i class="fas fa-list mr-3"></i> Derniers rapports
-            </p>
-            <div class="bg-white overflow-auto">
-              <table class="min-w-full bg-white">
-                <thead class="bg-gray-800 text-white">
-                <tr>
-                  <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Nom</th>
-                  <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Téléphone</th>
-                  <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Email</th>
-                  <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Projet</th>
-                </tr>
-                </thead>
-                <tbody class="text-gray-700">
-                <tr class="bg-gray-200">
-                  <td class="w-1/3 text-left py-3 px-4">Emma</td>
-                  <td class="text-left py-3 px-4"><a class="color-text" href="tel:622322662">622322662</a></td>
-                  <td class="text-left py-3 px-4"><a class="color-text" href="mailto:jonsmith@mail.com">jonsmith@mail.com</a>
-                  </td>
-                  <td class="text-left py-3 px-4"><a class="color-text" href="mailto:jonsmith@mail.com">En cours </a>
-                  </td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
+          <h1 class="text-3xl text-black pb-6">Tableau des Clients</h1>
+          <table-clients/>
         </main>
       </div>
     </div>
@@ -94,16 +47,13 @@
 </template>
 
 <script>
-import {defineComponent} from 'vue'
+import HeaderDashboard from "../../components/ComponentsAdmins/Hearders/HeaderDashboard";
 import VueJwtDecode from "vue-jwt-decode";
-import 'alpinejs'
-import HeaderDashboard from "@/components/ComponentsAdmins/Hearders/HeaderDashboard";
+import TableClients from "@/components/ComponentsAdmins/Tables/TableClients";
 import DropdownDashboard from "@/components/Dropdown/DropdownDashboard";
-
-export default defineComponent({
-  name: "Dashboard",
-
-  components: {DropdownDashboard, HeaderDashboard},
+export default {
+  name: "Client",
+  components: {DropdownDashboard, TableClients, HeaderDashboard},
   data() {
     return {
       user: {},
@@ -126,7 +76,7 @@ export default defineComponent({
     this.getUserDetails();
 
   }
-})
+}
 </script>
 
 <style scoped>
@@ -171,4 +121,5 @@ export default defineComponent({
 .color-text:hover {
   color: purple !important;
 }
+
 </style>

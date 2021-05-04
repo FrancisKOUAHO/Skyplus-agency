@@ -29,10 +29,10 @@
 <script lang="ts">
 
 import {defineComponent} from 'vue'
-import NavBar from "@/components/NavBar.vue";
-import PiedsPage from "@/components/PiedsPage.vue";
-import ContactVue from "@/components/ContactVue.vue";
-import ReseauSociaux from "@/components/ReseauSociaux.vue";
+import NavBar from "@/components/NavBars/NavBar.vue";
+import PiedsPage from "@/components/Footers/PiedsPage.vue";
+import ContactVue from "@/components/Forms/ContactVue.vue";
+import ReseauSociaux from "@/components/Reseaux/ReseauSociaux.vue";
 
 export default defineComponent({
   name: 'Contact',

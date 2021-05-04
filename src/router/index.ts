@@ -10,6 +10,9 @@ import OffresEntreprises from '@/views/Offres/OffresEntreprises.vue'
 import PageNotFound from '@/views/PageNotFound.vue'
 import Dashboard from '@/views/Admin/Dashboard.vue'
 import Login from '@/views/Login.vue'
+import Client from '@/views/Admin/Client.vue'
+import Calendrier from '@/views/Admin/Calendrier.vue'
+import Projet from '@/views/Admin/Projet.vue'
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -71,6 +74,24 @@ const routes: Array<RouteRecordRaw> = [
         name: 'Dashboard',
         component: Dashboard,
         meta: {title: 'Skyplus | Dashboard', requiresAuth: true}
+    },
+    {
+        path: '/client',
+        name: 'Client',
+        component: Client,
+        meta: {title: 'Skyplus | Client', requiresAuth: true}
+    },
+    {
+        path: '/calendrier',
+        name: 'Calendrier',
+        component: Calendrier,
+        meta: {title: 'Skyplus | Calendrier', requiresAuth: true}
+    },
+    {
+        path: '/projet',
+        name: 'Projet',
+        component: Projet,
+        meta: {title: 'Skyplus | Projet', requiresAuth: true}
     },
     {
         path: '/:pathMatch(.*)*',

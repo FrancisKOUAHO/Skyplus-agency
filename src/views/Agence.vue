@@ -9,9 +9,9 @@
 <script lang="ts">
 
 import {defineComponent} from 'vue'
-import NavBar from "@/components/NavBar.vue";
-import Agence1 from "@/components/Agence.vue"
-import PiedsPage from "@/components/PiedsPage.vue";
+import NavBar from "@/components/NavBars/NavBar.vue";
+import Agence1 from "@/components/Cards/Agence.vue"
+import PiedsPage from "@/components/Footers/PiedsPage.vue";
 
 export default defineComponent({
   name: 'Agence',

@@ -5,35 +5,35 @@
 
       <div
           class="my-2 px-2 w-1/4 overflow-hidden sm:my-2 sm:px-2 sm:w-1/4 md:my-2 md:px-2 md:w-1/4 lg:my-2 lg:px-2 lg:w-1/4 xl:my-2 xl:px-2 xl:w-1/4">
-        <img src="../assets/image/partenaire.png">
+        <img src="../../assets/image/partenaire.png">
       </div>
       <div
           class="my-2 px-2 w-1/4 overflow-hidden sm:my-2 sm:px-2 sm:w-1/4 md:my-2 md:px-2 md:w-1/4 lg:my-2 lg:px-2 lg:w-1/4 xl:my-2 xl:px-2 xl:w-1/4">
-        <img src="../assets/image/partenaire.png">
+        <img src="../../assets/image/partenaire.png">
       </div>
       <div
           class="my-2 px-2 w-1/4 overflow-hidden sm:my-2 sm:px-2 sm:w-1/4 md:my-2 md:px-2 md:w-1/4 lg:my-2 lg:px-2 lg:w-1/4 xl:my-2 xl:px-2 xl:w-1/4">
-        <img src="../assets/image/partenaire.png">
+        <img src="../../assets/image/partenaire.png">
       </div>
       <div
           class="my-2 px-2 w-1/4 overflow-hidden sm:my-2 sm:px-2 sm:w-1/4 md:my-2 md:px-2 md:w-1/4 lg:my-2 lg:px-2 lg:w-1/4 xl:my-2 xl:px-2 xl:w-1/4">
-        <img src="../assets/image/partenaire.png">
+        <img src="../../assets/image/partenaire.png">
       </div>
       <div
           class="my-2 px-2 w-1/4 overflow-hidden sm:my-2 sm:px-2 sm:w-1/4 md:my-2 md:px-2 md:w-1/4 lg:my-2 lg:px-2 lg:w-1/4 xl:my-2 xl:px-2 xl:w-1/4">
-        <img src="../assets/image/partenaire.png">
+        <img src="../../assets/image/partenaire.png">
       </div>
       <div
           class="my-2 px-2 w-1/4 overflow-hidden sm:my-2 sm:px-2 sm:w-1/4 md:my-2 md:px-2 md:w-1/4 lg:my-2 lg:px-2 lg:w-1/4 xl:my-2 xl:px-2 xl:w-1/4">
-        <img src="../assets/image/partenaire.png">
+        <img src="../../assets/image/partenaire.png">
       </div>
       <div
           class="my-2 px-2 w-1/4 overflow-hidden sm:my-2 sm:px-2 sm:w-1/4 md:my-2 md:px-2 md:w-1/4 lg:my-2 lg:px-2 lg:w-1/4 xl:my-2 xl:px-2 xl:w-1/4">
-        <img src="../assets/image/partenaire.png">
+        <img src="../../assets/image/partenaire.png">
       </div>
       <div
           class="my-2 px-2 w-1/4 overflow-hidden sm:my-2 sm:px-2 sm:w-1/4 md:my-2 md:px-2 md:w-1/4 lg:my-2 lg:px-2 lg:w-1/4 xl:my-2 xl:px-2 xl:w-1/4">
-        <img src="../assets/image/partenaire.png">
+        <img src="../../assets/image/partenaire.png">
       </div>
 
     </div>

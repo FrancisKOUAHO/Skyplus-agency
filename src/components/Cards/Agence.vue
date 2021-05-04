@@ -32,7 +32,7 @@
           dignissim quis urna. </h4>
     </div>
     <div class="content3">
-      <img class="agence_image mb-40 fadeInUp" src="../assets/image/agence_image1.png">
+      <img class="agence_image mb-40 fadeInUp" src="../../assets/image/agence_image1.png">
     </div>
   </div>
 </template>

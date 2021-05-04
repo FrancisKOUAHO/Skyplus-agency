@@ -20,7 +20,6 @@
 <script lang="ts">
 
 import {defineComponent} from 'vue'
-import Cercle from "@/components/Cercle.vue";
 
 export default defineComponent({
   name: 'PiedsPage',
@@ -32,7 +31,7 @@ export default defineComponent({
 
 <style scoped>
 footer {
-  background-image: linear-gradient(to right, rgb(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  background-image: linear-gradient(to right, rgb(255, 255, 255), rgba(255, 255, 255, 0));
   position: absolute;
   bottom: 0;
   text-align: left;
@@ -62,9 +61,7 @@ footer {
 #footer ul {
   list-style-type: none;
   margin: 0;
-  padding: 0;
-  padding-right: 0px;
-  padding-right: 2rem;
+  padding: 0 2rem 0 0;
 }
 
 #footer ul {
@@ -121,15 +118,6 @@ p {
   letter-spacing: 1px;
 }
 
-#footer ul li a, #footer ul li span {
-  padding: 0 1rem;
-  line-height: 3rem;
-  display: block;
-  font-weight: 450;
-  color: #fff;
-  font-size: .5rem;
-}
-
 #footer ul li.active::before, #footer ul li.active::after {
   width: 50%;
   opacity: 1;
@@ -168,11 +156,11 @@ p {
 
 #footer ul li a, #footer ul li span {
   padding: 0 1rem;
-  line-height: 3rem;
+  line-height: 1rem;
   display: block;
   font-weight: 450;
   color: #fff;
-  font-size: .5rem;
+  font-size: 0.7rem;
 }
 
 a, a:hover, a:focus, a:active {

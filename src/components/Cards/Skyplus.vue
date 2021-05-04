@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center items-center homeContent">
   <div>
-    <img class="visuel_plus fadeInUp" src="../assets/image/image_plus_home.png">
+    <img class="visuel_plus fadeInUp" src="../../assets/image/image_plus_home.png">
   </div>
   <div class="title_desc">
     <h1 class="text-9xl mt-12 relative fadeInRight" style="text-decoration: none; text-decoration-line: none">SKYPLUS</h1>
@@ -15,7 +15,7 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue'
-import Square from "@/components/square.vue";
+import Square from "@/components/Cards/square.vue";
 
 
 export default defineComponent({

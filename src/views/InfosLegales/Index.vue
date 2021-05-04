@@ -9,10 +9,10 @@
 
 
 import {defineComponent} from 'vue'
-import NavBar from "@/components/NavBar.vue";
-import PiedsPage from "@/components/PiedsPage.vue";
-import Hello from "@/components/Hello.vue";
-import InfoLegal from "@/components/InfoLegal.vue";
+import NavBar from "@/components/NavBars/NavBar.vue";
+import PiedsPage from "@/components/Footers/PiedsPage.vue";
+import Hello from "@/components/Barres/Hello.vue";
+import InfoLegal from "@/components/InfoLegal/InfoLegal.vue";
 
 export default defineComponent({
   name: 'Accueil',

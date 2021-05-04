@@ -11,10 +11,10 @@
 
 
 import {defineComponent} from 'vue'
-import NavBar from "@/components/NavBar.vue";
-import PiedsPage from "@/components/PiedsPage.vue";
-import Skyplus from "@/components/Skyplus.vue";
-import Hello from "@/components/Hello.vue";
+import NavBar from "@/components/NavBars/NavBar.vue";
+import PiedsPage from "@/components/Footers/PiedsPage.vue";
+import Skyplus from "@/components/Cards/Skyplus.vue";
+import Hello from "@/components/Barres/Hello.vue";
 
 export default defineComponent({
   name: 'Accueil',
