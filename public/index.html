@@ -16,6 +16,7 @@
 </noscript>
 <div id="app"></div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
     class VerticalMouseDrivenCarousel {
         constructor(options = {}) {
@@ -147,6 +148,119 @@
     }
 
     new VerticalMouseDrivenCarousel();
+</script>
+<script>
+
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line', // also try bar or other graph types
+
+        // The data for our dataset
+        data: {
+            labels: ["Jun 2016", "Jul 2016", "Aug 2016", "Sep 2016", "Oct 2016", "Nov 2016", "Dec 2016", "Jan 2017", "Feb 2017", "Mar 2017", "Apr 2017", "May 2017"],
+            // Information about the dataset
+            datasets: [{
+                label: "Rainfall",
+                backgroundColor: 'lightblue',
+                borderColor: 'royalblue',
+                data: [26.4, 39.8, 66.8, 66.4, 40.6, 55.2, 77.4, 69.8, 57.8, 76, 110.8, 142.6],
+            }]
+        },
+
+        // Configuration options
+        options: {
+            layout: {
+                padding: 10,
+            },
+            legend: {
+                position: 'bottom',
+            },
+            title: {
+                display: true,
+                text: 'Precipitation in Toronto'
+            },
+            scales: {
+                yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Precipitation in mm'
+                    }
+                }],
+                xAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Month of the Year'
+                    }
+                }]
+            }
+        }
+    });
+
+</script>
+<script>
+    const labels = ['Woche 1', 'Woche 2', 'Woche 3', 'Woche 4', 'Woche 5'];
+    const data = {
+        labels: labels,
+        datasets: [
+            {
+                label: 'Wert 1',
+                data: [10, 20, 15, 25, 20],
+                borderColor: 'red',
+                backgroundColor: 'rgba(red, 0.5)'
+            },
+            {
+                label: 'Wert 2',
+                data: [12, 25, 20, 22, 25],
+                borderColor: 'blue',
+                backgroundColor: 'rgba(blue, 0.5)'
+            },
+            {
+                label: 'Wert 3',
+                data: [15, 18, 21, 24, 22],
+                borderColor: 'green',
+                backgroundColor: 'rgba(green, 0.5)'
+            }
+        ]
+    };
+
+    const plugin = {
+        id: 'custom_canvas_background_color',
+        beforeDraw: (chart) => {
+            const ctx = chart.canvas.getContext('2d');
+            chartWidth = chart.chartArea.right - chart.chartArea.left;
+            chartHeight = chart.chartArea.bottom - chart.chartArea.top;
+
+            ctx.save();
+            ctx.globalCompositeOperation = 'destination-over';
+            ctx.fillStyle = 'rgba(0,255,0, 0.25)';
+            ctx.fillRect(chart.chartArea.left, chart.chartArea.top, chartWidth, chartHeight / 3);
+            ctx.fillStyle = 'rgba(255,255,0, 0.25)';
+            ctx.fillRect(chart.chartArea.left, chart.chartArea.top + chartHeight / 3, chartWidth, chartHeight / 3);
+            ctx.fillStyle = 'rgba(255,0,0, 0.25)';
+            ctx.fillRect(chart.chartArea.left, chart.chartArea.top + chartHeight / 3 * 2, chartWidth, chartHeight / 3);
+            ctx.restore();
+        }
+    };
+
+    var ctx = document.getElementById('myChartTwo').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: data,
+        plugins: [plugin],
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Training XYZ'
+                }
+            }
+        },
+    });
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
         integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
