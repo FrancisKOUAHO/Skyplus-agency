@@ -23,8 +23,9 @@
         </div>
 <!--        <div class="text-red-600 my-2"> data.message</div>-->
         <div class="form-row">
-          <button class="button" type="submit">
-            <span>Connexion</span>
+          <button class="button" type="submit" :disabled="loading">
+            <span v-if="loading">Connexion en cours...</span>
+            <span v-else>Connexion</span>
           </button>
         </div>
       </div>
@@ -42,16 +43,22 @@ export default defineComponent({
   name: "Login",
   data() {
     return {
+      success: false,
+      error: false,
+      loading: false,
       login: {
         email: "",
-        password: ""
+        password: "",
       }
     };
   },
   methods: {
     async loginUser() {
       try {
+        this.loading = true
         let response = await axios.post("https://agencyskyplus.herokuapp.com/user/login", this.login);
+        this.reset();
+        this.success = true;
         let token = response.data.token;
         localStorage.setItem("jwt", token);
         if (token) {
@@ -59,7 +66,15 @@ export default defineComponent({
           await this.$router.push({name: 'Dashboard'});
         }
       } catch (err) {
+        this.error = true;
         swal("Error", "Quelque chose a mal tourné", "error");
+      }
+    },
+    reset(){
+      this.success = false;
+      this.error = false;
+      for(let field in this.login){
+        this.login[field] = null;
       }
     }
   }
