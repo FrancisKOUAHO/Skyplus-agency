@@ -60,7 +60,6 @@ export default defineComponent({
         }
       } catch (err) {
         swal("Error", "Quelque chose a mal tourné", "error");
-        console.log(err.response);
       }
     }
   }

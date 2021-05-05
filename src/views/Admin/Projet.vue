@@ -38,8 +38,8 @@
 
       <div class="w-full overflow-x-hidden border-t flex flex-col">
         <main class="w-full flex-grow p-6">
-          <h1 class="text-3xl text-black pb-6">Tableau de bord des projets
-          </h1>
+          <h1 class="text-3xl text-black pb-6">Tableau de bord des projets</h1>
+          <gantt-projet/>
         </main>
       </div>
     </div>
@@ -50,10 +50,11 @@
 import VueJwtDecode from "vue-jwt-decode";
 import HeaderDashboard from "@/components/ComponentsAdmins/Hearders/HeaderDashboard";
 import DropdownDashboard from "@/components/Dropdown/DropdownDashboard";
+import GanttProjet from "@/components/Chart/GanttProjet";
 
 export default {
   name: "Projet",
-  components: {DropdownDashboard, HeaderDashboard},
+  components: {GanttProjet, DropdownDashboard, HeaderDashboard},
   data() {
     return {
       user: {},

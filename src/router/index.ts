@@ -10,7 +10,8 @@ import OffresEntreprises from '@/views/Offres/OffresEntreprises.vue'
 import PageNotFound from '@/views/PageNotFound.vue'
 import Dashboard from '@/views/Admin/Dashboard.vue'
 import Login from '@/views/Login.vue'
-import Client from '@/views/Admin/Client.vue'
+import Client from '@/views/Admin/Client/Client.vue'
+import editClient from "@/views/Admin/Client/editClient.vue";
 import Calendrier from '@/views/Admin/Calendrier.vue'
 import Projet from '@/views/Admin/Projet.vue'
 
@@ -79,6 +80,12 @@ const routes: Array<RouteRecordRaw> = [
         path: '/client',
         name: 'Client',
         component: Client,
+        meta: {title: 'Skyplus | Client', requiresAuth: true}
+    },
+    {
+        path: '/client/:id',
+        name: 'editClient',
+        component: editClient,
         meta: {title: 'Skyplus | Client', requiresAuth: true}
     },
     {

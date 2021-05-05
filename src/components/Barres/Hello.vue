@@ -6,7 +6,7 @@
       <form class="w-full max-w-lg ml-36" @submit.prevent="sendEmail">
         <div class="flex flex-wrap -mx-3 mb-6">
           <div class="w-full px-3">
-            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
               Votre nom
             </label>
             <input
@@ -17,7 +17,7 @@
         </div>
         <div class="flex flex-wrap -mx-3 mb-6">
           <div class="w-full px-3">
-            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
               mail
             </label>
             <input
@@ -28,7 +28,7 @@
         </div>
         <div class="flex flex-wrap -mx-3 mb-6">
           <div class="w-full px-3">
-            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
               Télephone
             </label>
             <input
@@ -56,7 +56,7 @@
         </div>
         <div class="flex flex-wrap -mx-3 mb-6">
           <div class="w-full px-3">
-            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
               Message
             </label>
             <textarea
@@ -113,7 +113,7 @@ export default defineComponent({
       this.name = ''
       this.email = ''
       this.message = ''
-      this.tel
+      this.tel = ''
     },
   }
 })

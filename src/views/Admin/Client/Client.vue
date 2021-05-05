@@ -36,11 +36,18 @@
         </div>
       </header>
 
-      <div class="w-full overflow-x-hidden border-t flex flex-col">
+      <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
         <main class="w-full flex-grow p-6">
-          <h1 class="text-3xl text-black pb-6">Tableau des Clients</h1>
+          <h1 class="w-full text-3xl text-black pb-6">Tableau des Clients</h1>
           <table-clients/>
-          <register-client/>
+          <div class="flex flex-wrap">
+            <div class="w-full lg:w-1/2 my-6 pr-0 lg:pr-2">
+              <register-client/>
+            </div>
+            <div class="w-full lg:w-1/2 mt-6 pl-0 lg:pl-2">
+
+            </div>
+          </div>
         </main>
       </div>
     </div>
@@ -48,11 +55,12 @@
 </template>
 
 <script>
-import HeaderDashboard from "../../components/ComponentsAdmins/Hearders/HeaderDashboard";
+import HeaderDashboard from "../../../components/ComponentsAdmins/Hearders/HeaderDashboard";
 import VueJwtDecode from "vue-jwt-decode";
 import TableClients from "@/components/ComponentsAdmins/Tables/TableClients";
 import DropdownDashboard from "@/components/Dropdown/DropdownDashboard";
 import RegisterClient from "@/components/Forms/RegisterClient";
+
 export default {
   name: "Client",
   components: {RegisterClient, DropdownDashboard, TableClients, HeaderDashboard},
@@ -61,6 +69,7 @@ export default {
       user: {},
       isOpen1: false,
       isOpen2: true,
+      showModal: false
     };
   },
   methods: {
