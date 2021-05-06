@@ -1,83 +1,38 @@
 <template>
-  <div class="container fadeInBottom">
-    <header class="c-header c-header--archive c-header--project-list">
-      <div class="c-mouse-vertical-carousel js-carousel u-media-wrapper u-media-wrapper--16-9">
-        <ul class="c-mouse-vertical-carousel__list js-carousel-list">
-          <li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="0">
-            <a href="https://auxfinsgastronomes.com/" target="_blank">
-              <p class="c-mouse-vertical-carousel__eyebrow u-b4">
-							<span>
-                        Projet 01
-                    </span> Août 2020
-              </p>
-
-              <p class="c-mouse-vertical-carousel__title u-a5">
-                AUX FINS GASTRONOMES
-              </p>
+  <main class="container fadeInBottom" style="position: relative;left: 5%;margin-top: 26%; z-index: 0.3">
+    <section class="has-dflex-center">
+      <div class="lx-container-80">
+        <div class="lx-row">
+          <div class="lx-card carousel-container">
+            <div class="item fade" v-for="(slider, index) in sliders" :key="index">
+              <div class="image">
+                <img :src="slider.background" :alt="slider.alt"/>
+              </div>
+              <center>
+                <div class="text is-text-left">
+                  <h1 class="title">
+                    {{ slider.name }}</h1>
+                  <p>{{ slider.description }}</p>
+                </div>
+              </center>
+            </div>
+            <a class="prev has-dflex-center">
+              <i class="fas fa-angle-left"></i>
             </a>
-          </li>
-
-          <li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="1">
-            <a href="https://kclm.fr/" target="_blank">
-              <p class="c-mouse-vertical-carousel__eyebrow u-b4">
-							<span>
-                        Projet 02
-                    </span> 2020
-              </p>
-
-              <p class="c-mouse-vertical-carousel__title u-a5">
-                KCLM
-              </p>
+            <a class="next has-dflex-center">
+              <i class="fas fa-angle-right"></i>
             </a>
-          </li>
-
-          <li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="2">
-            <a href="https://www.kouahofrancis.fr/" target="_blank">
-              <p class="c-mouse-vertical-carousel__eyebrow u-b4">
-							<span>
-                        Projet 03
-                    </span> 2020
-              </p>
-
-              <p class="c-mouse-vertical-carousel__title u-a5">
-                PORTFOLIO
-              </p>
-            </a>
-          </li>
-
-          <li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="3">
-            <a href="https://califor.fr/" target="_blank">
-              <p class="c-mouse-vertical-carousel__eyebrow u-b4">
-							<span>
-                        Projet 04
-                    </span> 2021
-              </p>
-
-              <p class="c-mouse-vertical-carousel__title u-a5">
-                Califor
-              </p>
-            </a>
-          </li>
-
-        </ul>
-
-        <i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img"
-           style="background-image: url('https://skyplus.fr/wp-content/uploads/2020/08/kitchen-2851910_1280-e1596840872303.jpg')"></i>
-        <i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img"
-           style="background-image: url('https://skyplus.fr/wp-content/uploads/2021/01/graffiti-832341_1920.jpg')"></i>
-        <i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img"
-           style="background-image: url('https://skyplus.fr/wp-content/uploads/2020/08/scrren_portofolio_nav_2.png')"></i>
-        <i class="c-mouse-vertical-carousel__bg-img js-carousel-bg-img"
-           style="background-image: url('https://skyplus.fr/wp-content/uploads/2021/01/ford-2707122_1920.jpg')"></i>
-        <i class="c-gradient-overlay"></i>
+          </div>
+        </div>
       </div>
-    </header>
-  </div>
+    </section>
+  </main>
 </template>
 
 
 <script lang="ts">
 import {defineComponent} from 'vue'
+import {TweenMax} from "gsap";
 
 
 export default defineComponent({
@@ -87,21 +42,31 @@ export default defineComponent({
       sliders: [
         {
           "name": "Aux fins gastronomes",
-          "background": "@/assets/image/projets/Auxfinsgastronomes.png",
-          "logo": "@assets/logo/logoauxfinsgastronomes.png",
+          "background": "https://skyplus.fr/wp-content/uploads/2020/08/kitchen-2851910_1280-e1596840872303.jpg",
+          "logo": "",
           "description": "Cuisine et pâtisse des recettes d’antan tout comme de nouvelles créations conçues en symbiose avec ses salariés",
+          "alt": " lgo Aux fins gastronomes"
         },
         {
           "name": "Califor",
-          "background": "../assets/image/projets/Califor.png",
+          "background": "https://skyplus.fr/wp-content/uploads/2021/01/ford-2707122_1920.jpg",
           "logo": "",
           "description": "CALIFOR, propose des pièces Unisexes, relax et bien pensées, baignant dans l’esprit Rap, sport et quelques références cinématographiques du milieu des années 90.\n",
+          "alt": " lgo Califor"
         },
         {
           "name": "KCLM",
-          "background": "../assets/image/projets/KCLM.png",
+          "background": "https://skyplus.fr/wp-content/uploads/2021/01/graffiti-832341_1920.jpg",
           "logo": "",
           "description": "Autorise-toi à avoir de Grands Rêves, avec un grand “G” et un grand “R”, c’est la devise de KCLM, une marque qui travaille avec de nombreux artistes connus comme inconnus.",
+          "alt": " lgo KCLM"
+        },
+        {
+          "name": "Francis KOUHO",
+          "background": "https://skyplus.fr/wp-content/uploads/2020/08/scrren_portofolio_nav_2.png",
+          "logo": "",
+          "description": "e pense que le design est comme une “baguette magique”. Si les services et les produits sont magiques pour résoudre les problèmes, le rôle du design est de devenir un support permettant aux utilisateurs de les maîtriser.",
+          "alt": " lgo Francis KOUHO"
         },
       ]
     }
@@ -110,128 +75,122 @@ export default defineComponent({
 </script>
 
 <style scoped>
-* {
-  margin: 0;
-  padding: 0;
+html,
+body {
+  font-family: "Roboto", sans-serif;
 }
 
-.container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: stretch;
+main section {
+  width: 100%;
   min-height: 100vh;
+  padding: 4rem 0;
+}
+
+main section .carousel-container {
   width: 100%;
-  max-width: 900px;
-  margin: 0em auto -10em auto;
-  -webkit-animation-duration: 2s;
-  animation-duration: 1.5s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  animation-delay: 2.5s;
-  padding: 35em 0 20em 0;
-}
-
-.c-header {
-  display: block;
-  width: 100%;
-}
-
-.u-a5 {
-  font-family: Arial, sans-serif;
-  font-size: 37px;
-  line-height: 35px;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  font-weight: 700;
-  text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
-  color: #fff;
-}
-
-.u-b4 {
-  font-family: Arial, sans-serif;
-  font-size: 12px;
-  line-height: 17px;
-  letter-spacing: 0;
-  font-weight: normal;
-  color: #fff;
-}
-
-a {
-  text-decoration: none;
-}
-
-.u-media-wrapper {
-  position: relative;
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  height: 0;
-}
-
-.u-media-wrapper.u-media-wrapper--16-9 {
-  padding-bottom: 56.25%;
-}
-
-.c-gradient-overlay {
-  position: absolute;
-  display: block;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(circle at 49% 50%, rgba(2, 21, 25, 0.3), rgba(2, 21, 25, 0.6));
-}
-
-.c-mouse-vertical-carousel {
+  height: 40rem;
+  padding: 0;
   position: relative;
   overflow: hidden;
+  border-radius: 0.375rem;
 }
 
-.c-mouse-vertical-carousel__list {
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  z-index: 1;
-}
-
-.c-mouse-vertical-carousel__list-item a {
-  display: block;
-  padding-bottom: 25px;
-  padding-top: 25px;
-  padding-left: 54.1666666667%;
-}
-
-.c-mouse-vertical-carousel__eyebrow {
-  position: relative;
-  padding-bottom: 12px;
-}
-
-.c-mouse-vertical-carousel__eyebrow span {
-  position: absolute;
-  left: -70px;
-  top: 0;
-}
-
-.c-mouse-vertical-carousel__title {
-  max-width: 450px;
-}
-
-.c-mouse-vertical-carousel__bg-img {
-  position: absolute;
-  top: 0;
-  left: 0;
+main section .carousel-container .item {
   width: 100%;
   height: 100%;
-  background-size: cover;
-  background-position: center;
-  will-change: transform;
+  position: relative;
+  display: none;
+  animation: fade 0.3s ease-in-out;
 }
 
-/* ANIMATION */
+main section .carousel-container .item .numbertext {
+  padding: 0.5rem 0.75rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border-radius: 0.9375rem;
+  font-size: 0.875rem;
+  color: #f2f2f2;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+main section .carousel-container .item .image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+main section .carousel-container .item .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+main section .carousel-container .item .text {
+  width: 100%;
+  padding: 0.625rem 0.9375rem;
+  position: absolute;
+  bottom: 0;
+  font-size: 0.9rem;
+  color: #f2f2f2;
+  background-image: linear-gradient(to left bottom, #9f92d1, #9f92d1, #9f92d1, #9f92d1);
+}
+
+main section .carousel-container .item .text .title {
+  margin: 0.5rem 0 0 0;
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+main section .carousel-container .prev,
+main section .carousel-container .next {
+  width: 2rem;
+  height: 2rem;
+  padding: 0.3125rem;
+  position: absolute;
+  top: calc(50% - 1rem);
+  user-select: none;
+  font-size: 1rem;
+  color: #f2f2f2;
+  border-radius: 50%;
+  transition: 0.6s ease;
+}
+
+main section .carousel-container .prev:focus, main section .carousel-container .prev:hover,
+main section .carousel-container .next:focus,
+main section .carousel-container .next:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+main section .carousel-container .prev {
+  left: 0.8rem;
+}
+
+main section .carousel-container .next {
+  right: 0.8rem;
+}
+
+main section .carousel-container .dots {
+  padding: 0.9375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main section .carousel-container .dots .dot {
+  width: 0.625rem;
+  height: 0.625rem;
+  margin: 0 0.125rem;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #bbb;
+  transition: background-color 0.6s ease;
+}
+
+main section .carousel-container .dots .dot:focus, main section .carousel-container .dots .dot:hover {
+  background-color: #717171;
+}
 
 @-webkit-keyframes fadeInBottom {
   0% {

@@ -6,6 +6,215 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/font-awesome.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
+            integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+            integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".carousel-container").forEach((carousel) => {
+                insertNumbers(carousel);
+
+                carousel.querySelector(".prev").addEventListener("click", (e) => {
+                    minusItem(carousel);
+                });
+
+                carousel.querySelector(".next").addEventListener("click", () => {
+                    plusItem(carousel);
+                });
+
+                insertDots(carousel);
+
+                carousel.querySelectorAll(".dot").forEach((dot) => {
+                    dot.addEventListener("click", (e) => {
+                        let item = Array.prototype.indexOf.call(
+                            e.target.parentNode.children,
+                            e.target
+                        );
+
+                        showItems(carousel, item);
+                    });
+                });
+
+                showItems(carousel, 0);
+            });
+        });
+
+        function insertNumbers(carousel) {
+            const length = carousel.querySelectorAll(".item").length;
+            for (let i = 0; i < length; i++) {
+                const nmbr = document.createElement("div");
+                nmbr.classList.add("numbertext");
+                nmbr.innerText = i + 1 + " / " + length;
+
+                carousel.querySelectorAll(".item")[i].append(nmbr);
+            }
+        }
+
+        function insertDots(carousel) {
+            const dots = document.createElement("div");
+            dots.classList.add("dots");
+
+            carousel.append(dots);
+
+            carousel.querySelectorAll(".item").forEach((elem) => {
+                const dot = document.createElement("div");
+                dot.classList.add("dot");
+
+                carousel.querySelector(".dots").append(dot);
+            });
+        }
+
+        function plusItem(carousel) {
+            let item = currentItem(carousel);
+
+            carousel
+                .querySelectorAll(".item")
+                [item].nextElementSibling.classList.contains("item")
+                ? showItems(carousel, item + 1)
+                : showItems(carousel, 0);
+        }
+
+        function minusItem(carousel) {
+            let item = currentItem(carousel);
+
+            carousel.querySelectorAll(".item")[item].previousElementSibling != null
+                ? showItems(carousel, item - 1)
+                : showItems(carousel, carousel.querySelectorAll(".item").length - 1);
+        }
+
+        function currentItem(carousel) {
+            return [...carousel.querySelectorAll(".item")].findIndex(
+                (item) => item.style.display == "block"
+            );
+        }
+
+        function showItems(carousel, item) {
+            if (carousel.querySelectorAll(".item")[currentItem(carousel)] != undefined)
+                carousel.querySelectorAll(".item")[currentItem(carousel)].style.display =
+                    "none";
+            carousel.querySelectorAll(".item")[item].style.display = "block";
+
+            if (carousel.querySelector(".dot.active") != null)
+                carousel.querySelector(".dot.active").classList.remove("active");
+            carousel.querySelectorAll(".dot")[item].classList.add("active");
+        }
+
+    </script>
+    <script>
+
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'line', // also try bar or other graph types
+
+            // The data for our dataset
+            data: {
+                labels: ["Jun 2016", "Jul 2016", "Aug 2016", "Sep 2016", "Oct 2016", "Nov 2016", "Dec 2016", "Jan 2017", "Feb 2017", "Mar 2017", "Apr 2017", "May 2017"],
+                // Information about the dataset
+                datasets: [{
+                    label: "Rainfall",
+                    backgroundColor: 'lightblue',
+                    borderColor: 'royalblue',
+                    data: [26.4, 39.8, 66.8, 66.4, 40.6, 55.2, 77.4, 69.8, 57.8, 76, 110.8, 142.6],
+                }]
+            },
+
+            // Configuration options
+            options: {
+                layout: {
+                    padding: 10,
+                },
+                legend: {
+                    position: 'bottom',
+                },
+                title: {
+                    display: true,
+                    text: 'Precipitation in Toronto'
+                },
+                scales: {
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Precipitation in mm'
+                        }
+                    }],
+                    xAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Month of the Year'
+                        }
+                    }]
+                }
+            }
+        });
+
+    </script>
+    <script>
+        const labels = ['Woche 1', 'Woche 2', 'Woche 3', 'Woche 4', 'Woche 5'];
+        const data = {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Wert 1',
+                    data: [10, 20, 15, 25, 20],
+                    borderColor: 'red',
+                    backgroundColor: 'rgba(red, 0.5)'
+                },
+                {
+                    label: 'Wert 2',
+                    data: [12, 25, 20, 22, 25],
+                    borderColor: 'blue',
+                    backgroundColor: 'rgba(blue, 0.5)'
+                },
+                {
+                    label: 'Wert 3',
+                    data: [15, 18, 21, 24, 22],
+                    borderColor: 'green',
+                    backgroundColor: 'rgba(green, 0.5)'
+                }
+            ]
+        };
+
+        const plugin = {
+            id: 'custom_canvas_background_color',
+            beforeDraw: (chart) => {
+                const ctx = chart.canvas.getContext('2d');
+                chartWidth = chart.chartArea.right - chart.chartArea.left;
+                chartHeight = chart.chartArea.bottom - chart.chartArea.top;
+
+                ctx.save();
+                ctx.globalCompositeOperation = 'destination-over';
+                ctx.fillStyle = 'rgba(0,255,0, 0.25)';
+                ctx.fillRect(chart.chartArea.left, chart.chartArea.top, chartWidth, chartHeight / 3);
+                ctx.fillStyle = 'rgba(255,255,0, 0.25)';
+                ctx.fillRect(chart.chartArea.left, chart.chartArea.top + chartHeight / 3, chartWidth, chartHeight / 3);
+                ctx.fillStyle = 'rgba(255,0,0, 0.25)';
+                ctx.fillRect(chart.chartArea.left, chart.chartArea.top + chartHeight / 3 * 2, chartWidth, chartHeight / 3);
+                ctx.restore();
+            }
+        };
+
+        var ctx = document.getElementById('myChartTwo').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: data,
+            plugins: [plugin],
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Training XYZ'
+                    }
+                }
+            },
+        });
+    </script>
     <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
@@ -15,254 +224,4 @@
 </noscript>
 <div id="app"></div>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-    class VerticalMouseDrivenCarousel {
-        constructor(options = {}) {
-            const _defaults = {
-                carousel: ".js-carousel",
-                bgImg: ".js-carousel-bg-img",
-                list: ".js-carousel-list",
-                listItem: ".js-carousel-list-item"
-            };
-
-            this.posY = 0;
-
-            this.defaults = Object.assign({}, _defaults, options);
-
-            this.initCursor();
-            this.init();
-            this.bgImgController();
-        }
-
-        //region getters
-        getBgImgs() {
-            return document.querySelectorAll(this.defaults.bgImg);
-        }
-
-        getListItems() {
-            return document.querySelectorAll(this.defaults.listItem);
-        }
-
-        getList() {
-            return document.querySelector(this.defaults.list);
-        }
-
-        getCarousel() {
-            return document.querySelector(this.defaults.carousel);
-        }
-
-        init() {
-            TweenMax.set(this.getBgImgs(), {
-                autoAlpha: 0,
-                scale: 1.05
-            });
-
-            TweenMax.set(this.getBgImgs()[0], {
-                autoAlpha: 1,
-                scale: 1
-            });
-
-            this.listItems = this.getListItems().length - 1;
-
-            this.listOpacityController(0);
-        }
-
-        initCursor() {
-            const listHeight = this.getList().clientHeight;
-            const carouselHeight = this.getCarousel().clientHeight;
-
-            this.getCarousel().addEventListener(
-                "mousemove",
-                event => {
-                    this.posY = event.pageY - this.getCarousel().offsetTop;
-                    let offset = -this.posY / carouselHeight * listHeight;
-
-                    TweenMax.to(this.getList(), 0.3, {
-                        y: offset,
-                        ease: Power4.easeOut
-                    });
-                },
-                false
-            );
-        }
-
-        bgImgController() {
-            for (const link of this.getListItems()) {
-                link.addEventListener("mouseenter", ev => {
-                    let currentId = ev.currentTarget.dataset.itemId;
-
-                    this.listOpacityController(currentId);
-
-                    TweenMax.to(ev.currentTarget, 0.3, {
-                        autoAlpha: 1
-                    });
-
-                    TweenMax.to(".is-visible", 0.2, {
-                        autoAlpha: 0,
-                        scale: 1.05
-                    });
-
-                    if (!this.getBgImgs()[currentId].classList.contains("is-visible")) {
-                        this.getBgImgs()[currentId].classList.add("is-visible");
-                    }
-
-                    TweenMax.to(this.getBgImgs()[currentId], 0.6, {
-                        autoAlpha: 1,
-                        scale: 1
-                    });
-                });
-            }
-        }
-
-        listOpacityController(id) {
-            id = parseInt(id);
-            let aboveCurrent = this.listItems - id;
-            let belowCurrent = parseInt(id);
-
-            if (aboveCurrent > 0) {
-                for (let i = 1; i <= aboveCurrent; i++) {
-                    let opacity = 0.5 / i;
-                    let offset = 5 * i;
-                    TweenMax.to(this.getListItems()[id + i], 0.5, {
-                        autoAlpha: opacity,
-                        x: offset,
-                        ease: Power3.easeOut
-                    });
-                }
-            }
-
-            if (belowCurrent > 0) {
-                for (let i = 0; i <= belowCurrent; i++) {
-                    let opacity = 0.5 / i;
-                    let offset = 5 * i;
-                    TweenMax.to(this.getListItems()[id - i], 0.5, {
-                        autoAlpha: opacity,
-                        x: offset,
-                        ease: Power3.easeOut
-                    });
-                }
-            }
-        }
-    }
-
-    new VerticalMouseDrivenCarousel();
-</script>
-<script>
-
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var chart = new Chart(ctx, {
-        // The type of chart we want to create
-        type: 'line', // also try bar or other graph types
-
-        // The data for our dataset
-        data: {
-            labels: ["Jun 2016", "Jul 2016", "Aug 2016", "Sep 2016", "Oct 2016", "Nov 2016", "Dec 2016", "Jan 2017", "Feb 2017", "Mar 2017", "Apr 2017", "May 2017"],
-            // Information about the dataset
-            datasets: [{
-                label: "Rainfall",
-                backgroundColor: 'lightblue',
-                borderColor: 'royalblue',
-                data: [26.4, 39.8, 66.8, 66.4, 40.6, 55.2, 77.4, 69.8, 57.8, 76, 110.8, 142.6],
-            }]
-        },
-
-        // Configuration options
-        options: {
-            layout: {
-                padding: 10,
-            },
-            legend: {
-                position: 'bottom',
-            },
-            title: {
-                display: true,
-                text: 'Precipitation in Toronto'
-            },
-            scales: {
-                yAxes: [{
-                    scaleLabel: {
-                        display: true,
-                        labelString: 'Precipitation in mm'
-                    }
-                }],
-                xAxes: [{
-                    scaleLabel: {
-                        display: true,
-                        labelString: 'Month of the Year'
-                    }
-                }]
-            }
-        }
-    });
-
-</script>
-<script>
-    const labels = ['Woche 1', 'Woche 2', 'Woche 3', 'Woche 4', 'Woche 5'];
-    const data = {
-        labels: labels,
-        datasets: [
-            {
-                label: 'Wert 1',
-                data: [10, 20, 15, 25, 20],
-                borderColor: 'red',
-                backgroundColor: 'rgba(red, 0.5)'
-            },
-            {
-                label: 'Wert 2',
-                data: [12, 25, 20, 22, 25],
-                borderColor: 'blue',
-                backgroundColor: 'rgba(blue, 0.5)'
-            },
-            {
-                label: 'Wert 3',
-                data: [15, 18, 21, 24, 22],
-                borderColor: 'green',
-                backgroundColor: 'rgba(green, 0.5)'
-            }
-        ]
-    };
-
-    const plugin = {
-        id: 'custom_canvas_background_color',
-        beforeDraw: (chart) => {
-            const ctx = chart.canvas.getContext('2d');
-            chartWidth = chart.chartArea.right - chart.chartArea.left;
-            chartHeight = chart.chartArea.bottom - chart.chartArea.top;
-
-            ctx.save();
-            ctx.globalCompositeOperation = 'destination-over';
-            ctx.fillStyle = 'rgba(0,255,0, 0.25)';
-            ctx.fillRect(chart.chartArea.left, chart.chartArea.top, chartWidth, chartHeight / 3);
-            ctx.fillStyle = 'rgba(255,255,0, 0.25)';
-            ctx.fillRect(chart.chartArea.left, chart.chartArea.top + chartHeight / 3, chartWidth, chartHeight / 3);
-            ctx.fillStyle = 'rgba(255,0,0, 0.25)';
-            ctx.fillRect(chart.chartArea.left, chart.chartArea.top + chartHeight / 3 * 2, chartWidth, chartHeight / 3);
-            ctx.restore();
-        }
-    };
-
-    var ctx = document.getElementById('myChartTwo').getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: data,
-        plugins: [plugin],
-        options: {
-            responsive: true,
-            plugins: {
-                legend: {
-                    position: 'top',
-                },
-                title: {
-                    display: true,
-                    text: 'Training XYZ'
-                }
-            }
-        },
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
-        integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
-        integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
 </html>
