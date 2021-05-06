@@ -6,7 +6,7 @@
           <div class="lx-card carousel-container">
             <div class="item fade" v-for="(slider, index) in sliders" :key="index">
               <div class="image">
-                <img :src="slider.background" :alt="slider.alt"/>
+                <img :src="slider.src" :alt="slider.alt"/>
               </div>
               <center>
                 <div class="text is-text-left">
@@ -40,32 +40,32 @@ export default defineComponent({
     return {
       sliders: [
         {
-          "name": "Aux fins gastronomes",
-          "background": "https://skyplus.fr/wp-content/uploads/2020/08/kitchen-2851910_1280-e1596840872303.jpg",
-          "logo": "",
-          "description": "Cuisine et pâtisse des recettes d’antan tout comme de nouvelles créations conçues en symbiose avec ses salariés",
-          "alt": " lgo Aux fins gastronomes"
+          name: "Aux fins gastronomes",
+          src: require('@/assets/image/site_gallery/auxfinsgastronomes.jpg'),
+          logo: "",
+          description: "Cuisine et pâtisse des recettes d’antan tout comme de nouvelles créations conçues en symbiose avec ses salariés",
+          alt: " lgo Aux fins gastronomes"
         },
         {
-          "name": "Califor",
-          "background": "https://skyplus.fr/wp-content/uploads/2021/01/ford-2707122_1920.jpg",
-          "logo": "",
-          "description": "CALIFOR, propose des pièces Unisexes, relax et bien pensées, baignant dans l’esprit Rap, sport et quelques références cinématographiques du milieu des années 90.\n",
-          "alt": " lgo Califor"
+          name: "Califor",
+          src: require('@/assets/image/site_gallery/ford-2707122_1920.jpg'),
+          logo: "",
+          description: "CALIFOR, propose des pièces Unisexes, relax et bien pensées, baignant dans l’esprit Rap, sport et quelques références cinématographiques du milieu des années 90.\n",
+          alt: " logo Califor"
         },
         {
-          "name": "KCLM",
-          "background": "https://skyplus.fr/wp-content/uploads/2021/01/graffiti-832341_1920.jpg",
-          "logo": "",
-          "description": "Autorise-toi à avoir de Grands Rêves, avec un grand “G” et un grand “R”, c’est la devise de KCLM, une marque qui travaille avec de nombreux artistes connus comme inconnus.",
-          "alt": " lgo KCLM"
+          name: "KCLM",
+          src: require('@/assets/image/site_gallery/graffiti-832341_1920.jpg'),
+          logo: "",
+          description: "Autorise-toi à avoir de Grands Rêves, avec un grand “G” et un grand “R”, c’est la devise de KCLM, une marque qui travaille avec de nombreux artistes connus comme inconnus.",
+          alt: " logo KCLM"
         },
         {
-          "name": "Francis KOUHO",
-          "background": "https://skyplus.fr/wp-content/uploads/2020/08/scrren_portofolio_nav_2.png",
-          "logo": "",
-          "description": "e pense que le design est comme une “baguette magique”. Si les services et les produits sont magiques pour résoudre les problèmes, le rôle du design est de devenir un support permettant aux utilisateurs de les maîtriser.",
-          "alt": " lgo Francis KOUHO"
+          name: "Francis KOUHO",
+          src: require('@/assets/image/site_gallery/scrren_portofolio_nav_2.png'),
+          logo: "",
+          description: "e pense que le design est comme une “baguette magique”. Si les services et les produits sont magiques pour résoudre les problèmes, le rôle du design est de devenir un support permettant aux utilisateurs de les maîtriser.",
+          alt: " logo Francis KOUHO"
         },
       ]
     }
