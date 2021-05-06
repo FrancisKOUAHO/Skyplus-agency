@@ -48,7 +48,6 @@
                   <i class="fas fa-plus mr-3"></i> Rapports mensuels
                 </p>
                 <div class="p-6 bg-white">
-                  <start-at-zero/>
                 </div>
               </div>
               <div class="w-full lg:w-1/2 pl-0 lg:pl-2 mt-12 lg:mt-0">
@@ -56,7 +55,6 @@
                   <i class="fas fa-check mr-3"></i> Rapports résolus
                 </p>
                 <div class="p-6 bg-white">
-                  <start-at-two/>
                 </div>
               </div>
             </div>
@@ -104,17 +102,14 @@
 <script>
 import {defineComponent} from 'vue'
 import VueJwtDecode from "vue-jwt-decode";
-import 'alpinejs'
 import HeaderDashboard from "@/components/ComponentsAdmins/Hearders/HeaderDashboard";
 import DropdownDashboard from "@/components/Dropdown/DropdownDashboard";
 import axios from "axios";
-import StartAtZero from "@/components/Chart/StartAtZero";
-import StartAtTwo from "@/components/Chart/StartAtTwo";
 
 export default defineComponent({
   name: "Dashboard",
 
-  components: {StartAtTwo, StartAtZero, DropdownDashboard, HeaderDashboard},
+  components: {DropdownDashboard, HeaderDashboard},
   data() {
     return {
       user: {},

@@ -32,7 +32,6 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue'
-import {TweenMax} from "gsap";
 
 
 export default defineComponent({
