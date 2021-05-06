@@ -8,7 +8,9 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@splidejs/vue-splide": "^0.3.5",
     "alpinejs": "^2.8.2",
+    "autoprefixer": "^10.2.5",
     "axios": "^0.21.1",
     "canvas": "^2.7.0",
     "chart.js": "^3.2.1",
@@ -18,10 +20,12 @@
     "express": "^4.17.1",
     "gsap": "^3.6.1",
     "moment": "^2.29.1",
+    "postcss": "^8.2.14",
     "pusher-js": "^7.0.3",
     "register-service-worker": "^1.7.1",
     "request": "^2.88.2",
     "sweetalert": "^2.1.2",
+    "tailwindcss": "^2.1.2",
     "v-calendar": "^2.3.0",
     "vanilla-tilt": "^1.7.0",
     "vue": "^3.0.0",
