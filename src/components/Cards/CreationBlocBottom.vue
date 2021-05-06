@@ -4,38 +4,10 @@
     <div class="flex flex-wrap -mx-2 overflow-hidden sm:-mx-2 md:-mx-2 lg:-mx-2 xl:-mx-2 mt-4">
 
       <div
+          v-for="(logo, index) in logos" :key="index"
           class="my-2 px-2 w-1/4 overflow-hidden sm:my-2 sm:px-2 sm:w-1/4 md:my-2 md:px-2 md:w-1/4 lg:my-2 lg:px-2 lg:w-1/4 xl:my-2 xl:px-2 xl:w-1/4">
-        <img src="../../assets/image/partenaire.png">
+        <img v-bind:src="logo.src" :alt="logo.alt" width="50">
       </div>
-      <div
-          class="my-2 px-2 w-1/4 overflow-hidden sm:my-2 sm:px-2 sm:w-1/4 md:my-2 md:px-2 md:w-1/4 lg:my-2 lg:px-2 lg:w-1/4 xl:my-2 xl:px-2 xl:w-1/4">
-        <img src="../../assets/image/partenaire.png">
-      </div>
-      <div
-          class="my-2 px-2 w-1/4 overflow-hidden sm:my-2 sm:px-2 sm:w-1/4 md:my-2 md:px-2 md:w-1/4 lg:my-2 lg:px-2 lg:w-1/4 xl:my-2 xl:px-2 xl:w-1/4">
-        <img src="../../assets/image/partenaire.png">
-      </div>
-      <div
-          class="my-2 px-2 w-1/4 overflow-hidden sm:my-2 sm:px-2 sm:w-1/4 md:my-2 md:px-2 md:w-1/4 lg:my-2 lg:px-2 lg:w-1/4 xl:my-2 xl:px-2 xl:w-1/4">
-        <img src="../../assets/image/partenaire.png">
-      </div>
-      <div
-          class="my-2 px-2 w-1/4 overflow-hidden sm:my-2 sm:px-2 sm:w-1/4 md:my-2 md:px-2 md:w-1/4 lg:my-2 lg:px-2 lg:w-1/4 xl:my-2 xl:px-2 xl:w-1/4">
-        <img src="../../assets/image/partenaire.png">
-      </div>
-      <div
-          class="my-2 px-2 w-1/4 overflow-hidden sm:my-2 sm:px-2 sm:w-1/4 md:my-2 md:px-2 md:w-1/4 lg:my-2 lg:px-2 lg:w-1/4 xl:my-2 xl:px-2 xl:w-1/4">
-        <img src="../../assets/image/partenaire.png">
-      </div>
-      <div
-          class="my-2 px-2 w-1/4 overflow-hidden sm:my-2 sm:px-2 sm:w-1/4 md:my-2 md:px-2 md:w-1/4 lg:my-2 lg:px-2 lg:w-1/4 xl:my-2 xl:px-2 xl:w-1/4">
-        <img src="../../assets/image/partenaire.png">
-      </div>
-      <div
-          class="my-2 px-2 w-1/4 overflow-hidden sm:my-2 sm:px-2 sm:w-1/4 md:my-2 md:px-2 md:w-1/4 lg:my-2 lg:px-2 lg:w-1/4 xl:my-2 xl:px-2 xl:w-1/4">
-        <img src="../../assets/image/partenaire.png">
-      </div>
-
     </div>
   </div>
 </template>
@@ -48,7 +20,22 @@ import {defineComponent} from 'vue'
 export default defineComponent({
   name: 'CreationBlocBottom',
   data() {
-    return {}
+    return {
+      logos: [
+        {
+          src: require('@/assets/image/site_gallery/logo/logo_francis_2.png'),
+          alt: "logo Francis KOUAHO"
+        },
+        {
+          src: require('@/assets/image/site_gallery/logo/logoauxfinsgastronomes.png'),
+          alt: "logo aux fins gastronomes"
+        },
+        {
+          src: require('@/assets/image/site_gallery/logo/logocalifor.png'),
+          alt: "logo califor"
+        }
+      ]
+    }
   }
 })
 </script>
