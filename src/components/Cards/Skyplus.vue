@@ -30,8 +30,8 @@ export default defineComponent({
 <style scoped>
 img {
   width: 27em;
-  -webkit-animation-duration: 3s;
-  animation-duration: 3s;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
@@ -80,27 +80,28 @@ img {
 @-webkit-keyframes fadeInRight {
   0% {
     opacity: 0;
-    position: relative;
-    left: 100px;
+    /* position: absolute; */
+    margin-right: -100px;
   }
   100% {
     opacity: 1;
-    position: relative;
-    left: 0px;
-    transform: translateX(0px);
+    /* position: absolute; */
+    margin-right: 0;
+    /* transform: translateY(-100px); */
   }
 }
 
 @keyframes fadeInRight {
   0% {
     opacity: 0;
-    position: relative;
-    left: 100px;
+    /* position: absolute; */
+    margin-right: -100px;
   }
   100% {
     opacity: 1;
-
-    transform: translateX(0px);
+    /* position: absolute; */
+    margin-right: 0;
+    /* transform: translateY(-100px); */
   }
 }
 
@@ -116,21 +117,21 @@ img {
 h1{
   right: 2em;
   font-family: Raleway-Bold;
-  -webkit-animation-duration: 3s;
-  animation-duration: 3s;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  animation-delay: 2s;
+  animation-delay: 1s;
 }
 
 h3 {
   font-family: Raleway-Thin;
   top: 1.7rem;
-  -webkit-animation-duration: 3s;
-  animation-duration: 3s;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  animation-delay: 4s;
+  animation-delay: 2s;
 }
 
 

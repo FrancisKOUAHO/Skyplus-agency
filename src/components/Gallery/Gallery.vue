@@ -1,25 +1,38 @@
 <template>
-  <main class="container fadeInBottom" style="position: relative;left: 5%;margin-top: 26%; z-index: 0.3">
+  <main class="fadeInBottom flex justify-center mt-96 mb-40">
     <section class="has-dflex-center">
       <div class="lx-container-80">
         <div class="lx-row">
           <div class="lx-card carousel-container">
-            <div class="item fade" v-for="(slider, index) in sliders" :key="index">
-              <div class="image">
-                <img :src="slider.src" :alt="slider.alt"/>
-              </div>
-              <center>
-                <div class="text is-text-left">
-                  <h1 class="title">
+            <div class="item fadeIn" v-for="(slider, index) in sliders" :key="index">
+              <div class="image flex justify-center items-center">
+                <img class="filter" :src="slider.src" :alt="slider.alt"/>
+                <div class="imageFilter"></div>
+                <h1 class="title absolute w-full text-center fadeInBottom">
                     {{ slider.name }}</h1>
-                  <p>{{ slider.description }}</p>
+              </div>
+
+              <div class="flex flex-wrap mt-6 sliderContent">
+
+                <div class="containerDescription overflow-hidden">
+                  <p class="sliderDescription fadeInBottom">{{ slider.description }}</p>
+                  <a v-bind:href="slider.link" target="_blank" class="linkSite fadeInRight mt-9 ml-60">Consulter {{slider.name}}</a>
                 </div>
-              </center>
+
+
+                <div class="containerLogo">
+                  <div class="containerImg fadeInRight">
+                    <img class="logoEnseigne" :src="slider.logo" :alt="'Logo ' + slider.name"/>
+                  </div>  
+                </div>
+
+
+              </div>
             </div>
-            <a class="prev has-dflex-center">
+            <a class="prev has-dflex-center -ml-20">
               <i class="fas fa-angle-left"></i>
             </a>
-            <a class="next has-dflex-center">
+            <a class="next has-dflex-center -mr-20">
               <i class="fas fa-angle-right"></i>
             </a>
           </div>
@@ -42,30 +55,30 @@ export default defineComponent({
         {
           name: "Aux fins gastronomes",
           src: require('@/assets/image/site_gallery/auxfinsgastronomes.jpg'),
-          logo: "",
+          logo: require("@/assets/image/site_gallery/logo/logoauxfinsgastronomes.png"),
           description: "Cuisine et pâtisse des recettes d’antan tout comme de nouvelles créations conçues en symbiose avec ses salariés",
-          alt: " lgo Aux fins gastronomes"
+          link : "https://traiteur-cheron.com/"
         },
         {
           name: "Califor",
           src: require('@/assets/image/site_gallery/ford-2707122_1920.jpg'),
-          logo: "",
+          logo: require("@/assets/image/site_gallery/logo/logocalifor.png"),
           description: "CALIFOR, propose des pièces Unisexes, relax et bien pensées, baignant dans l’esprit Rap, sport et quelques références cinématographiques du milieu des années 90.\n",
-          alt: " logo Califor"
+          link : "https://califor.fr/"
         },
         {
           name: "KCLM",
           src: require('@/assets/image/site_gallery/graffiti-832341_1920.jpg'),
-          logo: "",
+          logo: require("@/assets/image/site_gallery/logo/logokclm.png"),
           description: "Autorise-toi à avoir de Grands Rêves, avec un grand “G” et un grand “R”, c’est la devise de KCLM, une marque qui travaille avec de nombreux artistes connus comme inconnus.",
-          alt: " logo KCLM"
+          link : "https://kclm.fr/"
         },
         {
-          name: "Francis KOUHO",
+          name: "Portfolio",
           src: require('@/assets/image/site_gallery/scrren_portofolio_nav_2.png'),
-          logo: "",
-          description: "e pense que le design est comme une “baguette magique”. Si les services et les produits sont magiques pour résoudre les problèmes, le rôle du design est de devenir un support permettant aux utilisateurs de les maîtriser.",
-          alt: " logo Francis KOUHO"
+          logo: require("@/assets/image/site_gallery/logo/logo_francis_2.png"),
+          description: "Je pense que le design est comme une “baguette magique”. Si les services et les produits sont magiques pour résoudre les problèmes, le rôle du design est de devenir un support permettant aux utilisateurs de les maîtriser.",
+          link : "https://www.kouahofrancis.fr/"
         },
       ]
     }
@@ -74,14 +87,20 @@ export default defineComponent({
 </script>
 
 <style scoped>
-html,
-body {
-  font-family: "Roboto", sans-serif;
+
+h1{
+  font-family: Raleway-Bold,serif;
+  color: #fffefe;
+  font-size: 5.5rem;
+  line-height: 1em;
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-delay: 0.5s;
 }
 
 main section {
-  width: 100%;
-  min-height: 100vh;
   padding: 4rem 0;
 }
 
@@ -90,7 +109,7 @@ main section .carousel-container {
   height: 40rem;
   padding: 0;
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
   border-radius: 0.375rem;
 }
 
@@ -99,7 +118,10 @@ main section .carousel-container .item {
   height: 100%;
   position: relative;
   display: none;
-  animation: fade 0.3s ease-in-out;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
 
 main section .carousel-container .item .numbertext {
@@ -120,19 +142,77 @@ main section .carousel-container .item .image {
 }
 
 main section .carousel-container .item .image img {
-  width: 100%;
+  width: 900px;
   height: 100%;
   object-fit: cover;
+  filter: brightness(50%);
 }
 
-main section .carousel-container .item .text {
+.imageFilter{
+  background: #d16ba55e;
   width: 100%;
-  padding: 0.625rem 0.9375rem;
+  height: 100%;
   position: absolute;
-  bottom: 0;
-  font-size: 0.9rem;
+}
+
+.sliderContent{
+  max-width: 70em;
+}
+
+.containerDescription{
+  width: 70%;
+}
+
+.containerLogo{
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerImg{
+  width: 12em;
+  background: white;
+  height: 12em;
+  padding: 0.8em;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: -5em;
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-delay: 0.5s;
+}
+
+.logoEnseigne{
+  width: 100%;
+}
+
+.linkSite{
+  position: absolute;
   color: #f2f2f2;
-  background-image: linear-gradient(to left bottom, #9f92d1, #9f92d1, #9f92d1, #9f92d1);
+  font-family: Raleway-Bold;
+  font-size: 1rem;
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-delay: 0.5s;
+}
+
+.sliderDescription {
+  font-size: 1.3rem;
+  line-height: 1.2em;
+  color: #f2f2f2;
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-delay: 0.5s;
 }
 
 main section .carousel-container .item .text .title {
@@ -143,8 +223,8 @@ main section .carousel-container .item .text .title {
 
 main section .carousel-container .prev,
 main section .carousel-container .next {
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
   padding: 0.3125rem;
   position: absolute;
   top: calc(50% - 1rem);
@@ -153,6 +233,11 @@ main section .carousel-container .next {
   color: #f2f2f2;
   border-radius: 50%;
   transition: 0.6s ease;
+  background: #d16ba5bb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 main section .carousel-container .prev:focus, main section .carousel-container .prev:hover,
@@ -162,11 +247,11 @@ main section .carousel-container .next:hover {
 }
 
 main section .carousel-container .prev {
-  left: 0.8rem;
+  left: -0rem;
 }
 
-main section .carousel-container .next {
-  right: 0.8rem;
+main section .carousel-container .next{
+  right: 0rem;
 }
 
 main section .carousel-container .dots {
@@ -191,6 +276,8 @@ main section .carousel-container .dots .dot:focus, main section .carousel-contai
   background-color: #717171;
 }
 
+/* ANIMATION FADE IN BOTTOM */
+
 @-webkit-keyframes fadeInBottom {
   0% {
     opacity: 0;
@@ -208,13 +295,13 @@ main section .carousel-container .dots .dot:focus, main section .carousel-contai
 @keyframes fadeInBottom {
   0% {
     opacity: 0;
-    position: relative;
-    top: 50px;
+    /* position: absolute; */
+    margin-top: 50px;
   }
   100% {
     opacity: 1;
-    position: relative;
-    top: 0;
+    /* position: absolute; */
+    margin-top: 0;
     /* transform: translateY(-100px); */
   }
 }
@@ -222,6 +309,60 @@ main section .carousel-container .dots .dot:focus, main section .carousel-contai
 .fadeInBottom {
   -webkit-animation-name: fadeInBottom;
   animation-name: fadeInBottom;
+}
+
+/* Animation FadeInRight class "FadeInRight"*/
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    /* position: absolute; */
+    margin-right: -50px;
+  }
+  100% {
+    opacity: 1;
+    /* position: absolute; */
+    margin-right: 0;
+    /* transform: translateY(-100px); */
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    /* position: absolute; */
+    margin-right: -50px;
+  }
+  100% {
+    opacity: 1;
+    /* position: absolute; */
+    margin-right: 0;
+    /* transform: translateY(-100px); */
+  }
+}
+
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
+
+/* ANIMATION FADE */
+
+.fadeIn {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	animation-duration: 2s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
 
