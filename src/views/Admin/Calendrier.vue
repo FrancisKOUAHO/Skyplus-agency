@@ -4,7 +4,7 @@
 
       <aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl">
         <div class="p-6">
-          <img src="@/assets/image/logo/Logo_Skyplus.png"
+          <img src="@/assets/image/logo/Logo_Skyplus.svg"
                class="text-white text-3xl font-semibold uppercase hover:text-gray-300"/>
           <button
               class="w-full bg-white cta-btn font-semibold py-2 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">

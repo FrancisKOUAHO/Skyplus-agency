@@ -15,8 +15,7 @@ import editClient from "@/views/Admin/Client/editClient.vue";
 import Calendrier from '@/views/Admin/Calendrier.vue'
 import Projet from '@/views/Admin/Projet.vue'
 import Facturation from '@/views/Admin/Facturation/Facturation.vue'
-import Commandez from '@/views/Paiement/Commandez.vue'
-import CommandeComplete from '@/views/Paiement/CommandeComplete.vue'
+import EditerOffres from '@/views/Admin/EditerOffres/EditerOffres.vue'
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -50,6 +49,12 @@ const routes: Array<RouteRecordRaw> = [
         meta: {title: 'Skyplus |  Nos offres '}
     },
     {
+        path: '/editer-offres',
+        name: 'EditerOffres',
+        component: EditerOffres,
+        meta: {title: 'Skyplus |  Editer-offres '}
+    },
+    {
         path: '/infos-legales',
         name: 'InfosLegales',
         component: InfosLegales,
@@ -72,18 +77,6 @@ const routes: Array<RouteRecordRaw> = [
         name: 'Login',
         component: Login,
         meta: {title: 'Skyplus | Connexion'}
-    },
-    {
-        path: '/commande-complete/:id',
-        name: 'CommandeComplete',
-        component: CommandeComplete,
-        meta: {title: 'Skyplus | Completer'}
-    },
-    {
-        path: '/commandez',
-        name: 'Commandez',
-        component: Commandez,
-        meta: {title: 'Skyplus | Commandez'}
     },
     {
         path: '/dashboard',

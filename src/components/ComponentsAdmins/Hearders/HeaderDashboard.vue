@@ -8,6 +8,10 @@
       <i class="fas fa-sticky-note mr-3"></i>
       Client
     </router-link>
+    <router-link :to="{name: 'EditerOffres'}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+      <i class="fas fa-sticky-note mr-3"></i>
+      Éditer des offres
+    </router-link>
     <router-link :to="{name: 'Facturation'}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
       <i class="fas fa-sticky-note mr-3"></i>
       Facturation

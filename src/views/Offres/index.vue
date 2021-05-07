@@ -45,7 +45,7 @@
             <b> Assistant en ligne pour générer vos mentions légales</b>
           </li>
         </ul>
-        <router-link :to="{name: 'Commandez'}">
+        <router-link to="#">
           <button>
             Choisir ce plan
           </button>
@@ -85,7 +85,7 @@
             <b>Optimisation du référencement sur le nom de votre entreprise</b>
           </li>
         </ul>
-        <router-link :to="{name: 'Commandez'}">
+        <router-link to="#">
           <button class="border">
             Choisir ce plan
           </button>
@@ -122,7 +122,7 @@
             <b>Ligne de téléphone fixe avec suivi d'appel</b>
           </li>
         </ul>
-        <router-link :to="{name: 'Commandez'}">
+        <router-link to="#">
           <button>
             Choisir ce plan
           </button>
