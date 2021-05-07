@@ -1,5 +1,4 @@
 <template>
-  <div class="body-color">
     <nav-bar/>
     <div class="con-items ">
       <div class="item item1">
@@ -130,7 +129,6 @@
       </div>
     </div>
     <pieds-page/>
-  </div>
 </template>
 
 <script>
@@ -142,22 +140,14 @@ import PiedsPage from "@/components/Footers/PiedsPage";
 export default {
   name: "Index",
   components: {PiedsPage, NavBar},
+  setup(){
+    let body = document.querySelector('body');
+    body?.setAttribute('class','body-color1')
+  }
 }
 </script>
 
 <style scoped>
-.body-color {
-  min-height: 100%;
-  top: 0;
-  --primary: 25, 91, 255;
-  --color: 44, 62, 80;
-  --bg: 255, 255, 255;
-  --red: 255, 0, 78;
-  color: rgb(var(--color));
-  background-image: linear-gradient(to left bottom, #7e80cb, #5e8cd2, #3b95d1, #139ecb, #00a4c1,
-  #00adc1, #00b6be, #00bfb9, #00cfc2, #00dfc9, #00efce, #00ffd2);
-}
-
 * {
   list-style: none;
   outline: none;
