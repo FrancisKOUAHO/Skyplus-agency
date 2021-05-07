@@ -1,39 +1,37 @@
 <template>
-  <router-view/>
+  <router-view />
 </template>
 
 <script lang="ts">
-
-import {defineComponent} from 'vue'
-
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'App',
   data() {
-    return {}
+    return {};
   },
   watch: {
-    '$route'(to, from) {
-      document.title = to.meta.title || ' '
-    }
+    $route(to, from) {
+      document.title = to.meta.title || ' ';
+    },
   },
-})
+});
 </script>
 
 <style>
 @font-face {
-  font-family: "Raleway-Regular";
-  src: url("assets/fonts/Raleway-VariableFont_wght.ttf") format("truetype");
+  font-family: 'Raleway-Regular';
+  src: url('assets/fonts/Raleway-VariableFont_wght.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "Raleway-Bold";
-  src: url("assets/fonts/Raleway-Bold.ttf") format("truetype");
+  font-family: 'Raleway-Bold';
+  src: url('assets/fonts/Raleway-Bold.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "Raleway-Thin";
-  src: url("assets/fonts/Raleway-Thin.ttf") format("truetype");
+  font-family: 'Raleway-Thin';
+  src: url('assets/fonts/Raleway-Thin.ttf') format('truetype');
 }
 
 html {
@@ -41,9 +39,9 @@ html {
 }
 
 body {
-  font-family: "Raleway", "Arial", sans-serif;
+  font-family: 'Raleway', 'Arial', sans-serif;
   font-weight: 300;
-  font-size: .8rem;
+  font-size: 0.8rem;
   overflow-x: hidden;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -63,5 +61,14 @@ a {
 
 #app {
   font-family: Raleway-Regular, sans-serif;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  color: grey !important;
+}
+.loader {
+  width: 25px;
+  height: 25px;
 }
 </style>

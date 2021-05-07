@@ -1020,7 +1020,7 @@
     "@splidejs/splide-extension-video" "^0.4.6"
     vue "^2.6.12"
 
-"@stripe/stripe-js@^1.13.2":
+"@stripe/stripe-js@^1.14.0":
   version "1.14.0"
   resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-1.14.0.tgz#0eb8a185197948ab9ddb62ee28ae555e7d90bc72"
   integrity sha512-Zw4EI+ph8RPxRpIX2uwKKDIbe7WM2OarasPjIPRulU1UCj8lRFqWWW/fTj79lZtnX3FNZkiTRM13UG1UZF7yjQ==
@@ -1283,14 +1283,6 @@
   dependencies:
     native-promise-only "0.8.1"
     weakmap-polyfill "2.0.1"
-
-"@vue-stripe/vue-stripe@^4.1.8":
-  version "4.1.8"
-  resolved "https://registry.yarnpkg.com/@vue-stripe/vue-stripe/-/vue-stripe-4.1.8.tgz#3488457a1c7762bb3d02b80d195ce8747c215950"
-  integrity sha512-rc6+p6E9eMaUbulO8JCWwL3TTDLpmdK/h7ppEu9IlcKBecNbnoehi0UpA89cnsZZeswkvWNZNTf3l/xYjwKLdA==
-  dependencies:
-    "@stripe/stripe-js" "^1.13.2"
-    vue-coerce-props "^1.0.0"
 
 "@vue/babel-helper-vue-jsx-merge-props@^1.2.1":
   version "1.2.1"
@@ -10046,10 +10038,10 @@ vue-chartjs@^3.5.0:
   dependencies:
     "@types/chart.js" "^2.7.55"
 
-vue-coerce-props@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/vue-coerce-props/-/vue-coerce-props-1.0.0.tgz#af3d00aa419f0de79c2b020824c6c0387070d66e"
-  integrity sha512-4fdRMXO6FHzmE7H4soAph6QmPg3sL/RiGdd+axuxuU07f02LNMns0jMM88fmt1bvSbN+2Wyd8raho6p6nXUzag==
+vue-demi@^0.6.0:
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.6.2.tgz#ed9633eaa69b7409cc6e8328e8a6c3d31ab39319"
+  integrity sha512-4KfwxbqsZcDz7UryD11oHa6FLK9Gzx4MIwAEcP37IbUdXuF6DHg2w9L5Zv5t+FNqsuAjEQ2NnGVIZ3u71y435Q==
 
 vue-eslint-parser@^7.0.0, vue-eslint-parser@^7.6.0:
   version "7.6.0"
@@ -10102,6 +10094,11 @@ vue-meta@^2.4.0:
   dependencies:
     deepmerge "^4.2.2"
 
+vue-plugin-load-script@^1.3.2:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/vue-plugin-load-script/-/vue-plugin-load-script-1.3.2.tgz#348515d261205bb76d5b9285968e7e53539bbdb6"
+  integrity sha512-UQcFanuWBf72/339LxgsPZbMsT5LKUjBzkQfV3xf4ni5fc6Nnx5GNYclODFaQ9FHtOjWhu423bhHrlBHz4MIFg==
+
 vue-router@^4.0.0-0:
   version "4.0.6"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.0.6.tgz#91750db507d26642f225b0ec6064568e5fe448d6"
@@ -10139,6 +10136,13 @@ vue-template-es2015-compiler@^1.9.0:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
+
+vue-use-stripe@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/vue-use-stripe/-/vue-use-stripe-0.1.1.tgz#0d03bca607839636007676e4ed4da690b1794739"
+  integrity sha512-Gz5+7be9glQttWHJwsWzqFnkMmpWIAkklg+svflKKVEAUW9VFW+TFDoTaO2xhM23DAYyUBWEZEyRe+Juxq5QvA==
+  dependencies:
+    vue-demi "^0.6.0"
 
 vue@^2.3.3, vue@^2.6, vue@^2.6.12:
   version "2.6.12"
