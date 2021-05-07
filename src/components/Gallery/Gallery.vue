@@ -64,7 +64,7 @@ export default defineComponent({
           name: "Francis KOUHO",
           src: require('@/assets/image/site_gallery/scrren_portofolio_nav_2.png'),
           logo: "",
-          description: "e pense que le design est comme une “baguette magique”. Si les services et les produits sont magiques pour résoudre les problèmes, le rôle du design est de devenir un support permettant aux utilisateurs de les maîtriser.",
+          description: "Je pense que le design est comme une “baguette magique”. Si les services et les produits sont magiques pour résoudre les problèmes, le rôle du design est de devenir un support permettant aux utilisateurs de les maîtriser.",
           alt: " logo Francis KOUHO"
         },
       ]

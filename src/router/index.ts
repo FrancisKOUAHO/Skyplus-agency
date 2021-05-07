@@ -14,6 +14,9 @@ import Client from '@/views/Admin/Client/Client.vue'
 import editClient from "@/views/Admin/Client/editClient.vue";
 import Calendrier from '@/views/Admin/Calendrier.vue'
 import Projet from '@/views/Admin/Projet.vue'
+import Facturation from '@/views/Admin/Facturation/Facturation.vue'
+import Commandez from '@/views/Paiement/Commandez.vue'
+import CommandeComplete from '@/views/Paiement/CommandeComplete.vue'
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -71,6 +74,18 @@ const routes: Array<RouteRecordRaw> = [
         meta: {title: 'Skyplus | Connexion'}
     },
     {
+        path: '/commande-complete/:id',
+        name: 'CommandeComplete',
+        component: CommandeComplete,
+        meta: {title: 'Skyplus | Completer'}
+    },
+    {
+        path: '/commandez',
+        name: 'Commandez',
+        component: Commandez,
+        meta: {title: 'Skyplus | Commandez'}
+    },
+    {
         path: '/dashboard',
         name: 'Dashboard',
         component: Dashboard,
@@ -99,6 +114,12 @@ const routes: Array<RouteRecordRaw> = [
         name: 'Projet',
         component: Projet,
         meta: {title: 'Skyplus | Projet', requiresAuth: true}
+    },
+    {
+        path: '/facturation',
+        name: 'Facturation',
+        component: Facturation,
+        meta: {title: 'Skyplus | FormFacturation', requiresAuth: true}
     },
     {
         path: '/:pathMatch(.*)*',
