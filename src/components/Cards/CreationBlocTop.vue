@@ -27,19 +27,19 @@ export default defineComponent({
     position: absolute;
     top: 0;
     left: 30em;
-    -webkit-animation-duration: 2s;
-    animation-duration: 2s;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
 
 h3{
     font-size: 2rem;
-    -webkit-animation-duration: 2s;
-    animation-duration: 1.5s;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
-    animation-delay: 1.5s;
+    animation-delay: 1s;
 }
 
 h5{
@@ -47,11 +47,11 @@ h5{
     text-align: right;
     margin-top: 1.5em;
     padding-left: 4.5em;
-    -webkit-animation-duration: 2s;
-    animation-duration: 1.5s;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
-    animation-delay: 2s;
+    animation-delay: 1.25s;
 }
 
 h3, h5, .h5bold{
