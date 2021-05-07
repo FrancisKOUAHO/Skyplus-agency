@@ -5,8 +5,6 @@ import Agence from '@/views/Agence.vue'
 import Creations from '@/views/Creations.vue'
 import Offre from '@/views/Offres/index.vue'
 import InfosLegales from '@/views/InfosLegales/Index.vue'
-import OffresIndependants from '@/views/Offres/OffresIndependants.vue'
-import OffresEntreprises from '@/views/Offres/OffresEntreprises.vue'
 import PageNotFound from '@/views/PageNotFound.vue'
 import Dashboard from '@/views/Admin/Dashboard.vue'
 import Login from '@/views/Login.vue'
@@ -59,18 +57,6 @@ const routes: Array<RouteRecordRaw> = [
         name: 'InfosLegales',
         component: InfosLegales,
         meta: {title: 'Skyplus |  infos-legales '}
-    },
-    {
-        path: '/offres-independants-creation-site',
-        name: 'OffresIndependants',
-        component: OffresIndependants,
-        meta: {title: 'Skyplus | Offres Independants'}
-    },
-    {
-        path: '/offres-entreprises-creation-site',
-        name: 'OffresEntreprises',
-        component: OffresEntreprises,
-        meta: {title: 'Skyplus | Offres Entreprises'}
     },
     {
         path: '/login',
