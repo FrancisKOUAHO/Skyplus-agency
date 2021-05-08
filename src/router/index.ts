@@ -14,8 +14,6 @@ import Calendrier from '@/views/Admin/Calendrier.vue'
 import Projet from '@/views/Admin/Projet.vue'
 import Facturation from '@/views/Admin/Facturation/Facturation.vue'
 import EditerOffres from '@/views/Admin/EditerOffres/EditerOffres.vue'
-import SuccessPayment from '@/views/Offres/SuccessPayment.vue'
-import Canceled from '@/views/Offres/Canceled.vue'
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -47,18 +45,6 @@ const routes: Array<RouteRecordRaw> = [
         name: 'Offre',
         component: Offre,
         meta: {title: 'Skyplus |  Nos offres '}
-    },
-    {
-        path: '/success',
-        name: 'SuccessPayment',
-        component: SuccessPayment,
-        meta: {title: 'Skyplus |  Succès Paiement '}
-    }
-    ,{
-        path: '/payement-refuser',
-        name: 'Canceled',
-        component: Canceled,
-        meta: {title: 'Skyplus |  Annulé '}
     },
     {
         path: '/editer-offres',

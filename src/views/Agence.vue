@@ -1,7 +1,7 @@
 <template>
-    <nav-bar/>
-    <agence1/>
-    <pieds-page/>
+  <nav-bar/>
+  <agence1/>
+  <pieds-page/>
 </template>
 
 <script lang="ts">
@@ -19,10 +19,12 @@ export default defineComponent({
       color: '#333'
     }
   },
-  setup(){
+  setup() {
     let body = document.querySelector('body');
-    body?.setAttribute('class','body-color2')
+    body?.setAttribute('class', 'body-color2')
   }
 })
 </script>
 
+<style scoped>
+</style>

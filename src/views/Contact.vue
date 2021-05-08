@@ -1,29 +1,27 @@
 <template>
-  <div class="body-color">
-    <nav-bar/>
-    <contact-vue/>
-    <div class="container displayed" style="margin-top: -10%">
-      <h1 style="font-weight: 600; font-size: 48px; line-height: 1.15; color: white"><span>Nous gravitons dans</span>
-      </h1>
-      <span style="font-weight: 600; font-size: 48px; line-height: 1.15; color: white">les meilleures sphères</span>
-    </div>
-
-    <div class="flex-initial div-form">
-      <div v-for="(contact, index) in contacts" :key="index">
-        <a href="">
-          <span class="contact-info">{{ contact.info }}</span>
-        </a>
-        <router-link to="mailto:contact@skyplus.fr" class="contact-name">
-          <div style="display: flex;">
-            <img src="../assets/image/right.svg" alt="right" width="16"/>
-            <span style="margin-left: 5%">{{ contact.name }}</span>
-          </div>
-        </router-link>
-      </div>
-    </div>
-    <reseau-sociaux/>
-    <pieds-page/>
+  <nav-bar/>
+  <contact-vue/>
+  <div class="container displayed" style="margin-top: -10%">
+    <h1 style="font-weight: 600; font-size: 48px; line-height: 1.15; color: white"><span>Nous gravitons dans</span>
+    </h1>
+    <span style="font-weight: 600; font-size: 48px; line-height: 1.15; color: white">les meilleures sphères</span>
   </div>
+
+  <div class="flex-initial div-form">
+    <div v-for="(contact, index) in contacts" :key="index">
+      <a href="">
+        <span class="contact-info">{{ contact.info }}</span>
+      </a>
+      <router-link to="mailto:contact@skyplus.fr" class="contact-name">
+        <div style="display: flex;">
+          <img src="../assets/image/right.svg" alt="right" width="16"/>
+          <span style="margin-left: 5%">{{ contact.name }}</span>
+        </div>
+      </router-link>
+    </div>
+  </div>
+  <reseau-sociaux/>
+  <pieds-page/>
 </template>
 
 <script lang="ts">
@@ -55,9 +53,9 @@ export default defineComponent({
       ]
     }
   },
-  setup(){
+  setup() {
     let body = document.querySelector('body');
-    body?.setAttribute('class','body-color5')
+    body?.setAttribute('class', 'body-color5')
   }
 })
 </script>

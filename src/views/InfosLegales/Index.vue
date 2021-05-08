@@ -20,11 +20,11 @@ export default defineComponent({
   data() {
     return {}
   },
-  methods: {},
   setup(){
     let body = document.querySelector('body');
     body?.setAttribute('class','body-color3')
-  }
+  },
+  methods: {}
 })
 </script>
 

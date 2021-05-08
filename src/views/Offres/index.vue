@@ -1,183 +1,181 @@
 <template>
-  <div class="body-color">
-    <nav-bar />
-    <div class="con-items ">
-      <div class="item item1">
-        <div class="con-img">
-          <img src="1-3.png" alt="" />
-        </div>
-        <header>
-          <h3>Offre Simplicité</h3>
-          <h4>Site internet vitrine en une seule page</h4>
-          <p>
-            <b>
-              25€ HT/mois
-            </b>
-          </p>
-        </header>
-        <ul>
-          <li>
-            <i class="bx bx-check"></i>
-            <b>Création de l’architecture technique du site</b>
-          </li>
-          <li>
-            <i class="bx bx-check"></i>
-            <b>Maintenance et entretien</b>
-          </li>
-          <li>
-            <i class="bx bx-check"></i>
-            <b>Hébergement de qualité en France</b>
-          </li>
-          <li>
-            <i class="bx bx-check"></i>
-            <b>Accompagnement Standard</b>
-          </li>
-          <li>
-            <i class="bx bx-check"></i>
-            <b>Fonctionnalités de base</b>
-          </li>
-          <li>
-            <i class="bx bx-check"></i>
-            <b>Fonctionnalités de base</b>
-          </li>
-          <li>
-            <i class="bx bx-check"></i>
-            <b> Assistant en ligne pour générer vos mentions légales</b>
-          </li>
-        </ul>
-        <router-link to="#">
-          <button
-              :disabled="isPurchasing"
-              @click="purchaseMonthlyPlan('price_1IobEQKYGE5dRt9iRJCRKPj9')"
-          >
-            <img
-                class="loader"
-                v-if="isPurchasing"
-                src="../../assets/image/loading.gif"
-            />
-            <span v-else>Choisir ce plan</span>
-          </button>
-        </router-link>
+  <nav-bar/>
+  <div class="con-items ">
+    <div class="item item1">
+      <div class="con-img">
+        <img src="1-3.png" alt=""/>
       </div>
-      <div class="item color item2">
-        <div class="con-img">
-          <img src="2-1.png" alt="" />
-        </div>
-        <span class="badge">
+      <header>
+        <h3>Offre Simplicité</h3>
+        <h4>Site internet vitrine en une seule page</h4>
+        <p>
+          <b>
+            25€ HT/mois
+          </b>
+        </p>
+      </header>
+      <ul>
+        <li>
+          <i class="bx bx-check"></i>
+          <b>Création de l’architecture technique du site</b>
+        </li>
+        <li>
+          <i class="bx bx-check"></i>
+          <b>Maintenance et entretien</b>
+        </li>
+        <li>
+          <i class="bx bx-check"></i>
+          <b>Hébergement de qualité en France</b>
+        </li>
+        <li>
+          <i class="bx bx-check"></i>
+          <b>Accompagnement Standard</b>
+        </li>
+        <li>
+          <i class="bx bx-check"></i>
+          <b>Fonctionnalités de base</b>
+        </li>
+        <li>
+          <i class="bx bx-check"></i>
+          <b>Fonctionnalités de base</b>
+        </li>
+        <li>
+          <i class="bx bx-check"></i>
+          <b> Assistant en ligne pour générer vos mentions légales</b>
+        </li>
+      </ul>
+      <router-link to="#">
+        <button
+            :disabled="isPurchasing"
+            @click="purchaseMonthlyPlan('price_1IobEQKYGE5dRt9iRJCRKPj9')"
+        >
+          <img
+              class="loader"
+              v-if="isPurchasing"
+              src="../../assets/image/loading.gif"
+          />
+          <span v-else>Choisir ce plan</span>
+        </button>
+      </router-link>
+    </div>
+    <div class="item color item2">
+      <div class="con-img">
+        <img src="2-1.png" alt=""/>
+      </div>
+      <span class="badge">
           Popular
         </span>
-        <header>
-          <h3>Offre Crédibilité</h3>
-          <h4>Site internet professionnel multi-pages</h4>
-          <p>
-            <b>
-              50€ HT/mois
-            </b>
-          </p>
-        </header>
-        <ul>
-          <li>
-            <i class="bx bx-check"></i>
-            <b>Tout le pack Simplicité</b>
-          </li>
-          <li>
-            <i class="bx bx-check"></i>
-            <b>Système d'avis en ligne avec modération</b>
-          </li>
-          <li>
-            <i class="bx bx-check"></i>
-            <b
-            >Création des pages et intégration des contenus initiaux (10 pages
-              incluses)</b
-            >
-          </li>
-          <li>
-            <i class="bx bx-check"></i>
-            <b>Optimisation du référencement sur le nom de votre entreprise</b>
-          </li>
-        </ul>
-        <router-link to="#">
-          <button
-              class="border"
-              :disabled="isPurchasing"
-              @click="purchaseMonthlyPlan('price_1IobF1KYGE5dRt9ixPLWJisT')"
+      <header>
+        <h3>Offre Crédibilité</h3>
+        <h4>Site internet professionnel multi-pages</h4>
+        <p>
+          <b>
+            50€ HT/mois
+          </b>
+        </p>
+      </header>
+      <ul>
+        <li>
+          <i class="bx bx-check"></i>
+          <b>Tout le pack Simplicité</b>
+        </li>
+        <li>
+          <i class="bx bx-check"></i>
+          <b>Système d'avis en ligne avec modération</b>
+        </li>
+        <li>
+          <i class="bx bx-check"></i>
+          <b
+          >Création des pages et intégration des contenus initiaux (10 pages
+            incluses)</b
           >
-            <img
-                class="loader"
-                v-if="isPurchasing"
-                src="../../assets/image/loading.gif"
-            />
-            <span v-else>Choisir ce plan</span>
-          </button>
-        </router-link>
-      </div>
-      <div class="item item3">
-        <div class="con-img">
-          <img src="3-1.png" alt="" />
-        </div>
-        <header>
-          <h3>Offre Performance</h3>
-          <h4>Site internet professionnel optimisé pour le référencement</h4>
-          <p>
-            <b>
-              90€ HT/mois
-            </b>
-          </p>
-        </header>
-        <ul>
-          <li>
-            <i class="bx bx-check"></i>
-            <b>out le Pack Crédibilité</b>
-          </li>
-          <li>
-            <i class="bx bx-check"></i>
-            <b>Optimisation du référencement local sur 1 adresse</b>
-          </li>
-          <li>
-            <i class="bx bx-check"></i>
-            <b>Création et gestion d'une fiche Google My Business</b>
-          </li>
-          <li>
-            <i class="bx bx-check"></i>
-            <b>Ligne de téléphone fixe avec suivi d'appel</b>
-          </li>
-        </ul>
-        <router-link to="#">
-          <button
-              :disabled="isPurchasing"
-              @click="purchaseMonthlyPlan('price_1IobFYKYGE5dRt9iMWB6SSkN')"
-          >
-            <img
-                class="loader"
-                v-if="isPurchasing"
-                src="../../assets/image/loading.gif"
-            />
-            <span v-else>Choisir ce plan</span>
-          </button>
-        </router-link>
-      </div>
+        </li>
+        <li>
+          <i class="bx bx-check"></i>
+          <b>Optimisation du référencement sur le nom de votre entreprise</b>
+        </li>
+      </ul>
+      <router-link to="#">
+        <button
+            class="border"
+            :disabled="isPurchasing"
+            @click="purchaseMonthlyPlan('price_1IobF1KYGE5dRt9ixPLWJisT')"
+        >
+          <img
+              class="loader"
+              v-if="isPurchasing"
+              src="../../assets/image/loading.gif"
+          />
+          <span v-else>Choisir ce plan</span>
+        </button>
+      </router-link>
     </div>
-    <pieds-page />
+    <div class="item item3">
+      <div class="con-img">
+        <img src="3-1.png" alt=""/>
+      </div>
+      <header>
+        <h3>Offre Performance</h3>
+        <h4>Site internet professionnel optimisé pour le référencement</h4>
+        <p>
+          <b>
+            90€ HT/mois
+          </b>
+        </p>
+      </header>
+      <ul>
+        <li>
+          <i class="bx bx-check"></i>
+          <b>out le Pack Crédibilité</b>
+        </li>
+        <li>
+          <i class="bx bx-check"></i>
+          <b>Optimisation du référencement local sur 1 adresse</b>
+        </li>
+        <li>
+          <i class="bx bx-check"></i>
+          <b>Création et gestion d'une fiche Google My Business</b>
+        </li>
+        <li>
+          <i class="bx bx-check"></i>
+          <b>Ligne de téléphone fixe avec suivi d'appel</b>
+        </li>
+      </ul>
+      <router-link to="#">
+        <button
+            :disabled="isPurchasing"
+            @click="purchaseMonthlyPlan('price_1IobFYKYGE5dRt9iMWB6SSkN')"
+        >
+          <img
+              class="loader"
+              v-if="isPurchasing"
+              src="../../assets/image/loading.gif"
+          />
+          <span v-else>Choisir ce plan</span>
+        </button>
+      </router-link>
+    </div>
   </div>
+  <pieds-page/>
 </template>
 
 <script>
 import NavBar from '@/components/NavBars/NavBar';
 import PiedsPage from '@/components/Footers/PiedsPage';
 
-import { defineComponent, ref } from 'vue';
+import {defineComponent, ref} from 'vue';
 import axios from '../../utils/axiosInstance';
-import { useStripe } from 'vue-use-stripe';
+import {useStripe} from 'vue-use-stripe';
 
 export default defineComponent({
   name: 'Index',
-  components: { PiedsPage, NavBar },
+  components: {PiedsPage, NavBar},
   setup() {
     let body = document.querySelector('body');
-    body?.setAttribute('class','body-color1')
+    body?.setAttribute('class', 'body-color1')
 
     const isPurchasing = ref(false);
-    const { stripe } = useStripe({
+    const {stripe} = useStripe({
       key:
           'pk_test_51HwcPhKYGE5dRt9idxqGRsQgRwPQ78zHXD9N6cfWcC77owBiEJFH7r7d4sI0nfLnLj9U9gRMTr1bzQbSLgnasBMa00MHGpiTx5',
     });
@@ -185,7 +183,7 @@ export default defineComponent({
     const purchaseMonthlyPlan = async (priceId) => {
       isPurchasing.value = true;
       try {
-        const { data } = await axios.post('/payments/create-checkout-session', {
+        const {data} = await axios.post('/payments/create-checkout-session', {
           priceId,
         });
 

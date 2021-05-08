@@ -140,7 +140,7 @@ export default defineComponent({
 #container {
   border-radius: 15px;
   max-width: 1000px;
-  margin: 60px auto 0 auto;
+  margin: 60px auto;
   position: relative;
   background: rgba(255, 255, 255, .6);
   border: 1px solid white;

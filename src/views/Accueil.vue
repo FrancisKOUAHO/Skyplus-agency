@@ -1,8 +1,8 @@
 <template>
-    <nav-bar/>
-    <skyplus/>
-    <hello/>
-    <pieds-page/>
+  <nav-bar/>
+  <skyplus/>
+  <hello/>
+  <pieds-page/>
 </template>
 
 <script lang="ts">
@@ -20,16 +20,15 @@ export default defineComponent({
   data() {
     return {}
   },
-  methods: {},
-  setup(){
+  setup() {
     let body = document.querySelector('body');
-    body?.setAttribute('class','body-color1')
-  }
+    body?.setAttribute('class', 'body-color1')
+  },
+  methods: {}
 })
 </script>
 
 <style scoped>
-
 .square {
   margin-left: 70%;
   margin-top: -35%
