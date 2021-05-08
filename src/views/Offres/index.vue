@@ -109,7 +109,6 @@ import PiedsPage from '@/components/Footers/PiedsPage';
 import {defineComponent, ref} from 'vue';
 import axios from '../../utils/axiosInstance';
 import {useStripe} from 'vue-use-stripe';
-
 export default defineComponent({
   name: 'Index',
   components: {PiedsPage, NavBar},

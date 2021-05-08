@@ -24,7 +24,7 @@
         <!--        <div class="text-red-600 my-2"> data.message</div>-->
         <div class="form-row">
           <button class="button" type="submit" :disabled="loading">
-            <span v-if="loading">Connexion en cours...</span>
+            <span v-if="loading" style="color: white">Connexion en cours...</span>
             <span v-else>Connexion</span>
           </button>
         </div>
