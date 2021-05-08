@@ -49,7 +49,7 @@ const routes: Array<RouteRecordRaw> = [
         meta: {title: 'Skyplus |  Nos offres '}
     },
     {
-        path: '/paiement-reussi/:session.id',
+        path: '/paiement-reussi',
         name: 'PaymentSuccessful',
         component: PaymentSuccessful,
         meta: {title: 'Skyplus |  Paiement réussi '}
