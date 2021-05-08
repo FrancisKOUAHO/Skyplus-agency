@@ -4,6 +4,8 @@ import Contact from '@/views/Contact.vue'
 import Agence from '@/views/Agence.vue'
 import Creations from '@/views/Creations.vue'
 import Offre from '@/views/Offres/index.vue'
+import PaymentSuccessful from '@/views/Offres/PaymentSuccessful.vue'
+import PaymentFailed from '@/views/Offres/PaymentFailed.vue'
 import InfosLegales from '@/views/InfosLegales/Index.vue'
 import PageNotFound from '@/views/PageNotFound.vue'
 import Dashboard from '@/views/Admin/Dashboard.vue'
@@ -45,6 +47,18 @@ const routes: Array<RouteRecordRaw> = [
         name: 'Offre',
         component: Offre,
         meta: {title: 'Skyplus |  Nos offres '}
+    },
+    {
+        path: '/paiement-reussi',
+        name: 'PaymentSuccessful',
+        component: PaymentSuccessful,
+        meta: {title: 'Skyplus |  Paiement réussi '}
+    },
+    {
+        path: '/echec-paiement',
+        name: 'PaymentFailed',
+        component: PaymentFailed,
+        meta: {title: 'Skyplus |  Échec du paiement '}
     },
     {
         path: '/editer-offres',
