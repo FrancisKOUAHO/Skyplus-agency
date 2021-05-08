@@ -271,7 +271,7 @@ export default defineComponent({
   position: absolute;
   color: white;
   display: block;
-  background-color: #3bbdee;
+  background-color: #71ce73;
   text-align: center;
   right: 15px;
   top: -25px;
