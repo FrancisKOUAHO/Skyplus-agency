@@ -8,7 +8,7 @@
                 d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
         </svg>
       </div>
-      <div class="text-sm font-medium ml-3">Paiement réussi.</div>
+      <div class="text-sm font-medium ml-3">Paiement refusé.</div>
     </div>
     <div class="text-sm tracking-wide text-gray-500 mt-4 sm:mt-0 sm:ml-4">Votre paiement a été refusé. Vous pouvez
       contactez votre services !
