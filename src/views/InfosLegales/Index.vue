@@ -2,7 +2,7 @@
     <nav-bar/>
     <info-legal/>
     <hello/>
-    <pieds-page/>
+    <pieds-page class="pieds-page"/>
 </template>
 
 <script lang="ts">
@@ -29,5 +29,8 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.pieds-page{
+  margin-bottom: -30%;
+}
 
 </style>

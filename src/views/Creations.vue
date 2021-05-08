@@ -3,7 +3,7 @@
   <creation-bloc-top/>
   <gallery/>
   <creation-bloc-bottom/>
-  <pieds-page/>
+  <pieds-page class="pieds-page"/>
 </template>
 
 <script lang="ts">
@@ -46,5 +46,8 @@ export default defineComponent({
 })
 </script>
 
-<style>
+<style scoped>
+.pieds-page{
+  margin-bottom: -5%
+}
 </style>

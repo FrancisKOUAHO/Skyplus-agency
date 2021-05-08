@@ -21,7 +21,7 @@
               required
           />
         </div>
-<!--        <div class="text-red-600 my-2"> data.message</div>-->
+        <!--        <div class="text-red-600 my-2"> data.message</div>-->
         <div class="form-row">
           <button class="button" type="submit" :disabled="loading">
             <span v-if="loading">Connexion en cours...</span>
@@ -70,10 +70,10 @@ export default defineComponent({
         swal("Error", "Quelque chose a mal tourné", "error");
       }
     },
-    reset(){
+    reset() {
       this.success = false;
       this.error = false;
-      for(let field in this.login){
+      for (let field in this.login) {
         this.login[field] = null;
       }
     }

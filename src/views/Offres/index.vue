@@ -144,10 +144,11 @@ export default defineComponent({
 });
 </script>
 <style scoped>
-.ul-text{
+.ul-text {
   color: white;
   font-size: 1rem;
 }
+
 .pieds-page {
   margin-bottom: -25%;
 }
