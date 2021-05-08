@@ -54,6 +54,10 @@ export default defineComponent({
         }
       ]
     }
+  },
+  setup(){
+    let body = document.querySelector('body');
+    body?.setAttribute('class','body-color5')
   }
 })
 </script>
@@ -65,15 +69,6 @@ export default defineComponent({
 
 .contact-info {
   font-size: .9rem;
-}
-
-.body-color {
-  background-image: linear-gradient(to left bottom, #C94F0A, #C94F0A, #EA6232,
-  #F3B248, #F3B248);
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0px;
 }
 
 #contact .container.displayed .baseline {

@@ -1,119 +1,137 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
-      integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs="
-      crossorigin="anonymous"
-    ></script>
-    <script async src="https://js.stripe.com/v3/"></script>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
+            integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('.carousel-container').forEach((carousel) => {
-          insertNumbers(carousel);
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".carousel-container").forEach((carousel) => {
+                insertNumbers(carousel);
 
-          carousel.querySelector('.prev').addEventListener('click', (e) => {
-            minusItem(carousel);
-          });
+                carousel.querySelector(".prev").addEventListener("click", (e) => {
+                    minusItem(carousel);
+                });
 
-          carousel.querySelector('.next').addEventListener('click', () => {
-            plusItem(carousel);
-          });
+                carousel.querySelector(".next").addEventListener("click", () => {
+                    plusItem(carousel);
+                });
 
-          insertDots(carousel);
+                insertDots(carousel);
 
-          carousel.querySelectorAll('.dot').forEach((dot) => {
-            dot.addEventListener('click', (e) => {
-              let item = Array.prototype.indexOf.call(
-                e.target.parentNode.children,
-                e.target
-              );
+                carousel.querySelectorAll(".dot").forEach((dot) => {
+                    dot.addEventListener("click", (e) => {
+                        let item = Array.prototype.indexOf.call(
+                            e.target.parentNode.children,
+                            e.target
+                        );
 
-              showItems(carousel, item);
+                        showItems(carousel, item);
+                    });
+                });
+
+                showItems(carousel, 0);
             });
-          });
-
-          showItems(carousel, 0);
         });
-      });
 
-      function insertNumbers(carousel) {
-        const length = carousel.querySelectorAll('.item').length;
-        // for (let i = 0; i < length; i++) {
-        //     const nmbr = document.createElement("div");
-        //     nmbr.classList.add("numbertext");
-        //     nmbr.innerText = i + 1 + " / " + length;
+        function insertNumbers(carousel) {
+            const length = carousel.querySelectorAll(".item").length;
+            // for (let i = 0; i < length; i++) {
+            //     const nmbr = document.createElement("div");
+            //     nmbr.classList.add("numbertext");
+            //     nmbr.innerText = i + 1 + " / " + length;
 
-        //     carousel.querySelectorAll(".item")[i].append(nmbr);
-        // }
-      }
+            //     carousel.querySelectorAll(".item")[i].append(nmbr);
+            // }
+        }
 
-      function insertDots(carousel) {
-        const dots = document.createElement('div');
-        dots.classList.add('dots');
+        function insertDots(carousel) {
+            const dots = document.createElement("div");
+            dots.classList.add("dots");
 
-        carousel.append(dots);
+            carousel.append(dots);
 
-        carousel.querySelectorAll('.item').forEach((elem) => {
-          const dot = document.createElement('div');
-          dot.classList.add('dot');
+            carousel.querySelectorAll(".item").forEach((elem) => {
+                const dot = document.createElement("div");
+                dot.classList.add("dot");
 
-          carousel.querySelector('.dots').append(dot);
-        });
-      }
+                carousel.querySelector(".dots").append(dot);
+            });
+        }
 
-      function plusItem(carousel) {
-        let item = currentItem(carousel);
+        function plusItem(carousel) {
+            let item = currentItem(carousel);
 
-        carousel
-          .querySelectorAll('.item')
-          [item].nextElementSibling.classList.contains('item')
-          ? showItems(carousel, item + 1)
-          : showItems(carousel, 0);
-      }
+            carousel
+                .querySelectorAll(".item")
+                [item].nextElementSibling.classList.contains("item")
+                ? showItems(carousel, item + 1)
+                : showItems(carousel, 0);
+        }
 
-      function minusItem(carousel) {
-        let item = currentItem(carousel);
+        function minusItem(carousel) {
+            let item = currentItem(carousel);
 
-        carousel.querySelectorAll('.item')[item].previousElementSibling != null
-          ? showItems(carousel, item - 1)
-          : showItems(carousel, carousel.querySelectorAll('.item').length - 1);
-      }
+            carousel.querySelectorAll(".item")[item].previousElementSibling != null
+                ? showItems(carousel, item - 1)
+                : showItems(carousel, carousel.querySelectorAll(".item").length - 1);
+        }
 
-      function currentItem(carousel) {
-        return [...carousel.querySelectorAll('.item')].findIndex(
-          (item) => item.style.display == 'block'
-        );
-      }
+        function currentItem(carousel) {
+            return [...carousel.querySelectorAll(".item")].findIndex(
+                (item) => item.style.display == "block"
+            );
+        }
 
-      function showItems(carousel, item) {
-        if (
-          carousel.querySelectorAll('.item')[currentItem(carousel)] != undefined
-        )
-          carousel.querySelectorAll('.item')[
-            currentItem(carousel)
-          ].style.display = 'none';
-        carousel.querySelectorAll('.item')[item].style.display = 'block';
+        function showItems(carousel, item) {
+            if (carousel.querySelectorAll(".item")[currentItem(carousel)] != undefined)
+                carousel.querySelectorAll(".item")[currentItem(carousel)].style.display =
+                    "none";
+            carousel.querySelectorAll(".item")[item].style.display = "block";
 
-        if (carousel.querySelector('.dot.active') != null)
-          carousel.querySelector('.dot.active').classList.remove('active');
-        carousel.querySelectorAll('.dot')[item].classList.add('active');
-      }
+            if (carousel.querySelector(".dot.active") != null)
+                carousel.querySelector(".dot.active").classList.remove("active");
+            carousel.querySelectorAll(".dot")[item].classList.add("active");
+        }
+
     </script>
     <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
-    <noscript>
-      <strong
-        >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
-        properly without JavaScript enabled. Please enable it to
-        continue.</strong
-      >
-    </noscript>
-    <div id="app"></div>
-  </body>
+</head>
+<body>
+<noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong>
+</noscript>
+<div id="app"></div>
+
+<style>
+
+.body-color1 {
+  background-image: linear-gradient(to left bottom, #7e80cb, #5e8cd2, #3b95d1, #139ecb, #00a4c1,
+  #00adc1, #00b6be, #00bfb9, #00cfc2, #00dfc9, #00efce, #00ffd2);
+}
+.body-color2 {
+    background-image: linear-gradient(to left bottom, #355EF2, #355EF2, #355EF2,
+  #72BFD4, #72BFD4);
+}
+.body-color3 {
+    background-image: linear-gradient(to left bottom, #86A8E7, #D16BA5);
+}
+.body-color4 {
+  background-image: linear-gradient(to left bottom, #7e80cb, #5e8cd2, #3b95d1, #139ecb, #00a4c1,
+  #00adc1, #00b6be, #00bfb9, #00cfc2, #00dfc9, #00efce, #00ffd2);
+}
+.body-color5 {
+    background-image: linear-gradient(to left bottom, #C94F0A, #C94F0A, #EA6232,
+  #F3B248, #F3B248);
+}
+.body-color6 {
+  background-image: linear-gradient(to left bottom, #7e80cb, #5e8cd2, #3b95d1, #139ecb, #00a4c1,
+  #00adc1, #00b6be, #00bfb9, #00cfc2, #00dfc9, #00efce, #00ffd2);
+}
+</style>
+</body>
 </html>

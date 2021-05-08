@@ -1,10 +1,9 @@
 <template>
-  <div class="body-color">
-    <nav-bar />
+    <nav-bar/>
     <div class="con-items ">
       <div class="item item1">
         <div class="con-img">
-          <img src="1-3.png" alt="" />
+          <img src="1-3.png" alt="">
         </div>
         <header>
           <h3>Offre Simplicité</h3>
@@ -17,55 +16,47 @@
         </header>
         <ul>
           <li>
-            <i class="bx bx-check"></i>
+            <i class='bx bx-check'></i>
             <b>Création de l’architecture technique du site</b>
           </li>
           <li>
-            <i class="bx bx-check"></i>
+            <i class='bx bx-check'></i>
             <b>Maintenance et entretien</b>
           </li>
           <li>
-            <i class="bx bx-check"></i>
+            <i class='bx bx-check'></i>
             <b>Hébergement de qualité en France</b>
           </li>
           <li>
-            <i class="bx bx-check"></i>
+            <i class='bx bx-check'></i>
             <b>Accompagnement Standard</b>
           </li>
           <li>
-            <i class="bx bx-check"></i>
+            <i class='bx bx-check'></i>
             <b>Fonctionnalités de base</b>
           </li>
           <li>
-            <i class="bx bx-check"></i>
+            <i class='bx bx-check'></i>
             <b>Fonctionnalités de base</b>
           </li>
           <li>
-            <i class="bx bx-check"></i>
+            <i class='bx bx-check'></i>
             <b> Assistant en ligne pour générer vos mentions légales</b>
           </li>
         </ul>
-        <router-link to="#">
-          <button
-            :disabled="isPurchasing"
-            @click="purchaseMonthlyPlan('price_1IobEQKYGE5dRt9iRJCRKPj9')"
-          >
-            <img
-              class="loader"
-              v-if="isPurchasing"
-              src="../../assets/image/loading.gif"
-            />
-            <span v-else>Choisir ce plan</span>
+        <router-link :to="{name: 'Commandez'}">
+          <button>
+            Choisir ce plan
           </button>
         </router-link>
       </div>
       <div class="item color item2">
         <div class="con-img">
-          <img src="2-1.png" alt="" />
+          <img src="2-1.png" alt="">
         </div>
         <span class="badge">
-          Popular
-        </span>
+                Popular
+            </span>
         <header>
           <h3>Offre Crédibilité</h3>
           <h4>Site internet professionnel multi-pages</h4>
@@ -77,43 +68,31 @@
         </header>
         <ul>
           <li>
-            <i class="bx bx-check"></i>
+            <i class='bx bx-check'></i>
             <b>Tout le pack Simplicité</b>
           </li>
           <li>
-            <i class="bx bx-check"></i>
+            <i class='bx bx-check'></i>
             <b>Système d'avis en ligne avec modération</b>
           </li>
           <li>
-            <i class="bx bx-check"></i>
-            <b
-              >Création des pages et intégration des contenus initiaux (10 pages
-              incluses)</b
-            >
+            <i class='bx bx-check'></i>
+            <b>Création des pages et intégration des contenus initiaux (10 pages incluses)</b>
           </li>
           <li>
-            <i class="bx bx-check"></i>
+            <i class='bx bx-check'></i>
             <b>Optimisation du référencement sur le nom de votre entreprise</b>
           </li>
         </ul>
-        <router-link to="#">
-          <button
-            class="border"
-            :disabled="isPurchasing"
-            @click="purchaseMonthlyPlan('price_1IobF1KYGE5dRt9ixPLWJisT')"
-          >
-            <img
-              class="loader"
-              v-if="isPurchasing"
-              src="../../assets/image/loading.gif"
-            />
-            <span v-else>Choisir ce plan</span>
+        <router-link :to="{name: 'Commandez'}">
+          <button class="border">
+            Choisir ce plan
           </button>
         </router-link>
       </div>
       <div class="item item3">
         <div class="con-img">
-          <img src="3-1.png" alt="" />
+          <img src="3-1.png" alt="">
         </div>
         <header>
           <h3>Offre Performance</h3>
@@ -126,110 +105,49 @@
         </header>
         <ul>
           <li>
-            <i class="bx bx-check"></i>
+            <i class='bx bx-check'></i>
             <b>out le Pack Crédibilité</b>
           </li>
           <li>
-            <i class="bx bx-check"></i>
+            <i class='bx bx-check'></i>
             <b>Optimisation du référencement local sur 1 adresse</b>
           </li>
           <li>
-            <i class="bx bx-check"></i>
+            <i class='bx bx-check'></i>
             <b>Création et gestion d'une fiche Google My Business</b>
           </li>
           <li>
-            <i class="bx bx-check"></i>
+            <i class='bx bx-check'></i>
             <b>Ligne de téléphone fixe avec suivi d'appel</b>
           </li>
         </ul>
-        <router-link to="#">
-          <button
-            :disabled="isPurchasing"
-            @click="purchaseMonthlyPlan('price_1IobFYKYGE5dRt9iMWB6SSkN')"
-          >
-            <img
-              class="loader"
-              v-if="isPurchasing"
-              src="../../assets/image/loading.gif"
-            />
-            <span v-else>Choisir ce plan</span>
+        <router-link :to="{name: 'Commandez'}">
+          <button>
+            Choisir ce plan
           </button>
         </router-link>
       </div>
     </div>
-    <pieds-page />
-  </div>
+    <pieds-page/>
 </template>
 
 <script>
-import NavBar from '@/components/NavBars/NavBar';
-import PiedsPage from '@/components/Footers/PiedsPage';
 
-import { defineComponent, ref } from 'vue';
-import axios from '../../utils/axiosInstance';
-import { useStripe } from 'vue-use-stripe';
 
-export default defineComponent({
-  name: 'Index',
-  components: { PiedsPage, NavBar },
-  setup() {
-    const isPurchasing = ref(false);
-    const { stripe } = useStripe({
-      key:
-        'pk_test_51HwcPhKYGE5dRt9idxqGRsQgRwPQ78zHXD9N6cfWcC77owBiEJFH7r7d4sI0nfLnLj9U9gRMTr1bzQbSLgnasBMa00MHGpiTx5',
-    });
+import NavBar from "@/components/NavBars/NavBar";
+import PiedsPage from "@/components/Footers/PiedsPage";
 
-    const purchaseMonthlyPlan = async (priceId) => {
-      isPurchasing.value = true;
-      try {
-        const { data } = await axios.post('/payments/create-checkout-session', {
-          priceId,
-        });
-
-        const handleResult = await stripe.value.redirectToCheckout({
-          sessionId: data.sessionId,
-        });
-
-        console.log(handleResult);
-      } catch (error) {
-        console.log(error.message);
-      }
-      isPurchasing.value = false;
-    };
-    return {
-      purchaseMonthlyPlan,
-      isPurchasing,
-    };
-  },
-});
+export default {
+  name: "Index",
+  components: {PiedsPage, NavBar},
+  setup(){
+    let body = document.querySelector('body');
+    body?.setAttribute('class','body-color1')
+  }
+}
 </script>
 
 <style scoped>
-.body-color {
-  min-height: 100%;
-  top: 0;
-  --primary: 25, 91, 255;
-  --color: 44, 62, 80;
-  --bg: 255, 255, 255;
-  --red: 255, 0, 78;
-  color: rgb(var(--color));
-  background-image: linear-gradient(
-    to left bottom,
-    #7e80cb,
-    #5e8cd2,
-    #3b95d1,
-    #139ecb,
-    #00a4c1,
-    #00adc1,
-    #00b6be,
-    #00bfb9,
-    #00cfc2,
-    #00dfc9,
-    #00efce,
-    #00ffd2
-  );
-}
-
 * {
   list-style: none;
   outline: none;
@@ -254,7 +172,7 @@ b {
 .item {
   width: 360px;
   background: #fff;
-  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, .05);
   border-radius: 40px;
   margin: 0px;
   padding: 30px;
@@ -262,7 +180,7 @@ b {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  transition: all 0.25s ease;
+  transition: all .25s ease;
   position: relative;
   height: 550px;
 }
@@ -283,7 +201,7 @@ b {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.25s ease;
+  transition: all .25s ease;
 }
 
 .con-img img {
@@ -309,7 +227,7 @@ b {
 }
 
 .item.color li {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, .75);
 }
 
 .item.color li b {
@@ -346,7 +264,7 @@ b {
   border-radius: 12px;
   color: rgb(61, 203, 171);
   font-weight: bold;
-  font-size: 0.85rem;
+  font-size: .85rem;
 }
 
 .item ul {
@@ -362,17 +280,17 @@ b {
   align-items: center;
   justify-content: flex-start;
   text-align: left;
-  color: rgb(var(--color), 0.5);
+  color: rgb(var(--color), .5)
 }
 
 .item ul li b {
-  color: rgb(var(--color), 1);
+  color: rgb(var(--color), 1)
 }
 
 .item ul li i {
   font-size: 1.6rem;
   margin-right: 15px;
-  color: rgb(var(--color), 1);
+  color: rgb(var(--color), 1)
 }
 
 .item button {
@@ -384,14 +302,14 @@ b {
   color: #fff;
   font-weight: bold;
   font-size: 1.1rem;
-  box-shadow: 0px 10px 25px 0px rgba(61, 203, 171, 0.35);
+  box-shadow: 0px 10px 25px 0px rgba(61, 203, 171, .35);
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all .25s ease;
 }
 
 .item button:not(.border):hover {
   transform: translate(0, 5px);
-  box-shadow: 0px 0px 0px 0px rgba(61, 203, 171, 0.35);
+  box-shadow: 0px 0px 0px 0px rgba(61, 203, 171, .35);
 }
 
 .item button.border {

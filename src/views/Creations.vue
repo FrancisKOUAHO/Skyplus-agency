@@ -40,13 +40,11 @@ export default defineComponent({
           localStorage.setItem('reloaded', '1');
           location.reload();
       }
+  },
+  setup(){
+    let body = document.querySelector('body');
+    body?.setAttribute('class','body-color3')
   }
 })
 </script>
 
-<style>
-body {
-  background-image: linear-gradient(to left bottom, #86A8E7, #D16BA5);
-}
-
-</style>
