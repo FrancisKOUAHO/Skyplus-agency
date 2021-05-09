@@ -1,19 +1,16 @@
 <template>
-  <nav-bar/>
-  <agence1/>
-  <pieds-page/>
+  <agence/>
 </template>
 
 <script lang="ts">
 
 import {defineComponent} from 'vue'
-import NavBar from "@/components/NavBars/NavBar.vue";
-import Agence1 from "@/components/Cards/Agence.vue"
-import PiedsPage from "@/components/Footers/PiedsPage.vue";
+import Agence from "@/components/Cards/Agence.vue"
+
 
 export default defineComponent({
   name: 'Agence',
-  components: {PiedsPage, NavBar, Agence1},
+  components: {Agence},
   data() {
     return {
       color: '#333'

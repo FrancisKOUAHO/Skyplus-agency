@@ -1,12 +1,17 @@
 <template>
+  <nav-bar/>
   <router-view />
+  <pieds-page/>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import NavBar from "@/components/NavBars/NavBar.vue";
+import PiedsPage from "@/components/Footers/PiedsPage.vue";
 
 export default defineComponent({
   name: 'App',
+  components: {PiedsPage, NavBar},
   data() {
     return {};
   },

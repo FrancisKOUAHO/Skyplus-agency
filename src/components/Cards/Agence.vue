@@ -42,7 +42,7 @@
 import {defineComponent} from 'vue'
 
 export default defineComponent({
-  name: 'Agence1',
+  name: 'Agence',
   data() {
     return {}
   }
@@ -97,7 +97,7 @@ h4 {
 }
 
 .content1 > p {
-    font-family: Raleway-Thin;
+    font-family: Raleway-Thin,sans-serif;
     -webkit-animation-duration: 2s;
     animation-duration: 2s;
     -webkit-animation-fill-mode: both;
@@ -158,7 +158,7 @@ h4 {
 }
 
 /* Small devices (landscape phones, 340px and up) */
-@media (min-width: 340px) and (max-width: 767px){ 
+@media (min-width: 340px) and (max-width: 767px){
   .title_desc{
     padding: 1rem;
   }
@@ -207,7 +207,7 @@ h4 {
 }
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 1023px) { 
+@media (min-width: 768px) and (max-width: 1023px) {
   .title_desc{
     margin: 0 3rem 3rem 3rem;
   }
@@ -245,16 +245,16 @@ h4 {
 }
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 1024px) and (max-width: 1279px) { 
+@media (min-width: 1024px) and (max-width: 1279px) {
 
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1280px) and (max-width: 1535px) { 
-  
+@media (min-width: 1280px) and (max-width: 1535px) {
+
 }
 
-@media (min-width: 1536px) { 
+@media (min-width: 1536px) {
   .content1{
     width: 35em;
     padding: 3em 2em;

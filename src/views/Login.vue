@@ -32,7 +32,6 @@
     </div>
   </form>
 </template>
-
 <script>
 import {defineComponent} from 'vue'
 import swal from "sweetalert";
@@ -51,6 +50,10 @@ export default defineComponent({
         password: "",
       }
     };
+  },
+  setup() {
+    let body = document.querySelector('body');
+    body?.setAttribute('class', 'body-color8 creationHeight')
   },
   methods: {
     async loginUser() {
@@ -166,7 +169,6 @@ img {
 }
 
 .body-color {
-  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
   display: flex;
   align-items: center;
   justify-content: center;

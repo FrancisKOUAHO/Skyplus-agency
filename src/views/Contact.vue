@@ -1,5 +1,4 @@
 <template>
-  <nav-bar/>
   <contact-vue/>
   <div class="container displayed" style="margin-top: -10%">
     <h1 style="font-weight: 600; font-size: 48px; line-height: 1.15; color: white"><span>Nous gravitons dans</span>
@@ -21,20 +20,17 @@
     </div>
   </div>
   <reseau-sociaux/>
-  <pieds-page/>
 </template>
 
 <script lang="ts">
 
 import {defineComponent} from 'vue'
-import NavBar from "@/components/NavBars/NavBar.vue";
-import PiedsPage from "@/components/Footers/PiedsPage.vue";
 import ContactVue from "@/components/Forms/ContactVue.vue";
 import ReseauSociaux from "@/components/Reseaux/ReseauSociaux.vue";
 
 export default defineComponent({
   name: 'Contact',
-  components: {ReseauSociaux, ContactVue, PiedsPage, NavBar},
+  components: {ReseauSociaux, ContactVue},
   data() {
     return {
       contacts: [

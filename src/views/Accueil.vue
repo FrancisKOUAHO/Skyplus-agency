@@ -1,22 +1,18 @@
 <template>
-  <nav-bar/>
   <skyplus/>
   <hello/>
-  <pieds-page/>
 </template>
 
 <script lang="ts">
 
 import {defineComponent} from 'vue';
-import NavBar from "@/components/NavBars/NavBar.vue";
-import PiedsPage from "@/components/Footers/PiedsPage.vue";
 import Skyplus from "@/components/Cards/Skyplus.vue";
 import Hello from "@/components/Barres/Hello.vue";
 
 
 export default defineComponent({
   name: 'Accueil',
-  components: {Hello, Skyplus, PiedsPage, NavBar},
+  components: {Hello, Skyplus},
   data() {
     return {}
   },

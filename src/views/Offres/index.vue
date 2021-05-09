@@ -1,5 +1,4 @@
 <template>
-  <nav-bar/>
   <div class="background">
     <div class="container">
       <div class="panel pricing-table">
@@ -89,19 +88,16 @@
       </div>
     </div>
   </div>
-  <pieds-page class="pieds-page"/>
 </template>
 
 <script>
-import NavBar from '@/components/NavBars/NavBar';
-import PiedsPage from '@/components/Footers/PiedsPage';
 import {defineComponent, ref} from 'vue';
 import axios from '../../utils/axiosInstance';
 import {useStripe} from 'vue-use-stripe';
 
 export default defineComponent({
   name: 'Index',
-  components: {PiedsPage, NavBar},
+  components: {},
   setup() {
     let body = document.querySelector('body');
     body?.setAttribute('class', 'body-color1')
@@ -133,10 +129,6 @@ export default defineComponent({
 });
 </script>
 <style scoped>
-.pieds-page {
-  margin-bottom: -25%;
-}
-
 html {
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
