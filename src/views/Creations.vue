@@ -30,7 +30,7 @@ export default defineComponent({
   },
   setup() {
     let body = document.querySelector('body');
-    body?.setAttribute('class', 'body-color3')
+    body?.setAttribute('class', 'body-color3 creationHeight')
   },
   mounted() {
     if (localStorage.getItem('reloaded')) {
@@ -47,4 +47,8 @@ export default defineComponent({
 </script>
 
 <style>
+
+.creationHeight{
+  height: 190%;
+}
 </style>
