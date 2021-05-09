@@ -1,6 +1,6 @@
 <template>
-  <main class="fadeInBottom flex justify-center mt-96 mb-40">
-    <section class="has-dflex-center">
+  <main class="flex justify-center mt-96 mb-40">
+    <section class="fadeInBottom has-dflex-center">
       <div class="lx-container-80">
         <div class="lx-row">
           <div class="lx-card carousel-container">
@@ -102,6 +102,11 @@ h1{
 
 main section {
   padding: 4rem 0;
+    -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-delay: 2s;
 }
 
 main section .carousel-container {
@@ -118,10 +123,7 @@ main section .carousel-container .item {
   height: 100%;
   position: relative;
   display: none;
-  -webkit-animation-duration: 0.5s;
-  animation-duration: 0.5s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
+
 }
 
 main section .carousel-container .item .numbertext {
