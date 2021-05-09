@@ -74,6 +74,12 @@ export default {
       showModal: false
     };
   },
+  setup() {
+    let navBar = document.querySelector('nav');
+    let footer = document.querySelector('footer');
+    navBar.style.display = 'none';
+    footer.style.display = 'none';
+  },
   methods: {
     getUserDetails() {
       let token = localStorage.getItem("jwt");

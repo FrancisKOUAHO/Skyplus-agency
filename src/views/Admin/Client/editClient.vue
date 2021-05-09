@@ -122,6 +122,12 @@ export default defineComponent({
       showModal: false
     }
   },
+  setup() {
+    let navBar = document.querySelector('nav');
+    let footer = document.querySelector('footer');
+    navBar.style.display = 'none';
+    footer.style.display = 'none';
+  },
   created() {
     let apiURL = `https://agencyskyplus.herokuapp.com/client/edit-client/${this.$route.params.id}`;
 

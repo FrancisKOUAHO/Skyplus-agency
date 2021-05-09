@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="loginUser">
-    <div class="body-color">
+    <div class="login">
       <div class="card">
         <h1 class="card__title">Connexion</h1>
         <div class="form-row">
@@ -54,6 +54,10 @@ export default defineComponent({
   setup() {
     let body = document.querySelector('body');
     body?.setAttribute('class', 'body-color8 creationHeight')
+    let navBar = document.querySelector('nav');
+    let footer = document.querySelector('footer');
+    navBar.style.display = 'none';
+    footer.style.display = 'none';
   },
   methods: {
     async loginUser() {
@@ -168,11 +172,11 @@ img {
   background: #cecece;
 }
 
-.body-color {
+.login {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  height: 100vh;
   padding: 32px;
 }
 </style>
