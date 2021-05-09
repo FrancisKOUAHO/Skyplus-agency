@@ -1,27 +1,55 @@
 <template>
   <nav-bar/>
-  <div class="pricingTable">
-    <h2 class="pricingTable-title">Les offres Skyplus</h2>
-    <h3 class="pricingTable-subtitle">Toutes nos offres sont avec engagement de 24 mois</h3>
-    <ul class="pricingTable-firstTable">
-      <li class="pricingTable-firstTable_table">
-        <h1 class="pricingTable-firstTable_table__header">Bronze Package </h1>
-        <span class="subtitle">Site internet vitrine en une seule page</span>
-        <p class="pricingTable-firstTable_table__pricing"><span class="subtitle">130€ + 25€/mois</span></p>
-        <ul class="pricingTable-firstTable_table__options">
-          <li>Création de l’architecture technique du site</li>
-          <li>Maintenance et entretien</li>
-          <li>Hébergement de qualité en France</li>
-          <li>Accompagnement Standard</li>
-          <li>Fonctionnalités de base</li>
-          <li>Rapport de trafic</li>
-          <li>Assistant en ligne pour générer vos mentions légales</li>
-        </ul>
-        <router-link to="#">
-          <button
-              class="pricingTable-firstTable_table__getstart"
-              :disabled="isPurchasing"
-              @click="purchaseMonthlyPlan('price_1IobEQKYGE5dRt9iRJCRKPj9')"
+  <div class="background">
+    <div class="container">
+      <div class="panel pricing-table">
+
+        <div class="pricing-plan">
+          <img src="../../assets/image/forfaits/bronze.png" alt="" class="pricing-img">
+          <h2 class="pricing-header">Bronze Package</h2>
+          <br>
+          <h4 class="pricing-header">Site internet vitrine en une seule page</h4>
+          <ul class="pricing-features">
+            <li class="pricing-features-item">Création de l’architecture technique du site</li>
+            <li class="pricing-features-item">Maintenance et entretien</li>
+            <li class="pricing-features-item">Hébergement de qualité en France</li>
+            <li class="pricing-features-item">Accompagnement Standard</li>
+            <li class="pricing-features-item">Fonctionnalités de base</li>
+            <li class="pricing-features-item">Rapport de trafic</li>
+            <li class="pricing-features-item">Assistant en ligne pour générer vos mentions légales</li>
+          </ul>
+          <span class="pricing-price">130€ + 25€/mois</span>
+          <router-link to="#"
+                       class="pricingTable-firstTable_table__getstart pricing-button"
+                       :disabled="isPurchasing"
+                       @click="purchaseMonthlyPlan('price_1IobEQKYGE5dRt9iRJCRKPj9')"
+          >
+            <img
+                class="loader"
+                v-if="isPurchasing"
+                src="../../assets/image/loading.gif"
+            />
+            <span v-else style="color: #269aff;">Commencez maintenant</span>
+          </router-link>
+        </div>
+
+        <div class="pricing-plan">
+          <img src="../../assets/image/forfaits/gold.png" alt="" class="pricing-img">
+          <h2 class="pricing-header">Gold Package</h2>
+          <br>
+          <h4 class="pricing-header">Site internet professionnel multi-pages</h4>
+          <ul class="pricing-features">
+            <li class="pricing-features-item">Tout le pack Simplicité</li>
+            <li class="pricing-features-item">Système d'avis en ligne avec modération</li>
+            <li class="pricing-features-item">Création des pages et intégration des contenus initiaux (10 pages incluses)</li>
+            <li class="pricing-features-item">Optimisation du référencement sur le nom de votre entreprise</li>
+          </ul>
+          <span class="pricing-price" style="margin-top: 75%;">250€ + 50€/mois</span>
+          <router-link to="#"
+                       style="margin-top: 13%;"
+                       class="pricingTable-firstTable_table__getstart pricing-button is-featured"
+                       :disabled="isPurchasing"
+                       @click="purchaseMonthlyPlan('price_1IobF1KYGE5dRt9ixPLWJisT')"
           >
             <img
                 class="loader"
@@ -29,77 +57,38 @@
                 src="../../assets/image/loading.gif"
             />
             <span v-else>Commencez maintenant</span>
-          </button>
-        </router-link>
-      </li>
-      <li class="pricingTable-firstTable_table">
-        <h1 class="pricingTable-firstTable_table__header">Gold Package </h1>
-        <span class="subtitle">Site internet professionnel multi-pages</span>
-        <p class="pricingTable-firstTable_table__pricing"><span class="subtitle">250€ + 50€/mois</span></p>
-        <ul class="pricingTable-firstTable_table__options">
-          <li>Tout le pack Simplicité</li>
-          <li>Système d'avis en ligne avec modération</li>
-          <li>Création des pages et intégration des contenus initiaux (10 pages incluses)</li>
-          <li>Optimisation du référencement sur le nom de votre entreprise</li>
-        </ul>
-        <router-link to="#">
-          <button
-              class="pricingTable-firstTable_table__getstart"
-              :disabled="isPurchasing"
-              @click="purchaseMonthlyPlan('price_1IobF1KYGE5dRt9ixPLWJisT')"
+          </router-link>
+        </div>
+
+        <div class="pricing-plan">
+          <img src="../../assets/image/forfaits/platinum.png" alt="" class="pricing-img">
+          <h2 class="pricing-header">Platinum Package</h2>
+          <br>
+          <h4 class="pricing-header">Site internet professionnel optimisé pour le référencement</h4>
+          <ul class="pricing-features">
+            <li class="pricing-features-item">Tout le Pack Crédibilité</li>
+            <li class="pricing-features-item">Optimisation du référencement local sur 1 adresse</li>
+            <li class="pricing-features-item">Création et gestion d'une fiche Google My Business</li>
+            <li class="pricing-features-item">Ligne de téléphone fixe avec suivi d'appel</li>
+          </ul>
+          <span class="pricing-price" style="margin-top: 93%;">350€ + 90€/mois</span>
+          <router-link to="#"
+                       style="margin-top: 12%;"
+                       class="pricingTable-firstTable_table__getstart pricing-button "
+                       :disabled="isPurchasing"
+                       @click="purchaseMonthlyPlan('price_1IobFYKYGE5dRt9iMWB6SSkN')"
           >
             <img
                 class="loader"
                 v-if="isPurchasing"
                 src="../../assets/image/loading.gif"
             />
-            <span v-else>Commencez maintenant</span>
-          </button>
-        </router-link>
-      </li>
-      <li class="pricingTable-firstTable_table">
-        <h1 class="pricingTable-firstTable_table__header">Platinum Package</h1>
-        <span class="subtitle">Site internet professionnel optimisé pour le référencement</span>
-        <p class="pricingTable-firstTable_table__pricing"><span class="subtitle">350€ + 90€/mois</span></p>
-        <ul class="pricingTable-firstTable_table__options">
-          <li>Tout le Pack Crédibilité</li>
-          <li>Optimisation du référencement local sur 1 adresse</li>
-          <li>Création et gestion d'une fiche Google My Business</li>
-          <li>Ligne de téléphone fixe avec suivi d'appel</li>
-        </ul>
-        <router-link to="#">
-          <button
-              class="pricingTable-firstTable_table__getstart"
-              :disabled="isPurchasing"
-              @click="purchaseMonthlyPlan('price_1IobFYKYGE5dRt9iMWB6SSkN')"
-          >
-            <img
-                class="loader"
-                v-if="isPurchasing"
-                src="../../assets/image/loading.gif"
-            />
-            <span v-else>Commencez maintenant</span>
-          </button>
-        </router-link>
-      </li>
-    </ul>
-  </div>
-  <center>
-    <div>
-      <ul class="ul-text">
-        <li>Forfait tout compris à partir de 99.90 € HT /mois</li>
-        <span>Engagement sur 24 mois minimum, <router-link to="#" style="color: blue !important;">
-        voir les avantages du forfait tout compris
-      </router-link></span>
-      </ul>
-      <br>
-      <ul class="ul-text">
-        <li>Formule liberté à partir de 1790 € HT</li>
-        <span>Sans engagement de durée. Paiement en 3 fois sans frais : premier versement de 34% à la commande et 2 versements suivants de 33% respectivement</span>
-        <span><br>1 mois et 2 mois après la commande.</span>
-      </ul>
+            <span v-else style="color: #269aff;">Commencez maintenant</span>
+          </router-link>
+        </div>
+      </div>
     </div>
-  </center>
+  </div>
   <pieds-page class="pieds-page"/>
 </template>
 
@@ -109,6 +98,7 @@ import PiedsPage from '@/components/Footers/PiedsPage';
 import {defineComponent, ref} from 'vue';
 import axios from '../../utils/axiosInstance';
 import {useStripe} from 'vue-use-stripe';
+
 export default defineComponent({
   name: 'Index',
   components: {PiedsPage, NavBar},
@@ -143,464 +133,140 @@ export default defineComponent({
 });
 </script>
 <style scoped>
-.ul-text {
-  color: white;
-  font-size: 1rem;
-}
-
 .pieds-page {
   margin-bottom: -25%;
 }
 
-.pricingTable {
-  margin: 40px auto;
+html {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
 }
 
-.subtitle {
-  font-size: 0.9rem !important;
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
-.pricingTable > .pricingTable-title {
-  text-align: center;
-  color: white;
-  font-size: 3em;
-  font-size: 300%;
-  margin-bottom: 20px;
-  letter-spacing: 0.04em;
-}
 
-.pricingTable > .pricingTable-subtitle {
-  text-align: center;
-  color: white;
-  font-size: 1.8em;
-  letter-spacing: 0.04em;
-  margin-bottom: 60px;
-}
-
-@media screen and (max-width: 480px) {
-  .pricingTable > .pricingTable-subtitle {
-    margin-bottom: 30px;
+@media (min-width: 900px) {
+  .background {
+    padding: 0 0 25px;
   }
 }
 
-.pricingTable-firstTable {
-  list-style: none;
-  padding-left: 2em;
-  padding-right: 2em;
-  text-align: center;
+.container {
+  margin: 0 auto;
+  padding: 50px 0 0;
+  max-width: 960px;
+  width: 100%;
 }
 
-.pricingTable-firstTable_table {
-  vertical-align: middle;
-  width: 31%;
-  background-color: #ffffff;
-  display: inline-block;
-  padding: 0px 30px 40px;
-  text-align: center;
-  max-width: 320px;
-  transition: all 0.3s ease;
-  border-radius: 5px;
-}
-
-@media screen and (max-width: 767px) {
-  .pricingTable-firstTable_table {
-    display: block;
-    width: 90%;
-    margin: 0 auto;
-    max-width: 90%;
-    margin-bottom: 20px;
-    padding: 10px;
-    padding-left: 20px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .pricingTable-firstTable_table > * {
-    display: inline-block;
-    vertical-align: middle;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .pricingTable-firstTable_table > * {
-    display: block;
-    float: none;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .pricingTable-firstTable_table:after {
-    display: table;
-    content: "";
-    clear: both;
-  }
-}
-
-.pricingTable-firstTable_table:hover {
-  transform: scale(1.08);
-}
-
-@media screen and (max-width: 767px) {
-  .pricingTable-firstTable_table:hover {
-    transform: none;
-  }
-}
-
-.pricingTable-firstTable_table:not(:last-of-type) {
-  margin-right: 3.5%;
-}
-
-@media screen and (max-width: 767px) {
-  .pricingTable-firstTable_table:not(:last-of-type) {
-    margin-right: auto;
-  }
-}
-
-.pricingTable-firstTable_table:nth-of-type(2) {
+.panel {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 15px 25px;
   position: relative;
+  width: 100%;
+  z-index: 10;
 }
 
-@media screen and (max-width: 767px) {
-  .pricingTable-firstTable_table:nth-of-type(2) h1 {
-    padding-top: 8%;
+.pricing-table {
+  box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.08), 0px 20px 31px 3px rgba(0, 0, 0, 0.09), 0px 8px 20px 7px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 900px) {
+  .pricing-table {
+    flex-direction: row;
   }
 }
 
-.pricingTable-firstTable_table:nth-of-type(2):before {
-  content: "Populaire";
-  position: absolute;
-  color: white;
-  display: block;
-  background-color: #71ce73;
+.pricing-table * {
   text-align: center;
-  right: 15px;
-  top: -25px;
-  height: 65px;
-  width: 65px;
-  border-radius: 50%;
-  box-sizing: border-box;
-  font-size: 0.5em;
-  padding-top: 22px;
   text-transform: uppercase;
-  letter-spacing: 0.13em;
-  transition: all 0.5s ease;
-  font-size: 0.7em;
 }
 
-@media screen and (max-width: 988px) {
-  .pricingTable-firstTable_table:nth-of-type(2):before {
-    font-size: 0.6em;
-  }
+.pricing-plan {
+  border-bottom: 1px solid #e1f1ff;
+  padding: 25px;
 }
 
-@media screen and (max-width: 767px) {
-  .pricingTable-firstTable_table:nth-of-type(2):before {
-    left: 10px;
-    width: 45px;
-    height: 45px;
-    top: -10px;
-    padding-top: 13px;
-  }
+.pricing-plan:last-child {
+  border-bottom: none;
 }
 
-@media screen and (max-width: 480px) {
-  .pricingTable-firstTable_table:nth-of-type(2):before {
-    font-size: 0.8em;
-  }
-}
-
-.pricingTable-firstTable_table:nth-of-type(2):hover:before {
-  transform: rotate(360deg);
-}
-
-.pricingTable-firstTable_table__header {
-  font-size: 1.6em;
-  padding: 40px 0px;
-  border-bottom: 2px solid #ebedec;
-  letter-spacing: 0.03em;
-}
-
-@media screen and (max-width: 1068px) {
-  .pricingTable-firstTable_table__header {
-    font-size: 1.45em;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .pricingTable-firstTable_table__header {
-    padding: 0px;
+@media (min-width: 900px) {
+  .pricing-plan {
     border-bottom: none;
-    float: left;
-    width: 33%;
-    padding-top: 3%;
-    padding-bottom: 2%;
+    border-right: 1px solid #e1f1ff;
+    flex-basis: 100%;
+    padding: 25px 50px;
+  }
+
+  .pricing-plan:last-child {
+    border-right: none;
   }
 }
 
-@media screen and (max-width: 610px) {
-  .pricingTable-firstTable_table__header {
-    font-size: 1.3em;
-  }
+.pricing-img {
+  margin-bottom: 25px;
+  max-width: 100%;
 }
 
-@media screen and (max-width: 480px) {
-  .pricingTable-firstTable_table__header {
-    float: none;
-    width: 100%;
-    font-size: 1.8em;
-    margin-bottom: 5px;
-  }
+.pricing-header {
+  color: #888;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
-.pricingTable-firstTable_table__pricing {
-  font-size: 3em;
-  padding: 30px 0px;
-  border-bottom: 2px solid #ebedec;
-  line-height: 0.7;
+.pricing-features {
+  color: #016FF9;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 50px 0 25px;
 }
 
-@media screen and (max-width: 1068px) {
-  .pricingTable-firstTable_table__pricing {
-    font-size: 2.8em;
-  }
+.pricing-features-item {
+  border-top: 1px solid #e1f1ff;
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 15px 0;
 }
 
-@media screen and (max-width: 767px) {
-  .pricingTable-firstTable_table__pricing {
-    border-bottom: none;
-    padding: 0;
-    float: left;
-    clear: left;
-    width: 33%;
-  }
+.pricing-features-item:last-child {
+  border-bottom: 1px solid #e1f1ff;
 }
 
-@media screen and (max-width: 610px) {
-  .pricingTable-firstTable_table__pricing {
-    font-size: 2.4em;
-  }
+.pricing-price {
+  color: #016FF9 !important;
+  display: block;
+  font-size: 23px;
+  font-weight: 700;
 }
 
-@media screen and (max-width: 480px) {
-  .pricingTable-firstTable_table__pricing {
-    float: none;
-    width: 100%;
-    font-size: 3em;
-    margin-bottom: 10px;
-  }
+.pricing-button {
+  border: 1px solid #9dd1ff;
+  border-radius: 10px;
+  color: #348EFE;
+  display: inline-block;
+  margin: 25px 0;
+  padding: 15px 35px;
+  text-decoration: none;
+  transition: all 150ms ease-in-out;
 }
 
-.pricingTable-firstTable_table__pricing span:first-of-type {
-  font-size: 0.35em;
-  vertical-align: top;
-  letter-spacing: 0.15em;
+.pricing-button:hover,
+.pricing-button:focus {
+  background-color: #e1f1ff;
 }
 
-@media screen and (max-width: 1068px) {
-  .pricingTable-firstTable_table__pricing span:first-of-type {
-    font-size: 0.3em;
-  }
+.pricing-button.is-featured {
+  background-color: #48aaff;
+  color: #fff;
 }
 
-.pricingTable-firstTable_table__pricing span:last-of-type {
-  vertical-align: bottom;
-  font-size: 0.3em;
-  letter-spacing: 0.04em;
-  padding-left: 0.2em;
-}
-
-@media screen and (max-width: 1068px) {
-  .pricingTable-firstTable_table__pricing span:last-of-type {
-    font-size: 0.25em;
-  }
-}
-
-.pricingTable-firstTable_table__options {
-  list-style: none;
-  padding: 15px;
-  font-size: 0.9em;
-  border-bottom: 2px solid #ebedec;
-}
-
-@media screen and (max-width: 1068px) {
-  .pricingTable-firstTable_table__options {
-    font-size: 0.85em;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .pricingTable-firstTable_table__options {
-    border-bottom: none;
-    padding: 0;
-    margin-right: 10%;
-  }
-}
-
-@media screen and (max-width: 610px) {
-  .pricingTable-firstTable_table__options {
-    font-size: 0.7em;
-    margin-right: 8%;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .pricingTable-firstTable_table__options {
-    font-size: 1.3em;
-    margin-right: none;
-    margin-bottom: 10px;
-  }
-}
-
-.pricingTable-firstTable_table__options > li {
-  padding: 8px 0px;
-}
-
-@media screen and (max-width: 767px) {
-  .pricingTable-firstTable_table__options > li {
-    text-align: left;
-  }
-}
-
-@media screen and (max-width: 610px) {
-  .pricingTable-firstTable_table__options > li {
-    padding: 5px 0;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .pricingTable-firstTable_table__options > li {
-    text-align: center;
-  }
-}
-
-.pricingTable-firstTable_table__options > li:before {
-  content: "✓";
-  display: inline-flex;
-  margin-right: 15px;
-  color: white;
-  background-color: #74ce6a;
-  border-radius: 50%;
-  width: 15px;
-  height: 15px;
-  font-size: 0.8em;
-  padding: 2px;
-  align-items: center;
-  justify-content: center;
-}
-
-@media screen and (max-width: 1068px) {
-  .pricingTable-firstTable_table__options > li:before {
-    width: 14px;
-    height: 14px;
-    padding: 1.5px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .pricingTable-firstTable_table__options > li:before {
-    width: 12px;
-    height: 12px;
-  }
-}
-
-.pricingTable-firstTable_table__getstart {
-  color: white;
-  border: 0;
-  background-color: #71ce73;
-  margin-top: 30px;
-  border-radius: 5px;
-  cursor: pointer;
-  padding: 15px;
-  box-shadow: 0px 3px 0px 0px #66ac64;
-  letter-spacing: 0.07em;
-  transition: all 0.4s ease;
-}
-
-@media screen and (max-width: 1068px) {
-  .pricingTable-firstTable_table__getstart {
-    font-size: 0.95em;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .pricingTable-firstTable_table__getstart {
-    margin-top: 0;
-  }
-}
-
-@media screen and (max-width: 610px) {
-  .pricingTable-firstTable_table__getstart {
-    font-size: 0.9em;
-    padding: 10px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .pricingTable-firstTable_table__getstart {
-    font-size: 1em;
-    width: 50%;
-    margin: 10px auto;
-  }
-}
-
-.pricingTable-firstTable_table__getstart:hover {
-  transform: translateY(-10px);
-  box-shadow: 0px 40px 29px -19px rgba(102, 172, 100, 0.9);
-}
-
-@media screen and (max-width: 767px) {
-  .pricingTable-firstTable_table__getstart:hover {
-    transform: none;
-    box-shadow: none;
-  }
-}
-
-.pricingTable-firstTable_table__getstart:active {
-  box-shadow: inset 0 0 10px 1px #66a564, 0px 40px 29px -19px rgba(102, 172, 100, 0.95);
-  transform: scale(0.95) translateY(-9px);
-}
-
-@media screen and (max-width: 767px) {
-  .pricingTable-firstTable_table__getstart:active {
-    transform: scale(0.95) translateY(0);
-    box-shadow: none;
-  }
-}
-
-body {
-  font-family: "Montserrat", sans-serif;
-  font-size: 100%;
-  background-color: #f0f4f7;
-  color: #717787;
-}
-
-@media screen and (max-width: 960px) {
-  body {
-    font-size: 80%;
-  }
-}
-
-@media screen and (max-width: 776px) {
-  body {
-    font-size: 70%;
-  }
-}
-
-@media screen and (max-width: 496px) {
-  body {
-    font-size: 50%;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  body {
-    font-size: 40%;
-  }
-}
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+.pricing-button.is-featured:hover,
+.pricing-button.is-featured:active {
+  background-color: #269aff;
 }
 </style>

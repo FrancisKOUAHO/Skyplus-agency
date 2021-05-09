@@ -107,6 +107,8 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <style>
+      iframe:not(.userlike) {background-color: rgb(0, 255, 210) !important;}
+
       .body-color1 {
           background-image: linear-gradient(to left bottom, #7e80cb, #5e8cd2, #3b95d1, #139ecb, #00a4c1,
           #00adc1, #00b6be, #00bfb9, #00cfc2, #00dfc9, #00efce, #00ffd2);
@@ -134,7 +136,6 @@
           background-image: linear-gradient(to left bottom, #D16BA5, #D16BA5, #D16BA5);
       }
   </style>
-
   <body>
     <noscript>
       <strong
@@ -145,5 +146,6 @@
     </noscript>
     <div id="app"></div>
   </body>
+  <script type="text/javascript" async src="https://userlike-cdn-widgets.s3-eu-west-1.amazonaws.com/80b639ab9d37475d8138da914ee3b3a719541ad620ba48b4988e7af5dc890481.js"></script>
 </html>
 

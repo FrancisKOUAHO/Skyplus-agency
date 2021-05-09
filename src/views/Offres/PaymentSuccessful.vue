@@ -37,25 +37,15 @@
 </template>
 
 <script>
-import {useStripe} from "vue-use-stripe";
-import axios from "@/utils/axiosInstance";
+import {defineComponent} from 'vue'
 
-export default {
+export default defineComponent({
   name: "PaymentSuccessful",
   created() {
     let body = document.querySelector('body');
     body?.setAttribute('class', 'body-color1')
-    const {stripe} = useStripe({
-      key:
-          'pk_test_51HwcPhKYGE5dRt9idxqGRsQgRwPQ78zHXD9N6cfWcC77owBiEJFH7r7d4sI0nfLnLj9U9gRMTr1bzQbSLgnasBMa00MHGpiTx5',
-    });
-    const {data} = axios.post('/payments/create-checkout-session');
-    const handleResult = stripe.value.redirectToCheckout({
-      sessionId: data.sessionId,
-    });
-    return handleResult
   }
-}
+})
 </script>
 
 <style scoped>

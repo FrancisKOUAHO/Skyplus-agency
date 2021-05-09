@@ -41,59 +41,8 @@
           <main class="w-full flex-grow p-6">
             <h1 class="text-3xl text-black pb-6">Tableau de bord
             </h1>
+              <stat-card/>
 
-            <div class="flex flex-wrap mt-6">
-              <div class="w-full lg:w-1/2 pr-0 lg:pr-2">
-                <p class="text-xl pb-3 flex items-center">
-                  <i class="fas fa-plus mr-3"></i> Rapports mensuels
-                </p>
-                <div class="p-6 bg-white">
-                  <start-at-zero/>
-                </div>
-              </div>
-              <div class="w-full lg:w-1/2 pl-0 lg:pl-2 mt-12 lg:mt-0">
-                <p class="text-xl pb-3 flex items-center">
-                  <i class="fas fa-check mr-3"></i> Rapports résolus
-                </p>
-                <div class="p-6 bg-white">
-                  <start-at-two/>
-                </div>
-              </div>
-            </div>
-
-            <div class="w-full mt-12">
-              <p class="text-xl pb-3 flex items-center">
-                <i class="fas fa-list mr-3"></i> Derniers rapports
-              </p>
-              <div class="bg-white overflow-auto">
-                <table class="min-w-full bg-white">
-                  <thead class="bg-gray-800 text-white">
-                  <tr>
-                    <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Nom</th>
-                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Téléphone</th>
-                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Email</th>
-                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Projet</th>
-                  </tr>
-                  </thead>
-                  <tbody class="text-gray-700" v-for="(get_client, index) in get_clients" :key="index">
-                  <tr class="bg-gray-200">
-                    <td class="w-1/3 text-left py-3 px-4">{{ get_client.name }}</td>
-                    <td class="text-left py-3 px-4"><a class="color-text" href="tel:622322662">{{
-                        get_client.phone
-                      }}</a>
-                    </td>
-                    <td class="text-left py-3 px-4"><a class="color-text"
-                                                       v-bind:href="'mailto:'+get_client.email">{{
-                        get_client.email
-                      }}</a>
-                    </td>
-                    <td class="text-left py-3 px-4"><span class="color-text">{{ get_client.project }}</span>
-                    </td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
           </main>
         </div>
       </div>
@@ -107,11 +56,12 @@ import VueJwtDecode from "vue-jwt-decode";
 import HeaderDashboard from "@/components/ComponentsAdmins/Hearders/HeaderDashboard";
 import DropdownDashboard from "@/components/Dropdown/DropdownDashboard";
 import axios from "axios";
+import StatCard from "@/components/Cards/StatCard";
 
 export default defineComponent({
   name: "Dashboard",
 
-  components: {DropdownDashboard, HeaderDashboard},
+  components: {StatCard, DropdownDashboard, HeaderDashboard},
   data() {
     return {
       user: {},
