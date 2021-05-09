@@ -61,7 +61,7 @@
         </div>
 
         <div class="pricing-plan">
-          <img src="../../assets/image/forfaits/platinum.png" alt="" class="pricing-img">
+          <img src="../../assets/image/forfaits/platinium.png" alt="" class="pricing-img">
           <h2 class="pricing-header">Platinum Package</h2>
           <br>
           <h4 class="pricing-header">Site internet professionnel optimisé pour le référencement</h4>
