@@ -1,7 +1,7 @@
 <template>
   <nav-bar/>
   <router-view/>
-  <pieds-page style="margin-bottom: -11%"/>
+  <pieds-page style="position: fixed; bottom: 0"/>
 </template>
 
 <script lang="ts">

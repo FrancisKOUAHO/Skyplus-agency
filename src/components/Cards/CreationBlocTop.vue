@@ -129,4 +129,43 @@ h3, .h5bold{
   -webkit-animation-name: fadeInBottom;
   animation-name: fadeInBottom;
 }
+
+
+/* Small devices (landscape phones, 340px and up) */
+@media (min-width: 340px) and (max-width: 767px){
+  .container_bloc1{
+      background: none;
+      padding: 2em;
+      width: 100%;
+      left: 0em;
+      margin: 15em auto 0 auto;
+  }
+
+  h5{
+    padding-left: 0;
+  }
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1280px) and (max-width: 1535px) {
+
+}
+
+@media (min-width: 1536px) {
+
+}
+
+
 </style>

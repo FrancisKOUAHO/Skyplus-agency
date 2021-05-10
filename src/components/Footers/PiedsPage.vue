@@ -2,8 +2,8 @@
   <footer class='w-3/4 border-grey p-4' id="footer">
     <h1 style="color: white; font-size: 0.9rem">SKYPLUS © 2021 - Agence de communication et de création digitale</h1>
     <ul>
-      <li class="no-link active"><span class="lang">FR</span></li>
-      <li><a class="lang" href="http://www.skyplus.com/">EN</a></li>
+      <!-- <li class="no-link active"><span class="lang">FR</span></li>
+      <li><a class="lang" href="http://www.skyplus.com/">EN</a></li> -->
       <router-link class="double" :to="{name: 'InfosLegales'}">
         <li> infos <br>légales</li>
       </router-link>

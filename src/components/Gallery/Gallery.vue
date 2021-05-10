@@ -1,5 +1,5 @@
 <template>
-  <main class="flex justify-center mt-96 mb-40">
+  <main class="flex justify-center">
     <section class="fadeInBottom has-dflex-center">
       <div class="lx-container-80">
         <div class="lx-row">
@@ -12,11 +12,11 @@
                     {{ slider.name }}</h1>
               </div>
 
-              <div class="flex flex-wrap mt-6 sliderContent">
+              <div class="flex flex-wrap sliderContent">
 
                 <div class="containerDescription overflow-hidden">
                   <p class="sliderDescription fadeInBottom">{{ slider.description }}</p>
-                  <a v-bind:href="slider.link" target="_blank" class="linkSite fadeInRight mt-9 ml-60">Consulter {{slider.name}}</a>
+                  <a v-bind:href="slider.link" target="_blank" class="linkSite fadeInRight">Consulter {{slider.name}}</a>
                 </div>
 
 
@@ -455,6 +455,99 @@ main section .carousel-container .dots .dot:focus, main section .carousel-contai
 	100% {
 		opacity: 1;
 	}
+}
+
+/* Small devices (landscape phones, 340px and up) */
+@media (min-width: 340px) and (max-width: 767px){
+  .container_bloc1{
+      background: none;
+      padding: 2em;
+      width: 100%;
+      left: 0em;
+      margin: 15em auto 0 auto;
+  }
+
+  h1{
+    font-size: 3rem;
+    margin-bottom: 4em;
+  }
+
+  h5{
+    padding-left: 0;
+  }
+
+  main section .carousel-container .item .image img{
+    height: 50%;
+  }
+  .imageFilter{
+    height: 50%; 
+  }
+  main section .carousel-container .next{
+    right: 6rem;
+  }
+  main section .carousel-container .prev{
+    left: 6rem;
+  }
+  main{
+    margin-top: 12rem;
+  }
+  .sliderContent{
+    margin-top: -9rem;
+  }
+  .sliderDescription{
+    font-size: 1.1rem;
+  }
+  .containerImg{
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    position: absolute;
+    top: 30em;
+    left: 35%;
+  }
+  .containerDescription{
+    width: 100%;
+    margin: 3em 2em 0 2em;
+  }
+  .linkSite{
+    margin-top: 1rem;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  main section .carousel-container .item .image img{
+    height: 50%;
+  }
+  .imageFilter{
+    height: 50%; 
+  }
+
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1280px) and (max-width: 1535px) {
+
+}
+
+@media (min-width: 1536px) {
+  main{
+    margin-top: 24rem;
+  }
+  .sliderContent{
+    margin-top: 1.5rem;
+  }
+  .linkSite{
+    margin-left: 15rem;
+    margin-top: 2.25rem;
+  }
 }
 
 
