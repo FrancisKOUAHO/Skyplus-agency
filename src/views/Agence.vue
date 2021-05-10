@@ -1,16 +1,16 @@
 <template>
-  <agence/>
+  <agence2/>
 </template>
 
 <script lang="ts">
 
 import {defineComponent} from 'vue'
-import Agence from "@/components/Cards/Agence.vue"
+import Agence2 from "@/components/Cards/Agence.vue"
 
 
 export default defineComponent({
   name: 'Agence',
-  components: {Agence},
+  components: {Agence2},
   data() {
     return {
       color: '#333'

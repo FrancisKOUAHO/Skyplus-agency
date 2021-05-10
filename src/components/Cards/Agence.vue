@@ -42,7 +42,7 @@
 import {defineComponent} from 'vue'
 
 export default defineComponent({
-  name: 'Agence',
+  name: 'Agence2',
   data() {
     return {}
   }

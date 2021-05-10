@@ -188,6 +188,9 @@ html {
 }
 
 @media (min-width: 900px) {
+  .background {
+    padding: 0 0 100px;
+  }
   .pricing-plan {
     border-bottom: none;
     border-right: 1px solid #e1f1ff;

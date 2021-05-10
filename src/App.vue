@@ -66,6 +66,7 @@ a {
 
 #app {
   font-family: Raleway-Regular, sans-serif;
+  position: relative;
 }
 
 button:disabled {
