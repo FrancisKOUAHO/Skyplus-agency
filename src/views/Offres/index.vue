@@ -1,8 +1,27 @@
 <template>
   <div class="background">
+    <center>
+      <div style="animation-duration: 2000ms;">
+        <div>
+          <h1>
+          <span style="font-size: 40px;font-weight: bold;  font-family: 'Open Sans', sans-serif; color: white">
+            Les offres Skyplus
+          </span>
+          </h1>
+        </div>
+      </div>
+    </center>
+    <div>
+      <p style="text-align: center;">
+        <span style="font-size:22px;">
+          <span style=" font-family: 'Open Sans', sans-serif;text-transform: uppercase; color: white">
+           Toutes nos offres sont avec engagement de 24 mois
+          </span>
+        </span>
+      </p>
+    </div>
     <div class="container">
       <div class="panel pricing-table">
-
         <div class="pricing-plan">
           <img src="../../assets/image/forfaits/bronze.png" alt="" class="pricing-img">
           <h2 class="pricing-header">Bronze Package</h2>
@@ -40,7 +59,9 @@
           <ul class="pricing-features">
             <li class="pricing-features-item">Tout le pack Simplicité</li>
             <li class="pricing-features-item">Système d'avis en ligne avec modération</li>
-            <li class="pricing-features-item">Création des pages et intégration des contenus initiaux (10 pages incluses)</li>
+            <li class="pricing-features-item">Création des pages et intégration des contenus initiaux (10 pages
+              incluses)
+            </li>
             <li class="pricing-features-item">Optimisation du référencement sur le nom de votre entreprise</li>
           </ul>
           <span class="pricing-price" style="margin-top: 75%;">250€ + 50€/mois</span>
@@ -191,6 +212,7 @@ html {
   .background {
     padding: 0 0 100px;
   }
+
   .pricing-plan {
     border-bottom: none;
     border-right: 1px solid #e1f1ff;

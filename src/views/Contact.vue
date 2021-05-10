@@ -21,7 +21,6 @@
   </div>
   <reseau-sociaux/>
 </template>
-
 <script lang="ts">
 
 import {defineComponent} from 'vue'
@@ -88,7 +87,6 @@ export default defineComponent({
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$turquoise', endColorstr='#a571bf', GradientType=1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
   text-fill-color: transparent;
   font-weight: 600;
   display: inline-block;
@@ -120,7 +118,6 @@ export default defineComponent({
   z-index: 8;
   color: #000;
   padding: 1rem;
-  position: relative;
   opacity: 0;
   -webkit-transform: translateX(-1rem);
   transform: translateX(-1rem);
@@ -172,12 +169,10 @@ export default defineComponent({
   position: absolute;
   left: 0;
   line-height: 1.1rem;
-  -webkit-transition: all .25s ease;
   transition: all .25s ease;
   bottom: -1.1rem;
   margin-bottom: 2.2rem;
   -webkit-transition: margin-bottom .6s ease, bottom 0s .6s;
-  transition: margin-bottom .6s ease, bottom 0s .6s;
 }
 
 #contact .contacts {
