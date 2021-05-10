@@ -1,36 +1,38 @@
 <template>
-  <form @submit.prevent="loginUser">
-    <div class="login">
-      <div class="card">
-        <h1 class="card__title">Connexion</h1>
-        <div class="form-row">
-          <input
-              class="form-row__input"
-              type="text"
-              v-model="login.email"
-              placeholder="Adresse mail"
-              required
-          />
-        </div>
-        <div class="form-row">
-          <input
-              class="form-row__input"
-              type="password"
-              v-model="login.password"
-              placeholder="Mot de passe"
-              required
-          />
-        </div>
-        <!--        <div class="text-red-600 my-2"> data.message</div>-->
-        <div class="form-row">
-          <button class="button" type="submit" :disabled="loading">
-            <span v-if="loading" style="color: white">Connexion en cours...</span>
-            <span v-else>Connexion</span>
-          </button>
+  <div style="overflow-y: hidden;">
+    <form @submit.prevent="loginUser">
+      <div class="login">
+        <div class="card">
+          <h1 class="card__title">Connexion</h1>
+          <div class="form-row">
+            <input
+                class="form-row__input"
+                type="text"
+                v-model="login.email"
+                placeholder="Adresse mail"
+                required
+            />
+          </div>
+          <div class="form-row">
+            <input
+                class="form-row__input"
+                type="password"
+                v-model="login.password"
+                placeholder="Mot de passe"
+                required
+            />
+          </div>
+          <!--        <div class="text-red-600 my-2"> data.message</div>-->
+          <div class="form-row">
+            <button class="button" type="submit" :disabled="loading">
+              <span v-if="loading" style="color: white">Connexion en cours...</span>
+              <span v-else>Connexion</span>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  </form>
+    </form>
+  </div>
 </template>
 <script>
 import {defineComponent} from 'vue'
