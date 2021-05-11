@@ -36,7 +36,7 @@
         <img class="w-16 h-16 object-cover" src="https://www.usherbrooke.ca/sari/w728/gnec/img/8/0/3510868580-money_bag.png" alt="" />
         <div class="flex flex-col justify-center">
           <p class="text-gray-900 dark:text-gray-300 font-semibold">Chiffre d'affaire</p>
-          <p class="text-black dark:text-gray-100 text-justify font-semibold">$15 000,00</p>
+          <p class="text-black dark:text-gray-100 text-justify font-semibold">{{get_clients[0].amount_paid + get_clients[0].amount_paid}} €</p>
         </div>
       </div>
       <!-- END SMALL CARD ROUNDED -->

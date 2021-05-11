@@ -85,6 +85,8 @@
 <script>
 import {defineComponent} from 'vue'
 import emailjs from 'emailjs-com';
+import swal from "sweetalert";
+
 
 export default defineComponent({
   name: "Hello",
@@ -93,7 +95,8 @@ export default defineComponent({
       name: '',
       email: '',
       tel: '',
-      message: ''
+      message: '',
+      selected: ''
     }
   },
   methods: {
@@ -104,16 +107,20 @@ export default defineComponent({
               name: this.name,
               email: this.email,
               message: this.message,
-              tel: this.tel
+              tel: this.tel,
+              selected: this.selected
             })
 
+        swal("Success", "Email envoyé", "Error");
+
       } catch (error) {
-        console.log({error})
+        swal("Error", "Email non envoyé", "Error");
       }
       this.name = ''
       this.email = ''
       this.message = ''
-      this.tel = ''
+      this.tel = '',
+      this.selected = ''
     },
   }
 })

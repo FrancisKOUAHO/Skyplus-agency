@@ -42,7 +42,6 @@
             <h1 class="text-3xl text-black pb-6">Tableau de bord
             </h1>
               <stat-card/>
-
           </main>
         </div>
       </div>
