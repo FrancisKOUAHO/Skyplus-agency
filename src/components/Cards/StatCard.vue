@@ -6,7 +6,7 @@
         <img class="w-16 h-16 object-cover" src="https://www.ophos-system.com/wp-content/uploads/2019/08/proximite%CC%81-client-maintenance-informatique.png" alt="" />
         <div class="flex flex-col justify-center">
           <p class="text-gray-900 dark:text-gray-300 font-semibold">Clients</p>
-          <p class="text-black dark:text-gray-100 text-justify font-semibold">2</p>
+          <p class="text-black dark:text-gray-100 text-justify font-semibold">{{get_clients[0].id + get_clients[0].id }}</p>
         </div>
       </div>
       <!-- END SMALL CARD ROUNDED -->
@@ -16,7 +16,7 @@
         <img class="w-16 h-16 object-cover" src="https://dmo-constructions.fr/wp-content/uploads/2019/09/architect.png" alt="" />
         <div class="flex flex-col justify-center">
           <p class="text-gray-900 dark:text-gray-300 font-semibold">Projets en cours</p>
-          <p class="text-black dark:text-gray-100 text-justify font-semibold">2</p>
+          <p class="text-black dark:text-gray-100 text-justify font-semibold">--bientôt disponible--</p>
         </div>
       </div>
       <!-- END SMALL CARD ROUNDED -->
@@ -26,7 +26,7 @@
         <img class="w-16 h-16 object-cover" src="https://static.wixstatic.com/media/85d50f_00e22c8fddfc4ba88474ced2bbbf4102~mv2.png/v1/fill/w_340,h_236,al_c,q_85,usm_0.66_1.00_0.01/Projet%20termin%C3%A9.webp" alt="" />
         <div class="flex flex-col justify-center">
           <p class="text-gray-900 dark:text-gray-300 font-semibold">Projets terminer</p>
-          <p class="text-black dark:text-gray-100 text-justify font-semibold">20</p>
+          <p class="text-black dark:text-gray-100 text-justify font-semibold">--bientôt disponible--</p>
         </div>
       </div>
       <!-- END SMALL CARD ROUNDED -->
