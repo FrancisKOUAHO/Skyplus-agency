@@ -127,7 +127,7 @@ a.after:hover:after {
     height: 100%;
     transition: all .2s ease-out;
     content: '';
-    background: #3D4852;
+    background: #ffffff;
   }
 
   .navicon::before {

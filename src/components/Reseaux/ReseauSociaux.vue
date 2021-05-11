@@ -96,4 +96,30 @@ ul li a:hover::before {
   transform: skewX(45deg) translateX(-150px);
 }
 
+/* Small devices (landscape phones, 340px and up) */
+@media (min-width: 340px) and (max-width: 767px) {
+  section{
+    padding-bottom: 15em;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1280px) and (max-width: 1535px) {
+
+}
+
+@media (min-width: 1536px) {
+
+}
+
 </style>

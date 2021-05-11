@@ -18,13 +18,11 @@ export default defineComponent({
 </script>
 
 <style scoped>
-div {
-  width: 200px;
-  height: 200px;
+div{
   background-color: #5e8cd2;
   animation: square-to-circle 2s 1s infinite alternate;
   opacity: 0.6;
-  margin-bottom: 70%;
+  /* margin-bottom: 70%; */
 }
 
 @-webkit-keyframes square-to-circle {
@@ -95,4 +93,39 @@ div {
     transform: rotate(180deg);
   }
 }
+
+/* Small devices (landscape phones, 340px and up) */
+@media (min-width: 340px) and (max-width: 767px) {
+  div {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  div {
+    width: 200px;
+    height: 200px;
+    margin: 0;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1280px) and (max-width: 1535px) {
+
+}
+
+@media (min-width: 1536px) {
+  div {
+    width: 200px;
+    height: 200px;
+  }
+}
+
 </style>

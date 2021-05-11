@@ -1,82 +1,44 @@
 <template>
-  <span id="myBtn" class="fixed top-1/2 sayHello"><a href="#open-modal">Say hello</a></span>
-  <div id="open-modal" class="modal-window">
-    <div>
-      <a href="#modal-close" title="Fermer" class="modal-close">Fermer &times;</a>
-      <form class="w-full max-w-lg ml-36" @submit.prevent="sendEmail">
-        <div class="flex flex-wrap -mx-3 mb-6">
-          <div class="w-full px-3">
-            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-              Votre nom
-            </label>
-            <input
-                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="nick" type="text" v-model="name"
-            >
-          </div>
+  <span id="myBtn" class="fixed top-1/2 sayHello"><a href="#modal-container">Say hello</a></span>
+  <div id="modal-container">
+    <div class="modal">
+      <div class="form">
+        <a class="btnClose" href="#">✖</a>
+        <h2>Contactez-nous !<br> Nous ne mordons pas :)</h2>
+        <div class="inputTxt">
+          <input type="text" required="" v-model="name"/><span class="bar"></span><span class="label">NOM Prénom</span>
         </div>
-        <div class="flex flex-wrap -mx-3 mb-6">
-          <div class="w-full px-3">
-            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-              mail
-            </label>
-            <input
-                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="email" type="email" v-model="email"
-            >
-          </div>
+        <div class="inputTxt">
+          <input type="email" required="" v-model="email"/><span class="bar"></span><span class="label">Email</span>
         </div>
-        <div class="flex flex-wrap -mx-3 mb-6">
-          <div class="w-full px-3">
-            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-              Télephone
-            </label>
-            <input
-                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="tel" type="tel" v-model="tel"
-            >
-          </div>
+        <div class="inputTxt">
+          <input type="tel" required="" v-model="tel"/><span class="bar"></span><span class="label">Téléphone</span>
         </div>
-        <div class="flex flex-wrap -mx-3 mb-6">
-          <div class="w-full px-3">
-            <div class="formfield-select">
-              <div class="formfield-select--container">
-                <select id="mon_select">
-                  <option value="">Qu'est-ce qui vous amène ?</option>
-                  <option value="projet">J'ai un projet à vous présenter</option>
-                  <option value="rencontre">J'aimerais vous rencontrer</option>
-                  <option value="collaborer">Je veux collaborer avec vous</option>
-                  <option value="job">Je veux postuler</option>
-                  <option value="stage">Je recherche un stage</option>
-                  <option value="autre">Autre</option>
-                </select>
-              </div>
+        <div class="inputTxt">
+        <label class="labelSelect">Qu'est-ce qui vous amène ?</label>
+          <div class="formfield-select">
+            <div class="formfield-select--container">
+              <select id="mon_select">
+                <option value="projet">J'ai un projet à vous présenter</option>
+                <option value="rencontre">J'aimerais vous rencontrer</option>
+                <option value="collaborer">Je veux collaborer avec vous</option>
+                <option value="job">Je veux postuler</option>
+                <option value="stage">Je recherche un stage</option>
+                <option value="autre">Autre</option>
+              </select>
             </div>
           </div>
         </div>
-        <div class="flex flex-wrap -mx-3 mb-6">
-          <div class="w-full px-3">
-            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-              Message
-            </label>
-            <textarea
-                class=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
-                id="message" v-model="message"></textarea>
-            <p class="text-white text-xs italic">message d'erreur</p>
-          </div>
+
+        <div class="inputTxt">
+          <div class="textwrapper"><textarea cols="2" rows="4" id="rules" placeholder="Votre message" v-model="message"/></div>
         </div>
-        <div class="md:flex md:items-center">
-          <div class="md:w-1/3">
-            <button
-                class=" ml-60 shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none font-bold py-2 px-4 rounded"
-                type="submit" style="background-color: white !important;" value="Send"
-            >
-              Envoyer
-            </button>
-          </div>
-          <div class="md:w-2/3"></div>
+
+        <div class="button">
+          <button type="submit">Envoyer</button>
         </div>
-      </form>
+      </div>
+      
     </div>
   </div>
 
@@ -159,70 +121,187 @@ export default defineComponent({
   transition: all .25s ease;
 }
 
-.modal-window {
+#modal-container {
   position: fixed;
-  background-color: rgba(200, 200, 200, 0.75);
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
-  z-index: 999;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+#modal-container:not(:target) {
   opacity: 0;
-  pointer-events: none;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
+  visibility: hidden;
+  transition: opacity 1s, visibility 1s;
 }
-
-.modal-window:target {
+#modal-container:target {
   opacity: 1;
-  pointer-events: auto;
+  visibility: visible;
+  transition: opacity 1s, visibility 1s;
 }
 
-.modal-window > div {
-  width: 60%;
-  position: relative;
-  margin: 10% auto;
+.modal {
+
+  background: #fff;
   padding: 2rem;
-  background: #00adc1;
-  color: #444;
-  bottom: 16.5%;
-}
-
-.modal-window header {
-  font-weight: bold;
-}
-
-.modal-close {
-  color: black !important;
-  line-height: 50px;
-  font-size: 80%;
-  position: absolute;
-  right: 0;
   text-align: center;
-  top: 0;
-  width: 70px;
-  text-decoration: none;
 }
 
-.modal-close:hover {
-  color: black !important;
+.btnClose{
+  position: absolute;
+  background-color: black;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding: 0px px;
+  font-size: 1.5em;
+  right: 1em;
+  top: 1em;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.modal-window h1 {
-  font-size: 150%;
-  margin: 0 0 15px;
-}
+/* FORMULAIRE DE CONTACT */
 
-.formfield-select {
+.form {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: auto;
+  padding: 50px 70px 50px 70px;
+  background: #fff;
+  border-radius: 20px;
+  /*box-shadow: 0px 20px 100px rgba(160, 59, 68, 1);*/
+}
+.modal .form h2 {
+  font-size: 1.7rem;
+  line-height: 1.1em; 
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0px 0px 20px 0px;
+  color: #000000;
+}
+.modal .form .inputTxt {
+  display: block;
   position: relative;
+  width: 100%;
+  height: 70px;
+  padding: 10px 0px 0px 0px;
+  margin: 0px 0px 10px 0px;
+}
+.modal .form .inputTxt input {
+  display: block;
+  width: 100%;
+  height: 42px;
+  padding: 0px 0px 0px 4px;
+  border: none;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  color: #000000;
+  border-bottom: 2px solid #000;
+  background: transparent;
+}
+.modal .form .inputTxt input:focus ~ .label, .modal .form .inputTxt input:valid ~ .label {
+  top: -6px;
+  left: 2px;
+  font-size: 12px;
+  line-height: 24px;
+  font-weight: 600;
+  color: #000000;
+}
+.modal .form .inputTxt input:focus ~ .bar {
+  width: 100%;
+}
+.modal .form .inputTxt input:focus {
+  border-bottom: 2px solid #fff;
+}
+.modal .form .inputTxt .label {
+  position: absolute;
+  top: 19px;
+  left: 4px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  color: #000000;
+  pointer-events: none;
+}
+.modal .form .inputTxt .bar {
+  display: block;
+  position: absolute;
+  bottom: 18px;
+  left: 0px;
+  width: 0px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(45deg, #00adc1, #7e80cb);
+  pointer-events: none;
+}
+.modal .form button {
+  display: block;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  margin: 8em 0px 0px 0px;
+  padding: 0px 20px 0px 20px;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 36px;
+  color: #fff;
+  border-radius: 25px;
+  border: 0px;
+  opacity: 1;
+  background: linear-gradient(to right, #00adc1, #7e80cb);
+  cursor: pointer;
+}
+.modal .form button:hover {
+  box-shadow: 0px 8px 15px #7e80cb;
+}
+.modal .form .serviceLink {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 28px 0px 0px 0px;
+  font-size: 11px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #7C8589;
+  opacity: 0.5;
+}
+.modal .form .serviceLink:hover {
+  opacity: 1;
+}
+
+.labelSelect{
+  position: absolute;
+  top: 19px;
+  left: 4px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  color: #000000;
+  pointer-events: none;
+}
+
+formfield-select {
+  position: relative;
+  width: 100%;
 }
 
 .formfield-select--container {
   position: relative;
   background-color: #fff;
-  border: #00ffd2 1px solid;
-  margin: 0 0 1.5em 0;
+  border: #000000 1px solid;
+  margin: 3em 0 1.5em 0;
   overflow: hidden;
 }
 
@@ -238,8 +317,22 @@ export default defineComponent({
   border-radius: 0;
   overflow: hidden;
   text-overflow: ellipsis;
+}
 
+textarea
+{
+  width:100%;
+  padding: 1em;
+}
 
+textarea::placeholder {
+  font-size: 1rem;
+}
+
+.textwrapper
+{
+  border:1px solid #000;
+  margin:2em 0;
 }
 
 .formfield-select--container::after {
@@ -257,6 +350,39 @@ export default defineComponent({
   border-width: 6px;
   border-style: solid;
   pointer-events: none;
+}
+
+/* animations */
+.form * {
+  transition: 0.25s ease-in-out all;
+  -moz-transition: 0.25s ease-in-out all;
+  -webkit-transition: 0.25s ease-in-out all;
+}
+
+/* Small devices (landscape phones, 340px and up) */
+@media (min-width: 340px) and (max-width: 767px) {
+  .sayHello[data-v-0cdb4400] {
+      left: -2.5em;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1280px) and (max-width: 1535px) {
+
+}
+
+@media (min-width: 1536px) {
+
 }
 
 </style>
