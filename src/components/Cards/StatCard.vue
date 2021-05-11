@@ -6,7 +6,7 @@
         <img class="w-16 h-16 object-cover" src="https://www.ophos-system.com/wp-content/uploads/2019/08/proximite%CC%81-client-maintenance-informatique.png" alt="" />
         <div class="flex flex-col justify-center">
           <p class="text-gray-900 dark:text-gray-300 font-semibold">Clients</p>
-          <p class="text-black dark:text-gray-100 text-justify font-semibold">{{get_clients[0] +  get_clients[0] }}</p>
+          <p class="text-black dark:text-gray-100 text-justify font-semibold">--bientôt disponible--</p>
         </div>
       </div>
       <!-- END SMALL CARD ROUNDED -->
