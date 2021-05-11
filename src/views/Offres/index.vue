@@ -57,7 +57,7 @@
           <br>
           <h4 class="pricing-header">Site internet professionnel multi-pages</h4>
           <ul class="pricing-features">
-            <li class="pricing-features-item">Tout le pack Simplicité</li>
+            <li class="pricing-features-item">Tout le pack Bronze</li>
             <li class="pricing-features-item">Système d'avis en ligne avec modération</li>
             <li class="pricing-features-item">Création des pages et intégration des contenus initiaux (10 pages
               incluses)
@@ -86,7 +86,7 @@
           <br>
           <h4 class="pricing-header">Site internet professionnel optimisé pour le référencement</h4>
           <ul class="pricing-features">
-            <li class="pricing-features-item">Tout le Pack Crédibilité</li>
+            <li class="pricing-features-item">Tout le Pack Gold</li>
             <li class="pricing-features-item">Optimisation du référencement local sur 1 adresse</li>
             <li class="pricing-features-item">Création et gestion d'une fiche Google My Business</li>
             <li class="pricing-features-item">Ligne de téléphone fixe avec suivi d'appel</li>
