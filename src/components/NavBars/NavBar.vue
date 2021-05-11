@@ -20,7 +20,7 @@
     </div>
 
     <input class="menu-btn hidden" type="checkbox" id="menu-btn">
-    <label class="menu-icon block cursor-pointer md:hidden px-2 py-4 relative select-none" for="menu-btn">
+    <label class="menu-icon block cursor-pointer px-2 py-4 relative select-none" for="menu-btn">
       <span class="navicon bg-grey-darkest flex items-center relative"></span>
     </label>
 
@@ -71,7 +71,7 @@ export default defineComponent({
 
 <style scoped>
 
-nav{
+nav {
   z-index: 2;
   position: relative;
 }
@@ -113,7 +113,7 @@ a.after:hover:after {
   left: 0;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 340px) and (max-width: 770px) {
   .navicon {
     width: 1.125em;
     height: .125em;
