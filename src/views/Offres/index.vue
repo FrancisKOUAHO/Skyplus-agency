@@ -40,7 +40,7 @@
           <router-link to="#"
                        class="pricingTable-firstTable_table__getstart pricing-button"
                        :disabled="isPurchasing"
-                       @click="purchaseMonthlyPlan('price_1IobEQKYGE5dRt9iRJCRKPj9')"
+                       @click="purchaseMonthlyPlan('price_1Iow3UEQZ5CWt7xoFjZuD9fq')"
           >
             <img
                 class="loader"
@@ -69,7 +69,7 @@
                        style="margin-top: 13%;"
                        class="pricingTable-firstTable_table__getstart pricing-button is-featured"
                        :disabled="isPurchasing"
-                       @click="purchaseMonthlyPlan('price_1IobF1KYGE5dRt9ixPLWJisT')"
+                       @click="purchaseMonthlyPlan('price_1Iow4EEQZ5CWt7xo4Zy7X0jo')"
           >
             <img
                 class="loader"
@@ -96,7 +96,7 @@
                        style="margin-top: 12%;"
                        class="pricingTable-firstTable_table__getstart pricing-button "
                        :disabled="isPurchasing"
-                       @click="purchaseMonthlyPlan('price_1IobFYKYGE5dRt9iMWB6SSkN')"
+                       @click="purchaseMonthlyPlan('price_1Iow4kEQZ5CWt7xoDTjesKsG')"
           >
             <img
                 class="loader"
@@ -125,7 +125,7 @@ export default defineComponent({
     const isPurchasing = ref(false);
     const {stripe} = useStripe({
       key:
-          'pk_test_51HwcPhKYGE5dRt9idxqGRsQgRwPQ78zHXD9N6cfWcC77owBiEJFH7r7d4sI0nfLnLj9U9gRMTr1bzQbSLgnasBMa00MHGpiTx5',
+          'pk_live_51IoOLwEQZ5CWt7xoCMXJ2guOk2tfgq0WPrDa619s30mNlAghqQ3lD9AM7qrXoslqTm5wu2TwKqGLPdJnqgmakAJi00hgUA6dM8',
     });
     const purchaseMonthlyPlan = async (priceId) => {
       isPurchasing.value = true;
