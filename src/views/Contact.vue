@@ -1,13 +1,11 @@
 <template>
   <contact-vue/>
-  <div class="container displayed" style="margin-top: -10%">
-    <h1 style="font-weight: 600; font-size: 48px; line-height: 1.15; color: white"><span>Nous gravitons dans</span>
-    </h1>
-    <span style="font-weight: 600; font-size: 48px; line-height: 1.15; color: white">les meilleures sphères</span>
+  <div class="container displayed container_text">
+    <h1>Nous gravitons dans les meilleures sphères</h1>
   </div>
 
-  <div class="flex-initial div-form">
-    <div v-for="(contact, index) in contacts" :key="index">
+  <div class="flex-initial div-form container_contact">
+    <div class="type_contact" v-for="(contact, index) in contacts" :key="index">
       <a href="">
         <span class="contact-info">{{ contact.info }}</span>
       </a>
@@ -103,6 +101,13 @@ export default defineComponent({
   max-width: 780px;
   margin: 0 auto;
   padding-top: 12rem;
+}
+
+.container_text h1{
+  font-weight: 600; 
+  font-size: 48px; 
+  line-height: 1.15; 
+  color: white;
 }
 
 #contact .container.displayed h1 {
@@ -295,6 +300,48 @@ export default defineComponent({
 
 .div-form {
   color: white;
+}
+
+/* Small devices (landscape phones, 340px and up) */
+@media (min-width: 340px) and (max-width: 767px) {
+  .container_text{
+    margin-top: -3em;
+    padding: 2em;
+  }
+  .container_text h1{
+    font-size: 2.5rem; 
+  }
+  .container_contact{
+    display: flex;
+    flex-direction: column;
+    margin-left: 3em;
+  }
+  .type_contact{
+    margin-top: 1em;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1280px) and (max-width: 1535px) {
+
+}
+
+@media (min-width: 1536px) {
+
+.container_text{
+  margin-top: -10%
+}
+
 }
 
 
