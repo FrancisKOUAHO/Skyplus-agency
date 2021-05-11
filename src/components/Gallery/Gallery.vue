@@ -1,7 +1,7 @@
 <template>
   <main class="flex justify-center">
     <section class="fadeInBottom has-dflex-center">
-      <div class="lx-container-80 " style="margin-top: 42%;">
+      <div class="lx-container-80">
         <div class="lx-row">
           <div class="lx-card carousel-container">
             <div class="item fadeIn" v-for="(slider, index) in sliders" :key="index">
@@ -529,15 +529,35 @@ main section .carousel-container .dots .dot:focus, main section .carousel-contai
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 1023px) {
 
+  main{
+    margin: 17em auto 0 auto;
+  }
+
   main section .carousel-container .item .image img {
-    height: 50%;
+    height: 70%;
   }
 
   .imageFilter {
-    height: 50%;
+    height: 70%;
   }
 
+  main section .carousel-container .prev[data-v-73f0d8f5] {
+    left: 6rem;
+  }
 
+  main section .carousel-container .next[data-v-73f0d8f5] {
+    right: 6rem;
+  }
+
+  .sliderContent{
+    margin: -6em 0 0 0;
+  }
+  .containerDescription[data-v-73f0d8f5] {
+    padding-left: 3em;
+  }
+  .linkSite {
+    margin-top: 1rem;
+  } 
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -560,8 +580,7 @@ main section .carousel-container .dots .dot:focus, main section .carousel-contai
   }
 
   .linkSite {
-    margin-left: 15rem;
-    margin-top: 2.25rem;
+    margin: 1.5em auto 0 auto;
   }
 }
 

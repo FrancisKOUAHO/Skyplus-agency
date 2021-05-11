@@ -1,17 +1,15 @@
 <template>
-  <div class="container_bloc2 mt-20 fadeInLeft">
+  <div class="container_bloc2 text-center fadeInBottom">
     <span class="titre_partenaire">Ils nous ont fait confiance</span>
-    <div class="flex flex-wrap -mx-2 overflow-hidden sm:-mx-2 md:-mx-2 lg:-mx-2 xl:-mx-2 mt-4">
+      <div class="flex justify-center items-center container_logo flex-wrap -mx-3 overflow-hidden sm:-mx-3 md:-mx-3 lg:-mx-3 xl:-mx-3">
 
-      <div
-          v-for="(logo, index) in logos" :key="index"
-          class="flex justify-center items-center my-2 px-2 w-1/4 overflow-hidden sm:my-2 sm:px-2 sm:w-1/4 md:my-2 md:px-2 md:w-1/4 lg:my-2 lg:px-2 lg:w-1/4 xl:my-2 xl:px-2 xl:w-1/4">
-        <img v-bind:src="logo.src" :alt="logo.alt" style="width:auto; height:3.5em">
+        <div v-for="(logo, index) in logos" :key="index" class="container_image my-3 px-3 w-1/6 overflow-hidden sm:my-3 sm:px-3 sm:w-1/2 md:my-3 md:px-3 md:w-1/2 lg:my-3 lg:px-3 lg:w-1/6 xl:my-3 xl:px-3 xl:w-1/6">
+          <img v-bind:src="logo.src" :alt="logo.alt">
+        </div>
+
       </div>
-    </div>
   </div>
 </template>
-
 
 <script lang="ts">
 
@@ -33,6 +31,10 @@ export default defineComponent({
         {
           src: require('@/assets/image/site_gallery/logo/logocalifor.png'),
           alt: "logo califor"
+        },
+        {
+          src: require('@/assets/image/site_gallery/logo/logokclm.png'),
+          alt: "logo KCLM"
         }
       ]
     }
@@ -43,58 +45,162 @@ export default defineComponent({
 <style scoped>
 
 .container_bloc2 {
-  background: #fffefe60;
+  background: #fffefe36;
   /* padding: 3em 3em 3em 0em; */
-  width: 70%;
-  padding: 3em 3em 3em 49em;
-  -webkit-animation-duration: 2s;
-    animation-duration: 2s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    animation-delay: 2.5s;
+  width: 40%;
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-delay: 2.5s;
+  margin: 10em auto;
+  padding: 3em 5em;
 }
 
 .titre_partenaire {
-  padding: 0 7em;
+  /* padding: 0 7em; */
   color: #fffefe;
   font-size: 1.2rem;
 }
 
+.container_logo{
+  margin-top: 1em;
+}
+
+.container_image{
+  width: 25%;
+}
+
 .img{
-  max-width: 10em !important;
+  width: 100%;
+  height: auto;
 }
 
-/* Animation FadeInLeft class "FadeInLeft"*/
+/* ANIMATION FADE IN BOTTOM */
 
-@-webkit-keyframes fadeInLeft {
+@-webkit-keyframes fadeInBottom {
   0% {
     opacity: 0;
     position: relative;
-    left: -100px;
+    top: 50px;
   }
   100% {
     opacity: 1;
-    left: 100px;
-    /* transform: translateX(0px); */
+    position: relative;
+    top: 0;
+    /* transform: translateY(-100px); */
   }
 }
 
-@keyframes fadeInLeft {
+@keyframes fadeInBottom {
   0% {
     opacity: 0;
-    position: relative;
-    left: -100px;
+    /* position: absolute; */
+    margin-top: 15em;
   }
   100% {
     opacity: 1;
-    left: 100px;
-    /* transform: translateX(0px); */
+    /* position: absolute; */
+    margin-top: 13em;
+    /* transform: translateY(-100px); */
   }
 }
 
-.fadeInLeft {
-  -webkit-animation-name: fadeInLeft;
-  animation-name: fadeInLeft;
+.fadeInBottom {
+  -webkit-animation-name: fadeInBottom;
+  animation-name: fadeInBottom;
+}
+
+
+/* Small devices (landscape phones, 340px and up) */
+@media (min-width: 340px) and (max-width: 767px) {
+
+  .container_bloc2 {
+    width: 90%;
+    margin: auto;
+    padding: 3em 4em;
+  }
+
+  .container_image{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1em 5em;
+  }
+
+  .img{
+    max-width: 40%;
+  }
+  @keyframes fadeInBottom {
+  0% {
+    opacity: 0;
+    /* position: absolute; */
+    margin-top: 4em;
+  }
+  100% {
+    opacity: 1;
+    /* position: absolute; */
+    margin-top: 2em;
+    margin-bottom: 15em;
+    /* transform: translateY(-100px); */
+  }
+}
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container_bloc2 {
+    width: 80%;
+    margin: auto;
+    padding: 3em 4em;
+  }
+
+  .container_image{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    padding: 1em 5em;
+  }
+
+  .img{
+    max-width: 40%;
+  }
+  @keyframes fadeInBottom {
+  0% {
+    opacity: 0;
+    /* position: absolute; */
+    margin-top: 12em;
+  }
+  100% {
+    opacity: 1;
+    /* position: absolute; */
+    margin-top: 10em;
+    margin-bottom: 12em;
+    /* transform: translateY(-100px); */
+  }
+}
+
+  .titre_partenaire{
+    font-size: 1.5rem;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1280px) and (max-width: 1535px) {
+
+}
+
+@media (min-width: 1536px) {
+  
+  .titre_partenaire{
+    font-size: 1.7rem;
+  }
+
 }
 
 </style>

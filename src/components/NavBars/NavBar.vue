@@ -113,7 +113,7 @@ a.after:hover:after {
   left: 0;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .navicon {
     width: 1.125em;
     height: .125em;

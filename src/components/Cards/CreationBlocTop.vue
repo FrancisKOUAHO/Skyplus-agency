@@ -149,8 +149,17 @@ h3, .h5bold{
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 1023px) {
+  .container_bloc1{
+      background: none;
+      padding: 2em 10em;
+      width: 100%;
+      left: 0em;
+      margin: 15em auto 0 auto;
+  }
 
-
+  h5{
+    padding-left: 0;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */

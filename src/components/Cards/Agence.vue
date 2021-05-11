@@ -8,9 +8,8 @@
   <br>
   <div class="flex justify-center agenceContent">
     <div class="content1 fadeInUp">
-       <center>
-         <h4 class="text-4xl text-2xl mb-5  -mr-20 fadeInUp">Skyplus</h4>
-         <p class="fadeInUp text-xl">
+         <h4 class="text-4xl text-2xl mb-5 -mr-20 text-right fadeInUp">Skyplus, une histoire qui peut être la votre</h4>
+         <p class="fadeInUp text-xl text-left">
            Skyplus c’est la rencontre entre un commercial sans expérience,
 
            Passionné par le marketing et la communication
@@ -37,7 +36,6 @@
 
            Qui est un développeur exceptionnel avec qui j’ai décidé de m’associer pour créer l’agence Web Skyplus.
          </p>
-       </center>
     </div>
   </div>
   <br>
@@ -197,7 +195,7 @@ h4 {
   }
   .content1 > p {
     font-size: 1rem;
-    padding: 0 1rem 1rem 1rem;
+    padding: 1em;
   }
 
   .content2{
@@ -246,7 +244,7 @@ h4 {
   .content2{
     margin: 7rem 0 12rem 15rem;
     width: 100%;
-    background-image: url(/img/agence_image1.a14984af.png);
+    background-image: url("../../assets/image/bubbles.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: 0px;
@@ -275,7 +273,7 @@ h4 {
   .content1{
     width: 35em;
     padding: 3em 2em;
-    margin: 3em;
+    margin: 3em 25em 3em 0;
   }
   .content1 > p {
     font-size: 1rem;
