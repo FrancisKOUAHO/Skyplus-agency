@@ -1,0 +1,103 @@
+<template>
+  <div class="body-color">
+    <div class="bg-gray-100 font-family-karla flex">
+
+      <aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl">
+        <div class="p-6">
+          <img src="@/assets/image/logo/Logo_Skyplus.svg"
+               class="text-white text-3xl font-semibold uppercase hover:text-gray-300"/>
+          <button
+              class="w-full bg-white cta-btn font-semibold py-2 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">
+            {{ user.name }}
+          </button>
+        </div>
+        <header-dashboard/>
+      </aside>
+
+      <div class="w-full flex flex-col h-screen overflow-y-hidden">
+        <!-- Desktop Header -->
+        <header class="w-full items-center bg-white py-2 px-6 hidden sm:flex">
+          <div class="w-1/2"></div>
+          <div class="relative w-1/2 flex justify-end">
+            <div class="flex">
+              <div class="relative">
+                <button
+                    class="rounded-full overflow-hidden border-2 border-purple-500 w-10 h-10 flex justify-center items-center | hover:border-white focus:outline-none focus:border-white"
+                    @click="isOpen1 = true"
+                >
+                  <img src="@/assets/crescent-moon.png" alt="User's avatar">
+                </button>
+                <div v-if="isOpen1" class="fixed inset-0 w-full h-screen z-20 bg-black opacity-25"
+                     @click="isOpen1 = false"></div>
+                <div v-if="isOpen1" class="absolute z-30 right-0 mt-2" :class="{'hidden': !isOpen1}">
+                  <dropdown-dashboard/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="w-full overflow-x-hidden border-t flex flex-col">
+          <main class="w-full flex-grow p-6">
+            <h1 class="text-3xl text-black pb-6">Gestionnaire d'utilisateur
+            </h1>
+              <table-users/>
+          </main>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import {defineComponent} from 'vue'
+import VueJwtDecode from "vue-jwt-decode";
+import axios from "axios";
+import HeaderDashboard from "../../../components/ComponentsAdmins/Hearders/HeaderDashboard";
+import DropdownDashboard from "../../../components/Dropdown/DropdownDashboard";
+import TableUsers from "../../../components/ComponentsAdmins/Tables/TableUsers";
+
+export default defineComponent({
+  name: "index",
+  components: {TableUsers, DropdownDashboard, HeaderDashboard},
+  data() {
+    return {
+      user: {},
+      isOpen1: false,
+      isOpen2: true,
+      get_clients: []
+    };
+  },
+  setup() {
+    let navBar = document.querySelector('nav');
+    let footer = document.querySelector('footer');
+    navBar.style.display = 'none';
+    footer.style.display = 'none';
+  },
+  methods: {
+    getUserDetails() {
+      let token = localStorage.getItem("jwt");
+      let decoded = VueJwtDecode.decode(token);
+      this.user = decoded;
+    },
+    logUserOut() {
+      localStorage.removeItem("jwt");
+      this.$router.push({name: 'Login'});
+    }
+  },
+  created() {
+    this.getUserDetails();
+    let apiURL = 'https://agencyskyplus.herokuapp.com/client/get-client';
+    axios.get(apiURL).then(res => {
+      this.get_clients = res.data;
+    }).catch(error => {
+      console.log(error)
+    });
+
+  }
+})
+</script>
+
+<style scoped>
+
+</style>

@@ -83,8 +83,8 @@ import {defineComponent} from 'vue'
 import axios from "axios";
 import swal from "sweetalert";
 
-export default defineComponent( {
-  name: "TableClients",
+export default  defineComponent({
+  name: "TableUsers",
   data() {
     return {
       get_clients: []
@@ -118,11 +118,5 @@ export default defineComponent( {
 </script>
 
 <style scoped>
-.mod-text {
-  color: #4299E1 !important;
-}
 
-.mod-text:hover {
-  color: white !important;
-}
 </style>
