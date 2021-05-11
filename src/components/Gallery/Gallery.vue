@@ -1,7 +1,7 @@
 <template>
   <main class="flex justify-center">
     <section class="fadeInBottom has-dflex-center">
-      <div class="lx-container-80">
+      <div class="lx-container-80 " style="margin-top: 42%;">
         <div class="lx-row">
           <div class="lx-card carousel-container">
             <div class="item fadeIn" v-for="(slider, index) in sliders" :key="index">
@@ -9,14 +9,17 @@
                 <img class="filter" :src="slider.src" :alt="slider.alt"/>
                 <div class="imageFilter"></div>
                 <h1 class="title absolute w-full text-center fadeInBottom">
-                    {{ slider.name }}</h1>
+                  {{ slider.name }}</h1>
               </div>
 
               <div class="flex flex-wrap sliderContent">
 
                 <div class="containerDescription overflow-hidden">
                   <p class="sliderDescription fadeInBottom">{{ slider.description }}</p>
-                  <a v-bind:href="slider.link" target="_blank" class="linkSite fadeInRight">Consulter {{slider.name}}</a>
+                  <center>
+                    <a v-bind:href="slider.link" target="_blank" class="linkSite fadeInRight">Consulter
+                      {{ slider.name }}</a>
+                  </center>
                 </div>
 
 
@@ -46,96 +49,96 @@
 <script>
 import {defineComponent} from 'vue'
 
-     document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.carousel-container').forEach((carousel) => {
-                insertNumbers(carousel);
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.carousel-container').forEach((carousel) => {
+    insertNumbers(carousel);
 
-                carousel.querySelector('.prev').addEventListener('click', (e) => {
-                    minusItem(carousel);
-                });
+    carousel.querySelector('.prev').addEventListener('click', (e) => {
+      minusItem(carousel);
+    });
 
-                carousel.querySelector('.next').addEventListener('click', () => {
-                    plusItem(carousel);
-                });
+    carousel.querySelector('.next').addEventListener('click', () => {
+      plusItem(carousel);
+    });
 
-                insertDots(carousel);
+    insertDots(carousel);
 
-                carousel.querySelectorAll('.dot').forEach((dot) => {
-                    dot.addEventListener('click', (e) => {
-                        let item = Array.prototype.indexOf.call(
-                            e.target.parentNode.children,
-                            e.target
-                        );
+    carousel.querySelectorAll('.dot').forEach((dot) => {
+      dot.addEventListener('click', (e) => {
+        let item = Array.prototype.indexOf.call(
+            e.target.parentNode.children,
+            e.target
+        );
 
-                        showItems(carousel, item);
-                    });
-                });
+        showItems(carousel, item);
+      });
+    });
 
-                showItems(carousel, 0);
-            });
-        });
+    showItems(carousel, 0);
+  });
+});
 
-        function insertNumbers(carousel) {
-            const length = carousel.querySelectorAll('.item').length;
-            // for (let i = 0; i < length; i++) {
-            //     const nmbr = document.createElement("div");
-            //     nmbr.classList.add("numbertext");
-            //     nmbr.innerText = i + 1 + " / " + length;
+function insertNumbers(carousel) {
+  const length = carousel.querySelectorAll('.item').length;
+  // for (let i = 0; i < length; i++) {
+  //     const nmbr = document.createElement("div");
+  //     nmbr.classList.add("numbertext");
+  //     nmbr.innerText = i + 1 + " / " + length;
 
-            //     carousel.querySelectorAll(".item")[i].append(nmbr);
-            // }
-        }
+  //     carousel.querySelectorAll(".item")[i].append(nmbr);
+  // }
+}
 
-        function insertDots(carousel) {
-            const dots = document.createElement('div');
-            dots.classList.add('dots');
+function insertDots(carousel) {
+  const dots = document.createElement('div');
+  dots.classList.add('dots');
 
-            carousel.append(dots);
+  carousel.append(dots);
 
-            carousel.querySelectorAll('.item').forEach((elem) => {
-                const dot = document.createElement('div');
-                dot.classList.add('dot');
+  carousel.querySelectorAll('.item').forEach((elem) => {
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
 
-                carousel.querySelector('.dots').append(dot);
-            });
-        }
+    carousel.querySelector('.dots').append(dot);
+  });
+}
 
-        function plusItem(carousel) {
-            let item = currentItem(carousel);
+function plusItem(carousel) {
+  let item = currentItem(carousel);
 
-            carousel
-                .querySelectorAll('.item')[item].nextElementSibling.classList.contains('item')
-                ? showItems(carousel, item + 1)
-                : showItems(carousel, 0);
-        }
+  carousel
+      .querySelectorAll('.item')[item].nextElementSibling.classList.contains('item')
+      ? showItems(carousel, item + 1)
+      : showItems(carousel, 0);
+}
 
-        function minusItem(carousel) {
-            let item = currentItem(carousel);
+function minusItem(carousel) {
+  let item = currentItem(carousel);
 
-            carousel.querySelectorAll('.item')[item].previousElementSibling != null
-                ? showItems(carousel, item - 1)
-                : showItems(carousel, carousel.querySelectorAll('.item').length - 1);
-        }
+  carousel.querySelectorAll('.item')[item].previousElementSibling != null
+      ? showItems(carousel, item - 1)
+      : showItems(carousel, carousel.querySelectorAll('.item').length - 1);
+}
 
-        function currentItem(carousel) {
-            return [...carousel.querySelectorAll('.item')].findIndex(
-                (item) => item.style.display === 'block'
-            );
-        }
+function currentItem(carousel) {
+  return [...carousel.querySelectorAll('.item')].findIndex(
+      (item) => item.style.display === 'block'
+  );
+}
 
-        function showItems(carousel, item) {
-            if (
-                carousel.querySelectorAll('.item')[currentItem(carousel)] != undefined
-            )
-                carousel.querySelectorAll('.item')[
-                    currentItem(carousel)
-                    ].style.display = 'none';
-            carousel.querySelectorAll('.item')[item].style.display = 'block';
+function showItems(carousel, item) {
+  if (
+      carousel.querySelectorAll('.item')[currentItem(carousel)] != undefined
+  )
+    carousel.querySelectorAll('.item')[
+        currentItem(carousel)
+        ].style.display = 'none';
+  carousel.querySelectorAll('.item')[item].style.display = 'block';
 
-            if (carousel.querySelector('.dot.active') != null)
-                carousel.querySelector('.dot.active').classList.remove('active');
-            carousel.querySelectorAll('.dot')[item].classList.add('active');
-        }
+  if (carousel.querySelector('.dot.active') != null)
+    carousel.querySelector('.dot.active').classList.remove('active');
+  carousel.querySelectorAll('.dot')[item].classList.add('active');
+}
 
 export default defineComponent({
   name: 'Gallery2',
@@ -147,28 +150,28 @@ export default defineComponent({
           src: require('@/assets/image/site_gallery/auxfinsgastronomes.jpg'),
           logo: require("@/assets/image/site_gallery/logo/logoauxfinsgastronomes.png"),
           description: "Cuisine et pâtisse des recettes d’antan tout comme de nouvelles créations conçues en symbiose avec ses salariés",
-          link : "https://traiteur-cheron.com/"
+          link: "https://traiteur-cheron.com/"
         },
         {
           name: "Califor",
           src: require('@/assets/image/site_gallery/ford-2707122_1920.jpg'),
           logo: require("@/assets/image/site_gallery/logo/logocalifor.png"),
           description: "CALIFOR, propose des pièces Unisexes, relax et bien pensées, baignant dans l’esprit Rap, sport et quelques références cinématographiques du milieu des années 90.\n",
-          link : "https://califor.fr/"
+          link: "https://califor.fr/"
         },
         {
           name: "KCLM",
           src: require('@/assets/image/site_gallery/graffiti-832341_1920.jpg'),
           logo: require("@/assets/image/site_gallery/logo/logokclm.png"),
           description: "Autorise-toi à avoir de Grands Rêves, avec un grand “G” et un grand “R”, c’est la devise de KCLM, une marque qui travaille avec de nombreux artistes connus comme inconnus.",
-          link : "https://kclm.fr/"
+          link: "https://kclm.fr/"
         },
         {
           name: "Portfolio",
           src: require('@/assets/image/site_gallery/scrren_portofolio_nav_2.png'),
           logo: require("@/assets/image/site_gallery/logo/logo_francis_2.png"),
           description: "Je pense que le design est comme une “baguette magique”. Si les services et les produits sont magiques pour résoudre les problèmes, le rôle du design est de devenir un support permettant aux utilisateurs de les maîtriser.",
-          link : "https://www.kouahofrancis.fr/"
+          link: "https://www.kouahofrancis.fr/"
         },
       ]
     }
@@ -178,8 +181,8 @@ export default defineComponent({
 
 <style scoped>
 
-h1{
-  font-family: Raleway-Bold,serif;
+h1 {
+  font-family: Raleway-Bold, serif;
   color: #fffefe;
   font-size: 5.5rem;
   line-height: 1em;
@@ -192,7 +195,7 @@ h1{
 
 main section {
   padding: 4rem 0;
-    -webkit-animation-duration: 0.5s;
+  -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
@@ -240,29 +243,29 @@ main section .carousel-container .item .image img {
   filter: brightness(50%);
 }
 
-.imageFilter{
+.imageFilter {
   background: #d16ba55e;
   width: 100%;
   height: 100%;
   position: absolute;
 }
 
-.sliderContent{
+.sliderContent {
   max-width: 70em;
 }
 
-.containerDescription{
+.containerDescription {
   width: 70%;
 }
 
-.containerLogo{
+.containerLogo {
   width: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.containerImg{
+.containerImg {
   width: 12em;
   background: white;
   height: 12em;
@@ -280,11 +283,11 @@ main section .carousel-container .item .image img {
   animation-delay: 0.5s;
 }
 
-.logoEnseigne{
+.logoEnseigne {
   width: 100%;
 }
 
-.linkSite{
+.linkSite {
   position: absolute;
   color: #f2f2f2;
   font-family: Raleway-Bold;
@@ -342,7 +345,7 @@ main section .carousel-container .prev {
   left: -0rem;
 }
 
-main section .carousel-container .next{
+main section .carousel-container .next {
   right: 0rem;
 }
 
@@ -441,63 +444,70 @@ main section .carousel-container .dots .dot:focus, main section .carousel-contai
 /* ANIMATION FADE */
 
 .fadeIn {
-	opacity: 1;
-	animation-name: fadeInOpacity;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	animation-duration: 2s;
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-duration: 2s;
 }
 
 @keyframes fadeInOpacity {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* Small devices (landscape phones, 340px and up) */
-@media (min-width: 340px) and (max-width: 767px){
-  .container_bloc1{
-      background: none;
-      padding: 2em;
-      width: 100%;
-      left: 0em;
-      margin: 15em auto 0 auto;
+@media (min-width: 340px) and (max-width: 767px) {
+  .container_bloc1 {
+    background: none;
+    padding: 2em;
+    width: 100%;
+    left: 0em;
+    margin: 15em auto 0 auto;
   }
 
-  h1{
+  h1 {
     font-size: 3rem;
     margin-bottom: 4em;
   }
 
-  h5{
+  h5 {
     padding-left: 0;
   }
 
-  main section .carousel-container .item .image img{
+  main section .carousel-container .item .image img {
     height: 50%;
   }
-  .imageFilter{
-    height: 50%; 
+
+  .imageFilter {
+    height: 50%;
   }
-  main section .carousel-container .next{
+
+  main section .carousel-container .next {
     right: 6rem;
   }
-  main section .carousel-container .prev{
+
+  main section .carousel-container .prev {
     left: 6rem;
   }
-  main{
+
+  main {
     margin-top: 12rem;
   }
-  .sliderContent{
+
+  .sliderContent {
     margin-top: -9rem;
   }
-  .sliderDescription{
+
+  .sliderDescription {
     font-size: 1.1rem;
   }
-  .containerImg{
+
+  .containerImg {
     width: 10em;
     height: 10em;
     border-radius: 50%;
@@ -505,11 +515,13 @@ main section .carousel-container .dots .dot:focus, main section .carousel-contai
     top: 30em;
     left: 35%;
   }
-  .containerDescription{
+
+  .containerDescription {
     width: 100%;
     margin: 3em 2em 0 2em;
   }
-  .linkSite{
+
+  .linkSite {
     margin-top: 1rem;
   }
 }
@@ -517,11 +529,12 @@ main section .carousel-container .dots .dot:focus, main section .carousel-contai
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 1023px) {
 
-  main section .carousel-container .item .image img{
+  main section .carousel-container .item .image img {
     height: 50%;
   }
-  .imageFilter{
-    height: 50%; 
+
+  .imageFilter {
+    height: 50%;
   }
 
 
@@ -538,13 +551,15 @@ main section .carousel-container .dots .dot:focus, main section .carousel-contai
 }
 
 @media (min-width: 1536px) {
-  main{
+  main {
     margin-top: 24rem;
   }
-  .sliderContent{
+
+  .sliderContent {
     margin-top: 1.5rem;
   }
-  .linkSite{
+
+  .linkSite {
     margin-left: 15rem;
     margin-top: 2.25rem;
   }

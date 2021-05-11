@@ -1,5 +1,5 @@
 <template>
-  <div class="container_bloc2 fadeInLeft">
+  <div class="container_bloc2 mt-20 fadeInLeft">
     <span class="titre_partenaire">Ils nous ont fait confiance</span>
     <div class="flex flex-wrap -mx-2 overflow-hidden sm:-mx-2 md:-mx-2 lg:-mx-2 xl:-mx-2 mt-4">
 

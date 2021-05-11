@@ -5,34 +5,51 @@
         <h3 class="text-4xl relative text-right pl-10 fadeInUp">N’est pas <span class="h3bold">seulement</span> la notre, mais également la <span class="h3bold">votre</span></h3>
     </div>
   </div>
+  <br>
   <div class="flex justify-center agenceContent">
-    <div class="content1 right-56 fadeInUp">
-        <h4 class="text-4xl text-2xl mb-5 text-right -mr-20 fadeInUp">Lorem ipsum dolor sit</h4>
-        <p class="fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi ligula,
-            tincidunt eget placerat et, dignissim quis urna. In gravida vel magna at scelerisque.
-            Fusce mollis dapibus nisl vestibulum molestie. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Donec nisi ligula.
-            </p>
-        <p class="fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi ligula,
-            tincidunt eget placerat et, dignissim quis urna. In gravida vel magna at scelerisque.
-            Fusce mollis dapibus nisl vestibulum molestie. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Donec nisi ligula.
-            </p>
-        <p class="fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi ligula,
-            tincidunt eget placerat et, dignissim quis urna. In gravida vel magna at scelerisque.
-            Fusce mollis dapibus nisl vestibulum molestie. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Donec nisi ligula.
-            </p>
+    <div class="content1 fadeInUp">
+       <center>
+         <h4 class="text-4xl text-2xl mb-5  -mr-20 fadeInUp">Skyplus</h4>
+         <p class="fadeInUp text-xl">
+           Skyplus c’est la rencontre entre un commercial sans expérience,
+
+           Passionné par le marketing et la communication
+
+           Avec une obsession pour la publicité et les techniques de ventes.
+
+           Depuis 2016,
+
+           Et après plusieurs échecs entrepreneurial,
+
+           Je passe mon temps à cliquer et analyser toutes les publicités dans les moindres détails.
+
+           Aujourd’hui,
+
+           5 ans après, j’accompagne les entreprises et porteurs de projets dans la mise en place de solutions web sur mesure.
+
+           Réduire les dépenses liés à la masse salariale et aux coûts d’acquisitions est ma spécialité.
+
+           Mes interventions permettent aux entreprises de développer leurs base de données clients.
+
+           Et d’économiser plusieurs dizaines de milliers d’euros.
+
+           Mais cela n’aurait pas été possible sans ma rencontre avec Francis Kouaho,
+
+           Qui est un développeur exceptionnel avec qui j’ai décidé de m’associer pour créer l’agence Web Skyplus.
+         </p>
+       </center>
     </div>
   </div>
+  <br>
   <div class="flex items-center justify-end agenceContent">
     <div class="content2 fadeInUp">
-        <h4 class="text-4xl text-right fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Donec nisi ligula, tincidunt eget placerat et,
-          dignissim quis urna. </h4>
+        <h4 class="text-4xl text-right fadeInUp">
+          Notre Passion
+          transformer vos idées en réalité et vous accompagner dans le développement de votre entreprise.
+        </h4>
     </div>
     <div class="content3">
-      <img class="agence_image mb-40 fadeInUp" src="../../assets/image/agence_image1.png">
+      <img class="agence_image mb-40 fadeInUp" src="../../assets/image/bubbles.jpg">
     </div>
   </div>
 </template>
@@ -185,7 +202,7 @@ h4 {
 
   .content2{
     margin: 0;
-    background-image: url("../../assets/image/agence_image1.png");
+    background-image: url("../../assets/image/bubbles.jpg");
     background-size: 150%;
     background-repeat: no-repeat;
     background-position-y: 0px;
