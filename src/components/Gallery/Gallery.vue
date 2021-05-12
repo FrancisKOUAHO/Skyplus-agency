@@ -557,17 +557,21 @@ main section .carousel-container .dots .dot:focus, main section .carousel-contai
   }
   .linkSite {
     margin-top: 1rem;
-  } 
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 1024px) and (max-width: 1279px) {
-
+  main {
+    margin-top: 24rem;
+  }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1280px) and (max-width: 1535px) {
-
+  main {
+    margin-top: 24rem;
+  }
 }
 
 @media (min-width: 1536px) {

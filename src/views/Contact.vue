@@ -100,13 +100,12 @@ export default defineComponent({
 .container {
   max-width: 780px;
   margin: 0 auto;
-  padding-top: 12rem;
 }
 
 .container_text h1{
-  font-weight: 600; 
-  font-size: 48px; 
-  line-height: 1.15; 
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 1.15;
   color: white;
 }
 
@@ -309,7 +308,7 @@ export default defineComponent({
     padding: 2em;
   }
   .container_text h1{
-    font-size: 2.5rem; 
+    font-size: 2.5rem;
   }
   .container_contact{
     display: flex;

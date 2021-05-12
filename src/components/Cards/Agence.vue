@@ -261,12 +261,50 @@ h4 {
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 1024px) and (max-width: 1279px) {
+  .content1{
+    width: 35em;
+    padding: 3em 2em;
+    margin: 3em 25em 3em 0;
+  }
+  .content1 > p {
+    font-size: 1rem;
+  }
+  .content2{
+    width: 30em;
+    margin: 5em -6em 13em 0px;
+  }
+  .content3{
+    margin-top: 5em;
+    width: 50%;
+  }
 
+  .content3 .agence_image{
+    width: 80%;
+  }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1280px) and (max-width: 1535px) {
+  .content1{
+    width: 35em;
+    padding: 3em 2em;
+    margin: 3em 25em 3em 0;
+  }
+  .content1 > p {
+    font-size: 1rem;
+  }
+  .content2{
+    width: 30em;
+    margin: 5em -6em 13em 0px;
+  }
+  .content3{
+    margin-top: 5em;
+    width: 50%;
+  }
 
+  .content3 .agence_image{
+    width: 80%;
+  }
 }
 
 @media (min-width: 1536px) {

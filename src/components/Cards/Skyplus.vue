@@ -1,16 +1,16 @@
 <template>
   <div class="flex justify-center items-center sm:flex-col lg:flex-row homeContent">
-  <div class="container_plus">
-    <img class="visuel_plus fadeInUp" src="../../assets/image/image_plus_home.png">
+    <div class="container_plus">
+      <img class="visuel_plus fadeInUp" src="../../assets/image/image_plus_home.png">
+    </div>
+    <div class="title_desc">
+      <h1 class="fadeInRight">SKYPLUS</h1>
+      <h3 class="fadeInRight">Sky’s not the limit</h3>
+    </div>
+    <div>
+      <square/>
+    </div>
   </div>
-  <div class="title_desc">
-    <h1 class="fadeInRight">SKYPLUS</h1>
-    <h3 class="fadeInRight">Sky’s not the limit</h3>
-  </div>
-  <div>
-    <square/>
-  </div>
-</div>
 </template>
 
 <script lang="ts">
@@ -36,7 +36,7 @@ img {
   animation-fill-mode: both;
 }
 
-.homeContent{
+.homeContent {
   margin-top: 7em;
 }
 
@@ -110,11 +110,11 @@ img {
   animation-name: fadeInRight;
 }
 
-.title_desc{
+.title_desc {
   color: #fffefe;
 }
 
-h1{
+h1 {
   font-family: Raleway-Bold;
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
@@ -125,7 +125,7 @@ h1{
   line-height: 1;
   margin-top: 3rem;
   position: relative;
-  text-decoration: none; 
+  text-decoration: none;
   text-decoration-line: none;
 }
 
@@ -144,23 +144,23 @@ h3 {
 
 /* Small devices (landscape phones, 340px and up) */
 @media (min-width: 340px) and (max-width: 767px) {
-  .homeContent{
+  .homeContent {
     margin-top: 0;
   }
 
-  .container_plus{
+  .container_plus {
     display: none;
   }
 
-  .title_desc{
+  .title_desc {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-bottom: 5em;
   }
-  
-  h1{
+
+  h1 {
     width: 100%;
     font-size: 4rem;
     text-align: center;
@@ -170,28 +170,28 @@ h3 {
     top: 0.7rem;
     font-size: 2rem;
     text-align: center;
-}
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .homeContent{
+  .homeContent {
     margin-top: 0;
   }
 
-  img{
+  img {
     width: 22em;
   }
 
-  .title_desc{
+  .title_desc {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-bottom: 7em;
   }
-  
-  h1{
+
+  h1 {
     width: 100%;
     font-size: 6rem;
     text-align: center;
@@ -202,28 +202,34 @@ h3 {
     top: 0.7rem;
     font-size: 2rem;
     text-align: center;
-}
+  }
 }
 
-/* Large devices (desktops, 992px and up) */
 @media (min-width: 1024px) and (max-width: 1279px) {
-
+  h1{
+    right: 2em;
+  }
+  h3{
+    right: 6rem;
+  }
 }
 
-/* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1280px) and (max-width: 1535px) {
-
+  h1{
+    right: 2em;
+  }
+  h3{
+    right: 6rem;
+  }
 }
 
 @media (min-width: 1536px) {
   h1{
-  right: 2em;
+    right: 2em;
   }
   h3{
-  right: 6rem;
+    right: 6rem;
   }
 
 }
-
-
 </style>

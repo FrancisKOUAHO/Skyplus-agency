@@ -38,7 +38,7 @@
           <button type="submit">Envoyer</button>
         </div>
       </div>
-      
+
     </div>
   </div>
 
@@ -122,6 +122,7 @@ export default defineComponent({
 }
 
 #modal-container {
+  z-index: 200000;
   position: fixed;
   top: 0;
   left: 0;
@@ -144,7 +145,6 @@ export default defineComponent({
 }
 
 .modal {
-
   background: #fff;
   padding: 2rem;
   text-align: center;
@@ -183,7 +183,7 @@ export default defineComponent({
 }
 .modal .form h2 {
   font-size: 1.7rem;
-  line-height: 1.1em; 
+  line-height: 1.1em;
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
