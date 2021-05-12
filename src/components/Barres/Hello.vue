@@ -36,7 +36,7 @@
           </div>
 
           <div class="button">
-            <button type="submit" value="Send">Envoyer</button>
+            <button type="submit" value="Send" @click="close">Envoyer</button>
           </div>
         </div>
       </form>
@@ -63,6 +63,9 @@ export default defineComponent({
     }
   },
   methods: {
+    close(){
+      let close = document.getElementById('modal-container').style.display = 'none';
+    },
     sendEmail(e) {
       try {
         emailjs.sendForm('service_l8twccb', 'template_q8cvqtb', e.target,
@@ -74,9 +77,8 @@ export default defineComponent({
               selected: this.selected
             })
         if (emailjs) {
-          document.getElementById('')
+          setTimeout("close()",900);
           swal("Success", "Email envoyé", "Error");
-           this.$router.push({name: 'Accueil'});
         }
       } catch (error) {
         swal("Error", "Email non envoyé", "Error");

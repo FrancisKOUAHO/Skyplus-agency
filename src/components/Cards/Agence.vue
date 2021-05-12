@@ -10,31 +10,39 @@
     <div class="content1 fadeInUp">
          <h4 class="text-4xl text-2xl mb-5 -mr-20 text-right fadeInUp">Skyplus, une histoire qui peut être la votre</h4>
          <p class="fadeInUp text-xl text-left">
-           Skyplus c’est la rencontre entre un commercial sans expérience,
+           <b>Skyplus</b> c’est la rencontre entre un commercial sans expérience,
 
-           Passionné par le marketing et la communication
+           <b>Passionné par le marketing et la communication
 
-           Avec une obsession pour la publicité et les techniques de ventes.
+             Avec une obsession pour la publicité et les techniques de ventes. </b>
+           <br>
+           <br>
 
-           Depuis 2016,
+           <b>Depuis 2016,</b>
 
            Et après plusieurs échecs entrepreneurial,
 
-           Je passe mon temps à cliquer et analyser toutes les publicités dans les moindres détails.
+           Je passe mon temps à cliquer et analyser toutes les publicités dans les moindres détails. <br>
 
-           Aujourd’hui,
+           <b><em>
+             Aujourd’hui,
 
-           5 ans après, j’accompagne les entreprises et porteurs de projets dans la mise en place de solutions web sur mesure.
+             5 ans après, j’accompagne les entreprises et porteurs de projets dans la mise en place de solutions web sur mesure.
+           </em> </b>
+           <br>
+           <br>
 
-           Réduire les dépenses liés à la masse salariale et aux coûts d’acquisitions est ma spécialité.
+           <b>Réduire les dépenses liés à la masse salariale et aux coûts d’acquisitions est ma spécialité.</b>
 
            Mes interventions permettent aux entreprises de développer leurs base de données clients.
 
            Et d’économiser plusieurs dizaines de milliers d’euros.
+           <br>
+           <br>
 
-           Mais cela n’aurait pas été possible sans ma rencontre avec Francis Kouaho,
+           Mais cela n’aurait pas été possible sans ma rencontre avec <b><em>Francis KOUAHO,
 
-           Qui est un développeur exceptionnel avec qui j’ai décidé de m’associer pour créer l’agence Web Skyplus.
+           Qui est un développeur exceptionnel avec qui j’ai décidé de m’associer</em></b> pour créer <b>l’agence Web Skyplus.</b>
          </p>
     </div>
   </div>
@@ -68,6 +76,9 @@ export default defineComponent({
 
 h1, h3, h4, p {
     color: #fffefe;
+}
+b{
+  font-family: Raleway-Bold,serif ;
 }
 
 h1 {

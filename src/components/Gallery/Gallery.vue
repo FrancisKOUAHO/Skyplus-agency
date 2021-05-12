@@ -131,7 +131,6 @@ export default defineComponent({
         $('.port, .gallery ul').removeClass('item_open');
         return false;
       });
-
       $(".gallery ul li a").click(function () {
         $('html, body').animate({
           scrollTop: parseInt($("#top").offset().top)
@@ -154,8 +153,8 @@ header {
 }
 header h1 {
   text-align: center;
-  font-size: 65px;
-  font-weight: 400;
+  font-size: 50px;
+  font-weight: 300;
   letter-spacing: 3px;
   line-height: 0.8;
   padding-top: 50px;
