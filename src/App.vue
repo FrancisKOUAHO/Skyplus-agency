@@ -1,17 +1,17 @@
 <template>
-  <nav-bar/>
+  <nav-bar-two/>
   <router-view/>
   <pieds-page/>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import NavBar from "@/components/NavBars/NavBar.vue";
 import PiedsPage from "@/components/Footers/PiedsPage.vue";
+import NavBarTwo from "@/components/NavBars/NavBarTwo.vue";
 
 export default defineComponent({
   name: 'App',
-  components: {PiedsPage, NavBar},
+  components: {NavBarTwo, PiedsPage},
   data() {
     return {};
   },
@@ -54,11 +54,6 @@ body {
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-}
-
-a {
-  color: white !important;
-  text-decoration: none;
 }
 
 #app {
