@@ -1,5 +1,5 @@
 <template>
-  <div style="mt-5">
+  <div>
     <center>
       <div style="animation-duration: 2000ms;">
         <div>
