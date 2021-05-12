@@ -338,10 +338,10 @@ export default defineComponent({
 @media (min-width: 1536px) {
 
 .container_text{
-  margin-top: -10%
+  margin-top: -10%;
+  padding-top: 12em;
 }
 
 }
-
 
 </style>
