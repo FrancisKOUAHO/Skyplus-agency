@@ -1,5 +1,8 @@
 <template>
-  <div>
+  <div class="hoja">
+    <span id="hoja-1" >Francis</span>
+    <span id="hoja-2" v-if="show">Jacky</span>
+    <span id="hoja-3" v-if="show">Arash</span>
   </div>
 </template>
 
@@ -8,158 +11,104 @@
 import {defineComponent} from 'vue'
 
 export default defineComponent({
+  props: ["hoja-1", "hoja-2", "hoja-3"],
   name: 'square',
   data() {
-    return {}
+    return {
+      show: false,
+      timeout: null
+    }
   },
-  methods: {}
-
 })
 </script>
 
 <style scoped>
-div{
-  background-color: #5e8cd2;
-  animation: square-to-circle 2s 1s infinite alternate;
-  opacity: 0.6;
-  /* margin-bottom: 70%; */
+.hoja {
+  color: #dcdce2;
+  position: absolute;
+  top: 22%;
+  left: 84%;
+  margin-left: -140px;
+  margin-top: -140px;
+  width: 280px;
+  height: 280px;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 35px;
+  line-height: 280px;
+  -webkit-font-smoothing: antialiased;
 }
 
-@-webkit-keyframes square-to-circle {
+.hoja:after,
+.hoja:before {
+  content: "";
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center center;
+}
+
+.hoja:after {
+  box-shadow: inset 0 17.5px 0 rgba(250, 250, 0, 0.6), inset 17.5px 0 0 rgba(250, 200, 0, 0.6), inset 0 -17.5px 0 rgba(250, 150, 0, 0.6), inset -17.5px 0 0 rgba(250, 100, 0, 0.6);
+  -webkit-animation: rotar 2s -0.5s linear infinite;
+  animation: rotar 2s -0.5s linear infinite;
+}
+
+.hoja:before {
+  box-shadow: inset 0 17.5px 0 rgba(0, 250, 250, 0.6), inset 17.5px 0 0 rgba(0, 200, 200, 0.6), inset 0 -17.5px 0 rgba(0, 150, 200, 0.6), inset -17.5px 0 0 rgba(0, 200, 250, 0.6);
+  -webkit-animation: rotarIz 2s -0.5s linear infinite;
+  animation: rotarIz 2s -0.5s linear infinite;
+}
+
+@-webkit-keyframes rotar {
   0% {
-    border-radius: 0 0 0 0;
-  }
-  25% {
-    border-radius: 50% 0 0 0;
+    transform: rotateZ(0deg) scaleX(1) scaleY(1);
   }
   50% {
-    border-radius: 50% 50% 0 0;
-  }
-  75% {
-    border-radius: 50% 50% 50% 0;
+    transform: rotateZ(180deg) scaleX(0.82) scaleY(0.95);
   }
   100% {
-    border-radius: 50%;
+    transform: rotateZ(360deg) scaleX(1) scaleY(1);
   }
 }
 
-@keyframes square-to-circle {
+@keyframes rotar {
   0% {
-    border-radius: 0 0 0 0;
-    background: #3b95d1;
-  }
-  25% {
-    border-radius: 50% 0 0 0;
-    background: #139ecb;
+    transform: rotateZ(0deg) scaleX(1) scaleY(1);
   }
   50% {
-    border-radius: 50% 50% 0 0;
-    background: #00a4c1;
-  }
-  75% {
-    border-radius: 50% 50% 50% 0;
-    background: #00adc1;
+    transform: rotateZ(180deg) scaleX(0.82) scaleY(0.95);
   }
   100% {
-    border-radius: 50%;
-    background: #00b6be;
+    transform: rotateZ(360deg) scaleX(1) scaleY(1);
   }
 }
 
-@keyframes square-to-circle {
+@-webkit-keyframes rotarIz {
   0% {
-    border-radius: 0 0 0 0;
-    background: #00bfb9;
-    transform: rotate(0deg);
-  }
-  25% {
-    border-radius: 50% 0 0 0;
-    background: #00cfc2;
-    transform: rotate(45deg);
+    transform: rotateZ(0deg) scaleX(1) scaleY(1);
   }
   50% {
-    border-radius: 50% 50% 0 0;
-    background: #00dfc9;
-    transform: rotate(90deg);
-  }
-  75% {
-    border-radius: 50% 50% 50% 0;
-    background: #00efce;
-    transform: rotate(135deg);
+    transform: rotateZ(-180deg) scaleX(0.95) scaleY(0.85);
   }
   100% {
-    border-radius: 50%;
-    background: #00ffd2;
-    transform: rotate(180deg);
+    transform: rotateZ(-360deg) scaleX(1) scaleY(1);
   }
 }
 
-/* Large devices (desktops, 992px and up) /
-@media (min-width: 1024px) and (max-width: 1279px) {
-  h1{
-  right: 2em;
+@keyframes rotarIz {
+  0% {
+    transform: rotateZ(0deg) scaleX(1) scaleY(1);
   }
-  h3{
-  right: 6rem;
+  50% {
+    transform: rotateZ(-180deg) scaleX(0.95) scaleY(0.85);
   }
-}
-
-/ Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1280px) and (max-width: 1535px) {
-  h1{
-    right: 2em;
-  }
-  h3{
-    right: 6rem;
+  100% {
+    transform: rotateZ(-360deg) scaleX(1) scaleY(1);
   }
 }
 
-@media (min-width: 1536px) {
-  h1{
-    right: 2em;
-  }
-  h3{
-    right: 6rem;
-  }
-
-}
-/* Small devices (landscape phones, 340px and up) /
-@media (min-width: 340px) and (max-width: 767px) {
-  div {
-    width: 150px;
-    height: 150px;
-  }
-}
-
-/ Medium devices (tablets, 768px and up) /
-@media (min-width: 768px) and (max-width: 1023px) {
-  div {
-    width: 200px;
-    height: 200px;
-    margin: 0;
-  }
-}
-
-/ Large devices (desktops, 992px and up) /
-@media (min-width: 1024px) and (max-width: 1279px) {
-  div {
-    width: 200px;
-    height: 200px;
-  }
-}
-
-/ Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1280px) and (max-width: 1535px) {
-  div {
-    width: 200px;
-    height: 200px;
-  }
-}
-
-@media (min-width: 1536px) {
-  div {
-    width: 200px;
-    height: 200px;
-  }
-}
 </style>
