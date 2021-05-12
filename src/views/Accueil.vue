@@ -1,9 +1,9 @@
 <template>
   <hello/>
-  <creation-bloc-top/>
-  <skyplus style="margin-top: 35%"/>
+  <!-- <creation-bloc-top/> -->
+  <skyplus/>
   <gallery2/>
-  <points style="opacity: 0.2;"/>
+  <!-- <points/> -->
   <creation-bloc-bottom/>
 </template>
 
@@ -20,7 +20,7 @@ import Points from "@/components/Points.vue";
 
 export default defineComponent({
   name: 'Accueil',
-  components: {Points, Gallery2, CreationBlocBottom, CreationBlocTop, Hello, Skyplus},
+  components: {Gallery2, CreationBlocBottom, Hello, Skyplus},
   data() {
     return {}
   },
