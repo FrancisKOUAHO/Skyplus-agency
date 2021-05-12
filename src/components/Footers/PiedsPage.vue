@@ -30,6 +30,7 @@ export default defineComponent({
 
 <style scoped>
 footer {
+  font-family: Raleway-Regular, sans-serif;
   background-image: linear-gradient(to right, rgb(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
   position: absolute;
   padding:45px 0 20px;

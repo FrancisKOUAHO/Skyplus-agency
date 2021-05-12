@@ -3,7 +3,6 @@
   <div class="container displayed container_text">
     <h1>Nous gravitons dans les meilleures sphères</h1>
   </div>
-
   <div class="flex-initial div-form container_contact">
     <div class="type_contact" v-for="(contact, index) in contacts" :key="index">
       <a href="">

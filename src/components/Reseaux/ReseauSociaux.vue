@@ -36,12 +36,12 @@ export default {
 <style scoped>
 
 section {
-  position: absolute;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 5em;
+  padding: 0 0 5em 0;
 }
 
 ul {
