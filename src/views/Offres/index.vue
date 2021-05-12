@@ -23,7 +23,6 @@
     <div class="container">
       <div class="panel pricing-table">
         <div class="pricing-plan">
-          <img src="../../assets/image/forfaits/bronze.png" alt="" class="pricing-img">
           <h2 class="pricing-header">Bronze Package</h2>
           <br>
           <h4 class="pricing-header">Site internet vitrine en une seule page</h4>
@@ -52,7 +51,6 @@
         </div>
 
         <div class="pricing-plan">
-          <img src="../../assets/image/forfaits/gold.png" alt="" class="pricing-img">
           <h2 class="pricing-header">Gold Package</h2>
           <br>
           <h4 class="pricing-header">Site internet professionnel multi-pages</h4>
@@ -81,7 +79,6 @@
         </div>
 
         <div class="pricing-plan">
-          <img src="../../assets/image/forfaits/platinium.png" alt="" class="pricing-img">
           <h2 class="pricing-header">Platinum Package</h2>
           <br>
           <h4 class="pricing-header">Site internet professionnel optimisé pour le référencement</h4>
