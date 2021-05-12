@@ -1,6 +1,9 @@
 <template>
-  <skyplus/>
   <hello/>
+  <creation-bloc-top/>
+  <skyplus style="margin-top: 35%"/>
+  <gallery2/>
+  <creation-bloc-bottom/>
 </template>
 
 <script lang="ts">
@@ -8,11 +11,14 @@
 import {defineComponent} from 'vue';
 import Skyplus from "@/components/Cards/Skyplus.vue";
 import Hello from "@/components/Barres/Hello.vue";
+import CreationBlocTop from "@/components/Cards/CreationBlocTop.vue";
+import CreationBlocBottom from "@/components/Cards/CreationBlocBottom.vue";
+import Gallery2 from "@/components/Gallery/Gallery.vue";
 
 
 export default defineComponent({
   name: 'Accueil',
-  components: {Hello, Skyplus},
+  components: {Gallery2, CreationBlocBottom, CreationBlocTop, Hello, Skyplus},
   data() {
     return {}
   },

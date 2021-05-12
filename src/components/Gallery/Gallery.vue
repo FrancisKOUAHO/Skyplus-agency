@@ -1,144 +1,94 @@
 <template>
-  <main class="flex justify-center">
-    <section class="fadeInBottom has-dflex-center">
-      <div class="lx-container-80">
-        <div class="lx-row">
-          <div class="lx-card carousel-container">
-            <div class="item fadeIn" v-for="(slider, index) in sliders" :key="index">
-              <div class="image flex justify-center items-center">
-                <img class="filter" :src="slider.src" :alt="slider.alt"/>
-                <div class="imageFilter"></div>
-                <h1 class="title absolute w-full text-center fadeInBottom">
-                  {{ slider.name }}</h1>
-              </div>
+  <header>
+    <h1>Nos <span> créations</span></h1>
+  </header>
+  <div id="top"></div>
+  <section class="gallery">
+    <div class="row">
+      <ul>
+        <a href="#" class="close"></a>
+        <li>
+          <a href="#item01">
+            <img src='@/assets/image/site_gallery/auxfinsgastronomes.jpg' alt="">
+          </a>
+        </li>
+        <li>
+          <a href="#item02">
+            <img src='@/assets/image/site_gallery/ford-2707122_1920.jpg' alt="">
+          </a>
+        </li>
 
-              <div class="flex flex-wrap sliderContent">
+        <li>
+          <a class="image" href="#item03">
+            <img src='@/assets/image/site_gallery/graffiti-832341_1920.jpg' alt="">
+          </a>
+        </li>
 
-                <div class="containerDescription overflow-hidden">
-                  <p class="sliderDescription fadeInBottom">{{ slider.description }}</p>
-                  <center>
-                    <a v-bind:href="slider.link" target="_blank" class="linkSite fadeInRight">Consulter
-                      {{ slider.name }}</a>
-                  </center>
-                </div>
+      </ul>
+    </div>
 
+    <div id="item01" class="port">
 
-                <div class="containerLogo">
-                  <div class="containerImg fadeInRight">
-                    <img class="logoEnseigne" :src="slider.logo" :alt="'Logo ' + slider.name"/>
-                  </div>
-                </div>
-
-
-              </div>
-            </div>
-            <a class="prev has-dflex-center -ml-20">
-              <i class="fas fa-angle-left"></i>
-            </a>
-            <a class="next has-dflex-center -mr-20">
-              <i class="fas fa-angle-right"></i>
-            </a>
-          </div>
+      <div class="row">
+        <div class="description">
+          <center>
+            <h1>Aux fins gastronomes</h1>
+          </center>
+          <center>
+            <p>Cuisine et pâtisse des recettes d’antan tout comme de nouvelles créations conçues en symbiose avec ses
+              salariés</p>
+            <br>
+            <img src='@/assets/image/site_gallery/logo/logoauxfinsgastronomes.png' alt="logo" class="img-logo">
+          </center>
         </div>
+        <img src="@/assets/image/site_gallery/auxfinsgastronomes.jpg" alt="">
       </div>
-    </section>
-  </main>
+    </div>
+
+    <div id="item02" class="port">
+      <div class="row">
+        <div class="description">
+          <center>
+            <h1>Califor</h1>
+          </center>
+          <center>
+            <p>CALIFOR, propose des pièces Unisexes, relax et bien pensées, baignant dans l’esprit Rap, sport et
+              quelques
+              références cinématographiques du milieu des années 90.
+            </p>
+            <br>
+            <img src='@/assets/image/site_gallery/logo/logocalifor.png' alt="logo" class="img-logo">
+          </center>
+        </div>
+        <img src='@/assets/image/site_gallery/ford-2707122_1920.jpg' alt="">
+      </div>
+    </div>
+
+    <div id="item03" class="port">
+      <div class="row">
+        <div class="description">
+          <center>
+            <h1>KCLM</h1>
+          </center>
+          <center>
+            <p>Autorise-toi à avoir de Grands Rêves, avec un grand “G” et un grand “R”, c’est la devise de KCLM, une
+              marque qui travaille avec de nombreux artistes connus comme inconnus.</p>
+            <br>
+            <img src='@/assets/image/site_gallery/logo/logokclm.png' alt="logo" class="img-logo">
+          </center>
+        </div>
+        <img src='@/assets/image/site_gallery/ford-2707122_1920.jpg' alt="">
+      </div>
+    </div>
+  </section>
+
 </template>
 
 
 <script>
 import {defineComponent} from 'vue'
+import $ from 'jquery'
 
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.carousel-container').forEach((carousel) => {
-    insertNumbers(carousel);
-
-    carousel.querySelector('.prev').addEventListener('click', (e) => {
-      minusItem(carousel);
-    });
-
-    carousel.querySelector('.next').addEventListener('click', () => {
-      plusItem(carousel);
-    });
-
-    insertDots(carousel);
-
-    carousel.querySelectorAll('.dot').forEach((dot) => {
-      dot.addEventListener('click', (e) => {
-        let item = Array.prototype.indexOf.call(
-            e.target.parentNode.children,
-            e.target
-        );
-
-        showItems(carousel, item);
-      });
-    });
-
-    showItems(carousel, 0);
-  });
-});
-
-function insertNumbers(carousel) {
-  const length = carousel.querySelectorAll('.item').length;
-  // for (let i = 0; i < length; i++) {
-  //     const nmbr = document.createElement("div");
-  //     nmbr.classList.add("numbertext");
-  //     nmbr.innerText = i + 1 + " / " + length;
-
-  //     carousel.querySelectorAll(".item")[i].append(nmbr);
-  // }
-}
-
-function insertDots(carousel) {
-  const dots = document.createElement('div');
-  dots.classList.add('dots');
-
-  carousel.append(dots);
-
-  carousel.querySelectorAll('.item').forEach((elem) => {
-    const dot = document.createElement('div');
-    dot.classList.add('dot');
-
-    carousel.querySelector('.dots').append(dot);
-  });
-}
-
-function plusItem(carousel) {
-  let item = currentItem(carousel);
-
-  carousel
-      .querySelectorAll('.item')[item].nextElementSibling.classList.contains('item')
-      ? showItems(carousel, item + 1)
-      : showItems(carousel, 0);
-}
-
-function minusItem(carousel) {
-  let item = currentItem(carousel);
-
-  carousel.querySelectorAll('.item')[item].previousElementSibling != null
-      ? showItems(carousel, item - 1)
-      : showItems(carousel, carousel.querySelectorAll('.item').length - 1);
-}
-
-function currentItem(carousel) {
-  return [...carousel.querySelectorAll('.item')].findIndex(
-      (item) => item.style.display === 'block'
-  );
-}
-
-function showItems(carousel, item) {
-  if (
-      carousel.querySelectorAll('.item')[currentItem(carousel)] != undefined
-  )
-    carousel.querySelectorAll('.item')[
-        currentItem(carousel)
-        ].style.display = 'none';
-  carousel.querySelectorAll('.item')[item].style.display = 'block';
-
-  if (carousel.querySelector('.dot.active') != null)
-    carousel.querySelector('.dot.active').classList.remove('active');
-  carousel.querySelectorAll('.dot')[item].classList.add('active');
-}
 
 export default defineComponent({
   name: 'Gallery2',
@@ -166,426 +116,229 @@ export default defineComponent({
           description: "Autorise-toi à avoir de Grands Rêves, avec un grand “G” et un grand “R”, c’est la devise de KCLM, une marque qui travaille avec de nombreux artistes connus comme inconnus.",
           link: "https://kclm.fr/"
         },
-        {
-          name: "Portfolio",
-          src: require('@/assets/image/site_gallery/scrren_portofolio_nav_2.png'),
-          logo: require("@/assets/image/site_gallery/logo/logo_francis_2.png"),
-          description: "Je pense que le design est comme une “baguette magique”. Si les services et les produits sont magiques pour résoudre les problèmes, le rôle du design est de devenir un support permettant aux utilisateurs de les maîtriser.",
-          link: "https://www.kouahofrancis.fr/"
-        },
       ]
     }
   },
+  mounted: function () {
+    this.$nextTick(function () {
+      $('.gallery ul li a').click(function () {
+        let itemID = $(this).attr('href');
+        $('.gallery ul').addClass('item_open');
+        $(itemID).addClass('item_open');
+        return false;
+      });
+      $('.close').click(function () {
+        $('.port, .gallery ul').removeClass('item_open');
+        return false;
+      });
+
+      $(".gallery ul li a").click(function () {
+        $('html, body').animate({
+          scrollTop: parseInt($("#top").offset().top)
+        }, 400);
+      });
+    })
+  }
 })
 </script>
 
 <style scoped>
 
-h1 {
-  font-family: Raleway-Bold, serif;
-  color: #fffefe;
-  font-size: 5.5rem;
-  line-height: 1em;
-  -webkit-animation-duration: .5s;
-  animation-duration: .5s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  animation-delay: 0.5s;
-}
-
-main section {
-  padding: 4rem 0;
-  -webkit-animation-duration: 0.5s;
-  animation-duration: 0.5s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  animation-delay: 2s;
-}
-
-main section .carousel-container {
-  width: 100%;
-  height: 40rem;
-  padding: 0;
-  position: relative;
-  /* overflow: hidden; */
-  border-radius: 0.375rem;
-}
-
-main section .carousel-container .item {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  display: none;
-
-}
-
-main section .carousel-container .item .numbertext {
-  padding: 0.5rem 0.75rem;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  border-radius: 0.9375rem;
-  font-size: 0.875rem;
-  color: #f2f2f2;
-  background-color: rgba(0, 0, 0, 0.9);
-}
-
-main section .carousel-container .item .image {
-  width: 100%;
-  height: 100%;
-  display: flex;
-}
-
-main section .carousel-container .item .image img {
-  width: 900px;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(50%);
-}
-
-.imageFilter {
-  background: #d16ba55e;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
-
-.sliderContent {
-  max-width: 70em;
-}
-
-.containerDescription {
+header {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+  color: #fff;
+  text-align: center;
+  padding: 30px 0 120px;
+  margin-top: 7%;
   width: 70%;
 }
-
-.containerLogo {
-  width: 30%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+header h1 {
+  text-align: center;
+  font-size: 65px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  line-height: 0.8;
+  padding-top: 50px;
+  font-family: "Raleway-Regular", sans-serif;
 }
 
-.containerImg {
-  width: 12em;
-  background: white;
-  height: 12em;
-  padding: 0.8em;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  top: -5em;
-  -webkit-animation-duration: .5s;
-  animation-duration: .5s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  animation-delay: 0.5s;
+header p {
+  padding-top: 30px;
 }
 
-.logoEnseigne {
+
+a {
+  color: #fff;
+}
+
+.img-logo {
+  width: 20% !important;
+}
+
+.row {
   width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0;
+  clear: both;
 }
 
-.linkSite {
+.row img {
+  max-width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+}
+
+.gallery ul li {
+  float: left;
+  margin: 0 0.8771929825%;
+  overflow: hidden;
+}
+
+.gallery {
+  padding: 40px 0 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery ul {
+  padding-top: 50px;
+  position: relative;
+}
+
+.gallery ul li {
+  margin-bottom: 20px;
+  width: 23.2456140351%;
+  position: relative;
+}
+
+.gallery ul li a {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+.gallery ul li a:before {
   position: absolute;
-  color: #f2f2f2;
-  font-family: Raleway-Bold;
-  font-size: 1rem;
-  -webkit-animation-duration: .5s;
-  animation-duration: .5s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  animation-delay: 0.5s;
+  width: 32px;
+  height: 32px;
+  top: 40%;
+  left: 50%;
+  margin: -14px 0 0 -16px;
+  background: url(data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3C%21--%20Generator%3A%20Adobe%20Illustrator%2017.1.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200%29%20%20--%3E%0A%3C%21DOCTYPE%20svg%20PUBLIC%20%22-//W3C//DTD%20SVG%201.1//EN%22%20%22http%3A//www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd%22%3E%0A%3Csvg%20version%3D%221.1%22%0A%09%20id%3D%22svg2%22%20xmlns%3Adc%3D%22http%3A//purl.org/dc/elements/1.1/%22%20xmlns%3Acc%3D%22http%3A//creativecommons.org/ns%23%22%20xmlns%3Ardf%3D%22http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23%22%20xmlns%3Asvg%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Asodipodi%3D%22http%3A//sodipodi.sourceforge.net/DTD/sodipodi-0.dtd%22%20xmlns%3Ainkscape%3D%22http%3A//www.inkscape.org/namespaces/inkscape%22%20inkscape%3Aversion%3D%220.48.4%20r9939%22%20sodipodi%3Adocname%3D%22icon-fullscreen.svg%22%0A%09%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%20960%20560%22%0A%09%20enable-background%3D%22new%200%200%20960%20560%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Csodipodi%3Anamedview%20%20borderopacity%3D%221%22%20pagecolor%3D%22%23ffffff%22%20bordercolor%3D%22%23666666%22%20objecttolerance%3D%2210%22%20gridtolerance%3D%2210%22%20guidetolerance%3D%2210%22%20showgrid%3D%22false%22%20fit-margin-top%3D%220%22%20fit-margin-left%3D%220%22%20inkscape%3Azoom%3D%227.375%22%20inkscape%3Acx%3D%22-5.1525424%22%20inkscape%3Acy%3D%2216%22%20id%3D%22namedview11%22%20inkscape%3Awindow-x%3D%22-8%22%20inkscape%3Awindow-y%3D%22-8%22%20fit-margin-right%3D%220%22%20inkscape%3Apageopacity%3D%220%22%20fit-margin-bottom%3D%220%22%20inkscape%3Awindow-width%3D%221366%22%20inkscape%3Awindow-height%3D%22706%22%20inkscape%3Awindow-maximized%3D%221%22%20inkscape%3Apageshadow%3D%222%22%20inkscape%3Acurrent-layer%3D%22svg2%22%3E%0A%09%3C/sodipodi%3Anamedview%3E%0A%3Cg%3E%0A%09%3Crect%20x%3D%22220%22%20y%3D%22260%22%20fill%3D%22%23FFFFFF%22%20width%3D%22536%22%20height%3D%2224%22/%3E%0A%3C/g%3E%0A%3Cg%3E%0A%09%3Crect%20x%3D%22476%22%20y%3D%224%22%20fill%3D%22%23FFFFFF%22%20width%3D%2224%22%20height%3D%22556%22/%3E%0A%3C/g%3E%0A%3C/svg%3E%0A) no-repeat;
+  content: "";
+  opacity: 0;
+  z-index: 1;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
-.sliderDescription {
-  font-size: 1.3rem;
-  line-height: 1.2em;
-  color: #f2f2f2;
-  -webkit-animation-duration: .5s;
-  animation-duration: .5s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  animation-delay: 0.5s;
-}
-
-main section .carousel-container .item .text .title {
-  margin: 0.5rem 0 0 0;
-  font-size: 1.2rem;
-  font-weight: normal;
-}
-
-main section .carousel-container .prev,
-main section .carousel-container .next {
-  width: 3rem;
-  height: 3rem;
-  padding: 0.3125rem;
-  position: absolute;
-  top: calc(50% - 1rem);
-  user-select: none;
-  font-size: 1rem;
-  color: #f2f2f2;
-  border-radius: 50%;
-  transition: 0.6s ease;
-  background: #d16ba5bb;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-main section .carousel-container .prev:focus, main section .carousel-container .prev:hover,
-main section .carousel-container .next:focus,
-main section .carousel-container .next:hover {
-  background-color: rgba(0, 0, 0, 0.9);
-}
-
-main section .carousel-container .prev {
-  left: -0rem;
-}
-
-main section .carousel-container .next {
-  right: 0rem;
-}
-
-main section .carousel-container .dots {
-  padding: 0.9375rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-main section .carousel-container .dots .dot {
-  width: 0.625rem;
-  height: 0.625rem;
-  margin: 0 0.125rem;
-  display: inline-block;
-  cursor: pointer;
-  border-radius: 50%;
-  background-color: #bbb;
-  transition: background-color 0.6s ease;
-}
-
-main section .carousel-container .dots .dot:focus, main section .carousel-container .dots .dot:hover {
-  background-color: #717171;
-}
-
-/* ANIMATION FADE IN BOTTOM */
-
-@-webkit-keyframes fadeInBottom {
-  0% {
-    opacity: 0;
-    position: relative;
-    top: 50px;
-  }
-  100% {
-    opacity: 1;
-    position: relative;
-    top: 0;
-    /* transform: translateY(-100px); */
-  }
-}
-
-@keyframes fadeInBottom {
-  0% {
-    opacity: 0;
-    /* position: absolute; */
-    margin-top: 50px;
-  }
-  100% {
-    opacity: 1;
-    /* position: absolute; */
-    margin-top: 0;
-    /* transform: translateY(-100px); */
-  }
-}
-
-.fadeInBottom {
-  -webkit-animation-name: fadeInBottom;
-  animation-name: fadeInBottom;
-}
-
-/* Animation FadeInRight class "FadeInRight"*/
-
-@-webkit-keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    /* position: absolute; */
-    margin-right: -50px;
-  }
-  100% {
-    opacity: 1;
-    /* position: absolute; */
-    margin-right: 0;
-    /* transform: translateY(-100px); */
-  }
-}
-
-@keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    /* position: absolute; */
-    margin-right: -50px;
-  }
-  100% {
-    opacity: 1;
-    /* position: absolute; */
-    margin-right: 0;
-    /* transform: translateY(-100px); */
-  }
-}
-
-.fadeInRight {
-  -webkit-animation-name: fadeInRight;
-  animation-name: fadeInRight;
-}
-
-/* ANIMATION FADE */
-
-.fadeIn {
+.gallery ul li a:hover:before {
+  top: 50%;
   opacity: 1;
-  animation-name: fadeInOpacity;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in-out;
-  animation-duration: 2s;
 }
 
-@keyframes fadeInOpacity {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.gallery ul li a:after {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  content: "";
+  opacity: 0;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
-/* Small devices (landscape phones, 340px and up) */
-@media (min-width: 340px) and (max-width: 767px) {
-  .container_bloc1 {
-    background: none;
-    padding: 2em;
-    width: 100%;
-    left: 0em;
-    margin: 15em auto 0 auto;
-  }
-
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 4em;
-  }
-
-  h5 {
-    padding-left: 0;
-  }
-
-  main section .carousel-container .item .image img {
-    height: 50%;
-  }
-
-  .imageFilter {
-    height: 50%;
-  }
-
-  main section .carousel-container .next {
-    right: 6rem;
-  }
-
-  main section .carousel-container .prev {
-    left: 6rem;
-  }
-
-  main {
-    margin-top: 12rem;
-  }
-
-  .sliderContent {
-    margin-top: -9rem;
-  }
-
-  .sliderDescription {
-    font-size: 1.1rem;
-  }
-
-  .containerImg {
-    width: 10em;
-    height: 10em;
-    border-radius: 50%;
-    position: absolute;
-    top: 30em;
-    left: 35%;
-  }
-
-  .containerDescription {
-    width: 100%;
-    margin: 3em 2em 0 2em;
-  }
-
-  .linkSite {
-    margin-top: 1rem;
-  }
+.gallery ul li a:hover:after {
+  opacity: 1;
 }
 
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 1023px) {
-
-  main{
-    margin: 17em auto 0 auto;
-  }
-
-  main section .carousel-container .item .image img {
-    height: 70%;
-  }
-
-  .imageFilter {
-    height: 70%;
-  }
-
-  main section .carousel-container .prev[data-v-73f0d8f5] {
-    left: 6rem;
-  }
-
-  main section .carousel-container .next[data-v-73f0d8f5] {
-    right: 6rem;
-  }
-
-  .sliderContent{
-    margin: -6em 0 0 0;
-  }
-  .containerDescription[data-v-73f0d8f5] {
-    padding-left: 3em;
-  }
-  .linkSite {
-    margin-top: 1rem;
-  }
+.port {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding-top: 100px;
+  background-color: #fafafa;
+  z-index: 103;
+  visibility: hidden;
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  border-bottom: 1px solid #d0d0d0;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 1024px) and (max-width: 1279px) {
-  main {
-    margin-top: 24rem;
-  }
+.port img {
+  width: 50%;
 }
 
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1280px) and (max-width: 1535px) {
-  main {
-    margin-top: 24rem;
-  }
+.port .description {
+  float: left;
+  width: 50%;
+  max-height: 100%;
+  padding: 0 40px 40px;
+  overflow: auto;
 }
 
-@media (min-width: 1536px) {
-  main {
-    margin-top: 24rem;
-  }
+.port h1 {
+  font-size: 35px;
+  line-height: 2.3;
+  padding: 0;
+}
 
-  .sliderContent {
-    margin-top: 1.5rem;
-  }
+.port > * {
+  opacity: 0;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
 
-  .linkSite {
-    margin: 1.5em auto 0 auto;
-  }
+.port.item_open {
+  visibility: visible;
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.port > * {
+  opacity: 1;
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+}
+
+.close {
+  width: 21px;
+  height: 21px;
+  background: url(data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3C%21--%20Generator%3A%20Adobe%20Illustrator%2017.1.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200%29%20%20--%3E%0A%3C%21DOCTYPE%20svg%20PUBLIC%20%22-//W3C//DTD%20SVG%201.1//EN%22%20%22http%3A//www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd%22%3E%0A%3Csvg%20version%3D%221.1%22%0A%09%20id%3D%22svg2%22%20xmlns%3Adc%3D%22http%3A//purl.org/dc/elements/1.1/%22%20xmlns%3Acc%3D%22http%3A//creativecommons.org/ns%23%22%20xmlns%3Ardf%3D%22http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23%22%20xmlns%3Asvg%3D%22http%3A//www.w3.org/2000/svg%22%0A%09%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%2021%2021%22%0A%09%20enable-background%3D%22new%200%200%2021%2021%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cg%20id%3D%22layer1%22%20transform%3D%22translate%280%2C-1031.3622%29%22%3E%0A%09%3Cpath%20id%3D%22path2987%22%20fill%3D%22none%22%20stroke%3D%22%23000000%22%20d%3D%22M0%2C1031.4l21%2C21%22/%3E%0A%09%3Cpath%20id%3D%22path2989%22%20fill%3D%22none%22%20stroke%3D%22%23000000%22%20d%3D%22M21%2C1031.4l-21%2C21%22/%3E%0A%3C/g%3E%0A%3C/svg%3E%0A%0A) no-repeat;
+  position: absolute;
+  right: 10px;
+  top: -121px;
+  opacity: 1;
+  z-index: 1004;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.item_open .close {
+  opacity: 1;
+  top: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 

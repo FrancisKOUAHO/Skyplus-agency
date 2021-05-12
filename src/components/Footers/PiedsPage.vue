@@ -1,19 +1,18 @@
 <template>
-  <footer class='w-3/4 border-grey p-4' id="footer">
-    <h1 style="color: white; font-size: 0.9rem">SKYPLUS © 2021 - Agence de communication et de création digitale</h1>
-    <ul>
-      <!-- <li class="no-link active"><span class="lang">FR</span></li>
-      <li><a class="lang" href="http://www.skyplus.com/">EN</a></li> -->
-      <router-link class="double" :to="{name: 'InfosLegales'}">
-        <li> infos <br>légales</li>
-      </router-link>
-
-      <li class="no-link">
-        <router-link :to="{name: 'Login'}">
-          <span class="double">© 2021 <br>SKYPLUS</span>
+  <footer class="site-footer">
+    <h1>SKYPLUS © 2021 - Agence de communication et de création digitale</h1>
+    <div>
+      <ul>
+        <router-link class="double" :to="{name: 'InfosLegales'}">
+          <li> infos <br>légales</li>
         </router-link>
-      </li>
-    </ul>
+        <li>
+          <router-link :to="{name: 'Login'}">
+            <span>© 2021 <br>SKYPLUS</span>
+          </router-link>
+        </li>
+      </ul>
+    </div>
   </footer>
 </template>
 
@@ -31,154 +30,45 @@ export default defineComponent({
 
 <style scoped>
 footer {
-  background-image: linear-gradient(to right, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+  background-image: linear-gradient(to right, rgb(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
   position: absolute;
-  bottom: 0;
-  text-align: left;
+  padding:45px 0 20px;
+  font-size:15px;
+  line-height:24px;
+}
+footer, div, ul{
+  display: flex;
+  justify-content: space-between;
   padding-left: 2em;
 }
 
-#footer {
-  position: absolute;
-  bottom: 0;
+.site-footer
+{
   left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.08);
+  background: hsla(0,0%,100%,.08);
   z-index: 14;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
 }
 
-#footer ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0 2rem 0 0;
+ul{
+  margin-right: 5em;
 }
 
-#footer ul {
-  list-style-type: none;
-  text-align: right;
-}
-
-#footer ul li {
-  text-align: left;
-  position: relative;
-}
-
-#footer ul li {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-p {
-  color: #fff;
-}
-
-#footer ul li.active::before, #footer ul li.active::after {
-  width: 50%;
-  opacity: 1;
-  display: block;
-}
-
-#footer ul li.no-link::before, #footer ul li.no-link::after {
-  display: none;
-}
-
-#footer ul li::before {
-  right: 50%;
-}
-
-#footer ul li::before, #footer ul li::after {
-  content: '';
-  position: absolute;
-  display: block;
-  top: 0;
-  width: 0;
-  height: 1px;
-  background: #fff;
-  opacity: .5;
-  -webkit-transition: width .25s ease;
-  transition: width .25s ease;
-}
-
-#footer ul li.active a, #footer ul li.active span {
-  font-weight: 600;
-}
-
-#footer ul li a.lang, #footer ul li span.lang {
-  letter-spacing: 1px;
-}
-
-#footer ul li.active::before, #footer ul li.active::after {
-  width: 50%;
-  opacity: 1;
-  display: block;
-}
-
-#footer ul li.no-link::before, #footer ul li.no-link::after {
-  display: none;
-}
-
-#footer ul li::after {
-  left: 50%;
-}
-
-#footer ul li {
-  text-align: left;
-  position: relative;
-}
-
-#footer ul li::before, #footer ul li::after {
-  content: '';
-  position: absolute;
-  display: block;
-  top: 0;
-  width: 0;
-  height: 1px;
-  background: #fff;
-  opacity: .5;
-  -webkit-transition: width .25s ease;
-  transition: width .25s ease;
-}
-
-#footer ul li a.lang, #footer ul li span.lang {
-  letter-spacing: 3px;
-}
-
-#footer ul li a, #footer ul li span {
+span, li{
+  font-family: Raleway-Bold, serif;
   padding: 0 1rem;
   line-height: 1rem;
   display: block;
   font-weight: 450;
   color: #fff;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
 }
 
-a, a:hover, a:focus, a:active {
-  color: inherit;
-  text-decoration: none;
-}
-
-a {
-  background-color: transparent;
-}
-
-#footer ul li a[data-v-52281f4a], #footer ul li span[data-v-52281f4a] {
-  padding: 0 1rem;
-  line-height: 1rem;
-  display: block;
-  font-weight: 450;
-  color: #fff;
-  font-size: 0.7rem;
+h1{
+  font-family: Raleway-Bold, serif;
+  color: white;
+  font-size: 0.8rem;
+  margin-left: 2em;
 }
 
 </style>

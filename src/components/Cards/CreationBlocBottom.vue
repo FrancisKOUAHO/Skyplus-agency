@@ -4,7 +4,7 @@
       <div class="flex justify-center items-center container_logo flex-wrap -mx-3 overflow-hidden sm:-mx-3 md:-mx-3 lg:-mx-3 xl:-mx-3">
 
         <div v-for="(logo, index) in logos" :key="index" class="container_image my-3 px-3 w-1/6 overflow-hidden sm:my-3 sm:px-3 sm:w-1/2 md:my-3 md:px-3 md:w-1/2 lg:my-3 lg:px-3 lg:w-1/6 xl:my-3 xl:px-3 xl:w-1/6">
-          <img v-bind:src="logo.src" :alt="logo.alt">
+          <img v-bind:src="logo.src" :alt="logo.alt" class="img-barre">
         </div>
 
       </div>
@@ -47,7 +47,6 @@ export default defineComponent({
 .container_bloc2 {
   background: #fffefe36;
   /* padding: 3em 3em 3em 0em; */
-  width: 40%;
   -webkit-animation-duration: .5s;
   animation-duration: .5s;
   -webkit-animation-fill-mode: both;
@@ -71,8 +70,8 @@ export default defineComponent({
   width: 25%;
 }
 
-.img{
-  width: 100%;
+.img-barre{
+  width: 46%;
   height: auto;
 }
 
@@ -196,7 +195,7 @@ export default defineComponent({
 }
 
 @media (min-width: 1536px) {
-  
+
   .titre_partenaire{
     font-size: 1.7rem;
   }

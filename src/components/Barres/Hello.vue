@@ -2,43 +2,44 @@
   <span id="myBtn" class="fixed top-1/2 sayHello"><a href="#modal-container">Say hello</a></span>
   <div id="modal-container">
     <div class="modal">
-      <div class="form">
-        <a class="btnClose" href="#">✖</a>
-        <h2>Contactez-nous !<br> Nous ne mordons pas :)</h2>
-        <div class="inputTxt">
-          <input type="text" required="" v-model="name"/><span class="bar"></span><span class="label">NOM Prénom</span>
-        </div>
-        <div class="inputTxt">
-          <input type="email" required="" v-model="email"/><span class="bar"></span><span class="label">Email</span>
-        </div>
-        <div class="inputTxt">
-          <input type="tel" required="" v-model="tel"/><span class="bar"></span><span class="label">Téléphone</span>
-        </div>
-        <div class="inputTxt">
-        <label class="labelSelect">Qu'est-ce qui vous amène ?</label>
-          <div class="formfield-select">
-            <div class="formfield-select--container">
-              <select id="mon_select">
-                <option value="projet">J'ai un projet à vous présenter</option>
-                <option value="rencontre">J'aimerais vous rencontrer</option>
-                <option value="collaborer">Je veux collaborer avec vous</option>
-                <option value="job">Je veux postuler</option>
-                <option value="stage">Je recherche un stage</option>
-                <option value="autre">Autre</option>
-              </select>
+      <form @submit.prevent="sendEmail" >
+        <div class="form">
+          <a class="btnClose" href="#">✖</a>
+          <h2>Contactez-nous !<br> Nous ne mordons pas :)</h2>
+          <div class="inputTxt">
+            <input type="text" required="" v-model="name"/><span class="bar"></span><span class="label">NOM Prénom</span>
+          </div>
+          <div class="inputTxt">
+            <input type="email" required="" v-model="email"/><span class="bar"></span><span class="label">Email</span>
+          </div>
+          <div class="inputTxt">
+            <input type="tel" required="" v-model="tel"/><span class="bar"></span><span class="label">Téléphone</span>
+          </div>
+          <div class="inputTxt">
+            <label class="labelSelect">Qu'est-ce qui vous amène ?</label>
+            <div class="formfield-select">
+              <div class="formfield-select--container">
+                <select v-model="selected">
+                  <option value="projet">J'ai un projet à vous présenter</option>
+                  <option value="rencontre">J'aimerais vous rencontrer</option>
+                  <option value="collaborer">Je veux collaborer avec vous</option>
+                  <option value="job">Je veux postuler</option>
+                  <option value="stage">Je recherche un stage</option>
+                  <option value="autre">Autre</option>
+                </select>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="inputTxt">
-          <div class="textwrapper"><textarea cols="2" rows="4" id="rules" placeholder="Votre message" v-model="message"/></div>
-        </div>
+          <div class="inputTxt">
+            <div class="textwrapper"><textarea cols="2" rows="4" id="rules" placeholder="Votre message" v-model="message"/></div>
+          </div>
 
-        <div class="button">
-          <button type="submit">Envoyer</button>
+          <div class="button">
+            <button type="submit" value="Send">Envoyer</button>
+          </div>
         </div>
-      </div>
-
+      </form>
     </div>
   </div>
 
@@ -58,7 +59,7 @@ export default defineComponent({
       email: '',
       tel: '',
       message: '',
-      selected: ''
+      selected: '',
     }
   },
   methods: {
@@ -72,9 +73,11 @@ export default defineComponent({
               tel: this.tel,
               selected: this.selected
             })
-
-        swal("Success", "Email envoyé", "Error");
-
+        if (emailjs) {
+          document.getElementById('')
+          swal("Success", "Email envoyé", "Error");
+           this.$router.push({name: 'Accueil'});
+        }
       } catch (error) {
         swal("Error", "Email non envoyé", "Error");
       }

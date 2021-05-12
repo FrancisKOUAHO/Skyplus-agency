@@ -1,7 +1,7 @@
 <template>
   <nav-bar/>
   <router-view/>
-  <pieds-page style="position: fixed; bottom: 0"/>
+  <pieds-page/>
 </template>
 
 <script lang="ts">
@@ -47,7 +47,6 @@ body {
   font-family: 'Raleway', 'Arial', sans-serif;
   font-weight: 300;
   font-size: 0.8rem;
-  overflow-x: hidden;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -55,8 +54,6 @@ body {
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  min-height: 100%;
-  position: relative;
 }
 
 a {

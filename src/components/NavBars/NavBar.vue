@@ -26,23 +26,16 @@
 
     <ul class="menu border-b md:border-none flex justify-center list-reset m-0 w-full md:w-auto text-sm">
       <li class="border-t md:border-none hover:text-grey-darker">
-        <router-link :to="{name: 'Agence'}"
-                     class="link-hover after block md:inline-block m-8 py-3 no-underline text-grey-darkest">
-          Agence
-        </router-link>
-      </li>
-
-      <li class="border-t md:border-none hover:text-grey-darker">
-        <router-link :to="{name: 'Creations'}"
-                     class="link-hover after block md:inline-block m-8 py-3 no-underline text-grey-darkest">
-          Créations
-        </router-link>
-      </li>
-
-      <li class="border-t md:border-none hover:text-grey-darker">
         <router-link :to="{name: 'Offre'}"
                      class="link-hover after block md:inline-block m-8 py-3 no-underline text-grey-darkest">
           Nos offres
+        </router-link>
+      </li>
+
+      <li class="border-t md:border-none hover:text-grey-darker">
+        <router-link :to="{name: 'Agence'}"
+                     class="link-hover after block md:inline-block m-8 py-3 no-underline text-grey-darkest">
+          A propos
         </router-link>
       </li>
 
