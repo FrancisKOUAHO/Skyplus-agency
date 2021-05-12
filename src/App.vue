@@ -57,7 +57,7 @@ body {
 }
 
 a {
-  color: white !important;
+  color: white;
   text-decoration: none;
 }
 

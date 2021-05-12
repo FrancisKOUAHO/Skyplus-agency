@@ -114,8 +114,6 @@ export default defineComponent({
 </script>
 <style scoped>
 @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,800);
-@import url(https://fonts.googleapis.com/css?family=Montserrat:800);
 
 .snip1265 {
   font-family: 'Raleway', Arial, sans-serif;
@@ -123,7 +121,7 @@ export default defineComponent({
   text-align: left;
   font-size: 16px;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1100px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -133,14 +131,14 @@ export default defineComponent({
   width: 50%;
   position: relative;
   float: left;
-  background-color: #262626;
-  border: 1px solid #1e1e1e;
+  background-color: #fffefe;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
-  height: 32em;
+  border-radius: 20px;
+  height: 34em;
 }
 .snip1265 .plan:hover,
 .snip1265 .plan.hover {
-  background-color: #1c1c1c;
+  transform: translateY(-1em);
 }
 .snip1265 .plan:hover i,
 .snip1265 .plan.hover i {
@@ -160,30 +158,32 @@ export default defineComponent({
 .snip1265 header i {
   font-size: 56px;
   margin: 0 15px;
-  color: #f39c12;
+  color: #7e80cb;
   display: inline-block;
   float: left;
 }
 .snip1265 .plan-title {
   top: 0;
-  font-weight: 800;
   margin: 10px 0 0;
   text-transform: uppercase;
   letter-spacing: 1px;
+  color: #000;
+  font-family: Raleway-Bold;
 }
 .snip1265 .plan-cost {
   margin: 0;
-  opacity: 0.2;
 }
 .snip1265 .plan-price {
-  font-family: 'Montserrat', Arial, sans-serif;
-  font-weight: 800;
+  font-family: Raleway-Regular;
+  font-weight: 600;
   font-size: 1.3em;
+  color: #7e80cb
 }
 .snip1265 .plan-type {
   opacity: 0.8;
   font-size: 0.7em;
   text-transform: uppercase;
+  color: #7e80cb;
 }
 .snip1265 .plan-features {
   padding: 0;
@@ -196,19 +196,24 @@ export default defineComponent({
 .snip1265 .plan-features li {
   padding: 5px 5%;
   font-weight: 500;
-  opacity: 0.5;
-  border-left: 5px solid #f39c12;
+  opacity: 0.8;
+  border-left: 5px solid #7e80cb;
   margin: 2px 20px;
+  color: #000;
+  font-family: Raleway-Regular;
+  font-size: 0.9rem;
 }
 .snip1265 .plan-select {
-  background-color: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to right, #86A8E7, #7e80cb);
   text-align: center;
   position:absolute;
   bottom: 0;
   width: 100%;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 .snip1265 .plan-select a {
-  color: #ffffff;
+  color: #fffefe;
   text-decoration: none;
   padding: 15px 20px;
   margin: 20px;
@@ -217,24 +222,39 @@ export default defineComponent({
   font-weight: 800;
   text-transform: uppercase;
   display: inline-block;
-  background-color: #f39c12;
+  border: 2px solid #fffefe;
 }
 .snip1265 .plan-select a:hover {
-  background-color: #262626;
+  background-color: #fffefe;
+  color: #000;
 }
 .snip1265 .featured {
   margin-top: -10px;
-  background-color: #262626;
+  background-color: #fffefe;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   z-index: 1;
 }
 .snip1265 .featured .plan-select a {
   margin: 30px 20px;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
+  .snip1265 {
+    width: 70%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
   .snip1265 .plan {
-    width: 50%;
+    width: 100%;
+    margin-top: 2em;
   }
+
+  .snip1265 .plan-features li{
+    font-size: 1rem;
+  }
+
   .snip1265 .plan-title,
   .snip1265 .plan-select a {
     -webkit-transform: translateY(0);
@@ -244,13 +264,14 @@ export default defineComponent({
   .snip1265 .featured .plan-select a {
     margin: 20px;
   }
-  .snip1265 .featured {
-    margin-top: 0;
-  }
 }
 @media only screen and (max-width: 440px) {
+  .snip1265 {
+    width: 90%;
+  }
   .snip1265 .plan {
     width: 100%;
+    height: 36em;
   }
 }
 
