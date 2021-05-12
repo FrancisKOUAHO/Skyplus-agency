@@ -327,11 +327,18 @@ export default defineComponent({
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 1024px) and (max-width: 1279px) {
+  .container_text{
+    margin-top: -10%;
+  }
 
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1280px) and (max-width: 1535px) {
+  .container_text{
+    margin-top: -10%;
+    padding-top: 12em;
+  }
 
 }
 
