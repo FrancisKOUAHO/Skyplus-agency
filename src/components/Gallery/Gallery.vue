@@ -197,7 +197,7 @@ a {
 }
 
 .gallery {
-  padding: 40px 0 300px;
+  padding: 49px 0 250px;
   position: relative;
   overflow: hidden;
 }
