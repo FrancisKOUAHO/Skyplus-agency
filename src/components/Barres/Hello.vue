@@ -2,24 +2,25 @@
   <span id="myBtn" class="fixed top-1/2 sayHello"><a href="#modal-container">Say hello</a></span>
   <div id="modal-container">
     <div class="modal">
-      <form @submit.prevent="sendEmail" >
+      <form @submit.prevent="sendEmail">
         <div class="form">
           <a class="btnClose" href="#">✖</a>
           <h2>Contactez-nous !<br> Nous ne mordons pas :)</h2>
           <div class="inputTxt">
-            <input type="text" required="" v-model="name"/><span class="bar"></span><span class="label">NOM Prénom</span>
+            <input type="text" required="" name="name"/><span class="bar"></span><span
+              class="label">NOM Prénom</span>
           </div>
           <div class="inputTxt">
-            <input type="email" required="" v-model="email"/><span class="bar"></span><span class="label">Email</span>
+            <input type="email" required="" name="email"/><span class="bar"></span><span class="label">Email</span>
           </div>
           <div class="inputTxt">
-            <input type="tel" required="" v-model="tel"/><span class="bar"></span><span class="label">Téléphone</span>
+            <input type="tel" required="" name="tel"/><span class="bar"></span><span class="label">Téléphone</span>
           </div>
           <div class="inputTxt">
             <label class="labelSelect">Qu'est-ce qui vous amène ?</label>
             <div class="formfield-select">
               <div class="formfield-select--container">
-                <select v-model="selected">
+                <select name="selected">
                   <option value="projet">J'ai un projet à vous présenter</option>
                   <option value="rencontre">J'aimerais vous rencontrer</option>
                   <option value="collaborer">Je veux collaborer avec vous</option>
@@ -32,7 +33,8 @@
           </div>
 
           <div class="inputTxt">
-            <div class="textwrapper"><textarea cols="2" rows="4" id="rules" placeholder="Votre message" v-model="message"/></div>
+            <div class="textwrapper"><textarea cols="2" rows="4" id="rules" placeholder="Votre message"
+                                               name="message"/></div>
           </div>
 
           <div class="button">
@@ -53,41 +55,20 @@ import swal from "sweetalert";
 
 export default defineComponent({
   name: "Hello",
-  data() {
-    return {
-      name: '',
-      email: '',
-      tel: '',
-      message: '',
-      selected: '',
-    }
-  },
   methods: {
-    close(){
+    close() {
       let close = document.getElementById('modal-container').style.display = 'none';
     },
-    sendEmail(e) {
-      try {
-        emailjs.sendForm('service_l8twccb', 'template_q8cvqtb', e.target,
-            'user_IIORNjcJYo0Dcw6YZHP4E', {
-              name: this.name,
-              email: this.email,
-              message: this.message,
-              tel: this.tel,
-              selected: this.selected
-            })
-        if (emailjs) {
-          setTimeout("close()",900);
-          swal("Success", "Email envoyé", "Error");
-        }
-      } catch (error) {
-        swal("Error", "Email non envoyé", "Error");
-      }
-      this.name = ''
-      this.email = ''
-      this.message = ''
-      this.tel = '',
-      this.selected = ''
+    sendEmail: (e) => {
+      emailjs.sendForm('service_l8twccb', 'template_q8cvqtb', e.target, 'user_IIORNjcJYo0Dcw6YZHP4E')
+          .then((result) => {
+            if (emailjs) {
+              setTimeout("close()", 900);
+              swal("Success", "Email envoyé", "Error");
+            }
+          }, (error) => {
+            swal("Error", "Email non envoyé", "Error");
+          });
     },
   }
 })
@@ -116,7 +97,6 @@ export default defineComponent({
 }
 
 
-
 #modal-container {
   z-index: 200000;
   position: fixed;
@@ -129,11 +109,13 @@ export default defineComponent({
   justify-content: center;
   align-items: center;
 }
+
 #modal-container:not(:target) {
   opacity: 0;
   visibility: hidden;
   transition: opacity 1s, visibility 1s;
 }
+
 #modal-container:target {
   opacity: 1;
   visibility: visible;
@@ -146,7 +128,7 @@ export default defineComponent({
   text-align: center;
 }
 
-.btnClose{
+.btnClose {
   position: absolute;
   background-color: black;
   width: 30px;
@@ -178,6 +160,7 @@ export default defineComponent({
   border-radius: 20px;
   /*box-shadow: 0px 20px 100px rgba(160, 59, 68, 1);*/
 }
+
 .modal .form h2 {
   font-size: 1.7rem;
   line-height: 1.1em;
@@ -187,6 +170,7 @@ export default defineComponent({
   margin: 0px 0px 20px 0px;
   color: #000000;
 }
+
 .modal .form .inputTxt {
   display: block;
   position: relative;
@@ -195,6 +179,7 @@ export default defineComponent({
   padding: 10px 0px 0px 0px;
   margin: 0px 0px 10px 0px;
 }
+
 .modal .form .inputTxt input {
   display: block;
   width: 100%;
@@ -208,6 +193,7 @@ export default defineComponent({
   border-bottom: 2px solid #000;
   background: transparent;
 }
+
 .modal .form .inputTxt input:focus ~ .label, .modal .form .inputTxt input:valid ~ .label {
   top: -6px;
   left: 2px;
@@ -216,12 +202,15 @@ export default defineComponent({
   font-weight: 600;
   color: #000000;
 }
+
 .modal .form .inputTxt input:focus ~ .bar {
   width: 100%;
 }
+
 .modal .form .inputTxt input:focus {
   border-bottom: 2px solid #fff;
 }
+
 .modal .form .inputTxt .label {
   position: absolute;
   top: 19px;
@@ -232,6 +221,7 @@ export default defineComponent({
   color: #000000;
   pointer-events: none;
 }
+
 .modal .form .inputTxt .bar {
   display: block;
   position: absolute;
@@ -243,6 +233,7 @@ export default defineComponent({
   background: linear-gradient(45deg, #00adc1, #7e80cb);
   pointer-events: none;
 }
+
 .modal .form button {
   display: block;
   width: 100%;
@@ -260,9 +251,11 @@ export default defineComponent({
   background: linear-gradient(to right, #00adc1, #7e80cb);
   cursor: pointer;
 }
+
 .modal .form button:hover {
   box-shadow: 0px 8px 15px #7e80cb;
 }
+
 .modal .form .serviceLink {
   display: block;
   width: 100%;
@@ -274,11 +267,12 @@ export default defineComponent({
   color: #7C8589;
   opacity: 0.5;
 }
+
 .modal .form .serviceLink:hover {
   opacity: 1;
 }
 
-.labelSelect{
+.labelSelect {
   position: absolute;
   top: 19px;
   left: 4px;
@@ -316,9 +310,8 @@ formfield-select {
   text-overflow: ellipsis;
 }
 
-textarea
-{
-  width:100%;
+textarea {
+  width: 100%;
   padding: 1em;
 }
 
@@ -326,10 +319,9 @@ textarea::placeholder {
   font-size: 1rem;
 }
 
-.textwrapper
-{
-  border:1px solid #000;
-  margin:2em 0;
+.textwrapper {
+  border: 1px solid #000;
+  margin: 2em 0;
 }
 
 .formfield-select--container::after {
@@ -361,17 +353,20 @@ textarea::placeholder {
   .sayHello[data-v-0cdb4400] {
     left: -2.5em;
   }
-  .btnClose{
+
+  .btnClose {
     right: 5em;
     top: 4.5em;
     height: 30px;
     font-size: 15px;
   }
-  .modal .form h2{
+
+  .modal .form h2 {
     margin: 50px 0px 20px 0px;
     font-size: 1.4rem;
   }
-  .modal .form button{
+
+  .modal .form button {
     margin: 6em 0px 0px 0px;
   }
 }

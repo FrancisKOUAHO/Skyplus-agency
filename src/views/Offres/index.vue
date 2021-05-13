@@ -114,19 +114,19 @@
           <a class="btnClose" href="#">✖</a>
           <h2>Vous êtes intéressé ?<br>Contactez nous !</h2>
           <div class="inputTxt">
-            <input type="text" required="" v-model="name"/><span class="bar"></span><span class="label">NOM Prénom</span>
+            <input type="text" required="" name="name"/><span class="bar"></span><span class="label">NOM Prénom</span>
           </div>
           <div class="inputTxt">
-            <input type="email" required="" v-model="email"/><span class="bar"></span><span class="label">Email</span>
+            <input type="email" required="" name="email"/><span class="bar"></span><span class="label">Email</span>
           </div>
           <div class="inputTxt">
-            <input type="tel" required="" v-model="tel"/><span class="bar"></span><span class="label">Téléphone</span>
+            <input type="tel" required="" name="tel"/><span class="bar"></span><span class="label">Téléphone</span>
           </div>
           <div class="inputTxt">
             <label class="labelSelect">Quelle est l'offre concernée ?</label>
             <div class="formfield-select">
               <div class="formfield-select--container">
-                <select v-model="selected">
+                <select name="selected">
                   <option value="bronze">Pack BASIC</option>
                   <option value="argent">Pack PREMIUM</option>
                   <option value="gold">Pack BUSINESS</option>
@@ -136,7 +136,7 @@
           </div>
 
           <div class="inputTxt">
-            <div class="textwrapper"><textarea cols="2" rows="4" id="rules" placeholder="Votre message" v-model="message"/></div>
+            <div class="textwrapper"><textarea cols="2" rows="4" id="rules" placeholder="Votre message" name="message"/></div>
           </div>
 
           <div class="button">
@@ -154,6 +154,8 @@
 import {defineComponent, ref} from 'vue';
 import axios from '../../utils/axiosInstance';
 import {useStripe} from 'vue-use-stripe';
+import emailjs from "emailjs-com";
+import swal from "sweetalert";
 
 export default defineComponent({
   name: 'Index',
@@ -186,6 +188,22 @@ export default defineComponent({
       isPurchasing,
     };
   },
+  methods: {
+    close() {
+      let close = document.getElementById('modal-container').style.display = 'none';
+    },
+    sendEmail: (e) => {
+      emailjs.sendForm('service_l8twccb', 'template_q8cvqtb', e.target, 'user_IIORNjcJYo0Dcw6YZHP4E')
+          .then((result) => {
+            if (emailjs) {
+              setTimeout("close()", 900);
+              swal("Success", "Email envoyé", "Error");
+            }
+          }, (error) => {
+            swal("Error", "Email non envoyé", "Error");
+          });
+    },
+  }
 });
 </script>
 
