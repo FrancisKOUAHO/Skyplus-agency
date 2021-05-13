@@ -11,7 +11,7 @@
       <div class="Aligner-item">
         <h2>Aux fins gastronomes</h2>
         <p>Cuisine et pâtisse des recettes d’antan tout comme de nouvelles créations conçues en symbiose avec ses salariés. Cet artiste, épicurien dans l’âme, associe saveur et design pour proposer de nouvelles expériences culinaires répondant aux demandes et aux tendances nutritionnelles actuelles. « Nos métiers nécessitent de s’adapter et de prendre pleinement conscience des envies de nos clients », explique-t-il. Alliant simplicité, créativité et gastronomie, Jean-Pierre Chéron compte bien procurer de nombreuses émotions gustatives à ses clients.</p>
-        <a href="https://traiteur-cheron.com/" target="_blank" class="btn">
+        <a href="https://auxfinsgastronomes.com/" target="_blank" class="btn">
         Voir le site
         </a>
       </div>
