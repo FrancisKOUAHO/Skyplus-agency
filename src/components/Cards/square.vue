@@ -1,36 +1,52 @@
 <template>
-  <div class="hoja">
-    <span id="hoja-1" >Francis</span>
-    <span id="hoja-2" v-if="show">Jacky</span>
-    <span id="hoja-3" v-if="show">Arash</span>
+  <div class="hoja" @change="this.affichageLignes()">
+    <span id="ligne1" v-if="display === block" :style="display === block ? none: block" >Digitales</span>
+    <span id="ligne2"  v-if="display === block"  :style="display === block ? none: block">UX Design</span>
+    <span id="ligne3" v-if="display === block"  :style="display === block ? none: block">IU Design</span>
   </div>
 </template>
 
 
-<script lang="ts">
-import {defineComponent} from 'vue'
+<script>
 
-export default defineComponent({
-  props: ["hoja-1", "hoja-2", "hoja-3"],
+export default {
   name: 'square',
   data() {
     return {
-      show: false,
-      timeout: null
+      display : 'block'
     }
   },
-})
+  methods: {
+    affichageLignes() {
+        if (document.getElementById("ligne1").style.display === 'block') {
+          document.getElementById("ligne1").style.display = 'none';
+        } if (document.getElementById("ligne2").style.display === 'none') {
+          document.getElementById("ligne2").style.display === 'block'
+        }if (document.getElementById("ligne2").style.display === 'none'){
+        document.getElementById("ligne2").style.display === 'block'
+      }
+    }
+
+  }
+}
 </script>
 
 <style scoped>
 .hoja {
   color: #dcdce2;
-  position: relative;
+  position: absolute;
+  top: 22%;
+  left: 84%;
+  margin-left: -140px;
+  margin-top: -140px;
   width: 280px;
   height: 280px;
   text-align: center;
+  font-family: 'Open Sans', sans-serif;
   font-size: 35px;
   line-height: 280px;
+  -webkit-font-smoothing: antialiased;
+  opacity: 0.2;
 }
 
 .hoja:after,
