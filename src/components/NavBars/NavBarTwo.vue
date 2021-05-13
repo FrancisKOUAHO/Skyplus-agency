@@ -135,7 +135,7 @@ export default defineComponent({
   flex-direction: column;
   position: absolute;
   left: 50%;
-  top: 9%;
+  top: 15em;
   transform: translate(-50%, -50%);
   list-style: none;
 }
@@ -225,7 +225,6 @@ export default defineComponent({
 #nav-icon3 {
   width: 30px;
   height: calc(100% / 2);
-  position: relative;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);

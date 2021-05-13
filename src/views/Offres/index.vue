@@ -625,7 +625,8 @@ textarea::placeholder {
 
 @media only screen and (max-width: 768px) {
   .containerOffre {
-    margin-top: 15em;
+    margin-top: 0;
+    padding-top: 15em;
   }
   .listeOffre{
     margin-bottom: 5em;

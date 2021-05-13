@@ -304,8 +304,8 @@ export default defineComponent({
 /* Small devices (landscape phones, 340px and up) */
 @media (min-width: 340px) and (max-width: 767px) {
   .container_text {
-    margin-top: 10em;
-    padding: 2em;
+    margin-top: 0;
+    padding-top: 15em;
   }
 
   .container_text h1 {
