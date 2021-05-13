@@ -102,7 +102,7 @@ export default defineComponent({
   margin: 0 auto;
 }
 
-.container_text h1{
+.container_text h1 {
   font-weight: 600;
   font-size: 48px;
   line-height: 1.15;
@@ -303,41 +303,46 @@ export default defineComponent({
 
 /* Small devices (landscape phones, 340px and up) */
 @media (min-width: 340px) and (max-width: 767px) {
-  .container_text{
+  .container_text {
     margin-top: 10em;
     padding: 2em;
   }
-  .container_text h1{
+
+  .container_text h1 {
     font-size: 2.5rem;
   }
-  .container_contact{
+
+  .container_contact {
     display: flex;
     flex-direction: column;
     margin-left: 3em;
   }
-  .type_contact{
+
+  .type_contact {
     margin-top: 1em;
   }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .container_text{
+  .container_text {
     margin-top: 15em;
     padding: 2em;
   }
+
   .flex-initial {
     width: 80%;
     flex-direction: row;
     margin: 5em auto 0 auto;
   }
-  section{
+
+  section {
     padding: 0 0 25em 0;
     width: 90%;
     margin: 5em auto;
   }
 
-  ul li{
+  ul li {
     margin: 5px;
   }
 
@@ -345,7 +350,7 @@ export default defineComponent({
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .container_text{
+  .container_text {
     margin-top: -10%;
     padding: 2em;
   }
@@ -354,7 +359,7 @@ export default defineComponent({
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1280px) and (max-width: 1535px) {
-  .container_text{
+  .container_text {
     margin-top: -10%;
     padding-top: 12em;
   }
@@ -363,10 +368,12 @@ export default defineComponent({
 
 @media (min-width: 1536px) {
 
-.container_text{
-  margin-top: 2em;
-}
+  .container_text {
+    margin-top: 2em;
+  }
 
 }
+
+
 
 </style>

@@ -148,8 +148,6 @@ h4 {
   animation-delay: 3.5s;
 }
 
-/* ANIMATION */
-
 @-webkit-keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -293,6 +291,9 @@ h4 {
   .content3 .agence_image{
     width: 80%;
   }
+  .agenceContent{
+    margin-bottom: 4em;
+  }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
@@ -316,6 +317,10 @@ h4 {
 
   .content3 .agence_image{
     width: 80%;
+  }
+
+  .agenceContent{
+    margin-bottom: 4em;
   }
 }
 

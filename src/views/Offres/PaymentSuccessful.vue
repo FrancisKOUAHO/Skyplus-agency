@@ -44,6 +44,10 @@ export default defineComponent({
   created() {
     let body = document.querySelector('body');
     body?.setAttribute('class', 'body-color1')
+    let navBar = document.querySelector('nav');
+    let footer = document.querySelector('footer');
+    navBar.style.display = 'none';
+    footer.style.display = 'none';
   }
 })
 </script>

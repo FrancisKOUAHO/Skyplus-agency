@@ -65,11 +65,6 @@
           <h3 class="text-lg leading-6 font-medium text-gray-900">
             Échec du paiement
           </h3>
-          <div class="mt-2">
-            <p class="text-sm leading-5 text-gray-500">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur amet labore.
-            </p>
-          </div>
         </div>
       </div>
       <div class="mt-5 sm:mt-6">
@@ -92,6 +87,10 @@ export default {
   setup() {
     let body = document.querySelector('body');
     body?.setAttribute('class', 'body-color7')
+    let navBar = document.querySelector('nav');
+    let footer = document.querySelector('footer');
+    navBar.style.display = 'none';
+    footer.style.display = 'none';
   },
 }
 </script>

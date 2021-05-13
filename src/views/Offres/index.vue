@@ -6,30 +6,31 @@
   <div class="flex flex-row justify-center mt-10 listeOffre">
     <div class="snip1265">
       <div class="plan">
-        <header><i class="ion-ios-navigate-outline"></i>
+        <header>
+          <i class="ion-ios-navigate-outline"></i>
           <h4 class="plan-title">
             Pack BASIC
           </h4>
-          <div class="plan-cost"><span class="plan-price">130€ + 25€</span><span class="plan-type">/mois</span></div>
+          <div class="plan-cost"><span class="plan-price">130€ + <span style="color: #EA6232">25€</span></span><span class="plan-type">/mois</span></div>
         </header>
         <ul class="plan-features">
-          <li>Site vitrine en une seule page
+          <li class="listViolet">Site vitrine en une seule page
           </li>
-          <li>Création de l'architecture technique
+          <li class="listViolet">Création de l'architecture technique
           </li>
-          <li>Expérience utilisateur optimisée
+          <li class="listViolet">Expérience utilisateur optimisée
           </li>
-          <li>Création des pages et intégrations
+          <li class="listViolet">Création des pages et intégrations
           </li>
-          <li>Maintenance et entretien
+          <li class="listOrange">Maintenance, entretien et assistance
           </li>
-          <li>Nom de domaine + hébergement
+          <li class="listOrange">Nom de domaine + hébergement
           </li>
-          <li>Fonctionnalités de base
+          <li class="listOrange">Fonctionnalités de base
           </li>
-          <li>Rapport de trafic
+          <li class="listOrange">Rapport de trafic
           </li>
-          <li>Sauvegarde quotidienne du site
+          <li class="listOrange">Sauvegarde quotidienne du site
           </li>
         </ul>
         <div class="plan-select">
@@ -56,16 +57,16 @@
           <h4 class="plan-title">
             Pack PREMIUM
           </h4>
-          <div class="plan-cost"><span class="plan-price">250€ + 50€</span><span class="plan-type">/mois</span></div>
+          <div class="plan-cost"><span class="plan-price">250€ + <span style="color: #EA6232">50€</span></span><span class="plan-type">/mois</span></div>
         </header>
         <ul class="plan-features">
-          <li>Site Web professionnel multi-pages
+          <li class="listViolet">Site Web professionnel multi-pages
           </li>
-          <li>Tout le pack BASIC
+          <li class="listViolet">Tout le pack BASIC
           </li>
-          <li>Système d'avis en ligne
+          <li class="listViolet">Système d'avis en ligne
           </li>
-          <li>Optimisation du référencement sur le nom de l'entreprise
+          <li class="listOrange">Optimisation du référencement sur le nom de l'entreprise
           </li>
         </ul>
         <div class="plan-select">
@@ -91,16 +92,16 @@
           <h4 class="plan-title">
             Pack BUSINESS
           </h4>
-          <div class="plan-cost"><span class="plan-price">350€ + 90€</span><span class="plan-type">/mois</span></div>
+          <div class="plan-cost"><span class="plan-price">350€ + <span style="color: #EA6232">90€</span></span><span class="plan-type">/mois</span></div>
         </header>
         <ul class="plan-features">
-          <li>Site Web professionnel optimisé pour le référencement
+          <li class="listViolet">Site Web professionnel optimisé pour le référencement
           </li>
-          <li>Tout le pack PREMIUM
+          <li class="listViolet">Tout le pack PREMIUM
           </li>
-          <li>Optimisation du référencement local sur 1 adresse
+          <li class="listOrange">Optimisation du référencement local sur 1 adresse
           </li>
-          <li>Création et gestion d'une fiche Google Mybusiness
+          <li class="listOrange">Création et gestion d'une fiche Google Mybusiness
           </li>
         </ul>
         <div class="plan-select">
@@ -312,7 +313,7 @@ export default defineComponent({
   opacity: 0.8;
   font-size: 0.7em;
   text-transform: uppercase;
-  color: #7e80cb;
+  color: #EA6232;
 }
 
 .snip1265 .plan-features {
@@ -328,11 +329,19 @@ export default defineComponent({
   padding: 5px 5%;
   font-weight: 500;
   opacity: 0.8;
-  border-left: 5px solid #7e80cb;
+  /*border-left: 5px solid #7e80cb;*/
   margin: 2px 20px;
   color: #000;
   font-family: Raleway-Regular;
   font-size: 0.9rem;
+}
+
+.listViolet{
+  border-left: 5px solid #7e80cb;
+}
+
+.listOrange{
+  border-left: 5px solid #EA6232;
 }
 
 .snip1265 .plan-select {

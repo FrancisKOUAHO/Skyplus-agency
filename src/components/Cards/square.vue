@@ -1,124 +1,98 @@
 <template>
-  <div class="hoja" @change="this.affichageLignes()">
-    <span id="ligne1" v-if="display === block" :style="display === block ? none: block" >Digitales</span>
-    <span id="ligne2"  v-if="display === block"  :style="display === block ? none: block">UX Design</span>
-    <span id="ligne3" v-if="display === block"  :style="display === block ? none: block">IU Design</span>
+  <div>
   </div>
 </template>
 
 
-<script>
+<script lang="ts">
+import {defineComponent} from 'vue'
 
-export default {
+export default defineComponent({
   name: 'square',
   data() {
-    return {
-      display : 'block'
-    }
+    return {}
   },
-  methods: {
-    affichageLignes() {
-        if (document.getElementById("ligne1").style.display === 'block') {
-          document.getElementById("ligne1").style.display = 'none';
-        } if (document.getElementById("ligne2").style.display === 'none') {
-          document.getElementById("ligne2").style.display === 'block'
-        }if (document.getElementById("ligne2").style.display === 'none'){
-        document.getElementById("ligne2").style.display === 'block'
-      }
-    }
+  methods: {}
 
-  }
-}
+})
 </script>
 
 <style scoped>
-.hoja {
-  color: #dcdce2;
-  position: absolute;
-  top: 22%;
-  left: 84%;
-  margin-left: -140px;
-  margin-top: -140px;
-  width: 280px;
-  height: 280px;
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 35px;
-  line-height: 280px;
-  -webkit-font-smoothing: antialiased;
-  opacity: 0.2;
+div {
+  width: 200px;
+  height: 200px;
+  background-color: #5e8cd2;
+  animation: square-to-circle 2s 1s infinite alternate;
+  opacity: 0.6;
+  margin-bottom: 70%;
 }
 
-.hoja:after,
-.hoja:before {
-  content: "";
-  border-radius: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform-origin: center center;
-}
-
-.hoja:after {
-  box-shadow: inset 0 17.5px 0 rgba(250, 250, 0, 0.6), inset 17.5px 0 0 rgba(250, 200, 0, 0.6), inset 0 -17.5px 0 rgba(250, 150, 0, 0.6), inset -17.5px 0 0 rgba(250, 100, 0, 0.6);
-  -webkit-animation: rotar 2s -0.5s linear infinite;
-  animation: rotar 2s -0.5s linear infinite;
-}
-
-.hoja:before {
-  box-shadow: inset 0 17.5px 0 rgba(0, 250, 250, 0.6), inset 17.5px 0 0 rgba(0, 200, 200, 0.6), inset 0 -17.5px 0 rgba(0, 150, 200, 0.6), inset -17.5px 0 0 rgba(0, 200, 250, 0.6);
-  -webkit-animation: rotarIz 2s -0.5s linear infinite;
-  animation: rotarIz 2s -0.5s linear infinite;
-}
-
-@-webkit-keyframes rotar {
+@-webkit-keyframes square-to-circle {
   0% {
-    transform: rotateZ(0deg) scaleX(1) scaleY(1);
+    border-radius: 0 0 0 0;
+  }
+  25% {
+    border-radius: 50% 0 0 0;
   }
   50% {
-    transform: rotateZ(180deg) scaleX(0.82) scaleY(0.95);
+    border-radius: 50% 50% 0 0;
+  }
+  75% {
+    border-radius: 50% 50% 50% 0;
   }
   100% {
-    transform: rotateZ(360deg) scaleX(1) scaleY(1);
+    border-radius: 50%;
   }
 }
 
-@keyframes rotar {
+@keyframes square-to-circle {
   0% {
-    transform: rotateZ(0deg) scaleX(1) scaleY(1);
+    border-radius: 0 0 0 0;
+    background: #3b95d1;
+  }
+  25% {
+    border-radius: 50% 0 0 0;
+    background: #139ecb;
   }
   50% {
-    transform: rotateZ(180deg) scaleX(0.82) scaleY(0.95);
+    border-radius: 50% 50% 0 0;
+    background: #00a4c1;
+  }
+  75% {
+    border-radius: 50% 50% 50% 0;
+    background: #00adc1;
   }
   100% {
-    transform: rotateZ(360deg) scaleX(1) scaleY(1);
+    border-radius: 50%;
+    background: #00b6be;
   }
 }
 
-@-webkit-keyframes rotarIz {
+@keyframes square-to-circle {
   0% {
-    transform: rotateZ(0deg) scaleX(1) scaleY(1);
+    border-radius: 0 0 0 0;
+    background: #00bfb9;
+    transform: rotate(0deg);
+  }
+  25% {
+    border-radius: 50% 0 0 0;
+    background: #00cfc2;
+    transform: rotate(45deg);
   }
   50% {
-    transform: rotateZ(-180deg) scaleX(0.95) scaleY(0.85);
+    border-radius: 50% 50% 0 0;
+    background: #00dfc9;
+    transform: rotate(90deg);
+  }
+  75% {
+    border-radius: 50% 50% 50% 0;
+    background: #00efce;
+    transform: rotate(135deg);
   }
   100% {
-    transform: rotateZ(-360deg) scaleX(1) scaleY(1);
+    border-radius: 50%;
+    background: #00ffd2;
+    transform: rotate(180deg);
   }
 }
-
-@keyframes rotarIz {
-  0% {
-    transform: rotateZ(0deg) scaleX(1) scaleY(1);
-  }
-  50% {
-    transform: rotateZ(-180deg) scaleX(0.95) scaleY(0.85);
-  }
-  100% {
-    transform: rotateZ(-360deg) scaleX(1) scaleY(1);
-  }
-}
-
 </style>
