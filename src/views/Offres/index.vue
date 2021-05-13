@@ -673,6 +673,20 @@ textarea::placeholder {
   }
 }
 
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .listeOffre{
+    margin-bottom: 8em
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1280px) and (max-width: 1535px) {
+    .listeOffre{
+    margin-bottom: 10em
+  }
+}
+
 @media (min-width: 1536px) {
   .listeOffre{
     margin-bottom: 12em
