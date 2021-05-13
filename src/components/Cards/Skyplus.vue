@@ -7,18 +7,18 @@
       <h1 class="fadeInRight">SKYPLUS</h1>
       <h3 class="fadeInRight">Sky’s not the limit</h3>
     </div>
-    <square/>
+    <!-- <square/> -->
   </div>
 </template>
 
 <script lang="ts">
 import {defineComponent} from 'vue'
-import Square from "@/components/Cards/square.vue";
+
 
 
 export default defineComponent({
   name: 'Skyplus',
-  components: {Square},
+  components: {},
   data() {
     return {}
   }
