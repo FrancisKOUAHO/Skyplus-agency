@@ -1,19 +1,20 @@
 <template>
   <!-- <contact-vue/> -->
   <div class="container displayed container_text">
-    <h1>Nous gravitons dans les meilleures sphères</h1>
+    <h1>On est pas le grand méchant loup,</h1>
+    <h3>mais on a les oreilles pour bien vous écouter </h3>
   </div>
   <div class="flex-initial div-form container_contact">
     <div class="type_contact" v-for="(contact, index) in contacts" :key="index">
       <a href="">
-        <span class="contact-info">{{ contact.info }}</span>
+        <span class="contact-info">{{ contact.name }}</span>
       </a>
-      <router-link to="mailto:contact@skyplus.fr" class="contact-name">
-        <div style="display: flex;">
+      <a :href="contact.info" class="contact-name">
+        <div style="display: flex; flex-direction: column-reverse">
           <img src="../assets/image/right.svg" alt="right" width="16"/>
-          <span style="margin-left: 5%">{{ contact.name }}</span>
+          <span>{{ contact.type }}</span>
         </div>
-      </router-link>
+      </a>
     </div>
   </div>
   <reseau-sociaux/>
@@ -32,16 +33,19 @@ export default defineComponent({
     return {
       contacts: [
         {
-          name: 'mail',
-          info: 'contact@skyplus.fr',
+          name: 'contact@skyplus.fr',
+          info: 'mailto:contact@skyplus.fr',
+          type: 'MAIL'
         },
         {
-          name: 'map',
-          info: '119 rue saint sebastien 78300 Poissy',
+          name: '119 rue saint sebastien 78300 Poissy',
+          info: 'https://www.google.com/maps/place/119+Rue+Saint-S%C3%A9bastien,+78300+Poissy/@48.939257,2.0577699,17z/data=!3m1!4b1!4m5!3m4!1s0x47e68981cfb2b963:0xad87735df99c91dc!8m2!3d48.939257!4d2.0599586',
+          type: 'MAP'        
         },
         {
-          name: 'call',
-          info: '+33 (0) 9 00 00 00 00'
+          name: '06 95 68 68 99',
+          info: 'tel:0695686899',
+          type: 'TEL'
         }
       ]
     }
@@ -107,6 +111,15 @@ export default defineComponent({
   font-size: 48px;
   line-height: 1.15;
   color: white;
+}
+
+.container_text h3 {
+  line-height: 1.15;
+  color: white;
+  font-family: Raleway-Regular;
+  font-size: 2rem;
+  text-align: right;
+  margin-top: 1em;
 }
 
 #contact .container.displayed h1 {
@@ -309,7 +322,14 @@ export default defineComponent({
   }
 
   .container_text h1 {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
+    padding: 0.5em;
+  }
+
+  .container_text h3 {
+    font-size: 1.5rem;
+    padding: 0 1em;
+    margin: 0 0 2em 0;
   }
 
   .container_contact {
@@ -321,6 +341,7 @@ export default defineComponent({
   .type_contact {
     margin-top: 1em;
   }
+
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -369,7 +390,7 @@ export default defineComponent({
 @media (min-width: 1536px) {
 
   .container_text {
-    margin-top: 2em;
+    padding-top: 7em;
   }
 
 }

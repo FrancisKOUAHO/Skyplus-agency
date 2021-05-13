@@ -12,12 +12,12 @@
         </a>
       </li>
       <li>
-        <a href="mailto:contact@example.com">
+        <a href="mailto:contact@skyplus.fr">
           <i class="far fa-envelope"></i>
         </a>
       </li>
       <li>
-        <a href="tel:+33500000000">
+        <a href="tel:0695686899">
           <i class="fas fa-mobile"></i>
         </a>
       </li>
@@ -97,10 +97,23 @@ ul li a:hover::before {
 }
 
 /* Small devices (landscape phones, 340px and up) */
-@media (min-width: 340px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 767px) {
   section{
     padding-bottom: 15em;
+    width: 80%;
+    margin: 5em auto;
+}
+
+  ul li {
+      margin: 5px;
   }
+
+  ul li a {
+    width: 70px;
+    height: 70px;
+  }
+
+  
 }
 
 /* Medium devices (tablets, 768px and up) */

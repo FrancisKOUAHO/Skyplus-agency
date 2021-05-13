@@ -115,16 +115,7 @@ export default defineComponent({
   left: -1em;
 }
 
-.sayHello::after {
-  content: '';
-  position: absolute;
-  width: 5em;
-  height: 2px;
-  background: #fff;
-  top: 0.5em;
-  left: 6rem;
-  transition: all .25s ease;
-}
+
 
 #modal-container {
   z-index: 200000;

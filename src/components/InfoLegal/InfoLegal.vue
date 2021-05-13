@@ -155,7 +155,7 @@ export default defineComponent({
 
 @media (max-width: 768px) {
   #container {
-    margin-top: 15em;
+    padding-top: 15em;
   }
 }
 
