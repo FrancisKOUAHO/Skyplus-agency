@@ -200,7 +200,7 @@ h.col-text {
 }
 
 .btn {
-  border: 1px solid white;
+  border: 2px solid white;
   padding: 0.5em 1.5em;
   font-size: 1rem;
   margin-top: 1em;

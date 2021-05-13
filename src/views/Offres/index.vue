@@ -1,25 +1,7 @@
 <template>
-  <div>
-    <center>
-      <div style="animation-duration: 2000ms;">
-        <div>
-          <h1>
-          <span style="font-size: 40px;font-weight: bold;  font-family: 'Open Sans', sans-serif; color: white">
-            Les offres Skyplus
-          </span>
-          </h1>
-        </div>
-      </div>
-    </center>
-    <div>
-      <p style="text-align: center;">
-        <span style="font-size:22px;">
-          <span style=" font-family: 'Open Sans', sans-serif;text-transform: uppercase; color: white">
-           Toutes nos offres sont sans engagement
-          </span>
-        </span>
-      </p>
-    </div>
+  <div class="containerOffre">
+    <h1>Les offres Skyplus</h1>
+    <p>Toutes nos offres sont sans engagement</p>
   </div>
   <div class="flex flex-row justify-center mt-10 listeOffre">
     <div class="snip1265">
@@ -61,7 +43,7 @@
                 v-if="isPurchasing"
                 src="../../assets/image/loading.gif"
             />
-            <span v-else style="color: white;">Sélectionner</span>
+            <span v-else>Sélectionner</span>
           </router-link>
         </div>
       </div>
@@ -126,7 +108,7 @@
                 v-if="isPurchasing"
                 src="../../assets/image/loading.gif"
             />
-            <span v-else style="color: white;">Sélectionner</span>
+            <span v-else>Sélectionner</span>
           </router-link>
         </div>
       </div>
@@ -176,6 +158,26 @@ export default defineComponent({
 <style scoped>
 @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
 
+.containerOffre {
+  margin-top: 5em;
+  padding: 1em;
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.containerOffre h1{
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-family: Raleway-Bold;
+}
+
+.containerOffre p{
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-family: Raleway-Regular;
+}
+
 .snip1265 {
   font-family: 'Raleway', Arial, sans-serif;
   color: #ffffff;
@@ -197,6 +199,7 @@ export default defineComponent({
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   height: 34em;
+  width: 40%;
 }
 
 .snip1265 .plan:hover,
@@ -316,6 +319,9 @@ export default defineComponent({
   margin: 30px 20px;
 }
 @media only screen and (max-width: 768px) {
+  .containerOffre {
+    margin-top: 15em;
+  }
   .snip1265 {
     width: 70%;
     max-width: 800px;

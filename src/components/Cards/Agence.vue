@@ -187,6 +187,7 @@ h4 {
 @media (min-width: 340px) and (max-width: 767px){
   .title_desc{
     padding: 1rem;
+    margin-top: 10em;
   }
   h1{
     font-size: 2.25rem;
@@ -235,7 +236,7 @@ h4 {
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 1023px) {
   .title_desc{
-    margin: 0 3rem 3rem 3rem;
+    margin: 10em 3rem 3rem 3rem;
   }
   .agenceContent{
     justify-content: flex-start;

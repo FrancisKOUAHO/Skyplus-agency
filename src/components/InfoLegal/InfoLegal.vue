@@ -142,19 +142,21 @@ export default defineComponent({
   max-width: 1000px;
   margin: 60px auto;
   position: relative;
-  background: rgba(255, 255, 255, .6);
-  border: 1px solid white;
+  background: rgba(255, 255, 255, 0.2);
   height: auto;
   width: 100%;
   padding: 3em;
-  -webkit-box-shadow: 0px 13px 26px -4px rgba(184, 182, 184, 1);
-  -moz-box-shadow: 0px 13px 26px -4px rgba(184, 182, 184, 1);
-  box-shadow: 0px 13px 26px -4px rgba(184, 182, 184, 1);
 }
 
 #container p {
   font-family: Raleway-Regular;
   font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  #container {
+    margin-top: 15em;
+  }
 }
 
 </style>

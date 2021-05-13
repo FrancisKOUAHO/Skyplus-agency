@@ -1,5 +1,5 @@
 <template>
-  <contact-vue/>
+  <!-- <contact-vue/> -->
   <div class="container displayed container_text">
     <h1>Nous gravitons dans les meilleures sphères</h1>
   </div>
@@ -22,12 +22,12 @@
 <script lang="ts">
 
 import {defineComponent} from 'vue'
-import ContactVue from "@/components/Forms/ContactVue.vue";
+// import ContactVue from "@/components/Forms/ContactVue.vue";
 import ReseauSociaux from "@/components/Reseaux/ReseauSociaux.vue";
 
 export default defineComponent({
   name: 'Contact',
-  components: {ReseauSociaux, ContactVue},
+  components: {ReseauSociaux},
   data() {
     return {
       contacts: [
@@ -304,7 +304,7 @@ export default defineComponent({
 /* Small devices (landscape phones, 340px and up) */
 @media (min-width: 340px) and (max-width: 767px) {
   .container_text{
-    margin-top: -3em;
+    margin-top: 10em;
     padding: 2em;
   }
   .container_text h1{
@@ -322,6 +322,24 @@ export default defineComponent({
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 1023px) {
+  .container_text{
+    margin-top: 15em;
+    padding: 2em;
+  }
+  .flex-initial {
+    width: 80%;
+    flex-direction: row;
+    margin: 5em auto 0 auto;
+  }
+  section{
+    padding: 0 0 25em 0;
+    width: 90%;
+    margin: 5em auto;
+  }
+
+  ul li{
+    margin: 5px;
+  }
 
 }
 
@@ -329,6 +347,7 @@ export default defineComponent({
 @media (min-width: 1024px) and (max-width: 1279px) {
   .container_text{
     margin-top: -10%;
+    padding: 2em;
   }
 
 }
@@ -345,8 +364,7 @@ export default defineComponent({
 @media (min-width: 1536px) {
 
 .container_text{
-  margin-top: -10%;
-  padding-top: 12em;
+  margin-top: 2em;
 }
 
 }
