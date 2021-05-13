@@ -8,7 +8,7 @@
       <div class="plan">
         <header><i class="ion-ios-navigate-outline"></i>
           <h4 class="plan-title">
-            Pack Bronze
+            Pack BASIC
           </h4>
           <div class="plan-cost"><span class="plan-price">130€ + 25€</span><span class="plan-type">/mois</span></div>
         </header>
@@ -45,20 +45,23 @@
             />
             <span v-else>Sélectionner</span>
           </router-link>
+          <a href="#modal-container" class="pricingTable-firstTable_table__getstart pricing-button" data-v-2f65754e="">
+            <span>Contactez-nous</span>
+          </a>
         </div>
       </div>
 
       <div class="plan featured">
         <header><i class="ion-ios-people"></i>
           <h4 class="plan-title">
-            Pack Gold
+            Pack PREMIUM
           </h4>
           <div class="plan-cost"><span class="plan-price">250€ + 50€</span><span class="plan-type">/mois</span></div>
         </header>
         <ul class="plan-features">
           <li>Site Web professionnel multi-pages
           </li>
-          <li>Tout le pack BRONZE
+          <li>Tout le pack BASIC
           </li>
           <li>Système d'avis en ligne
           </li>
@@ -78,19 +81,22 @@
             />
             <span v-else>Sélectionner</span>
           </router-link>
+          <a href="#modal-container" class="pricingTable-firstTable_table__getstart pricing-button" data-v-2f65754e="">
+            <span>Contactez-nous</span>
+          </a>
         </div>
       </div>
       <div class="plan">
         <header><i class="ion-ios-speedometer"></i>
           <h4 class="plan-title">
-            Pack Platinium
+            Pack BUSINESS
           </h4>
           <div class="plan-cost"><span class="plan-price">350€ + 90€</span><span class="plan-type">/mois</span></div>
         </header>
         <ul class="plan-features">
           <li>Site Web professionnel optimisé pour le référencement
           </li>
-          <li>Tout le pack GOLD
+          <li>Tout le pack PREMIUM
           </li>
           <li>Optimisation du référencement local sur 1 adresse
           </li>
@@ -110,10 +116,55 @@
             />
             <span v-else>Sélectionner</span>
           </router-link>
+          <a href="#modal-container" class="pricingTable-firstTable_table__getstart pricing-button" data-v-2f65754e="">
+            <span>Contactez-nous</span>
+          </a>
         </div>
       </div>
     </div>
   </div>
+
+  <div id="modal-container">
+    <div class="modal">
+      <form @submit.prevent="sendEmail" >
+        <div class="form">
+          <a class="btnClose" href="#">✖</a>
+          <h2>Vous êtes intéressé ?<br>Contactez nous !</h2>
+          <div class="inputTxt">
+            <input type="text" required="" v-model="name"/><span class="bar"></span><span class="label">NOM Prénom</span>
+          </div>
+          <div class="inputTxt">
+            <input type="email" required="" v-model="email"/><span class="bar"></span><span class="label">Email</span>
+          </div>
+          <div class="inputTxt">
+            <input type="tel" required="" v-model="tel"/><span class="bar"></span><span class="label">Téléphone</span>
+          </div>
+          <div class="inputTxt">
+            <label class="labelSelect">Quelle est l'offre concernée ?</label>
+            <div class="formfield-select">
+              <div class="formfield-select--container">
+                <select v-model="selected">
+                  <option value="bronze">Pack BASIC</option>
+                  <option value="argent">Pack PREMIUM</option>
+                  <option value="gold">Pack BUSINESS</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="inputTxt">
+            <div class="textwrapper"><textarea cols="2" rows="4" id="rules" placeholder="Votre message" v-model="message"/></div>
+          </div>
+
+          <div class="button">
+            <button type="submit" value="Send" @click="close">Envoyer</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
 </template>
 
 <script>
@@ -157,6 +208,10 @@ export default defineComponent({
 
 <style scoped>
 @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+
+.listeOffre{
+  margin-top: 5em;
+}
 
 .containerOffre {
   margin-top: 5em;
@@ -293,14 +348,15 @@ export default defineComponent({
 .snip1265 .plan-select a {
   color: #fffefe;
   text-decoration: none;
-  padding: 15px 20px;
-  margin: 20px;
+  padding: 15px 0px;
+  margin: 20px 10px;
   border-radius: 40px;
   font-size: 0.75em;
   font-weight: 800;
   text-transform: uppercase;
   display: inline-block;
   border: 2px solid #fffefe;
+  width: 40%;
 }
 
 .snip1265 .plan-select a:hover {
@@ -309,18 +365,279 @@ export default defineComponent({
 }
 
 .snip1265 .featured {
-  margin-top: -10px;
+  margin: -30px -5px 0 -5px;
   background-color: #fffefe;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   z-index: 1;
 }
 
 .snip1265 .featured .plan-select a {
-  margin: 30px 20px;
+  margin: 30px 10px;
 }
+
+
+#modal-container {
+  z-index: 200000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+#modal-container:not(:target) {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s, visibility 1s;
+}
+#modal-container:target {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1s, visibility 1s;
+}
+
+.modal {
+  background: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.btnClose{
+  position: absolute;
+  background-color: black;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding: 0px px;
+  font-size: 1.5em;
+  right: 1em;
+  top: 1em;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+/* FORMULAIRE DE CONTACT */
+
+.form {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: auto;
+  padding: 50px 70px 50px 70px;
+  background: #fff;
+  border-radius: 20px;
+  /*box-shadow: 0px 20px 100px rgba(160, 59, 68, 1);*/
+}
+.modal .form h2 {
+  font-size: 1.7rem;
+  line-height: 1.1em;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0px 0px 20px 0px;
+  color: #000000;
+}
+.modal .form .inputTxt {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 70px;
+  padding: 10px 0px 0px 0px;
+  margin: 0px 0px 10px 0px;
+}
+.modal .form .inputTxt input {
+  display: block;
+  width: 100%;
+  height: 42px;
+  padding: 0px 0px 0px 4px;
+  border: none;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  color: #000000;
+  border-bottom: 2px solid #000;
+  background: transparent;
+}
+.modal .form .inputTxt input:focus ~ .label, .modal .form .inputTxt input:valid ~ .label {
+  top: -6px;
+  left: 2px;
+  font-size: 12px;
+  line-height: 24px;
+  font-weight: 600;
+  color: #000000;
+}
+.modal .form .inputTxt input:focus ~ .bar {
+  width: 100%;
+}
+.modal .form .inputTxt input:focus {
+  border-bottom: 2px solid #fff;
+}
+.modal .form .inputTxt .label {
+  position: absolute;
+  top: 19px;
+  left: 4px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  color: #000000;
+  pointer-events: none;
+}
+.modal .form .inputTxt .bar {
+  display: block;
+  position: absolute;
+  bottom: 18px;
+  left: 0px;
+  width: 0px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(45deg, #00adc1, #7e80cb);
+  pointer-events: none;
+}
+.modal .form button {
+  display: block;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  margin: 8em 0px 0px 0px;
+  padding: 0px 20px 0px 20px;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 36px;
+  color: #fff;
+  border-radius: 25px;
+  border: 0px;
+  opacity: 1;
+  background: linear-gradient(to right, #00adc1, #7e80cb);
+  cursor: pointer;
+}
+.modal .form button:hover {
+  box-shadow: 0px 8px 15px #7e80cb;
+}
+.modal .form .serviceLink {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 28px 0px 0px 0px;
+  font-size: 11px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #7C8589;
+  opacity: 0.5;
+}
+.modal .form .serviceLink:hover {
+  opacity: 1;
+}
+
+.labelSelect{
+  position: absolute;
+  top: 19px;
+  left: 4px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  color: #000000;
+  pointer-events: none;
+}
+
+formfield-select {
+  position: relative;
+  width: 100%;
+}
+
+.formfield-select--container {
+  position: relative;
+  background-color: #fff;
+  border: #000000 1px solid;
+  margin: 3em 0 1.5em 0;
+  overflow: hidden;
+}
+
+.formfield-select--container select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 110%;
+  height: auto;
+  border: 0;
+  margin: 0;
+  padding: .75em;
+  border-radius: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+textarea
+{
+  width:100%;
+  padding: 1em;
+}
+
+textarea::placeholder {
+  font-size: 1rem;
+}
+
+.textwrapper
+{
+  border:1px solid #000;
+  margin:2em 0;
+}
+
+.formfield-select--container::after {
+  /* Le pointeur du select */
+  content: '';
+  position: absolute;
+  top: 50%;
+  margin-top: -3px;
+  right: .75em;
+  display: block;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-top-color: #444;
+  border-width: 6px;
+  border-style: solid;
+  pointer-events: none;
+}
+
+/* animations */
+.form * {
+  transition: 0.25s ease-in-out all;
+  -moz-transition: 0.25s ease-in-out all;
+  -webkit-transition: 0.25s ease-in-out all;
+}
+
+/* Small devices (landscape phones, 340px and up) */
+@media (min-width: 340px) and (max-width: 767px) {
+  .btnClose{
+    right: 5em;
+    top: 4.5em;
+    height: 30px;
+    font-size: 15px;
+  }
+  .modal .form h2{
+    margin: 50px 0px 20px 0px;
+    font-size: 1.4rem;
+  }
+  .modal .form button{
+    margin: 6em 0px 0px 0px;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .containerOffre {
     margin-top: 15em;
+  }
+  .listeOffre{
+    margin-bottom: 5em;
   }
   .snip1265 {
     width: 70%;
@@ -343,11 +660,6 @@ export default defineComponent({
   .snip1265 .plan-select a {
     -webkit-transform: translateY(0);
     transform: translateY(0);
-  }
-
-  .snip1265 .plan-select a,
-  .snip1265 .featured .plan-select a {
-    margin: 20px;
   }
 }
 
