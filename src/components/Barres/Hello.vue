@@ -111,7 +111,6 @@ export default defineComponent({
   font-weight: 600;
   letter-spacing: .2rem;
   line-height: .8rem;
-  margin-top: -5em;
   left: -1em;
 }
 
@@ -359,7 +358,7 @@ textarea::placeholder {
 /* Small devices (landscape phones, 340px and up) */
 @media (min-width: 340px) and (max-width: 767px) {
   .sayHello[data-v-0cdb4400] {
-    left: -2.5em;
+    left: -3em;
   }
   .btnClose{
     right: 5em;
