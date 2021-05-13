@@ -17,7 +17,7 @@
       </div>
     </div>
   </div>
-  
+
   <div class="grid-flex">
     <div class="col col-image image-right col2">
       <div class="container-logo">
@@ -114,7 +114,7 @@ h.col-text {
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  flex-direction: row; 
+  flex-direction: row;
   -webkit-flex-direction: row;
   -webkit-flex-wrap: wrap;
   -webkit-justify-content: space-around;
@@ -174,6 +174,7 @@ h.col-text {
   font-size: 3rem;
   line-height: 1em;
   margin-bottom: 0.6em;
+  padding-top: 1em;
 }
 
 .Aligner-item p {
@@ -220,7 +221,7 @@ h.col-text {
     height: 40em;
     display: -webkit-flex;
     -webkit-flex-direction: column;
-    flex-direction: column; 
+    flex-direction: column;
    }
   .col {
     order:vertical;
@@ -241,7 +242,7 @@ h.col-text {
   .grid-flex {
     display: -webkit-flex;
     -webkit-flex-direction: column;
-    flex-direction: column; 
+    flex-direction: column;
     margin-top: 4em;
    }
 
@@ -252,6 +253,7 @@ h.col-text {
   .Aligner-item{
     width: 85%;
     margin-top: 2em;
+    padding-top: 4em;
   }
   .container-logo {
     border-radius: 50%;
