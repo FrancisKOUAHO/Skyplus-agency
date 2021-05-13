@@ -129,7 +129,7 @@ h.col-text {
 .image-left {
   display:flex;
   flex-direction: row;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: flex-end;
 }
 
@@ -268,7 +268,7 @@ h.col-text {
     order: 0;
     display:flex;
     flex-direction: row;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: flex-end;
   }
 
