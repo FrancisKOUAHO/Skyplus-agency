@@ -36,15 +36,9 @@
         <div class="plan-select">
           <router-link to="#"
                        class="pricingTable-firstTable_table__getstart pricing-button"
-                       :disabled="isPurchasing"
                        @click="purchaseMonthlyPlan('price_1Iow3UEQZ5CWt7xoFjZuD9fq')"
           >
-            <img
-                class="loader"
-                v-if="isPurchasing"
-                src="../../assets/image/loading.gif"
-            />
-            <span v-else>Sélectionner</span>
+            <span>Sélectionner</span>
           </router-link>
           <a href="#modal-container" class="pricingTable-firstTable_table__getstart pricing-button" data-v-2f65754e="">
             <span>Contactez-nous</span>
@@ -72,15 +66,9 @@
         <div class="plan-select">
           <router-link to="#"
                        class="pricingTable-firstTable_table__getstart pricing-button is-featured"
-                       :disabled="isPurchasing"
                        @click="purchaseMonthlyPlan('price_1Iow4EEQZ5CWt7xo4Zy7X0jo')"
           >
-            <img
-                class="loader"
-                v-if="isPurchasing"
-                src="../../assets/image/loading.gif"
-            />
-            <span v-else>Sélectionner</span>
+            <span>Sélectionner</span>
           </router-link>
           <a href="#modal-container" class="pricingTable-firstTable_table__getstart pricing-button" data-v-2f65754e="">
             <span>Contactez-nous</span>
@@ -107,15 +95,9 @@
         <div class="plan-select">
           <router-link to="#"
                        class="pricingTable-firstTable_table__getstart pricing-button "
-                       :disabled="isPurchasing"
                        @click="purchaseMonthlyPlan('price_1Iow4kEQZ5CWt7xoDTjesKsG')"
           >
-            <img
-                class="loader"
-                v-if="isPurchasing"
-                src="../../assets/image/loading.gif"
-            />
-            <span v-else>Sélectionner</span>
+            <span>Sélectionner</span>
           </router-link>
           <a href="#modal-container" class="pricingTable-firstTable_table__getstart pricing-button" data-v-2f65754e="">
             <span>Contactez-nous</span>

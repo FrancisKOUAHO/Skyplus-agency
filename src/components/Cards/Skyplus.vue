@@ -35,7 +35,7 @@ img {
 }
 
 .homeContent {
-  margin-top: 7em;
+  padding-top: 7em;
 }
 
 /* Animation FadeInUp class "FadeInUp"*/
@@ -144,7 +144,7 @@ h3 {
 @media (min-width: 340px) and (max-width: 767px) {
   .homeContent {
     margin-top: 0;
-    margin-top: 13em;
+    padding-top: 13em;
   }
 
   .container_plus {
@@ -176,7 +176,7 @@ h3 {
 @media (min-width: 768px) and (max-width: 1023px) {
   .homeContent {
     margin-top: 0;
-    margin-top: 13em;
+    padding-top: 13em;
   }
 
   img {
