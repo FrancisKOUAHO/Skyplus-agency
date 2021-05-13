@@ -169,6 +169,7 @@ export default defineComponent({
   display: flex;
   justify-content: center;
   align-items: center;
+  color: white;
 }
 
 /* FORMULAIRE DE CONTACT */
@@ -367,7 +368,20 @@ textarea::placeholder {
 /* Small devices (landscape phones, 340px and up) */
 @media (min-width: 340px) and (max-width: 767px) {
   .sayHello[data-v-0cdb4400] {
-      left: -2.5em;
+    left: -2.5em;
+  }
+  .btnClose{
+    right: 5em;
+    top: 4.5em;
+    height: 30px;
+    font-size: 15px;
+  }
+  .modal .form h2{
+    margin: 50px 0px 20px 0px;
+    font-size: 1.4rem;
+  }
+  .modal .form button{
+    margin: 6em 0px 0px 0px;
   }
 }
 
