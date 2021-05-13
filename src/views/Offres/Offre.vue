@@ -20,7 +20,7 @@
         </span>
       </p>
     </div>
-    <div class="container">
+    <div class="container listeOffre">
       <div class="panel pricing-table">
         <div class="pricing-plan">
           <h2 class="pricing-header">Bronze Package</h2>
@@ -282,5 +282,12 @@ html {
 .pricing-button.is-featured:hover,
 .pricing-button.is-featured:active {
   background-color: #269aff;
+}
+
+
+@media (min-width: 1536px) {
+  .listeOffre{
+    margin-bottom: 15em
+  }
 }
 </style>

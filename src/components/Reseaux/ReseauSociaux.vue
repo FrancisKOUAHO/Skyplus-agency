@@ -119,7 +119,8 @@ ul li a:hover::before {
 }
 
 @media (min-width: 1536px) {
-
+  section{
+    margin-bottom: 23em;
 }
-
+}
 </style>

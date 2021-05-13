@@ -339,6 +339,10 @@ h4 {
   .content3 .agence_image{
     width: 80%;
   }
+
+  .agenceContent{
+    margin-bottom: 4em;
+  }
 }
 
 </style>

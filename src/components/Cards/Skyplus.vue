@@ -7,9 +7,7 @@
       <h1 class="fadeInRight">SKYPLUS</h1>
       <h3 class="fadeInRight">Sky’s not the limit</h3>
     </div>
-    <div>
-      <square/>
-    </div>
+    <square/>
   </div>
 </template>
 
@@ -146,6 +144,7 @@ h3 {
 @media (min-width: 340px) and (max-width: 767px) {
   .homeContent {
     margin-top: 0;
+    margin-top: 13em;
   }
 
   .container_plus {
@@ -177,6 +176,7 @@ h3 {
 @media (min-width: 768px) and (max-width: 1023px) {
   .homeContent {
     margin-top: 0;
+    margin-top: 13em;
   }
 
   img {

@@ -2,9 +2,9 @@
   <hello/>
   <!-- <creation-bloc-top/> -->
   <skyplus/>
-  <gallery2/>
+  <gallery/>
   <!-- <points/> -->
-  <creation-bloc-bottom/>
+  <!-- <creation-bloc-bottom/> -->
 </template>
 
 <script lang="ts">
@@ -13,14 +13,14 @@ import {defineComponent} from 'vue';
 import Skyplus from "@/components/Cards/Skyplus.vue";
 import Hello from "@/components/Barres/Hello.vue";
 import CreationBlocTop from "@/components/Cards/CreationBlocTop.vue";
-import CreationBlocBottom from "@/components/Cards/CreationBlocBottom.vue";
-import Gallery2 from "@/components/Gallery/Gallery.vue";
+// import CreationBlocBottom from "@/components/Cards/CreationBlocBottom.vue";
+import Gallery from "@/components/Gallery/Gallery.vue";
 import Points from "@/components/Points.vue";
 
 
 export default defineComponent({
   name: 'Accueil',
-  components: {Gallery2, CreationBlocBottom, Hello, Skyplus},
+  components: {Gallery, Hello, Skyplus},
   data() {
     return {}
   },

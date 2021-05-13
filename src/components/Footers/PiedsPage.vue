@@ -33,7 +33,7 @@ footer {
   font-family: Raleway-Regular, sans-serif;
   background-image: linear-gradient(to right, rgb(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
   position: absolute;
-  padding:45px 0 20px;
+  padding: 20px 10px;
   font-size:15px;
   line-height:24px;
 }
@@ -47,8 +47,10 @@ footer, div, ul{
 {
   left: 0;
   width: 100%;
-  background: hsla(0,0%,100%,.08);
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.041), rgba(255, 255, 255, 0.445));
   z-index: 14;
+  display: flex;
+  align-items: center;
 }
 
 ul{
@@ -70,6 +72,27 @@ h1{
   color: white;
   font-size: 0.8rem;
   margin-left: 2em;
+}
+
+@media (max-width: 500px) {
+  .site-footer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.041));
+  }
+  footer{
+    padding-left: 0;
+  }
+  h1{
+    margin-left: 0;
+    text-align: center;
+  }
+  ul{
+    padding:0;
+    margin: 1em 0 0 0;
+    text-align: center;
+  }
 }
 
 </style>
