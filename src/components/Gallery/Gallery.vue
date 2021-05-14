@@ -174,7 +174,6 @@ h.col-text {
   font-size: 3rem;
   line-height: 1em;
   margin-bottom: 0.6em;
-  padding-top: 1em;
 }
 
 .Aligner-item p {
