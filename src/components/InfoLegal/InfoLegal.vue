@@ -1,6 +1,6 @@
 <template>
   <div id="container">
-    <p style="text-align:center; font-family: Raleway-Bold; font-size: 2.5rem;">MENTIONS LEGALES :</p>
+    <h1>MENTIONS LEGALES :</h1>
 
     <p style="text-align:justify">Conformément aux dispositions des articles 6-III et 19 de la Loi n° 2004-575 du 21
       juin 2004 pour la Confiance dans l'économie numérique, dite L.C.E.N., nous portons à la connaissance des
@@ -148,6 +148,13 @@ export default defineComponent({
   padding: 3em;
 }
 
+#container h1 {
+  text-align:center; 
+  font-family: Raleway-Bold; 
+  font-size: 2.5rem;
+  margin-bottom: 1.5em;
+}
+
 #container p {
   font-family: Raleway-Regular;
   font-size: 1rem;
@@ -156,7 +163,14 @@ export default defineComponent({
 @media (max-width: 768px) {
   #container {
     padding-top: 15em;
+    padding-bottom: 15em;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 0;
   }
+  #container h1 {
+  font-size: 1.7rem;
+}
 }
 
 </style>
