@@ -11,7 +11,8 @@
           <h4 class="plan-title">
             Pack BASIC
           </h4>
-          <div class="plan-cost"><span class="plan-price">130€ + <span style="color: #EA6232">25€</span></span><span class="plan-type">/mois</span></div>
+          <div class="plan-cost"><span class="plan-price">130€ + <span style="color: #EA6232">25€</span></span><span
+              class="plan-type">/mois</span></div>
         </header>
         <ul class="plan-features">
           <li class="listViolet">Site vitrine en une seule page
@@ -36,22 +37,28 @@
         <div class="plan-select">
           <router-link to="#"
                        class="pricingTable-firstTable_table__getstart pricing-button"
+                       :disabled="isPurchasing"
                        @click="purchaseMonthlyPlan('price_1Iow3UEQZ5CWt7xoFjZuD9fq')"
           >
-            <span>Sélectionner</span>
+            <img
+                class="loader"
+                v-if="isPurchasing"
+                src="../../assets/image/loading.gif"
+            />
+            <span v-else>Sélectionner</span>
           </router-link>
           <a href="#modal-container" class="pricingTable-firstTable_table__getstart pricing-button" data-v-2f65754e="">
             <span>Contactez-nous</span>
           </a>
         </div>
       </div>
-
       <div class="plan featured">
         <header><i class="ion-ios-people"></i>
           <h4 class="plan-title">
             Pack PREMIUM
           </h4>
-          <div class="plan-cost"><span class="plan-price">250€ + <span style="color: #EA6232">50€</span></span><span class="plan-type">/mois</span></div>
+          <div class="plan-cost"><span class="plan-price">250€ + <span style="color: #EA6232">50€</span></span><span
+              class="plan-type">/mois</span></div>
         </header>
         <ul class="plan-features">
           <li class="listViolet">Site Web professionnel multi-pages
@@ -65,10 +72,16 @@
         </ul>
         <div class="plan-select">
           <router-link to="#"
-                       class="pricingTable-firstTable_table__getstart pricing-button is-featured"
+                       class="pricingTable-firstTable_table__getstart pricing-button"
+                       :disabled="isPurchasing"
                        @click="purchaseMonthlyPlan('price_1Iow4EEQZ5CWt7xo4Zy7X0jo')"
           >
-            <span>Sélectionner</span>
+            <img
+                class="loader"
+                v-if="isPurchasing"
+                src="../../assets/image/loading.gif"
+            />
+            <span v-else>Sélectionner</span>
           </router-link>
           <a href="#modal-container" class="pricingTable-firstTable_table__getstart pricing-button" data-v-2f65754e="">
             <span>Contactez-nous</span>
@@ -80,7 +93,8 @@
           <h4 class="plan-title">
             Pack BUSINESS
           </h4>
-          <div class="plan-cost"><span class="plan-price">350€ + <span style="color: #EA6232">90€</span></span><span class="plan-type">/mois</span></div>
+          <div class="plan-cost"><span class="plan-price">350€ + <span style="color: #EA6232">90€</span></span><span
+              class="plan-type">/mois</span></div>
         </header>
         <ul class="plan-features">
           <li class="listViolet">Site Web professionnel optimisé pour le référencement
@@ -94,10 +108,16 @@
         </ul>
         <div class="plan-select">
           <router-link to="#"
-                       class="pricingTable-firstTable_table__getstart pricing-button "
+                       class="pricingTable-firstTable_table__getstart pricing-button"
+                       :disabled="isPurchasing"
                        @click="purchaseMonthlyPlan('price_1Iow4kEQZ5CWt7xoDTjesKsG')"
           >
-            <span>Sélectionner</span>
+            <img
+                class="loader"
+                v-if="isPurchasing"
+                src="../../assets/image/loading.gif"
+            />
+            <span v-else>Sélectionner</span>
           </router-link>
           <a href="#modal-container" class="pricingTable-firstTable_table__getstart pricing-button" data-v-2f65754e="">
             <span>Contactez-nous</span>
@@ -109,7 +129,7 @@
 
   <div id="modal-container">
     <div class="modal">
-      <form @submit.prevent="sendEmail" >
+      <form @submit.prevent="sendEmail">
         <div class="form">
           <a class="btnClose" href="#">✖</a>
           <h2>Vous êtes intéressé ?<br>Contactez nous !</h2>
@@ -136,7 +156,8 @@
           </div>
 
           <div class="inputTxt">
-            <div class="textwrapper"><textarea cols="2" rows="4" id="rules" placeholder="Votre message" name="message"/></div>
+            <div class="textwrapper"><textarea cols="2" rows="4" id="rules" placeholder="Votre message" name="message"/>
+            </div>
           </div>
 
           <div class="button">
@@ -210,25 +231,25 @@ export default defineComponent({
 <style scoped>
 @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
 
-.listeOffre{
+.listeOffre {
   margin-top: 5em;
 }
 
 .containerOffre {
   margin-top: 5em;
   padding: 1em;
-  display:flex;
+  display: flex;
   flex-direction: column;
   text-align: center;
 }
 
-.containerOffre h1{
+.containerOffre h1 {
   color: #ffffff;
   font-size: 2.2rem;
   font-family: Raleway-Bold;
 }
 
-.containerOffre p{
+.containerOffre p {
   color: #ffffff;
   font-size: 1.5rem;
   font-family: Raleway-Thin;
@@ -336,11 +357,11 @@ export default defineComponent({
   font-size: 0.9rem;
 }
 
-.listViolet{
+.listViolet {
   border-left: 5px solid #7e80cb;
 }
 
-.listOrange{
+.listOrange {
   border-left: 5px solid #EA6232;
 }
 
@@ -397,11 +418,13 @@ export default defineComponent({
   justify-content: center;
   align-items: center;
 }
+
 #modal-container:not(:target) {
   opacity: 0;
   visibility: hidden;
   transition: opacity 1s, visibility 1s;
 }
+
 #modal-container:target {
   opacity: 1;
   visibility: visible;
@@ -414,7 +437,7 @@ export default defineComponent({
   text-align: center;
 }
 
-.btnClose{
+.btnClose {
   position: absolute;
   background-color: black;
   width: 30px;
@@ -446,6 +469,7 @@ export default defineComponent({
   border-radius: 20px;
   /*box-shadow: 0px 20px 100px rgba(160, 59, 68, 1);*/
 }
+
 .modal .form h2 {
   font-size: 1.7rem;
   line-height: 1.1em;
@@ -455,6 +479,7 @@ export default defineComponent({
   margin: 0px 0px 20px 0px;
   color: #000000;
 }
+
 .modal .form .inputTxt {
   display: block;
   position: relative;
@@ -463,6 +488,7 @@ export default defineComponent({
   padding: 10px 0px 0px 0px;
   margin: 0px 0px 10px 0px;
 }
+
 .modal .form .inputTxt input {
   display: block;
   width: 100%;
@@ -476,6 +502,7 @@ export default defineComponent({
   border-bottom: 2px solid #000;
   background: transparent;
 }
+
 .modal .form .inputTxt input:focus ~ .label, .modal .form .inputTxt input:valid ~ .label {
   top: -6px;
   left: 2px;
@@ -484,12 +511,15 @@ export default defineComponent({
   font-weight: 600;
   color: #000000;
 }
+
 .modal .form .inputTxt input:focus ~ .bar {
   width: 100%;
 }
+
 .modal .form .inputTxt input:focus {
   border-bottom: 2px solid #fff;
 }
+
 .modal .form .inputTxt .label {
   position: absolute;
   top: 19px;
@@ -500,6 +530,7 @@ export default defineComponent({
   color: #000000;
   pointer-events: none;
 }
+
 .modal .form .inputTxt .bar {
   display: block;
   position: absolute;
@@ -511,6 +542,7 @@ export default defineComponent({
   background: linear-gradient(45deg, #00adc1, #7e80cb);
   pointer-events: none;
 }
+
 .modal .form button {
   display: block;
   width: 100%;
@@ -528,9 +560,11 @@ export default defineComponent({
   background: linear-gradient(to right, #00adc1, #7e80cb);
   cursor: pointer;
 }
+
 .modal .form button:hover {
   box-shadow: 0px 8px 15px #7e80cb;
 }
+
 .modal .form .serviceLink {
   display: block;
   width: 100%;
@@ -542,11 +576,12 @@ export default defineComponent({
   color: #7C8589;
   opacity: 0.5;
 }
+
 .modal .form .serviceLink:hover {
   opacity: 1;
 }
 
-.labelSelect{
+.labelSelect {
   position: absolute;
   top: 19px;
   left: 4px;
@@ -584,9 +619,8 @@ formfield-select {
   text-overflow: ellipsis;
 }
 
-textarea
-{
-  width:100%;
+textarea {
+  width: 100%;
   padding: 1em;
 }
 
@@ -594,10 +628,9 @@ textarea::placeholder {
   font-size: 1rem;
 }
 
-.textwrapper
-{
-  border:1px solid #000;
-  margin:2em 0;
+.textwrapper {
+  border: 1px solid #000;
+  margin: 2em 0;
 }
 
 .formfield-select--container::after {
@@ -626,25 +659,28 @@ textarea::placeholder {
 
 /* Small devices (landscape phones, 340px and up) */
 @media (min-width: 340px) and (max-width: 767px) {
-  .containerOffre h1{
+  .containerOffre h1 {
     font-size: 2.25rem;
     padding: 0.5em;
   }
-  .containerOffre p{
+
+  .containerOffre p {
     font-size: 1.875rem;
   }
 
-  .btnClose{
+  .btnClose {
     right: 5em;
     top: 4.5em;
     height: 30px;
     font-size: 15px;
   }
-  .modal .form h2{
+
+  .modal .form h2 {
     margin: 50px 0px 20px 0px;
     font-size: 1.4rem;
   }
-  .modal .form button{
+
+  .modal .form button {
     margin: 6em 0px 0px 0px;
   }
 }
@@ -654,23 +690,25 @@ textarea::placeholder {
     margin-top: 0;
     padding-top: 15em;
   }
-  .listeOffre{
+
+  .listeOffre {
     margin-bottom: 5em;
   }
+
   .snip1265 {
     width: 70%;
     max-width: 800px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
+  }
 
   .snip1265 .plan {
     width: 100%;
     margin-top: 2em;
   }
 
-  .snip1265 .plan-features li{
+  .snip1265 .plan-features li {
     font-size: 1rem;
   }
 
@@ -685,6 +723,7 @@ textarea::placeholder {
   .snip1265 {
     width: 90%;
   }
+
   .snip1265 .plan {
     width: 100%;
     height: 36em;
@@ -693,20 +732,20 @@ textarea::placeholder {
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 1024px) and (max-width: 1279px) {
-  .listeOffre{
+  .listeOffre {
     margin-bottom: 8em
   }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1280px) and (max-width: 1535px) {
-    .listeOffre{
+  .listeOffre {
     margin-bottom: 10em
   }
 }
 
 @media (min-width: 1536px) {
-  .listeOffre{
+  .listeOffre {
     margin-bottom: 12em
   }
 }
