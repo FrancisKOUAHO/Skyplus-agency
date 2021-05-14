@@ -117,7 +117,7 @@
                 v-if="isPurchasing"
                 src="../../assets/image/loading.gif"
             />
-            <span v-else>Sélectionne</span>
+            <span v-else>Sélectionner</span>
           </router-link>
           <a href="#modal-container" class="pricingTable-firstTable_table__getstart pricing-button" data-v-2f65754e="">
             <span>Contactez-nous</span>
