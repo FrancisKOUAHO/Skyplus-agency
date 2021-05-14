@@ -38,7 +38,7 @@
           <router-link to="#"
                        class="pricingTable-firstTable_table__getstart pricing-button"
                        :disabled="isPurchasing"
-                       @click="purchaseMonthlyPlan('price_1Iow3UEQZ5CWt7xoFjZuD9fq')"
+                       @click="purchaseMonthlyPlan('price_1Iow3UEQZ5CWt7xomdoD6Ku1','price_1Iow3UEQZ5CWt7xoFjZuD9fq')"
           >
             <img
                 class="loader"
@@ -74,7 +74,7 @@
           <router-link to="#"
                        class="pricingTable-firstTable_table__getstart pricing-button"
                        :disabled="isPurchasing"
-                       @click="purchaseMonthlyPlan('price_1Iow4EEQZ5CWt7xo4Zy7X0jo')"
+                       @click="purchaseMonthlyPlan('price_1Iow4EEQZ5CWt7xo9TVI885U','price_1Iow4EEQZ5CWt7xo4Zy7X0jo')"
           >
             <img
                 class="loader"
@@ -110,7 +110,7 @@
           <router-link to="#"
                        class="pricingTable-firstTable_table__getstart pricing-button"
                        :disabled="isPurchasing"
-                       @click="purchaseMonthlyPlan('price_1Iow4kEQZ5CWt7xoDTjesKsG')"
+                       @click="purchaseMonthlyPlan('price_1Iow4kEQZ5CWt7xothMe9M6i','price_1Iow4kEQZ5CWt7xoDTjesKsG')"
           >
             <img
                 class="loader"
