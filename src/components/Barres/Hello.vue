@@ -349,7 +349,7 @@ textarea::placeholder {
 
 /* Small devices (landscape phones, 340px and up) */
 @media (min-width: 340px) and (max-width: 767px) {
-  .sayHello[data-v-0cdb4400] {
+  .sayHello {
     left: -3em;
   }
 

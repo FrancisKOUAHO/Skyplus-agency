@@ -123,7 +123,7 @@ h4 {
 }
 
 .content1 > p {
-    font-family: Raleway-Thin,sans-serif;
+    font-family: Raleway-Regular,sans-serif;
     -webkit-animation-duration: 2s;
     animation-duration: 2s;
     -webkit-animation-fill-mode: both;

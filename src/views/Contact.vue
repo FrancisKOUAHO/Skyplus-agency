@@ -116,7 +116,7 @@ export default defineComponent({
 .container_text h3 {
   line-height: 1.15;
   color: white;
-  font-family: Raleway-Regular;
+  font-family: Raleway-Thin;
   font-size: 2rem;
   text-align: right;
   margin-top: 1em;
@@ -318,18 +318,18 @@ export default defineComponent({
 @media (min-width: 340px) and (max-width: 767px) {
   .container_text {
     margin-top: 0;
-    padding-top: 15em;
+    padding-top: 13em;
   }
 
   .container_text h1 {
-    font-size: 2.3rem;
+    font-size: 2.25rem;
     padding: 0.5em;
   }
 
   .container_text h3 {
-    font-size: 1.5rem;
+    font-size: 1.875rem;
     padding: 0 1em;
-    margin: 0 0 2em 0;
+    margin: 2rem 0 2em 0;
   }
 
   .container_contact {

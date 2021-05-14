@@ -231,7 +231,7 @@ export default defineComponent({
 .containerOffre p{
   color: #ffffff;
   font-size: 1.5rem;
-  font-family: Raleway-Regular;
+  font-family: Raleway-Thin;
 }
 
 .snip1265 {
@@ -626,6 +626,14 @@ textarea::placeholder {
 
 /* Small devices (landscape phones, 340px and up) */
 @media (min-width: 340px) and (max-width: 767px) {
+  .containerOffre h1{
+    font-size: 2.25rem;
+    padding: 0.5em;
+  }
+  .containerOffre p{
+    font-size: 1.875rem;
+  }
+
   .btnClose{
     right: 5em;
     top: 4.5em;
