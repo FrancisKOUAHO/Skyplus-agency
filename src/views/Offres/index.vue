@@ -72,6 +72,9 @@
           </li>
           <li class="listViolet">Système d'avis en ligne
           </li>
+          <br>
+          <li class="listOrange">Services et accompagnement
+          </li>
           <li class="listOrange">Optimisation du référencement sur le nom de l'entreprise
           </li>
         </ul>
@@ -105,6 +108,9 @@
           <li class="listViolet">Site Web professionnel optimisé pour le référencement
           </li>
           <li class="listViolet">Tout le pack PREMIUM
+          </li>
+          <br>
+          <li class="listOrange">Services et accompagnement
           </li>
           <li class="listOrange">Optimisation du référencement local sur 1 adresse
           </li>
