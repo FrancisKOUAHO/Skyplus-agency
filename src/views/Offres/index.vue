@@ -14,22 +14,26 @@
           <div class="plan-cost"><span class="plan-price">130€ + <span style="color: #EA6232">25€</span></span><span
               class="plan-type">/mois</span></div>
         </header>
-        <ul class="plan-features">
+        <ul class="plan-features scroller">
           <li class="listViolet">Site vitrine en une seule page
           </li>
           <li class="listViolet">Création de l'architecture technique
           </li>
           <li class="listViolet">Expérience utilisateur optimisée
           </li>
-          <li class="listViolet">Création des pages et intégrations
+          <li class="listViolet">Intégration des textes et images
           </li>
-          <li class="listOrange">Maintenance, entretien et assistance
+          <li class="listViolet">Responsive design
+          </li>
+          <li class="listOrange">Services et accompagnement
+          </li>
+          <li class="listOrange">Maintenance, entretien
+          </li>
+          <li class="listOrange">Assistance par mail et téléphone
           </li>
           <li class="listOrange">Nom de domaine + hébergement
           </li>
-          <li class="listOrange">Fonctionnalités de base
-          </li>
-          <li class="listOrange">Rapport de trafic
+          <li class="listOrange">Mise à jour et sauvegarde du site
           </li>
           <li class="listOrange">Sauvegarde quotidienne du site
           </li>
@@ -230,6 +234,14 @@ export default defineComponent({
 
 <style scoped>
 @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+
+.scroller {
+  width: 353px;
+  height: 330px;
+  overflow-y: scroll;
+  scrollbar-color: rebeccapurple green;
+  scrollbar-width: thin;
+}
 
 .listeOffre {
   margin-top: 5em;
