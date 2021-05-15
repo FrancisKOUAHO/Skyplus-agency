@@ -25,6 +25,7 @@
           </li>
           <li class="listViolet">Responsive design
           </li>
+          <br>
           <li class="listOrange">Services et accompagnement
           </li>
           <li class="listOrange">Maintenance, entretien
