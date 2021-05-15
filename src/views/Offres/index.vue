@@ -36,8 +36,6 @@
           </li>
           <li class="listOrange">Mise à jour et sauvegarde du site
           </li>
-          <li class="listOrange">Sauvegarde quotidienne du site
-          </li>
         </ul>
         <div class="plan-select">
           <router-link to="#"
