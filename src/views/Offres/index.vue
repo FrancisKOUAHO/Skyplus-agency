@@ -248,10 +248,6 @@ export default defineComponent({
   scrollbar-width: thin;
 }
 
-.scrollbar::-webkit-scrollbar-thumb {
-  background-color: #EA6232 #EA6232;
-}
-
 .listeOffre {
   margin-top: 5em;
 }
