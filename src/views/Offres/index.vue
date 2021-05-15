@@ -244,8 +244,12 @@ export default defineComponent({
   width: 353px;
   height: 330px;
   overflow-y: scroll;
-  scrollbar-color: rebeccapurple green;
+  scrollbar-color: #EA6232 #EA6232;
   scrollbar-width: thin;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: #EA6232 #EA6232;
 }
 
 .listeOffre {
