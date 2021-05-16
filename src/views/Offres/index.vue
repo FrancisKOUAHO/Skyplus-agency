@@ -26,11 +26,9 @@
           <li class="listViolet">Responsive design
           </li>
           <br>
-          <li class="listOrange">Services et accompagnement
+          <li class="listOrange">Assistance par mail et téléphone
           </li>
           <li class="listOrange">Maintenance et entretien
-          </li>
-          <li class="listOrange">Assistance par mail et téléphone
           </li>
           <li class="listOrange">Nom de domaine + hébergement
           </li>
