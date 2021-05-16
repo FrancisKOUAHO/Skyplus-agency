@@ -28,7 +28,7 @@
           <br>
           <li class="listOrange">Services et accompagnement
           </li>
-          <li class="listOrange">Maintenance, entretien
+          <li class="listOrange">Maintenance et entretien
           </li>
           <li class="listOrange">Assistance par mail et téléphone
           </li>
