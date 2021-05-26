@@ -61,7 +61,7 @@
           <div class="plan-cost"><span class="plan-price">250€ + <span style="color: #EA6232">50€</span></span><span
               class="plan-type">/mois</span></div>
         </header>
-        <ul class="plan-features">
+        <ul class="plan-features scroller">
           <li class="listViolet">Site Web professionnel multi-pages
           </li>
           <li class="listViolet">Tout le pack BASIC
@@ -100,7 +100,7 @@
           <div class="plan-cost"><span class="plan-price">350€ + <span style="color: #EA6232">90€</span></span><span
               class="plan-type">/mois</span></div>
         </header>
-        <ul class="plan-features">
+        <ul class="plan-features scroller">
           <li class="listViolet">Site Web professionnel optimisé pour le référencement
           </li>
           <li class="listViolet">Tout le pack PREMIUM
@@ -174,8 +174,6 @@
       </form>
     </div>
   </div>
-
-
 </template>
 
 <script>

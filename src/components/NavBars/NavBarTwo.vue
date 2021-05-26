@@ -21,12 +21,12 @@
           </router-link>
           <div id="nav-icon3"><span></span><span></span><span></span><span></span></div>
           <ul class="navbar__nav">
-            <li class="navbar__link after-transform">
+<!--            <li class="navbar__link after-transform">
               <router-link :to="{name: 'Offre'}"
                            class="link-hover after block md:inline-block m-8 py-3 no-underline text-grey-darkest">
                 Nos offres
               </router-link>
-            </li>
+            </li>-->
             <li class="navbar__link after-transform">
               <router-link :to="{name: 'Agence'}"
                            class="link-hover after block md:inline-block m-8 py-3 no-underline text-grey-darkest">
@@ -45,12 +45,12 @@
     </div>
     <div class="navbar-responsive">
       <ul class="navbar-responsive__nav">
-        <li class="navbar-responsive__link after-transform">
+<!--        <li class="navbar-responsive__link after-transform">
           <router-link :to="{name: 'Offre'}"
                        class="link-hover after block md:inline-block mt-8 mb-8 py-3 no-underline text-grey-darkest">
             Nos offres
           </router-link>
-        </li>
+        </li>-->
         <li class="navbar-responsive__link after-transform">
           <router-link :to="{name: 'Agence'}"
                        class="link-hover after block md:inline-block mt-8 mb-8 py-3 no-underline text-grey-darkest">
