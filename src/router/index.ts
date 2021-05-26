@@ -2,6 +2,7 @@ import {createRouter, createWebHistory, RouteRecordRaw} from "vue-router"
 import Accueil from '@/views/Accueil.vue'
 import Contact from '@/views/Contact.vue'
 import Agence from '@/views/Agence.vue'
+import Offre from '@/views/Offres/index.vue'
 import PaymentSuccessful from '@/views/Offres/PaymentSuccessful.vue'
 import PaymentFailed from '@/views/Offres/PaymentFailed.vue'
 import InfosLegales from '@/views/InfosLegales/Index.vue'
@@ -32,6 +33,12 @@ const routes: Array<RouteRecordRaw> = [
         name: 'Contact',
         component: Contact,
         meta: {title: 'Skyplus | Contact'}
+    },
+    {
+        path: '/Offre',
+        name: 'Offre',
+        component: Offre,
+        meta: {title: 'Skyplus |  Nos offres '}
     },
     {
         path: '/paiement-reussi',

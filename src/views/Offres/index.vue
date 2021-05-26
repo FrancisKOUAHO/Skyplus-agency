@@ -14,7 +14,7 @@
           <div class="plan-cost"><span class="plan-price">130€ + <span style="color: #EA6232">25€</span></span><span
               class="plan-type">/mois</span></div>
         </header>
-        <ul class="plan-features scroller">
+        <ul class="plan-features scroller__offre">
           <li class="listViolet">Site vitrine en une seule page
           </li>
           <li class="listViolet">Création de l'architecture technique
@@ -61,7 +61,7 @@
           <div class="plan-cost"><span class="plan-price">250€ + <span style="color: #EA6232">50€</span></span><span
               class="plan-type">/mois</span></div>
         </header>
-        <ul class="plan-features scroller">
+        <ul class="plan-features scroller__offre">
           <li class="listViolet">Site Web professionnel multi-pages
           </li>
           <li class="listViolet">Tout le pack BASIC
@@ -100,7 +100,7 @@
           <div class="plan-cost"><span class="plan-price">350€ + <span style="color: #EA6232">90€</span></span><span
               class="plan-type">/mois</span></div>
         </header>
-        <ul class="plan-features scroller">
+        <ul class="plan-features scroller__offre">
           <li class="listViolet">Site Web professionnel optimisé pour le référencement
           </li>
           <li class="listViolet">Tout le pack PREMIUM
@@ -236,12 +236,11 @@ export default defineComponent({
 <style scoped>
 @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
 
-.scroller {
+.scroller__offre{
   width: 353px;
   height: 330px;
   overflow-y: scroll;
   scrollbar-color: #EA6232 #EA6232;
-  scrollbar-width: thin;
 }
 
 .listeOffre {
